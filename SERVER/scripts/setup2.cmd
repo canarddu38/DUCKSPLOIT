@@ -13,6 +13,8 @@ set root_dir=%current_dir:\SERVER=%
 
 echo %server_dir%
 
+cd %server_dir%
+
 for /f %%i in (version.txt) do SET version=%%i
 
 echo.
@@ -22,16 +24,17 @@ if %result%==y (
 echo.
 echo [+] Installing Menu Shortcut...
 
-if exist C:\Users\%username%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\DUCKSPLOIT (
-copy %server_dir%\ducksploit.bat C:\Users\%username%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs
+if exist C:\Users\%username%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Ducksploit (
+copy %server_dir%\ducksploit.bat "C:\Users\%username%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Ducksloit"
 ) else (
 cd C:\Users\%username%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs
-mkdir DUCKSPLOIT
-copy %server_dir%\ducksploit.bat C:\Users\%username%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs
+mkdir Ducksploit
+copy %server_dir%\ducksploit.bat "C:\Users\%username%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Ducksploit\
 )
 
 ) else (echo [x] Cancelled)
 
+echo.
 set /p result2="Install Ducksploit V.%version% ...? [y/n]"
 
 if %result2%==y (
