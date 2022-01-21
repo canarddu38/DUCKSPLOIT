@@ -1,0 +1,10 @@
+import mouse
+
+with open('action.txt') as f:
+    action = f.readlines()
+
+# scroll mouse
+mouse.wheel(action)
+
+
+
