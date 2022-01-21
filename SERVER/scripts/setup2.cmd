@@ -44,10 +44,10 @@ echo [+] Installing Ducksploit v.%version% ...
 copy %server_dir%\ducksploit.bat C:\Windows\System32
 
 if exist C:\Users\%username%\DUCKSPLOIT (
-xcopy %server_dir% C:\Users\%username%\DUCKSPLOIT /s /e /h
+copy %server_dir% C:\Users\%username%\DUCKSPLOIT /s /e /h
 ) else (
 mkdir C:\Users\%username%\DUCKSPLOIT
-xcopy %server_dir% C:\Users\%username%\DUCKSPLOIT /s /e /h
+copy %server_dir% C:\Users\%username%\DUCKSPLOIT /s /e /h
 )
 
 ) else echo [x] Cancelled
