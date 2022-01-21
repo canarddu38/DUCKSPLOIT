@@ -8,11 +8,9 @@ color C
 
 set current_dir=%~dp0
 set server_dir=%current_dir:\scripts=%
-
-set root_dir=%current_dir:\SERVER=%
+set root_dir=%server_dir:\SERVER=%
 
 echo %server_dir%
-
 cd %server_dir%
 
 for /f %%i in (version.txt) do SET version=%%i
@@ -29,7 +27,8 @@ copy %server_dir%\ducksploit.bat "C:\Users\%username%\AppData\Roaming\Microsoft\
 ) else (
 cd C:\Users\%username%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs
 mkdir Ducksploit
-copy %server_dir%\ducksploit.bat "C:\Users\%username%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Ducksploit\
+copy %server_dir%\ducksploit.bat "C:\Users\%username%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Ducksploit\"
+cd %server_dir%
 )
 
 ) else (echo [x] Cancelled)
@@ -41,13 +40,14 @@ if %result2%==y (
 echo.
 echo [+] Installing Ducksploit v.%version% ...
 
-copy %server_dir%\ducksploit.bat C:\Windows\System32
+copy ducksploit.bat "C:\Windows\System32"
+echo [o] Ducksploit command configured!
 
 if exist C:\Users\%username%\DUCKSPLOIT (
-copy %server_dir% C:\Users\%username%\DUCKSPLOIT /s /e /h
+copy %server_dir% "C:\Users\%username%\DUCKSPLOIT"
 ) else (
 mkdir C:\Users\%username%\DUCKSPLOIT
-copy %server_dir% C:\Users\%username%\DUCKSPLOIT /s /e /h
+copy %server_dir% "C:\Users\%username%\DUCKSPLOIT"
 )
 
 ) else echo [x] Cancelled
