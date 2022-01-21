@@ -22,13 +22,11 @@ if %result%==y (
 echo.
 echo [+] Installing Menu Shortcut...
 
-if exist C:\Users\%username%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Ducksploit (
-copy %server_dir%\ducksploit.bat "C:\Users\%username%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Ducksloit"
+if exist C:\Users\%username%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Ducksploit\ (
+copy %server_dir%\ducksploit.bat "C:\Users\%username%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Ducksloit\"
 ) else (
-cd C:\Users\%username%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs
-mkdir Ducksploit
+mkdir C:\Users\%username%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Ducksploit\
 copy %server_dir%\ducksploit.bat "C:\Users\%username%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Ducksploit\"
-cd %server_dir%
 )
 
 ) else (echo [x] Cancelled)
