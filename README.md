@@ -6,16 +6,18 @@
 
 ## Install Ducksploit
 
+####Hacker
    1. Download https://github.com/canarddu38/DUCKSPLOIT/archive/master.zip
    2. Extract downloaded zip file
-   3. If python is not installed, launch 'installpython.bat' or download at https://www.python.org/ftp/python/3.8.0/python-3.8.0.exe
-   4. Install python requirements using 'installrequirements.bat' script
-   5. launch setup.bat       ###MUST BE RUN AS ADMINISTRATOR###
-   6. Ducksploit is now installed on your PC :smile:
-   7. Type 'ducksploit' in the cmd
-   8. Config your ip using 'ipconfig' (your ip)
-   9. Wait victim's connection using 'wait' command
-   10. Have fun with ducksploit hacking commands (type help to get commands list)
+   3. Go in SERVER folder
+   4. If python is not installed, launch 'installpython.bat' or download at https://www.python.org/ftp/python/3.8.0/python-3.8.0.exe
+   5. Install python requirements using 'installrequirements.bat' script
+   6. launch setup.bat       ###MUST BE RUN AS ADMINISTRATOR###
+   7. Ducksploit is now installed on your PC :smile:
+   8. Type 'ducksploit' in the cmd
+   9. Config your ip using 'ipconfig' (your ip)
+   10. Wait victim's connection using 'wait' command
+   11. Have fun with ducksploit hacking commands (type help to get commands list)
 
 
 :warning: Ducksploit is made for legal use or educational use :warning:
