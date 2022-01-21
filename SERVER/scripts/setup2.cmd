@@ -7,11 +7,9 @@ cls
 color C
 
 set current_dir=%~dp0
-set server_dir=%current_dir:\scripts= %
+set server_dir=%current_dir:\scripts=%
 
-cd %server_dir%
-
-set root_dir=%current_dir:\SERVER= %
+set root_dir=%current_dir:\SERVER=%
 
 echo %server_dir%
 
