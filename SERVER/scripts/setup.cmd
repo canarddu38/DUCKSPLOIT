@@ -29,7 +29,7 @@ copy %server_dir%\ducksploit.bat C:\Users\%username%\AppData\Roaming\Microsoft\W
 ) else (
 cd C:\Users\%username%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs
 mkdir DUCKSPLOIT
-xcopy %server_dir%\ducksploit.bat C:\Users\%username%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs
+copy %server_dir%\ducksploit.bat C:\Users\%username%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs
 )
 
 ) else (echo [x] Cancelled)
