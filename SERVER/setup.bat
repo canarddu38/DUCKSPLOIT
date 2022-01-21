@@ -13,13 +13,16 @@ set current_dir=%~dp0
 ::echo %current_dir%
 cd %current_dir%
 
+set root_dir=%current_dir:/SERVER=/"%
+
 echo.
 set /p result="Create a menu shortcut? [y/n]"
 
-if %result%==y (goto menuinstall) else echo [x] Exit
+if %result%==y (goto menuinstall) else echo [x] Cancelled
 
 set /p result2="Install Ducksploit V.%version% ...? [y/n]"
 
+if %result2%==y (goto cmdinstall) else echo [x] Cancelled
 
 :cmdinstall
 echo.
@@ -33,6 +36,8 @@ if exist C:\Users\%username%\DUCKSPLOIT (
 copy commands\*.txt C:\Users\%username%\DUCKSPLOIT
 ) else (
 mkdir C:\Users\%username%\DUCKSPLOIT
+cd %root_dir%
+copy /SERVER/ C:\Users\%username%\DUCKSPLOIT
 )
 
 :menuinstall
