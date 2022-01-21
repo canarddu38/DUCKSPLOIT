@@ -35,16 +35,16 @@ copy %server_dir%\ducksploit.bat "C:\Users\%username%\AppData\Roaming\Microsoft\
 ) else (echo [x] Cancelled)
 
 echo.
-set /p result2="Install Ducksploit V.%version% ...? [y/n]"
+set /p result2="Install Ducksploit v.%version% ...? [y/n]"
 
 if %result2%==y (
 echo.
-echo [+] Installing Ducksploit V.%version% ...
+echo [+] Installing Ducksploit v.%version% ...
 
-xcopy %server_dir%\ducksploit.bat C:\Windows\System32 /s /e /h
+copy %server_dir%\ducksploit.bat C:\Windows\System32
 
 if exist C:\Users\%username%\DUCKSPLOIT (
-xcopy %root_dir%\SERVER\ C:\Users\%username%\DUCKSPLOIT /s /e /h
+xcopy %server_dir% C:\Users\%username%\DUCKSPLOIT /s /e /h
 ) else (
 mkdir C:\Users\%username%\DUCKSPLOIT
 xcopy %server_dir% C:\Users\%username%\DUCKSPLOIT /s /e /h
