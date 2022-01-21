@@ -22,24 +22,31 @@ if %result%==y (
 echo.
 echo [+] Installing Menu Shortcut...
 
-if exist C:\Users\%username%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Ducksploit\ (
-copy ducksploit.bat "C:\Users\%username%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Ducksloit\"
-) else (
+
 mkdir C:\Users\%username%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Ducksploit
 copy ducksploit.bat "C:\Users\%username%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Ducksploit\"
-)
+
 
 ) else (echo [x] Cancelled)
+
+
+
+
 
 echo.
 set /p result2="Install Ducksploit v.%version% ...? [y/n]"
 
 if %result2%==y (
+
+
+
 echo.
 echo [+] Installing Ducksploit v.%version% ...
 
+@echo on
 copy ducksploit.bat "C:\Windows\System32"
-echo [o] Ducksploit command configured!
+pause
+echo [o] Ducksploit command version '%version%' configured!
 
 if exist C:\Users\%username%\DUCKSPLOIT (
 copy %server_dir% "C:\Users\%username%\DUCKSPLOIT"
@@ -47,6 +54,8 @@ copy %server_dir% "C:\Users\%username%\DUCKSPLOIT"
 mkdir C:\Users\%username%\DUCKSPLOIT
 copy %server_dir% "C:\Users\%username%\DUCKSPLOIT"
 )
+
+echo [o] Commands are now ready to use!
 
 ) else echo [x] Cancelled
 
