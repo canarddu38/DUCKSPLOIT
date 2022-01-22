@@ -33,7 +33,6 @@ copy ducksploit.bat "C:\Users\%username%\AppData\Roaming\Microsoft\Windows\Start
 
 
 
-
 echo.
 set /p result2="Install Ducksploit v.%version% ...? [y/n]"
 
