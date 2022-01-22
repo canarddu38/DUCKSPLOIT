@@ -24,9 +24,19 @@ echo [-] Exit
 goto:eof
 ) else (
 
+
+set arg1=%1
+set arg2=%2
+set arg3=%3
+set arg4=%4
+set arg5=%5
+set arg6=%6
+set arg7=%7
+
+
 if exist %path%\commands\%start%.bat (
 
-call %path%\commands\%start%.bat %1 %2 %3 %4
+call %path%\commands\%start%.bat %arg1% %arg2% %arg3% %arg4% %arg5% %arg6% %arg7%
 
 ) else (
 echo [x] Unknown command type help to get command list

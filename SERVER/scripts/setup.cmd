@@ -10,6 +10,9 @@ set current_dir=%~dp0
 set server_dir=%current_dir:\scripts=%
 set root_dir=%server_dir:\SERVER=%
 
+copy path.txt C:\Users\%username%
+(echo %root_dir%)> C:\Users\%username%\path.txt
+
 echo %server_dir%
 cd %server_dir%
 

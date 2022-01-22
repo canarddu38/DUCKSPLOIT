@@ -1,3 +1,7 @@
+@echo off
 echo [+] Opened!
-echo (%1)
-start %1
+
+SET appname=%1
+
+echo (%appname%)
+start %appname%

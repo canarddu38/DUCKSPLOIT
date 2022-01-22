@@ -2,23 +2,23 @@
 ::copy commands\*.txt C:\Windows\System32
 @echo off
 
+for /f %%i in (C:\Users\%username%\path.txt) do SET root_dir=%%i
+
+
+
 cls
 
-color C
+color 0e
 
 set current_dir=%~dp0
-set server_dir=%current_dir:\scripts=%
-set root_dir=%server_dir:\SERVER=%
+set server_dir=%root_dir%\SERVER
 
 echo %server_dir%
 cd %server_dir%
 
 for /f %%i in (version.txt) do SET version=%%i
 
-echo.
-set /p result="Create a menu shortcut? [y/n]"
 
-if %result%==y (
 echo.
 echo [+] Installing Menu Shortcut...
 
@@ -29,15 +29,11 @@ copy ducksploit.bat "C:\Users\%username%\AppData\Roaming\Microsoft\Windows\Start
 copy "Ducksploit - Docs.cmd" "C:\Users\%username%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Ducksploit\"
 copy "DuckpvpTeam.bat" "C:\Users\%username%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Ducksploit\"
 
-) else (echo [x] Cancelled)
 
 
 
 echo.
 set /p result2="Install Ducksploit v.%version% ...? [y/n]"
-
-if %result2%==y (
-
 
 
 echo.
@@ -56,10 +52,9 @@ Xcopy %root_dir%\SERVER C:\Users\%username%\DUCKSPLOIT /E /H /C /I /q
 
 echo [o] Commands are now ready to use!
 
-) else echo [x] Cancelled
 
 echo.
-echo [o] Finished!
+echo [o] Updated!
 pause
 
-color F
+color A
