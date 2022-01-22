@@ -52,7 +52,7 @@ echo [o] Ducksploit command version '%version%' configured!
 
 
 mkdir C:\Users\%username%\DUCKSPLOIT
-Xcopy %root_dir%\SERVER C:\Users\%username%\DUCKSPLOIT /E /H /C /I
+Xcopy %root_dir%\SERVER C:\Users\%username%\DUCKSPLOIT /E /H /C /I /q
 
 echo [o] Commands are now ready to use!
 
