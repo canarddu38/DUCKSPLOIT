@@ -7,7 +7,7 @@
 ## Install Ducksploit
 
 #### Hacker
-   1. Download https://github.com/canarddu38/DUCKSPLOIT/archive/master.zip
+   1. Download https://github.com/canarddu38/DUCKSPLOIT/archive/root.zip
    2. Extract downloaded zip file
    3. Go in SERVER folder
    4. If python is not installed, launch 'installpython.bat' or download at https://www.python.org/ftp/python/3.8.0/python-3.8.0.exe
