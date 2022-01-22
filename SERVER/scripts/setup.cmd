@@ -47,7 +47,7 @@ set current_dir=%~dp0
 ::echo %current_dir%
 cd %current_dir%
 @echo on
-copy ducksploit.bat C:\Windows\System32
+copy "%server_dir%\ducksploit.bat" "C:\Windows\System32"
 pause
 echo [o] Ducksploit command version '%version%' configured!
 @echo off
