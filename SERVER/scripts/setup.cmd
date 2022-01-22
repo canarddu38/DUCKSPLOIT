@@ -42,18 +42,22 @@ if %result2%==y (
 echo.
 echo [+] Installing Ducksploit v.%version% ...
 
+@echo off
+set current_dir=%~dp0
+::echo %current_dir%
+cd %current_dir%
 @echo on
-copy ducksploit.bat "C:\Windows\System32"
+copy ducksploit.bat C:\Windows\System32
 pause
 echo [o] Ducksploit command version '%version%' configured!
 @echo off
 
 
 if exist "C:\Users\%username%\DUCKSPLOIT" (
-xcopy /s /e /t %server_dir% "C:\Users\%username%\DUCKSPLOIT"
+Xcopy %server_dir% C:\Users\%username%\DUCKSPLOIT /s /e /t
 ) else (
 mkdir C:\Users\%username%\DUCKSPLOIT
-xcopy /s /e /t %server_dir% "C:\Users\%username%\DUCKSPLOIT"
+Xcopy %server_dir% C:\Users\%username%\DUCKSPLOIT /s /e /t
 )
 
 echo [o] Commands are now ready to use!
