@@ -10,9 +10,6 @@ set current_dir=%~dp0
 set server_dir=%current_dir:\scripts=%
 set root_dir=%server_dir:\SERVER=%
 
-copy path.txt C:\Users\%username%
-(echo %root_dir%)> C:\Users\%username%\path.txt
-
 echo %server_dir%
 cd %server_dir%
 
@@ -48,6 +45,7 @@ echo [+] Installing Ducksploit v.%version% ...
 
 @echo on
 copy "%server_dir%\ducksploit.bat" "C:\Windows\System32"
+copy "%server_dir%\scripts\wget.exe" "C:\Windows\System32"
 pause
 echo [o] Ducksploit command version '%version%' configured!
 @echo off
