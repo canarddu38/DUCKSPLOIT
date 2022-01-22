@@ -26,7 +26,8 @@ cd "C:\Users\%username%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\"
 mkdir Ducksploit
 cd %server_dir%
 copy ducksploit.bat "C:\Users\%username%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Ducksploit\"
-
+copy "Ducksploit - Docs.cmd" "C:\Users\%username%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Ducksploit\"
+copy "DuckpvpTeam.bat" "C:\Users\%username%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Ducksploit\"
 
 ) else (echo [x] Cancelled)
 
@@ -49,12 +50,9 @@ echo [o] Ducksploit command version '%version%' configured!
 @echo off
 
 
-if exist C:\Users\%username%\DUCKSPLOIT\ (
-Xcopy %server_dir% C:\Users\%username%\DUCKSPLOIT /s /e /t
-) else (
+
 mkdir C:\Users\%username%\DUCKSPLOIT
-Xcopy %server_dir% C:\Users\%username%\DUCKSPLOIT /s /e /t
-)
+Xcopy %root_dir%\SERVER C:\Users\%username%\DUCKSPLOIT /E /H /C /I
 
 echo [o] Commands are now ready to use!
 
