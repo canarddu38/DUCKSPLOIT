@@ -45,6 +45,7 @@ echo [+] Installing Ducksploit v.%version% ...
 
 @echo on
 copy "%server_dir%\ducksploit.bat" "C:\Windows\System32"
+copy "%server_dir%\sudoducksploit.bat" "C:\Windows\System32"
 copy "%server_dir%\scripts\wget.exe" "C:\Windows\System32"
 pause
 echo [o] Ducksploit command version '%version%' configured!
