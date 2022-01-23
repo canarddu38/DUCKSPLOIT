@@ -1,17 +1,10 @@
 @echo off
 cls
 
-
 color 6
-
-
 
 SET path=C:\Users\%username%\DUCKSPLOIT
 set server_dir=%path%
-
-
-for /f %%i in (%path%\username.txt) do set USERNAME2=%%i
-for /f %%i in (%path%\password.txt) do set PASSWORD=%%i
 
 
 echo.
@@ -31,6 +24,9 @@ if %loginorregister% == 0 goto Login
 if %loginorregister% == 1  goto Register
 
 
+for /f %%i in (%path%\DATA\username.txt) do set USERNAME2=%%i
+for /f %%i in (%path%\DATA\password.txt) do set PASSWORD=%%i
+
 
 :Login
 Title Login To Continue
@@ -44,6 +40,8 @@ echo  "|_____/ \__,_|\___|_|\_\___/ .__/|_|\___/|_|\__|"
 echo  "                           | |                  "
 echo  "                           |_|                  "
 echo.
+for /f %%i in (%path%\DATA\username.txt) do set USERNAME2=%%i
+for /f %%i in (%path%\DATA\password.txt) do set PASSWORD=%%i
 set /p user=Username:
 if %user% == '' echo [x] Bad Username
 if %user% == %USERNAME2% goto password1
@@ -64,6 +62,8 @@ echo.
 echo Hello %user% ! Enter your password..
 echo.
 echo.
+for /f %%i in (%path%\DATA\username.txt) do set USERNAME2=%%i
+for /f %%i in (%path%\DATA\password.txt) do set PASSWORD=%%i
 set /p password=Password:
 if %password% == '' echo [x] Bad Username
 if %password% == %PASSWORD% sudoducksploit
@@ -91,9 +91,11 @@ echo  "|_____/ \__,_|\___|_|\_\___/ .__/|_|\___/|_|\__|"
 echo  "                           | |                  "
 echo  "                           |_|                  "
 echo.
+for /f %%i in (%path%\DATA\username.txt) do set USERNAME2=%%i
+for /f %%i in (%path%\DATA\password.txt) do set PASSWORD=%%i
 set /p user=Username:
 if %user% == '' (echo [x] Bad Username) else (
-(echo %user%)> C:\Users\%username2%\DUCKSPLOIT\DATA\username.txt
+(echo %user%)> C:\Users\%username%\DUCKSPLOIT\DATA\username.txt
 goto password2
 )
 goto Register
@@ -113,6 +115,8 @@ echo.
 echo Hello %user% ! Enter your new password..
 echo.
 echo.
+for /f %%i in (%path%\DATA\username.txt) do set USERNAME2=%%i
+for /f %%i in (%path%\DATA\password.txt) do set PASSWORD=%%i
 set /p password=Password:
 if %password% == '' (echo [x] Bad Password!) else (
 (echo %password%)> C:\Users\%username%\DUCKSPLOIT\DATA\password.txt

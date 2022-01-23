@@ -10,11 +10,11 @@ echo.
 
 set /p input="Choose option: [int] "
 
-if %input%==0 (for /f %%i in (C:\Users\%username%\DUCKSPLOIT\help\config.txt) do echo %%i&&sleep 3&&ducksploit) else (
-if %input%==1 (for /f %%i in (C:\Users\%username%\DUCKSPLOIT\help\exploits.txt) do echo %%i&&sleep 3&&ducksploit) else (
-if %input%==2 (for /f %%i in (C:\Users\%username%\DUCKSPLOIT\help\mouse.txt) do echo %%i&&sleep 3&&ducksploit) else (
-if %input%==3 (for /f %%i in (C:\Users\%username%\DUCKSPLOIT\help\spy.txt) do echo %%i&&sleep 3&&ducksploit) else (
-if %input%==4 (for /f %%i in (C:\Users\%username%\DUCKSPLOIT\help\mysc.txt) do echo %%i&&sleep 3&&ducksploit) else (
+if %input%==0 (for /f %%i in (C:\Users\%username%\DUCKSPLOIT\help\config.txt) do echo %%i&&sleep 3&&sudoducksploit) else (
+if %input%==1 (for /f %%i in (C:\Users\%username%\DUCKSPLOIT\help\exploits.txt) do echo %%i&&sleep 3&&sudoducksploit) else (
+if %input%==2 (for /f %%i in (C:\Users\%username%\DUCKSPLOIT\help\mouse.txt) do echo %%i&&sleep 3&&sudoducksploit) else (
+if %input%==3 (for /f %%i in (C:\Users\%username%\DUCKSPLOIT\help\spy.txt) do echo %%i&&sleep 3&&sudoducksploit) else (
+if %input%==4 (for /f %%i in (C:\Users\%username%\DUCKSPLOIT\help\mysc.txt) do echo %%i&&sleep 3&&sudoducksploit) else (
 echo [x] Invalid Arg
 goto help
 )
@@ -23,4 +23,4 @@ goto help
 )
 )
 
-ducksploit
+sudoducksploit
