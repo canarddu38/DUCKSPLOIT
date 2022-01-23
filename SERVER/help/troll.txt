@@ -1,1 +1,3 @@
-troll
+| Command | Usage |               Result                |
+| ------- |------ | ----------------------------------- |
+|  skull  | skull | spam cmds with skull and crossbones |
