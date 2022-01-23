@@ -55,7 +55,6 @@
 | open  | open (applicationname.exe) | open mensioned application |
 | recordscreen  | recordscreen (time in second) | record victim's screen durring amount of time |
 | recordmicro  | recordmicro (time in second) | record victim's micro durring amount of time |
-| open  | open (applicationname.exe) | open mensioned application |
 
 #### Mouse
 | Command  | Usage | Result |
