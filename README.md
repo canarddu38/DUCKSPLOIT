@@ -31,10 +31,21 @@
 
 ## **Commands**
 
+#### Launch
+| Command | Usage | Result |
+| ------------- | ------------- | ------------- |
+| wait    | wait | wait your victim's connection |
+
 #### Config
 | Command  | Usage | Result |
 | ------------- | ------------- | ------------- |
 | ipconfig  | ipconfig (your ipv4) | config your ip |
+
+#### Account
+| Command | Usage    | Result |
+| ------------- | ------------- | ------------- |
+| register | register | reconfigure your account |
+| accountinfo | accountinfo | view all your account's infos |
 
 #### Exploits
 | Command  | Usage | Result |
@@ -60,12 +71,19 @@
 | msg | msg [-file, -text] (title) (line1) (line2) | create an alertbox and send it on the vitim's pc with a title and 2 lines (if -file set line1 to createfile command content) |
 | createfile | createfile (text) | set the content of line1 of msg command |
 
-#### Mysc
-| Command  | Usage | Result |
+#### Troll
+| Command | Usage | Result |
 | ------------- | ------------- | ------------- |
-| update | update | update ducksploit |
-| exit | exit | exit from the ducksploit treminal |
-| help | help | getting the list of all commands |
-| shutdown | shutdown | make the victim's pc shutdown |
-| reboot | reboot | make the victim's pc reboot |
-| closesession | closesesion | make the victim's session close |
+| skull   | skull | spam cmds with skull and crossbones |
+
+#### Mysc
+| Command      | Usage       | Result                            |
+|--------------|-------------|-----------------------------------|
+| uninstall    | uninstall   | uninstall ducksploit              |
+| update       | update      | update ducksploit                 |
+| credits      | credits     | view ducksploit's credits         |
+| exit         | exit        | exit from the ducksploit treminal |
+| help         | help        | getting the list of all commands  |
+| shutdown     | shutdown    | make the victim's pc shutdown     |
+| reboot       | reboot      | make the victim's pc reboot       |
+| closesession | closesesion | make the victim's session close   |
