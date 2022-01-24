@@ -6,8 +6,8 @@ goto delete
 set /p option="Are You sure to uninstall Ducksploit? [y/n] "
 
 if %option%==y (
-del C:\Windows\System32\ducksploit.bat
-del C:\Windows\System32\sudoducksploit.bat
+del C:\Windows\System32\ducksploit.cmd
+del C:\Windows\System32\sudoducksploit.cmd
 echo [o] Command Deleted!
 
 del C:\Users\%username%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Ducksploit\

@@ -34,9 +34,9 @@ set arg6=%6
 set arg7=%7
 
 
-if exist %path%\commands\%start%.bat (
+if exist %path%\commands\%start%.cmd (
 
-call commands\%start%.bat %arg1% %arg2% %arg3% %arg4% %arg5% %arg6% %arg7%
+call commands\%start%.cmd %arg1% %arg2% %arg3% %arg4% %arg5% %arg6% %arg7%
 
 ) else (
 echo [x] Unknown command type help to get command list

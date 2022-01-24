@@ -21,3 +21,4 @@ echo "    MMM.MMM!   M!!!!!!!!!M   MMMM MM!    "
 echo "   MMMMMMM!    MMMMMMMMMMM    MMMMMM!    "
 echo "     MMMMMM!    MMMMMMMMM    MMMMM!      "
 echo "        MM!                   MM!"       "
+pause

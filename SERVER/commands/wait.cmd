@@ -41,4 +41,4 @@ echo "+  )/    (8P   (88    )  )"
 echo "  (a:f   "     `"`"
 
 cd C:\Users\%username%\DUCKSPLOIT
-call scripts\start.vbs
+call server.py %ip%

