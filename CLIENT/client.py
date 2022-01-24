@@ -33,6 +33,7 @@ while True:
             output = str(e)
         else:
             # if operation is successful, empty message
+            echo
             output = ""
     else:
         # execute the command and retrieve the results

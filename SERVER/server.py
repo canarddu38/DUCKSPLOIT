@@ -1,10 +1,8 @@
 import socket
 import os
-import sys
 
 
-
-SERVER_HOST = argv[0]
+SERVER_HOST = "192.168.1.50"
 SERVER_PORT = 5003
 BUFFER_SIZE = 1024 * 128 # 128KB max size of messages, feel free to increase
 # separator string for sending 2 messages in one go
