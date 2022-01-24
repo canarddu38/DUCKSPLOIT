@@ -1,5 +1,4 @@
 
-::wget -O C:\Users\%username% https://github.com/canarddu38/DUCKSPLOIT/archive/root.zip
-
-cd C:\Users\%username%
-start sudoupdate.bat.lnk
+cd C:\Users\%username%\DUCKSPLOIT\commands
+call sudoupdate.bat.Lnk
+cd C:\Users\%username%\DUCKSPLOIT\

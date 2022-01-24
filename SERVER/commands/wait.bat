@@ -39,3 +39,6 @@ echo "  _(    (    )b  -`.  ) +"
 echo " ( 8)  ( _.aP" _a   \( \   *"
 echo "+  )/    (8P   (88    )  )"
 echo "  (a:f   "     `"`"
+
+cd C:\Users\%username%\DUCKSPLOIT
+call scripts\start.vbs
