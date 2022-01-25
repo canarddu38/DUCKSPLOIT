@@ -3,7 +3,7 @@ import os
 
 
 SERVER_HOST = "192.168.1.50"
-SERVER_PORT = 5003
+SERVER_PORT = 8013
 BUFFER_SIZE = 1024 * 128 # 128KB max size of messages, feel free to increase
 # separator string for sending 2 messages in one go
 SEPARATOR = "<sep>"

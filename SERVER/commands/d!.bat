@@ -1,4 +1,5 @@
 @echo off
+
 SET command=%1
 SET path=C:\Users\%username%\DUCKSPLOIT
 
@@ -63,11 +64,24 @@ echo "[o] Your Account (%user%) is reconfigured!"
 
 )
 
+::setip
 if %command%==setip (
 set arg2=%2
 echo %arg2%
 (echo %arg2%)>C:\Users\%username%\DUCKSPLOIT\myip.txt
 echo [+] Your IP sets to %arg2%
 )
+
+::wait
+if %command%==wait (
+cd C:\Users\%username%\DUCKSPLOIT
+call server.py
+)
+
+::test
+if %command%==test (
+set /p 1=5
+)
+
 
 
