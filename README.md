@@ -1,12 +1,33 @@
-[![banner](https://github.com/canarddu38/DUCKSPLOIT/blob/root/images/banner.png?raw=true "banner")](https://github.com/canarddu38/DUCKSPLOIT/blob/master/images/banner.png?raw=true "banner")
+![banner](https://github.com/canarddu38/DUCKSPLOIT/blob/root/images/banner.png?raw=true "banner")](https://github.com/canarddu38/DUCKSPLOIT/blob/master/images/banner.png?raw=true "banner")
 
  # Ducksploit
- ![](https://img.shields.io/badge/Version-1.0-red) ![](https://img.shields.io/github/stars/canarddu38/DUCKSPLOIT) ![](https://img.shields.io/github/issues/canarddu38/DUCKSPLOIT) ![](	https://img.shields.io/github/forks/canarddu38/DUCKSPLOIT) ![](https://img.shields.io/github/license/canarddu38/DUCKSPLOIT)
+ ![](https://img.shields.io/badge/Version-1.0.3-red) ![](https://img.shields.io/github/stars/canarddu38/DUCKSPLOIT) ![](https://img.shields.io/github/issues/canarddu38/DUCKSPLOIT) ![](	https://img.shields.io/github/forks/canarddu38/DUCKSPLOIT) ![](https://img.shields.io/github/license/canarddu38/DUCKSPLOIT)
 
 
 ## Install Ducksploit
 
 #### Hacker
+###### setup raspberry pico
+   1. Download https://github.com/canarddu38/DUCKSPLOIT/archive/root.zip
+   2. Extract downloaded zip file
+   3. Go in PICO SETUP folder
+   4. Plugg your raspberry pico on your PC with the BOOTSEL button
+   [![picobootbutton](https://github.com/canarddu38/DUCKSPLOIT/blob/root/images/picoboot.png?raw=true "picobootbutton")](https://github.com/canarddu38/DUCKSPLOIT/blob/root/images/picoboot.png?raw=true "picobootbutton")
+   5. Move CircuitPython.uf2 file in the E:\ usb port (port of your pico)
+now your raspberry pico gonna leave usb port and reconnec with CIRCUITPY name
+   6. Erase all the content of your raspberry pico and copy 'copy' folder into him
+   7. Write myip.txt and write your own IP
+   8. Now your raspberry pico is full configured , unplugg your pico and done!
+
+
+
+
+
+###### setup ducksploit commands
+
+
+
+
    1. Download https://github.com/canarddu38/DUCKSPLOIT/archive/root.zip
    2. Extract downloaded zip file
    3. Go in SERVER folder
