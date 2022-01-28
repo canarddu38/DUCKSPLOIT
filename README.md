@@ -20,9 +20,6 @@ now your raspberry pico gonna leave usb port and reconnec with CIRCUITPY name
    8. Now your raspberry pico is full configured , unplugg your pico and done!
 
 
-
-
-
 ###### setup ducksploit commands
 
 
@@ -40,14 +37,16 @@ now your raspberry pico gonna leave usb port and reconnec with CIRCUITPY name
    10. Wait victim's connection using 'wait' command
    11. Have fun with ducksploit hacking commands (type help to get commands list)
 
+#### Victim
+Just plugg the raspberry pico in your pc (or hacker can do also)
+That will start automaticaly the client of the reverse shell
 
 :warning: Ducksploit is made for legal use or educational use :warning:
 
 ## Uninstall Ducksploit
 
-   1. Launch Ducksploit terminal using 'ducksploit'
-   2. type 'uninstall'
-   3. Done  :smile:
+   1. type 'ds uninstall' in cmd
+   2. Done  :smile:
 
 
 ## **Commands**
