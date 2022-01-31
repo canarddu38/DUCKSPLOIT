@@ -48,6 +48,8 @@ That will start automaticaly the client of the reverse shell
    1. type 'ds uninstall' in cmd
    2. Done  :smile:
 
+## SUPPORT
+<noscript><a href="https://paypal.me/canarddu38"><img alt="Donate 👍 using Paypal" src="https://www.paypalobjects.com/webstatic/mktg/Logo/pp-logo-200px.png"></a></noscript>
 
 ## **Commands**
 
