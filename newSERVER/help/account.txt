@@ -1,4 +1,0 @@
-|    Command    |     Usage     |            Result             |
-| ------------- | ------------- | ----------------------------- |
-|   register    |    register   |   reconfigure your account    |
-|  accountinfo  |  accountinfo  | view all your account's infos |

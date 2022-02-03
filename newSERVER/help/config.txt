@@ -1,3 +1,0 @@
-|    Command    |       Usage      |     Result     |
-| ------------- | ---------------- | -------------- |
-| ipconfig  | ipconfig (your ipv4) | config your ip |

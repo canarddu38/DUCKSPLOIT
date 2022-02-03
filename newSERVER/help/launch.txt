@@ -1,3 +1,0 @@
-|    Command    |      Usage     |             Result            |
-| ------------- | -------------- | ----------------------------- |
-|     wait      |      wait      | wait your victim's connection |
