@@ -1,6 +1,0 @@
-|   Command   |              Usage               |                  Result                     |
-| ----------- | -------------------------------- | ------------------------------------------- |
-|  mouseclick | mouseclick [left, right, middle] | make the victim click the mensionned button |
-|  mousemove  |         mousemove (x) (y)        |  move the victim's cursor by x and y pixels |
-| mousescroll |         mousescroll (int)        |    make the user scroll by int pixels       |
-| locatemouse |          locatemouse             |  get the victim's cursor current locations  |

@@ -1,4 +1,0 @@
-|  Command   |                  Usage                     |                                            Result                                                         |
-| ---------- | ------------------------------------------ | --------------------------------------------------------------------------------------------------------- |
-|    msg     | msg [-file, -text] (title) (line1) (line2) | send alertbox on the vitim's pc with title and 2 lines (if -file set line1 to createfile command content) |
-| createfile |            createfile (text)               |                         set the content of line1 of msg command                                           |
