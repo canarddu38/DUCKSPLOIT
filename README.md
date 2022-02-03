@@ -1,4 +1,4 @@
-![banner](https://github.com/canarddu38/DUCKSPLOIT/blob/root/images/banner.png?raw=true "banner")](https://github.com/canarddu38/DUCKSPLOIT/blob/master/images/banner.png?raw=true "banner")
+![banner](https://github.com/canarddu38/DUCKSPLOIT/blob/root/images/banner.png?raw=true "banner")
 
  # Ducksploit
  ![](https://img.shields.io/badge/Version-1.0.3-red) ![](https://img.shields.io/github/stars/canarddu38/DUCKSPLOIT) ![](https://img.shields.io/github/issues/canarddu38/DUCKSPLOIT) ![](	https://img.shields.io/github/forks/canarddu38/DUCKSPLOIT) ![](https://img.shields.io/github/license/canarddu38/DUCKSPLOIT)
@@ -48,6 +48,8 @@ That will start automaticaly the client of the reverse shell
    1. type 'ds uninstall' in cmd
    2. Done  :smile:
 
+## SUPPORT
+<noscript><a href="https://paypal.me/canarddu38"><img alt="Donate 👍 using Paypal" src="https://www.paypalobjects.com/webstatic/mktg/Logo/pp-logo-200px.png"></a></noscript>
 
 ## **Commands**
 
