@@ -1,7 +1,7 @@
 import socket
 import os
 import subprocess
-import sys 
+import sys
 
 SERVER_HOST = "192.168.1.50"
 SERVER_PORT = 8014

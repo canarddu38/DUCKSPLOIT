@@ -37,8 +37,6 @@ SET line2=%4
 
 IF (%~1) == (help) (type C:\DuckSploit\help\help.txt)
 
-IF (%~1) == (version) echo DuckSploit version:&&type C:\DuckSploit\version.txt
-
 
 
 IF (%~1) == (msg) (
@@ -116,12 +114,6 @@ start python.exe C:\DuckSploit\scripts\exploits\chat\clientnoname.py %NetworkIP%
 echo [o] Connect to the chat with 'ds clientchat %NetworkIP%' in a new command prompt
 )
 
-IF (%~1) == (chatconnect) (
-if "%2" == "" (echo Usage: ds chatconnect 'serverip') else (
-python C:\DuckSploit\scripts\exploits\chat\client.py %2
-)
-)
-
 IF (%~1) == (open) (
 if "%2" == "" (echo Usage: ds open 'appname') else (
 if "%3" == "" (start %2&&echo [o]Opended %2) else (
@@ -130,17 +122,11 @@ start %2 %3 %4 %5 %6 %7 %8 %9
 )
 )
 
-IF (%~1) == (wait) (
-python C:\DuckSploit\server.py %NetworkIP%
-)
 
 IF (%~1) == (skull) (
 start cmd.exe /k call C:\DuckSploit\scripts\exploits\batch\skull.cmd
 )
 
-IF (%~1) == (credits) (
-type C:\DuckSploit\help\credits.txt
-)
 
 IF (%~1) == (malware) (
 if "%2"=="" (echo [x] Usage ds malware 'malwarename') else (

@@ -1,0 +1,20 @@
+                   
+credits: DuckpvpTeam - 2022
+
+commands:
+
++----------------+----------------------------------+-----------------------------------+
+|    Command     |              Usage               |                  Result           |
++----------------+----------------------------------+-----------------------------------+
+| help           | help                             | getting the command list          |
+| wait           | wait                             | await victim's connection         |
+
+##chat__________________________________________________________________________________
+| chatconnect    | chatconnect <victim's IP>        | connect to the victim's chat      |
+
+##utilities_____________________________________________________________________________
+| uninstall      | uninstall                        | uninstall ducksploit              |
+| update         | update                           | update ducksploit                 |
+| credits        | credits                          | get ducksploits credits           |
+| myinfo         | myinfo                           | get all stored victim's infos     |
++----------------+----------------------------------+-----------------------------------+

