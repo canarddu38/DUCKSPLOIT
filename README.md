@@ -58,16 +58,11 @@ That will start automaticaly the client of the reverse shell
 | ------------- | ------------- | ------------- |
 | wait    | wait | wait your victim's connection |
 
-#### Config
-| Command  | Usage | Result |
-| ------------- | ------------- | ------------- |
-| ipconfig  | ipconfig (your ipv4) | config your ip |
 
 #### Account
 | Command | Usage    | Result |
 | ------------- | ------------- | ------------- |
-| register | register | reconfigure your account |
-| accountinfo | accountinfo | view all your account's infos |
+| info | info | view all your account's infos |
 
 #### Exploits
 | Command  | Usage | Result |
@@ -77,6 +72,8 @@ That will start automaticaly the client of the reverse shell
 | open  | open (applicationname.exe) | open mensioned application |
 | recordscreen  | recordscreen (time in second) | record victim's screen durring amount of time |
 | recordmicro  | recordmicro (time in second) | record victim's micro durring amount of time |
+
+## ⚠️ To get your victim's keylogs, go on 'http://{ip of your victim}:8013/keylogger/' ⚠️
 
 #### Mouse
 | Command  | Usage | Result |
@@ -89,8 +86,7 @@ That will start automaticaly the client of the reverse shell
 #### Alert Window
 | Command  | Usage | Result |
 | ------------- | ------------- | ------------- |
-| msg | msg [-file, -text] (title) (line1) (line2) | create an alertbox and send it on the vitim's pc with a title and 2 lines (if -file set line1 to createfile command content) |
-| createfile | createfile (text) | set the content of line1 of msg command |
+| msg | msg [-file, -text] (title) (line1) (line2) | create an alertbox and send it on the vitim's pc with a title and 2 lines (if -file set line1 to createfile command content)
 
 #### Troll
 | Command | Usage | Result |
@@ -103,7 +99,6 @@ That will start automaticaly the client of the reverse shell
 | uninstall    | uninstall   | uninstall ducksploit              |
 | update       | update      | update ducksploit                 |
 | credits      | credits     | view ducksploit's credits         |
-| exit         | exit        | exit from the ducksploit treminal |
 | help         | help        | getting the list of all commands  |
 | shutdown     | shutdown    | make the victim's pc shutdown     |
 | reboot       | reboot      | make the victim's pc reboot       |
