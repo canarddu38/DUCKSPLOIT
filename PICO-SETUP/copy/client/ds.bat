@@ -128,6 +128,12 @@ start cmd.exe /k call C:\DuckSploit\scripts\exploits\batch\skull.cmd
 )
 
 
+IF (%~1) == (host) (
+start python.exe C:\$DuckSploitw\host.py
+)
+
+
+
 IF (%~1) == (malware) (
 if "%2"=="" (echo [x] Usage ds malware 'malwarename') else (
 if "%2"=="--help" (type C:\DuckSploit\help\malwarehelp.txt) else (
