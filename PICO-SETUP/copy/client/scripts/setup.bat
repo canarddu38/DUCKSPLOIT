@@ -46,7 +46,10 @@ echo [o] Ducksploit command version '%version%' configured!
 pause
 
 echo.
-echo [o] Finished!
+echo [o] Installation Finished!
 pause
+echo [~] Loading hosting component...
+call %root_dir%\host\launch.bat %root_dir%
+echo [o] finished!
 
 color F
