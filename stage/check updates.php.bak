@@ -1,0 +1,13 @@
+<?php
+
+// get the lastest version
+$newverfile = 'https://raw.githubusercontent.com/canarddu38/DUCKSPLOIT/root/last_version.txt';
+$newverfilecont = file_get_contents($newverfile);
+print_r($newverfilecont);
+echo "<br>";
+
+$currentversionfile = 'C:\DuckSploit\version.txt';
+$currentverfilecont = file_get_contents($currentversionfile);
+print_r($currentverfilecont);
+echo "<br>";
+?>
