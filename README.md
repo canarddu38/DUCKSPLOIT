@@ -1,7 +1,7 @@
 ![banner](https://github.com/canarddu38/DUCKSPLOIT/blob/root/images/banner.png?raw=true "banner")
 
  # Ducksploit
- ![](https://img.shields.io/badge/Version-1.0.3-red) ![](https://img.shields.io/github/stars/canarddu38/DUCKSPLOIT) ![](https://img.shields.io/github/issues/canarddu38/DUCKSPLOIT) ![](	https://img.shields.io/github/forks/canarddu38/DUCKSPLOIT) ![](https://img.shields.io/github/license/canarddu38/DUCKSPLOIT)
+ ![](https://img.shields.io/badge/Version-1.0.6-red) ![](https://img.shields.io/github/stars/canarddu38/DUCKSPLOIT) ![](https://img.shields.io/github/issues/canarddu38/DUCKSPLOIT) ![](	https://img.shields.io/github/forks/canarddu38/DUCKSPLOIT) ![](https://img.shields.io/github/license/canarddu38/DUCKSPLOIT)
  
  <center>
 <img src="https://github.com/canarddu38/DUCKSPLOIT/blob/root/images/pyxbat.png?raw=true" alt="pyxbat" width="300"/>
