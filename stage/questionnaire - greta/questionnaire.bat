@@ -53,7 +53,7 @@ goto menu
 )
 :help
 cls
-type help.txt
+type files\help.txt
 echo.
 pause
 goto menu
@@ -65,8 +65,8 @@ exit
 
 
 :start
-for /f "tokens=*" %%a in (questions.txt) do set /A totallinescount=totallinescount+1
-for /f "tokens=*" %%a in (questions.txt) do set /A linescount=linescount+1&&call :processline %%a
+for /f "tokens=*" %%a in (files\questions.txt) do set /A totallinescount=totallinescount+1
+for /f "tokens=*" %%a in (files\questions.txt) do set /A linescount=linescount+1&&call :processline %%a
 echo finished
 cls
 
@@ -96,8 +96,6 @@ set input2="Sans avis"
 )
 )
 )
-echo %*: %input2%>> avis.txt
-
 
 
 REM new table line
