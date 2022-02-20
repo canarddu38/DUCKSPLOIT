@@ -1,0 +1,15 @@
+Greta - Questionnaire; aide?
+
+### choisissez une option dans le menu ###
+Greta - Simple Questionnaire
+
+  1)commencer  <-- si vous voulez commencer le questionnaire, tapez 1
+  2)aide       <-- tapez 2 pour avoir de l'aide
+  3)quitter    <-- et tapez 3 pour fermer le questionnaire
+
+Choisisser une option [1, 2, 3]: _ <-- dans ce champ, vous pouvez repondre au questionnaire
+
+### repondre au questionnaire ###
+
+(ex)Aimez vous les burgers?
+Votre reponse [y/n]: y   <-- placez la lettre desiree (y pour oui et n pour non) et tapez [entree]

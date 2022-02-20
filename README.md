@@ -1,8 +1,12 @@
 ![banner](https://github.com/canarddu38/DUCKSPLOIT/blob/root/images/banner.png?raw=true "banner")
 
  # Ducksploit
- ![](https://img.shields.io/badge/Version-1.0.3-red) ![](https://img.shields.io/github/stars/canarddu38/DUCKSPLOIT) ![](https://img.shields.io/github/issues/canarddu38/DUCKSPLOIT) ![](	https://img.shields.io/github/forks/canarddu38/DUCKSPLOIT) ![](https://img.shields.io/github/license/canarddu38/DUCKSPLOIT)
-
+ ![](https://img.shields.io/badge/Version-1.0.6-red) ![](https://img.shields.io/github/stars/canarddu38/DUCKSPLOIT) ![](https://img.shields.io/github/issues/canarddu38/DUCKSPLOIT) ![](	https://img.shields.io/github/forks/canarddu38/DUCKSPLOIT) ![](https://img.shields.io/github/license/canarddu38/DUCKSPLOIT)
+ 
+ ## Awsome crossbreed of batch and python ♥
+ <center>
+<img src="https://github.com/canarddu38/DUCKSPLOIT/blob/root/images/pyxbat.png?raw=true" alt="pyxbat" width="300"/>
+</center>
 
 ## Install Ducksploit
 
@@ -49,7 +53,7 @@ That will start automaticaly the client of the reverse shell
    2. Done  :smile:
 
 ## SUPPORT
-<noscript><a href="https://paypal.me/canarddu38"><img alt="Donate 👍 using Paypal" src="https://www.paypalobjects.com/webstatic/mktg/Logo/pp-logo-200px.png"></a></noscript>
+<noscript><a href="https://www.paypal.com/paypalme/Canarddu38"><img alt="Donate 👍 using Paypal" src="https://www.paypalobjects.com/webstatic/mktg/Logo/pp-logo-200px.png"></a></noscript>
 
 ## **Commands**
 
