@@ -1,0 +1,5 @@
+# Expand-Archive -Path 'C:\tmp\DS.zip' -DestinationPath 'Desktop'
+ 
+$source = 'https://github.com/canarddu38/DUCKSPLOIT/archive/root.zip'
+$destination = 'C:\$DuckSploitw'
+Invoke-RestMethod -Uri $source -OutFile $destination

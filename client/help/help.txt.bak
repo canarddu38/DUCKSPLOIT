@@ -1,0 +1,65 @@
+      dP                   dP                         dP          oo   dP   
+      88                   88                         88               88   
+.d888b88 dP    dP .d8888b. 88  .dP  .d8888b. 88d888b. 88 .d8888b. dP d8888P 
+88'  `88 88    88 88'  `"" 88888"   Y8ooooo. 88'  `88 88 88'  `88 88   88   
+88.  .88 88.  .88 88.  ... 88  `8b.       88 88.  .88 88 88.  .88 88   88   
+`88888P8 `88888P' `88888P' dP   `YP `88888P' 88Y888P' dP `88888P' dP   dP   
+                                             88                             
+                                             dP                             
+credits: DuckpvpTeam - 2022
+
+prefix: 'ds'
+usage: 'ds <command>'
+
+website: 'http://<victim's ip>:8013'
+
+commands:
+
++----------------+----------------------------------+-------------------------------------------+
+|    Command     |              Usage               |                  Result                   |
++----------------+----------------------------------+-------------------------------------------+
+| help           | help                             | getting the command list                  |
+| reload         | reload                           | reload connection to the  victim
+
+##chat__________________________________________________________________________________________
+| talk           | talk                             | start talk to your victim                 |
+
+##mouse_________________________________________________________________________________________
+| mouseclick     | mouseclick [right, middle, left] | click the desired mouse button            |
+| mousescroll    | mousescroll <int>                | symulate a scrolling with intensity       |
+| locatemouse    | locatemouse                      | get current victom's mouse locations      |
+
+
+##utilities_____________________________________________________________________________________
+| uninstall      | uninstall                        | uninstall ducksploit                      |
+| update         | update                           | update ducksploit                         |
+| credits        | credits                          | get ducksploits credits                   |
+
+##exploits______________________________________________________________________________________
+| open           | open <app name>                  | open desired app                          |
+| install        | install <path to exe/msi file>   | install package on victim's pc            |
+| download       | download <url>                   | download file in current url              |
+| shutdown       | shutdown                         | shutdown the victim's pc                  |
+| reboot         | reboot                           | reboot the victim's pc                    |
+| closesession   | closesession                     | close current victim's session            |
+| host           | host                             | host file at http://{victim's ip}:8013    |
+| getwifipwd     | getwifipwd                       | get the victim's wifi password            |
+
+##troll_________________________________________________________________________________________
+| skull          | skull                            | spam cmd with skull and crossbones        |
+| msg            | msg <title> <line1> <line2>      | create alertbox with desired infos        |
+
+##stealing______________________________________________________________________________________
+| stealpasswords | stealpasswords                   | steal all victim's chrome saved passwords |
+| stealcookies   | stealcookies                     | steal all victim's chrome cookies         |
+
+##spy___________________________________________________________________________________________
+| recordmicro    | recordmicro <time in second>     | record victim's micro for 'time'seconds   |
+| recordscreen   | recordscreen <time in second>    | record victim's screen for 'time'seconds  |
+| screenshot     | screenshot                       | take screenshot (located at )  |
+| info           | info                             | get all stored victim's infos             |
+
+##evil__________________________________________________________________________________________
+| malware        | malware <malware name>           | add malware to vour victim                |
+|                |                                  | (ds malware --help)                       |
++----------------+----------------------------------+-------------------------------------------+

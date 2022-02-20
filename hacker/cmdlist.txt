@@ -1,0 +1,10 @@
+2022;help;2022
+2022;credits;2022
+2022;portscanner;2022
+2022;exit;2022
+2022;chatconnect;2022
+2022;version;2022
+2022;wait;2022
+2022;update;2022
+2022;myinfo;2022
+2022;website;2022
