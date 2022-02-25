@@ -22,7 +22,7 @@ client_color = Fore.GREEN
 # if the server is not on this machine, 
 # put the private (network) IP address (e.g 192.168.1.2)
 SERVER_HOST = sys.argv[1]
-SERVER_PORT = 8013 # server's port
+SERVER_PORT = 8012 # server's port
 separator_token = "<SEP>" # we will use this to separate the client name & message
 
 # initialize TCP socket

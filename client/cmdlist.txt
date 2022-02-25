@@ -8,7 +8,7 @@
 2022;mouseclick;2022
 2022;info;2022
 2022;recordmicro;2022
-2022;recordscreen;2022
+2022;desktopstream;2022
 2022;screenshot;2022
 2022;getwifipwd;2022
 2022;open;2022
@@ -22,3 +22,4 @@
 2022;reboot;2022
 2022;closesession;2022
 2022;shutdown;2022
+2022;rickroll;2022

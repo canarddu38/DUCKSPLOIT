@@ -1,59 +1,55 @@
 ![banner](https://github.com/canarddu38/DUCKSPLOIT/blob/root/images/banner.png?raw=true "banner")
 
- # Ducksploit
- ![](https://img.shields.io/badge/Version-1.0.6-red) ![](https://img.shields.io/github/stars/canarddu38/DUCKSPLOIT) ![](https://img.shields.io/github/issues/canarddu38/DUCKSPLOIT) ![](	https://img.shields.io/github/forks/canarddu38/DUCKSPLOIT) ![](https://img.shields.io/github/license/canarddu38/DUCKSPLOIT)
- 
- ## Awsome crossbreed of batch and python ♥
+# Ducksploit
+![](https://img.shields.io/badge/Version-1.0.7-red) ![](https://img.shields.io/github/stars/canarddu38/DUCKSPLOIT) ![](https://img.shields.io/github/issues/canarddu38/DUCKSPLOIT) ![](	https://img.shields.io/github/forks/canarddu38/DUCKSPLOIT) ![](https://img.shields.io/github/license/canarddu38/DUCKSPLOIT) ![](https://img.shields.io/badge/Windows-blue)
+
+## Awsome crossbreed of batch and python on Windows ♥
  <center>
-<img src="https://github.com/canarddu38/DUCKSPLOIT/blob/root/images/pyxbat.png?raw=true" alt="pyxbat" width="300"/>
+<img src="https://github.com/canarddu38/DUCKSPLOIT/blob/root/images/pyxbat.png?raw=true" alt="pyxbat" width="300"/><img src="https://github.com/canarddu38/DUCKSPLOIT/blob/root/images/windows-10.png?raw=true" alt="win10" widith="100" height="100"/>
 </center>
 
 ## Install Ducksploit
 
 #### Hacker
-###### setup raspberry pico
-   1. Download https://github.com/canarddu38/DUCKSPLOIT/archive/root.zip
-   2. Extract downloaded zip file
-   3. Go in PICO SETUP folder
-   4. Plugg your raspberry pico on your PC with the BOOTSEL button
+###### setup raspberry pico (hacker)
+1. Download https://github.com/canarddu38/DUCKSPLOIT/archive/root.zip
+2. Extract downloaded zip file
+3. Plugg your raspberry pico on your PC with the BOOTSEL button
    [![picobootbutton](https://github.com/canarddu38/DUCKSPLOIT/blob/root/images/picoboot.png?raw=true "picobootbutton")](https://github.com/canarddu38/DUCKSPLOIT/blob/root/images/picoboot.png?raw=true "picobootbutton")
-   5. Move CircuitPython.uf2 file in the E:\ usb port (port of your pico)
-now your raspberry pico gonna leave usb port and reconnec with CIRCUITPY name
-   6. Erase all the content of your raspberry pico and copy 'copy' folder into him
-   7. Write myip.txt and write your own IP
-   8. Now your raspberry pico is full configured , unplugg your pico and done!
+4. Move CircuitPython.uf2 file in the E:\ or F:\ <-- usb port (port of your pico)
+   now your raspberry pico gonna leave usb port and reconnec with CIRCUITPY name
+5. Erase all the content of your raspberry pico and copy all the extracted repo folder into him
+6. Write myip.txt and write your own IP
+7. Now your raspberry pico is full configured , unplugg your pico and done!
 
+###### setup ducksploit commands (hacker)
 
-###### setup ducksploit commands
+1. Download https://github.com/canarddu38/DUCKSPLOIT/archive/root.zip
+2. Extract downloaded zip file
+3. If python is not installed, launch 'installpython.bat' or download at https://www.python.org/ftp/python/3.8.0/python-3.8.0.exe
+4. launch setup.bat       ###MUST BE RUN AS ADMINISTRATOR###
+5. wait till installation is finished
+7. Ducksploit is now installed on your PC :smile:
+8. Type 'ds' in the cmd
+9. Wait victim's connection using 'wait' command
+10. Have fun with ducksploit hacking commands (type help to get commands list)
 
-
-
-
-   1. Download https://github.com/canarddu38/DUCKSPLOIT/archive/root.zip
-   2. Extract downloaded zip file
-   3. Go in SERVER folder
-   4. If python is not installed, launch 'installpython.bat' or download at https://www.python.org/ftp/python/3.8.0/python-3.8.0.exe
-   5. Install python requirements using 'installrequirements.bat' script
-   6. launch setup.bat       ###MUST BE RUN AS ADMINISTRATOR###
-   7. Ducksploit is now installed on your PC :smile:
-   8. Type 'ducksploit' in the cmd
-   9. Config your ip using 'ipconfig' (your ip)
-   10. Wait victim's connection using 'wait' command
-   11. Have fun with ducksploit hacking commands (type help to get commands list)
+⚠️ WHEN EXPLOIT/SCRIPT IS RUNNING, TYPE ON 'ESC' KEY ⚠️
 
 #### Victim
 Just plugg the raspberry pico in your pc (or hacker can do also)
 That will start automaticaly the client of the reverse shell
 
-:warning: Ducksploit is made for legal use or educational use :warning:
+:warning: Ducksploit is made for legal use or educational use (then, we are not responsible for any crimes committed by our users):warning:
 
-## Uninstall Ducksploit
+## Uninstall Ducksploit (victim)
 
-   1. type 'ds uninstall' in cmd
-   2. Done  :smile:
+1. type 'ds uninstall' in cmd
+2. Done  :smile:
 
 ## SUPPORT
-<noscript><a href="https://www.paypal.com/paypalme/Canarddu38"><img alt="Donate 👍 using Paypal" src="https://www.paypalobjects.com/webstatic/mktg/Logo/pp-logo-200px.png"></a></noscript>
+support us with     
+<noscript><a href="https://www.paypal.com/paypalme/Canarddu38"><img alt="Donate 👍 using Paypal" src="https://www.paypalobjects.com/webstatic/mktg/Logo/pp-logo-200px.png"></a></noscript>        or        <noscript><a href="https://www.patreon.com/ducksploit"><img alt="Donate 👍 using Patreon" src="https://forum.cwowd.com/uploads/default/original/3X/6/d/6d1cdda143cc46667d87659d64d15a869a9b6139.png" width="100" height="100"></a></noscript>
 
 ## **Commands**
 
@@ -84,20 +80,19 @@ That will start automaticaly the client of the reverse shell
 | ------------- | ------------- | ------------- |
 | mouseclick | mouseclick [left, right, middle] | make the victim click the mensionned button |
 | mousemove | mousemove (x) (y) | move the victim's cursor by x and y pixels |
-| mousescroll | mousescroll (int between -1000 and 1000) | make the user scroll by int pixels |
 | locatemouse | locatemouse | get the victim's cursor current locations |
 
 #### Alert Window
 | Command  | Usage | Result |
 | ------------- | ------------- | ------------- |
-| msg | msg [-file, -text] (title) (line1) (line2) | create an alertbox and send it on the vitim's pc with a title and 2 lines (if -file set line1 to createfile command content)
+| msg | msg (title) (line1) (line2) | create an alertbox and send it on the vitim's pc with a title and 2 lines (if -file set line1 to createfile command content)
 
 #### Troll
 | Command | Usage | Result |
 | ------------- | ------------- | ------------- |
 | skull   | skull | spam cmds with skull and crossbones |
 
-#### Mysc
+#### Mysc 
 | Command      | Usage       | Result                            |
 |--------------|-------------|-----------------------------------|
 | uninstall    | uninstall   | uninstall ducksploit              |

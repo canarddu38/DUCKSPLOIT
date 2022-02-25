@@ -1,0 +1,10 @@
+sockets
+keyboard
+mouse
+requests
+crypto
+pycrypto
+subprocess
+os
+sys
+threads
