@@ -16,10 +16,12 @@ body {
 
 #banner {
     position: relative;
-    top: 45%;
+    top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
-    max-width: 100%;
+    max-width: 200%;
+	weight: 400px;
+	height: 300px;
 }
 
 .buttons {
@@ -36,16 +38,16 @@ body {
 
 .download {
     display: inline-flex;
-    height: 50px;
+    height: 75px;
     padding: 0;
     background: #008009;
     border: none;
     outline: none;
-    border-radius: 5px;
+    border-radius: 7px;
     overflow: hidden;
     font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
-    font-size: 15px;
-    font-weight: 500;
+    font-size: 22px;
+    font-weight: 400;
     cursor: pointer;
     text-align: center;
 }
@@ -60,40 +62,40 @@ body {
 
 .github {
     display: inline-flex;
-    height: 50px;
+    height: 75px;
     padding: 0;
     background: #171515;
     border: none;
     outline: none;
-    border-radius: 5px;
+    border-radius: 7px;
     overflow: hidden;
     font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
-    font-size: 15px;
-    font-weight: 500;
+    font-size: 22px;
+    font-weight: 400;
     cursor: pointer;
     text-align: center;
 }
 
-.discord:hover {
+.github:hover {
         background: #080707;
 }
 
-.discord:active {
+.github:active {
     background: #1c1818;
 }
 
 .discord {
     display: inline-flex;
-    height: 50px;
+    height: 75px;
     padding: 0;
     background: #5865F2;
     border: none;
     outline: none;
-    border-radius: 5px;
+    border-radius: 7px;
     overflow: hidden;
     font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
-    font-size: 15px;
-    font-weight: 500;
+    font-size: 22px;
+    font-weight: 400;
     cursor: pointer;
     text-align: center;
 }
