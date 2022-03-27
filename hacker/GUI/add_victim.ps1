@@ -81,9 +81,9 @@ If($TextBox1.Text -eq "")
   [System.Windows.Forms.MessageBox]::Show("Victim's PORT can't be empty", "DUCKSPLOIT" , 0, 48)
 }else{
   [System.Windows.Forms.MessageBox]::Show("Victim Successfully Added!", "DUCKSPLOIT" , 0, 64)
-  Add-Content -Path C:\DuckSploit\victimsIP.txt -Value ($TextBox2.Text)
-  Add-Content -Path C:\DuckSploit\victimsPORT.txt -Value ($TextBox3.Text)
-  Add-Content -Path C:\DuckSploit\victimsNAME.txt -Value ($TextBox1.Text)
+  Add-Content -Path C:\DuckSploit\victimsIP -Value ($TextBox2.Text)
+  Add-Content -Path C:\DuckSploit\victimsPORT -Value ($TextBox3.Text)
+  Add-Content -Path C:\DuckSploit\victimsNAME -Value ($TextBox1.Text)
   $Form.Close();
 }
 }

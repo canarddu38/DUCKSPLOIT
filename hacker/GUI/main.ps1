@@ -76,7 +76,7 @@ $num = 0
 $num2 = 1
 # listview add colmuns
 
-foreach($line in Get-Content C:\DuckSploit\victimsNAME.txt) {
+foreach($line in Get-Content C:\DuckSploit\victimsNAME) {
 	$objitem = ""
 	
 	$item2 = ""
@@ -87,8 +87,8 @@ foreach($line in Get-Content C:\DuckSploit\victimsNAME.txt) {
 	
 	$objItem = $ListView1.Items[$num]
 	
-	$item2 = Get-Content C:\DuckSploit\victimsIP.txt | Select -First $num2 | Select -Last 1
-	$item3 = Get-Content C:\DuckSploit\victimsPORT.txt | Select -First $num2 | Select -Last 1
+	$item2 = Get-Content C:\DuckSploit\victimsIP | Select -First $num2 | Select -Last 1
+	$item3 = Get-Content C:\DuckSploit\victimsPORT | Select -First $num2 | Select -Last 1
 	
 	$objitem.SubItems.Add($item2)
 	$objitem.SubItems.Add($item3)
@@ -110,7 +110,7 @@ function reload {
 	$num2 = 1
 	# listview add colmuns
 
-	foreach($line in Get-Content C:\DuckSploit\victimsNAME.txt) {
+	foreach($line in Get-Content C:\DuckSploit\victimsNAME) {
 	
 		$objitem = ""
 	
@@ -122,8 +122,8 @@ function reload {
 	
 		$objItem = $ListView1.Items[$num]
 	
-		$item2 = Get-Content C:\DuckSploit\victimsIP.txt | Select -First $num2 | Select -Last 1
-		$item3 = Get-Content C:\DuckSploit\victimsPORT.txt | Select -First $num2 | Select -Last 1
+		$item2 = Get-Content C:\DuckSploit\victimsIP | Select -First $num2 | Select -Last 1
+		$item3 = Get-Content C:\DuckSploit\victimsPORT | Select -First $num2 | Select -Last 1
 	
 		$objitem.SubItems.Add($item2)
 		$objitem.SubItems.Add($item3)
@@ -134,11 +134,9 @@ function reload {
 }
 
 $ListView1.Add_Click({
-    # here put your code to perform some action with the selected subfolder
-    # $selected = $ListView1.SelectedItems[0].Text
-	# [System.Windows.Forms.MessageBox]::Show($selected, "DUCKSPLOIT" , 0, 64)
-	Write-Host $ListView1.SelectedItem
-	pause
+	$linenumber= Get-Content C:\DuckSploit\victimsNAME | select-string $ListView1.SelectedItems[0].Text
+	$linenumber.LineNumber | Out-File -FilePath C:\DuckSploit\num
+	./view.ps1
 })
 
 function add_victim {
