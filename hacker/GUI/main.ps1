@@ -10,8 +10,8 @@ $Form.TopMost                    = $true
 $Form.BackColor                  = [System.Drawing.ColorTranslator]::FromHtml("#000000")
 
 
-$objIcon = New-Object system.drawing.icon ("C:\DuckSploit\images\icon.ico")
-$Form.Icon = $objIcon
+$objIcon 						 = New-Object system.drawing.icon ("C:\DuckSploit\images\icon.ico")
+$Form.Icon						 = $objIcon
 
 
 $Label1                          = New-Object system.Windows.Forms.Label
@@ -24,13 +24,34 @@ $Label1.Font                     = New-Object System.Drawing.Font('Microsoft San
 $Label1.ForeColor                = [System.Drawing.ColorTranslator]::FromHtml("#02ff00")
 $Label1.BackColor                = [System.Drawing.ColorTranslator]::FromHtml("#000000")
 
+$Label2                          = New-Object system.Windows.Forms.Label
+$Label2.text                     = "+ Add Victim"
+$Label2.AutoSize                 = $true
+$Label2.width                    = 25
+$Label2.height                   = 10
+$Label2.location                 = New-Object System.Drawing.Point(10,10)
+$Label2.Font                     = New-Object System.Drawing.Font('Microsoft Sans Serif',20,[System.Drawing.FontStyle]([System.Drawing.FontStyle]::Bold))
+$Label2.ForeColor                = [System.Drawing.ColorTranslator]::FromHtml("#FFFFFF")
+$Label2.BackColor                = [System.Drawing.ColorTranslator]::FromHtml("#000000")
+
 $ListView1                       = New-Object system.Windows.Forms.ListView
-$ListView1.text                  = "TEST"
 $ListView1.width                 = 635
+$ListView1.text                  = "TEST"
 $ListView1.height                = 234
 $ListView1.location              = New-Object System.Drawing.Point(35,103)
 $ListView1.BackColor             = [System.Drawing.ColorTranslator]::FromHtml("#373737")
-# $ListView.ForeColor              = [System.Drawing.ColorTranslator]::FromHtml("#FFFFFF")
+$ListView1.View 				 = "Details"
+$Listview1.forecolor			 = "LightGreen"
+$Listview1.GridLines			 = $false
+$Listview1.MultiSelect           = $false
+
+$ListView1.Columns.Add('NAME')
+$ListView1.Columns.Add('IP')
+$ListView1.Columns.Add('PORT')
+
+$ListView1.Columns[0].Width = 200
+$ListView1.Columns[1].Width = 335
+$ListView1.Columns[2].Width = 95
 
 $Button1                         = New-Object system.Windows.Forms.Button
 $Button1.text                    = "RELOAD"
@@ -41,26 +62,87 @@ $Button1.Font                    = New-Object System.Drawing.Font('Microsoft San
 $Button1.ForeColor               = [System.Drawing.ColorTranslator]::FromHtml("#ffffff")
 $Button1.BackColor               = [System.Drawing.ColorTranslator]::FromHtml("#3e3e3e")
 
-$Form.controls.AddRange(@($Label1,$ListView1,$Button1))
+$Form.controls.AddRange(@($Label1,$ListView1,$Button1,$Label2))
 
 $Button1.Add_Click({ reload })
 
+$Label2.Add_Click({ add_victim })
+
+
+
 #region Logic
 
-
+$num = 0
+$num2 = 1
 # listview add colmuns
-[void]$Listview1.Columns.Add('col1',150)
 
-foreach($line in Get-Content C:\DuckSploit\victimsIP.txt) {
-    $ListView1.Items.Add("$line", 150);
+foreach($line in Get-Content C:\DuckSploit\victimsNAME.txt) {
+	$objitem = ""
+	
+	$item2 = ""
+	$item3 = ""
+	
+	$item1 = New-Object System.Windows.Forms.ListViewItem($line)
+	$ListView1.Items.AddRange($item1)
+	
+	$objItem = $ListView1.Items[$num]
+	
+	$item2 = Get-Content C:\DuckSploit\victimsIP.txt | Select -First $num2 | Select -Last 1
+	$item3 = Get-Content C:\DuckSploit\victimsPORT.txt | Select -First $num2 | Select -Last 1
+	
+	$objitem.SubItems.Add($item2)
+	$objitem.SubItems.Add($item3)
+
+	$num = $num + 1
+	$num2 = $num2 + 1
 }
+
+
+$form.Controls.Add($Listview1)
+
+
+
+
 
 function reload {
-	$Form.Close();
-	$listView1.Items.Clear();
-	foreach($line in Get-Content C:\DuckSploit\victimsIP.txt) {
-		$ListView1.Items.Add("$line", 150);
+	$ListView1.Items.Clear();
+	$num = 0
+	$num2 = 1
+	# listview add colmuns
+
+	foreach($line in Get-Content C:\DuckSploit\victimsNAME.txt) {
+	
+		$objitem = ""
+	
+		$item2 = ""
+		$item3 = ""
+	
+		$item1 = New-Object System.Windows.Forms.ListViewItem($line)
+		$ListView1.Items.AddRange($item1)
+	
+		$objItem = $ListView1.Items[$num]
+	
+		$item2 = Get-Content C:\DuckSploit\victimsIP.txt | Select -First $num2 | Select -Last 1
+		$item3 = Get-Content C:\DuckSploit\victimsPORT.txt | Select -First $num2 | Select -Last 1
+	
+		$objitem.SubItems.Add($item2)
+		$objitem.SubItems.Add($item3)
+		$num = $num + 1
+		$num2 = $num2 + 1
 }
+	[System.Windows.Forms.MessageBox]::Show("Succesfully Reloaded!", "DUCKSPLOIT" , 0, 64)
+}
+
+$ListView1.Add_Click({
+    # here put your code to perform some action with the selected subfolder
+    # $selected = $ListView1.SelectedItems[0].Text
+	# [System.Windows.Forms.MessageBox]::Show($selected, "DUCKSPLOIT" , 0, 64)
+	Write-Host $ListView1.SelectedItem
+	pause
+})
+
+function add_victim {
+	./add_victim.ps1
 }
 
 #endregion
