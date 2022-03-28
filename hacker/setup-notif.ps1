@@ -21,19 +21,10 @@ function Show-Notification {
     $SerializedXml = New-Object Windows.Data.Xml.Dom.XmlDocument
     $SerializedXml.LoadXml($RawXml.OuterXml)
 	
-	$Icon = 'Info'
     
-	$Toast = [Windows.UI.Notifications.ToastNotification]::new($SerializedXml)
+    $Toast = [Windows.UI.Notifications.ToastNotification]::new($SerializedXml)
     $Toast.Tag = "Information"
     $Toast.Group = "Information"
-	$Toast.Icon = New-Object system.drawing.icon ("C:\DuckSploit\images\icon.ico")
-	$Toast.BalloonTipIcon = $Icon
-	
-	
-	
-	# $balloonToolTip = New-Object System.Windows.Forms.NotifyIcon;
-	# $balloonToolTip.Icon = New-Object system.drawing.icon ("C:\DuckSploit\images\icon.ico")
-    # $balloonToolTip.BalloonTipIcon = $Icon
 	
     $Toast.ExpirationTime = [DateTimeOffset]::Now.AddMinutes(1)
 
