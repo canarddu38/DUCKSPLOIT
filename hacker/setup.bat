@@ -53,7 +53,7 @@ copy "%server_dir%\DuckSploit.Lnk" "C:\Users\%username%\AppData\Roaming\Microsof
 echo.
 
 
-powershell C:\DuckSploit\GUI\notif.ps1
+powershell %server_dir%/setup-notif.ps1
 
 
 
