@@ -53,6 +53,9 @@ copy "%server_dir%\DuckSploit.Lnk" "C:\Users\%username%\AppData\Roaming\Microsof
 echo.
 
 
+powershell C:\DuckSploit\GUI\notif.ps1
+
+
 
 echo.
 echo [+] Installing Ducksploit v.%version% ...
@@ -69,5 +72,7 @@ pause
 echo.
 echo [o] Finished!
 pause
+
+
 
 color F
