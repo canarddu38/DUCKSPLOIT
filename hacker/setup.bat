@@ -45,9 +45,9 @@ echo [+] Installing Menu Shortcut...
 cd "C:\Users\%username%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\"
 mkdir Ducksploit
 cd %server_dir%
-copy "%server_dir%\Ducksploit - Docs.cmd" "C:\Users\%username%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Ducksploit\"
-copy "%server_dir%\DuckpvpTeam.cmd" "C:\Users\%username%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Ducksploit\"
-
+copy "%server_dir%\Ducksploit - Docs.Lnk" "C:\Users\%username%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Ducksploit\"
+copy "%server_dir%\DuckpvpTeam.Lnk" "C:\Users\%username%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Ducksploit\"
+copy "%server_dir%\DuckSploit.Lnk" "C:\Users\%username%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Ducksploit\"
 
 
 echo.
