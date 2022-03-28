@@ -1,7 +1,5 @@
 @echo off
 
-REM mode con:cols=15 lines=1
+mode con:cols=15 lines=1
 
-powershell ./main.ps1
-
-pause
+start %SystemRoot%\system32\WindowsPowerShell\v1.0\powershell.exe -WindowStyle Hidden ./main.ps1
