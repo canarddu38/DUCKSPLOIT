@@ -76,3 +76,5 @@ pause
 
 
 color F
+
+exit
