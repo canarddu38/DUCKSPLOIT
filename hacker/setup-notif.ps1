@@ -26,7 +26,7 @@ function Show-Notification {
     $Toast.Tag = "Information"
     $Toast.Group = "Information"
 	
-    $Toast.ExpirationTime = [DateTimeOffset]::Now.AddMinutes(1)
+    $Toast.ExpirationTime = [DateTimeOffset]::Now.AddMinutes(2)
 
     $Notifier = [Windows.UI.Notifications.ToastNotificationManager]::CreateToastNotifier("DuckSploit")
     $Notifier.Show($Toast);
