@@ -39,7 +39,7 @@ body {
 }
 
 .buttons {
-    position: relative;
+    position: relative,bottom;
     top: 10%;
     left: 0%;
     width: 100%;
