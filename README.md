@@ -1,7 +1,7 @@
 # 🦑 shell-reverse-windows
 
  
-<img src="https://github.com/canarddu38/DUCKSPLOIT/blob/root/images/banner.png?raw=true" alt="banner" width="300"/>
+<img src="https://github.com/canarddu38/DUCKSPLOIT/blob/root/images/banner.png" alt="banner"/>
 
 
 <p>
