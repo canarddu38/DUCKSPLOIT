@@ -3,10 +3,7 @@
 
 
 # DUCKSPLOIT
- <img src="https://camo.githubusercontent.com/7f611eb7fa49f2b2cf006f5164f75e1b4fafd3d967bfe0b00b717d3a10ebd44d/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f527562792d4343333432443f7374796c653d666f722d7468652d6261646765266c6f676f3d72756279266c6f676f436f6c6f723d7768697465"
-</p>
-
-![](https://img.shields.io/badge/Version-1.0.7-red) ![](https://img.shields.io/github/stars/canarddu38/DUCKSPLOIT) ![](https://img.shields.io/github/issues/canarddu38/DUCKSPLOIT) ![](	https://img.shields.io/github/forks/canarddu38/DUCKSPLOIT) ![](https://img.shields.io/github/license/canarddu38/DUCKSPLOIT) ![](https://img.shields.io/badge/Windows-blue)
+![](https://img.shields.io/badge/Version-1.0.7-red?style=for-the-badge) ![](https://img.shields.io/github/stars/canarddu38/DUCKSPLOIT?style=for-the-badge) ![](https://img.shields.io/github/issues/canarddu38/DUCKSPLOIT?style=for-the-badge) ![](	https://img.shields.io/github/forks/canarddu38/DUCKSPLOIT?style=for-the-badge) ![](https://img.shields.io/github/license/canarddu38/DUCKSPLOIT?style=for-the-badge) ![](https://img.shields.io/badge/Windows-blue?style=for-the-badge)
  
 ![GitHub repo size](https://img.shields.io/github/repo-size/canarddu38/DUCKSPLOIT?style=for-the-badge)
 ![GitHub language count](https://img.shields.io/github/languages/count/canarddu38/DUCKSPLOIT?style=for-the-badge)
