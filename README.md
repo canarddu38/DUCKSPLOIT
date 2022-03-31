@@ -7,7 +7,7 @@
 ![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/DioBruh/backdoor-windows?style=for-the-badge)
  
 <p>
-  <img src="https://i.pinimg.com/originals/8d/bb/fc/8dbbfcd986821d26a8c09ace36045c0f.png"width=300px>
+  <img src="https://github.com/canarddu38/DUCKSPLOIT/blob/root/images/banner.png?raw=true"width=300px>
 </p>
 
 <p>
