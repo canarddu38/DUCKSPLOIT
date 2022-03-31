@@ -1,6 +1,6 @@
 # 🦑 shell-reverse-windows
 
- 
+ ![](https://github.com/canarddu38/DUCKSPLOIT/blob/root/images/banner.png)
 <img src="https://github.com/canarddu38/DUCKSPLOIT/blob/root/images/banner.png" alt="banner"/>
 
 
