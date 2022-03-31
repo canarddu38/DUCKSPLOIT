@@ -1,3 +1,25 @@
+# 🦑 shell-reverse-windows
+ 
+![GitHub repo size](https://img.shields.io/github/repo-size/DioBruh/backdoor-windows?style=for-the-badge)
+![GitHub language count](https://img.shields.io/github/languages/count/DioBruh/backdoor-windows?style=for-the-badge)
+![GitHub forks](https://img.shields.io/github/forks/DioBruh/backdoor-windows?style=for-the-badge)
+![Bitbucket open issues](https://img.shields.io/bitbucket/issues/DioBruh/backdoor-windows?style=for-the-badge)
+![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/DioBruh/backdoor-windows?style=for-the-badge)
+ 
+<p>
+  <img src="https://i.pinimg.com/originals/8d/bb/fc/8dbbfcd986821d26a8c09ace36045c0f.png"width=300px>
+</p>
+
+<p>
+  <img src="https://camo.githubusercontent.com/7f611eb7fa49f2b2cf006f5164f75e1b4fafd3d967bfe0b00b717d3a10ebd44d/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f527562792d4343333432443f7374796c653d666f722d7468652d6261646765266c6f676f3d72756279266c6f676f436f6c6f723d7768697465"
+</p>
+
+> A simple ruby reverse-shell windows 10, 11
+
+
+
+
+
 ![banner](https://github.com/canarddu38/DUCKSPLOIT/blob/root/images/banner.png?raw=true "banner")
 
 # Ducksploit
@@ -5,7 +27,7 @@
 
 ## Awsome crossbreed of batch and python on Windows ♥
  <center>
-<img src="https://github.com/canarddu38/DUCKSPLOIT/blob/root/images/pyxbat.png?raw=true" alt="pyxbat" width="300"/><img src="https://github.com/canarddu38/DUCKSPLOIT/blob/root/images/windows-10.png?raw=true" alt="win10" widith="100" height="100"/>
+<img src="https://camo.githubusercontent.com/7f611eb7fa49f2b2cf006f5164f75e1b4fafd3d967bfe0b00b717d3a10ebd44d/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f527562792d4343333432443f7374796c653d666f722d7468652d6261646765266c6f676f3d72756279266c6f676f436f6c6f723d7768697465" alt="ruby" width="300"/><img src="https://github.com/canarddu38/DUCKSPLOIT/blob/root/images/windows-10.png?raw=true" alt="win10" widith="100" height="100"/>
 </center>
 
 ## Install Ducksploit
