@@ -28,17 +28,26 @@ loop do
 				
 				
 				cmd = gets.chomp
-				
-				puts "sended cmd == #{cmd}"
-				
 				client.puts cmd
 				
 				
 				if cmd.downcase == "exit"
-					puts "Exiting..."
+					puts "[".red.bold.blink + "~".white.bold.blink + "] Exiting...".red.bold.blink
+					sleep(3)
+					exit
+					
+				elsif cmd.downcase == "clear"
+					system("cls")
+				
+				elsif cmd.downcase == "reload"
+					puts "[".red.bold.blink + "~".white.bold.blink + "] Reloading...".red.bold.blink
+					sleep(3)
 					break
+				elsif cmd.downcase == "background"
+					system("setx 'ds_backup_ip[#{sessionnum}]' #{remote_ip}")
 				end
 				out = client.gets.chomp.gsub("\\NEWLINE", "\n")
+				
 				print out
 			end
 		else

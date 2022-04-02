@@ -1,6 +1,8 @@
 @echo off
 
-copy commands\*.* C:\DuckSploit\ruby
+mkdir C:\DuckSploit\ruby\
+
+copy commands\*.* C:\DuckSploit\ruby\
 
 cls
 
