@@ -1,4 +1,4 @@
-<img src="https://github.com/canarddu38/DUCKSPLOIT/blob/root/images/banner.png" alt="banner"/>
+<img src="https://github.com/canarddu38/DUCKSPLOIT/blob/root/images/dsbanner.png" alt="banner"/>
 
 
 
