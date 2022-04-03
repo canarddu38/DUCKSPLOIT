@@ -1,0 +1,19 @@
+      dP                   dP                         dP          oo   dP   
+      88                   88                         88               88   
+.d888b88 dP    dP .d8888b. 88  .dP  .d8888b. 88d888b. 88 .d8888b. dP d8888P 
+88'  `88 88    88 88'  `"" 88888"   Y8ooooo. 88'  `88 88 88'  `88 88   88   
+88.  .88 88.  .88 88.  ... 88  `8b.       88 88.  .88 88 88.  .88 88   88   
+`88888P8 `88888P' `88888P' dP   `YP `88888P' 88Y888P' dP `88888P' dP   dP   
+                                             88                             
+                                             dP                             
+credits: DuckpvpTeam - 2022
+
+Project chief: Canarddu38
+
+UI/UX designer: Canarddu38
+
+Data Manager: Canarddu38
+
+Developers:
+   - Jajmandu96
+   - Canarddu38
