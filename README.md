@@ -1,8 +1,5 @@
 <img src="https://github.com/canarddu38/DUCKSPLOIT/blob/root/images/dsbanner.png" alt="banner"/>
 
-
-
-# DUCKSPLOIT
 ![](https://img.shields.io/badge/Version-1.0.7-red?style=for-the-badge) ![](https://img.shields.io/github/stars/canarddu38/DUCKSPLOIT?style=for-the-badge) ![](https://img.shields.io/github/issues/canarddu38/DUCKSPLOIT?style=for-the-badge) ![](	https://img.shields.io/github/forks/canarddu38/DUCKSPLOIT?style=for-the-badge) ![](https://img.shields.io/github/license/canarddu38/DUCKSPLOIT?style=for-the-badge) ![](https://img.shields.io/badge/Windows-blue?style=for-the-badge)
 
 > Awsome crossbreed of batch and python on Windows ♥
