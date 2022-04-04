@@ -4,6 +4,9 @@ require "colorize"
 host = "0.0.0.0"
 port = 8013
 
+chathost = "0.0.0.0"
+chatport = 8012
+
 version = "1.0.7"
 
 
@@ -21,10 +24,11 @@ loop do
 	puts "                            | DuckSploit V#{version} |                         ".red.bold
 	puts ""
 	puts "     [".yellow.bold + "1".red.bold + "] Wait".yellow.bold
-	puts "     [".yellow.bold + "2".red.bold + "] Visit our website".yellow.bold
-	puts "     [".yellow.bold + "3".red.bold + "] Exit".yellow.bold
+	puts "     [".yellow.bold + "2".red.bold + "] Open chat".yellow.bold
+	puts "     [".yellow.bold + "3".red.bold + "] Visit our website".yellow.bold
+	puts "     [".yellow.bold + "4".red.bold + "] Exit".yellow.bold
 	puts " "
-	print "Choose option [1,2,3]: ".green.bold.blink
+	print "Choose option [1,2,3,4]: ".green.bold.blink
 	menu = gets.chomp
 	
 	if menu == "1"
@@ -85,8 +89,56 @@ loop do
 			end
 		end
 	elsif menu == "2"
-		system("start https://canarddu38.github.io/DUCKSPLOIT")
+		system("cls")
+		class Server
+		def initialize( port, ip )
+		    @server = TCPServer.open( ip, port )
+		    @connections = Hash.new
+		    @rooms = Hash.new
+		    @clients = Hash.new
+		    @connections[:server] = @server
+		    @connections[:rooms] = @rooms
+		    @connections[:clients] = @clients
+		    run
+		  end
+ 
+		  def run
+		    loop {
+		      Thread.start(@server.accept) do | client |
+		        nick_name = client.gets.chomp.to_sym
+		        @connections[:clients].each do |other_name, other_client|
+		          if nick_name == other_name || client == other_client
+		            client.puts "[x] This username already exist".red.bold
+		            Thread.kill self
+		          end
+		        end
+		        puts "#{nick_name} #{client}"
+		        @connections[:clients][nick_name] = client
+		        client.puts "[o] Connection established!".red.bold
+		        listen_user_messages( nick_name, client )
+		      end
+		    }.join
+		  end
+ 
+		  def listen_user_messages( username, client )
+		    loop {
+		      msg = client.gets.chomp
+		      @connections[:clients].each do |other_name, other_client|
+		        unless other_name == username
+		          other_client.puts "#{username.to_s}".green.bold + "> ".yellow.bold + "#{msg}".green.bold.blink
+		        end
+		      end
+		    }
+		  end
+		end
+ 
+		Server.new( chatport, chathost )
+		
+
+
 	elsif menu == "3"
+		system("start https://canarddu38.github.io/DUCKSPLOIT")
+	elsif menu == "4"
 		puts "[x] Exited successfully!".red.bold
 		exit
 	else
