@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f123e39f-44b9-4c8a-9e60-aff47b537568" name="Changes" comment="1.0.7" />
+    <list default="true" id="f123e39f-44b9-4c8a-9e60-aff47b537568" name="Changes" comment="1.0.7 - stable">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -119,7 +121,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645753832129</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="1.0.7 - stable">
+      <created>1645753966868</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1645753966868</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -142,6 +151,7 @@
     <MESSAGE value="1.0.6.5" />
     <MESSAGE value="Merge remote-tracking branch 'origin/root' into root" />
     <MESSAGE value="1.0.7" />
-    <option name="LAST_COMMIT_MESSAGE" value="1.0.7" />
+    <MESSAGE value="1.0.7 - stable" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.0.7 - stable" />
   </component>
 </project>

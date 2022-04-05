@@ -1,4 +1,4 @@
 @echo off
 
-SET address=https://duckpvpteam.github.io
-start chrome.exe "%address%"
+SET address=https://canarddu38.github.io
+start firefox.exe "%address%"
