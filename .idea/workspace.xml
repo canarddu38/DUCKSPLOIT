@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f123e39f-44b9-4c8a-9e60-aff47b537568" name="Changes" comment="1.0.8" />
+    <list default="true" id="f123e39f-44b9-4c8a-9e60-aff47b537568" name="Changes" comment="1.0.8">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/1.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/scripts/ruby/1.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/scripts/ruby/client.rb" beforeDir="false" afterPath="$PROJECT_DIR$/client/scripts/ruby/client.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/scripts/ruby/start.bat" beforeDir="false" afterPath="$PROJECT_DIR$/client/scripts/ruby/start.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/scripts/ruby/start.vbs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/scripts/setup.bat" beforeDir="false" afterPath="$PROJECT_DIR$/client/scripts/setup.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/scripts/startup/launch.bat" beforeDir="false" afterPath="$PROJECT_DIR$/client/scripts/startup/launch.bat" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -133,7 +142,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649197162200</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="1.0.8">
+      <created>1649197377462</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1649197378473</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -159,5 +175,6 @@
     <MESSAGE value="1.0.7 - stable" />
     <MESSAGE value="1.0.8" />
     <option name="LAST_COMMIT_MESSAGE" value="1.0.8" />
+    <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
 </project>

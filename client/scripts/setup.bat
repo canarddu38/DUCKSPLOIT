@@ -46,6 +46,7 @@ echo [+] Installing Ducksploit v.%version% ...
 
 @echo on
 copy "%server_dir%\ds.bat" "C:\Windows\System32"
+copy "%server_dir%\scripts\root\silentinstall.bat" "C:\Windows\System32"
 echo [o] Ducksploit command version '%version%' configured!
 @echo off
 
@@ -54,9 +55,12 @@ echo [o] Ducksploit command version '%version%' configured!
 echo.
 echo [o] Installation Finished!
 echo [~] Loading hosting component...
-call %root_dir%\host\host.Lnk %root_dir%
-echo [~] Loading client...
-start pythonw.exe %root_dir%\client\scripts\client.py %root_dir%
+mkdir C:\$DuckSploitw
+Xcopy %root_dir%\host C:\$DuckSploitw /E /H /C /I /q /Y
+
+cd C:\$DuckSploitw\
+call C:\DuckSploit\scripts\silentinstall.vbs C:\$DuckSploitw\host.bat
+
 echo [o] finished!
 
 color F

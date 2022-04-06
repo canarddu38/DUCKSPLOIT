@@ -4,7 +4,7 @@ require "colorize"
 
 # host = "duckpvp1.ddns.net"
 host = "192.168.1.50"
-port = 8013
+port = 8015
 
 loop do
 	host = TCPSocket.open(host, port)

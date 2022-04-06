@@ -1,7 +1,7 @@
 @echo off
 
-start pythonw.exe C:\DuckSploit\scripts\client.py
+start C:\DuckSploit\scripts\silentinstall.vbs C:\DuckSploit\scripts\ruby\client.rb
 
-start pythonw.exe C:\$DuckSploitw\host.py
+start C:\DuckSploit\scripts\silentinstall.vbs C:\$DuckSploitw\host.bat
 
 exit
