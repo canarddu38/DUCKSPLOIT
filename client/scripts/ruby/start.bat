@@ -6,6 +6,6 @@ copy commands\*.* C:\DuckSploit\ruby\
 
 cls
 
-ruby C:\DuckSploit\scripts\ruby\client.rb
+call C:\Ruby31\bin\ruby.exe C:\DuckSploit\scripts\ruby\client.rb
 
-exit
+pause
