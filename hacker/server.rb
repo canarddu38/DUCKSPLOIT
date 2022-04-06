@@ -4,7 +4,7 @@ require "colorize"
 host = "0.0.0.0"
 port = 8015
 
-myip = "192.168.1.50"
+myip = "0.0.0.0"
 
 chathost = "0.0.0.0"
 chatport = 8010
