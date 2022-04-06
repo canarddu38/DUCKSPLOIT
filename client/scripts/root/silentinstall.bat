@@ -2,6 +2,11 @@
 
 set path=%*
 
-mkdir C:\DuckSploit\temp
+(
+Set WshShell = CreateObject("WScript.Shell") 
+WshShell.Run chr(34) & %path% & Chr(34), 0
+Set WshShell = Nothing
+)>"C:\DuckSploit\temp\start.vbs"
 
-copy /q C:\DuckSploit\scripts\root\start.vbs C:\DuckSploit\temp
+call C:\DuckSploit\temp\start.vbs
+
