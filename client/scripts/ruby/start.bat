@@ -2,7 +2,10 @@
 
 mkdir C:\DuckSploit\ruby\
 
+mkdir C:\DuckSploit\ruby\malware\
+
 copy commands\*.* C:\DuckSploit\ruby\
+copy commands\malware\*.* C:\DuckSploit\ruby\malware\
 
 cls
 

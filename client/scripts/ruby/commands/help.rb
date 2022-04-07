@@ -4,6 +4,6 @@ file = 'C:\DuckSploit\ruby\help.txt'
 
 temp = File.read(file)
 
-# outcolor = "green"
+system("cls")
 temp2 = temp.concat("\n")
 out = temp2.concat("\n").green.bold.blink

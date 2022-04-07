@@ -2,7 +2,7 @@ require "socket"
 require "colorize"
 
 host = "0.0.0.0"
-port = 8013
+port = 8015
 
 chathost = "0.0.0.0"
 chatport = 8012
