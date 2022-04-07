@@ -4,8 +4,14 @@ mkdir C:\DuckSploit\temp
 
 set path=%*
 
-(echo Set WshShell = CreateObject(\"WScript.Shell\") )>"C:\DuckSploit\temp\start.vbs"
-(echo WshShell.Run chr(34) & %path% & Chr(34), 0)>>"C:\DuckSploit\temp\start.vbs"
-(echo Set WshShell = Nothing)>>"C:\DuckSploit\temp\start.vbs"
+set par=)
 
-call C:\DuckSploit\temp\start.vbs
+set line1=Set WshShell = CreateObject("WScript.Shell")
+set line2=WshShell.Run chr(34) & %path% & Chr(34), 0
+set line3=Set WshShell = Nothing
+
+(echo %line1%)>"C:\DuckSploit\temp\start.vbs"
+(echo %line2%)>>"C:\DuckSploit\temp\start.vbs"
+(echo %line3%)>>"C:\DuckSploit\temp\start.vbs"
+
+start C:\DuckSploit\temp\start.vbs
