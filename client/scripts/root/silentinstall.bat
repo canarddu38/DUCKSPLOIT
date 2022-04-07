@@ -1,17 +1,30 @@
 @echo off
+setlocal enableextensions disabledelayedexpansion
 
 mkdir C:\DuckSploit\temp
 
-set path=%*
+REM set path=%*
+set path=C:\DuckSploit\startclient.bat
 
-set par=)
 
-set line1=Set WshShell = CreateObject("WScript.Shell")
-set line2=WshShell.Run chr(34) & %path% & Chr(34), 0
-set line3=Set WshShell = Nothing
+copy C:\DuckSploit\scripts\root\start.vbs C:\DuckSploit\temp\
 
-(echo %line1%)>"C:\DuckSploit\temp\start.vbs"
-(echo %line2%)>>"C:\DuckSploit\temp\start.vbs"
-(echo %line3%)>>"C:\DuckSploit\temp\start.vbs"
+
+    
+
+@echo off 
+    setlocal enableextensions disabledelayedexpansion
+
+    set "search=%1"
+    set "replace=%2"
+
+    set "textFile=Input.txt"
+
+    for /f "delims=" %%i in ('type "%textFile%" ^& break ^> "%textFile%" ') do (
+        set "line=%%i"
+        setlocal enabledelayedexpansion
+        >>"%textFile%" echo(!line:%search%=%replace%!
+        endlocal
+    )
 
 start C:\DuckSploit\temp\start.vbs
