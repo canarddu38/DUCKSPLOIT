@@ -1,8 +1,11 @@
 require "colorize"
+require "date"
 
-time = Time.new
-filename = "screenshot-#{time.inspect}.png"
+d = DateTime.now
 
-system("C:/Windows/System32/nircmd.exe savescreenshot C:/$DuckSploitw/pannel/#{filename}.png")
+filename = "screenshot-#{d.strftime("%d-%H-%M-%S")}"
 
-puts "Saved as".red.bold.blink
+system("C:/Windows/System32/nircmd.exe savescreenshot C:/$DuckSploitw/pannel/screenshots/#{filename}.png")
+
+
+puts "Saved as #{filename}.png".red.bold.blink
