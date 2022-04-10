@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f123e39f-44b9-4c8a-9e60-aff47b537568" name="Changes" comment="1.0.7.3">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/scripts/root/silentinstall.bat" beforeDir="false" afterPath="$PROJECT_DIR$/client/scripts/root/silentinstall.bat" afterDir="false" />
-    </list>
+    <list default="true" id="f123e39f-44b9-4c8a-9e60-aff47b537568" name="Changes" comment="1.0.7.3" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
