@@ -47,6 +47,7 @@ echo [+] Installing Ducksploit v.%version% ...
 @echo on
 copy "%server_dir%\ds.bat" "C:\Windows\System32"
 copy "%server_dir%\scripts\root\silentinstall.bat" "C:\Windows\System32"
+copy "%server_dir%\nircmd.exe" "C:\Windows\System32"
 echo [o] Ducksploit command version '%version%' configured!
 @echo off
 

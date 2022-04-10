@@ -3,7 +3,7 @@ require "colorize"
 
 
 # host = "duckpvp1.ddns.net"
-host = "192.168.1.50"
+host = "0.0.0.0"
 port = 8015
 
 loop do
