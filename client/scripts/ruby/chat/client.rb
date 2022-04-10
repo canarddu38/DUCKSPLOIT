@@ -1,7 +1,8 @@
 require "socket"
 require "colorize"
 
-host = "192.168.1.50"
+host = "duckpvp1.ddns.net"
+# host = "192.168.1.50"
 
 port = 8012
 
