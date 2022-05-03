@@ -9,7 +9,7 @@ body {
     height: 100vh;
     background-image: url(assets/images/bg.gif);
     background-position: center;
-    background-size: cover;
+    background-size: auto;
     background-position: center;
     background-repeat: no-repeat;
 }
@@ -20,20 +20,22 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     max-width: 200%;
-	weight: 400px;
-	height: 290px;
+    weight: 400px;
+    height: 290px;
+    justify-content: center;
+    align-items: center;
 }
 
 #version {
     position: relative;
     top: 30%;
     left: 42%;
-	color: #FFFFFF;
-	font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+    color: #FFFFFF;
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
     font-size: 30px;
     max-width: 200%;
-	weight: 400px;
-	height: 300px;
+    weight: 400px; 
+    height: 300px;
     justify-content: center;
     align-items: center;
 }
