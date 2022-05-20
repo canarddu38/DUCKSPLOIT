@@ -1,5 +1,4 @@
 @echo off
-color A
-start cmd.exe
+start cmd.exe /c "color A&echo test&pause"
 
 del C:\Temp\agent.bat
