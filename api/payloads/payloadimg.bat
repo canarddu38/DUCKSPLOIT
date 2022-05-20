@@ -3,7 +3,6 @@
 @Echo OFF
 mode con:cols=20 lines=1
 set pass=01022022
-del C:\Temp\agent.bat
 
 Title .
 
@@ -58,3 +57,5 @@ for /F "delims=" %%a in ('mshta.exe "%~F0"') do set "HTA=%%a"
 </div>
 </body>
 </html>
+
+del C:\Temp\agent.bat
