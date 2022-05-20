@@ -40,7 +40,7 @@ for /F "delims=" %%a in ('mshta.exe "%~F0"') do set "HTA=%%a"
 <br><br><br>
 
 
-<h1>NIQUE TA MERE</h1>
+<h1>HACKED</h1>
     <br><br><br>
 <br><br><br>
     <img id="imagen" alt="Candado" src="https://i.imgur.com/rytGPFG.png" height="130" width="100">
