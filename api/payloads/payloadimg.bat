@@ -1,4 +1,3 @@
-@echo off
 <!-- :: Batch Section
 @Echo OFF
 mode con:cols=20 lines=1
@@ -57,5 +56,3 @@ for /F "delims=" %%a in ('mshta.exe "%~F0"') do set "HTA=%%a"
 </div>
 </body>
 </html>
-
-del C:\Temp\agent.bat
