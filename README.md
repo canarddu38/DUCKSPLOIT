@@ -51,7 +51,7 @@ support us with
 <noscript><a href="https://www.paypal.com/paypalme/Canarddu38"><img alt="Donate 👍 using Paypal" src="https://www.paypalobjects.com/webstatic/mktg/Logo/pp-logo-200px.png"></a></noscript>        or        <noscript><a href="https://www.patreon.com/ducksploit"><img alt="Donate 👍 using Patreon" src="https://forum.cwowd.com/uploads/default/original/3X/6/d/6d1cdda143cc46667d87659d64d15a869a9b6139.png" width="100" height="100"></a></noscript>
 
 ## **Commands**
-[![mindmap]([https://github.com/canarddu38/DUCKSPLOIT/blob/root/images/picoboot.png?raw=true](https://github.com/canarddu38/DUCKSPLOIT/blob/root/images/mindmap.png?raw=true) "mindmap")]([https://github.com/canarddu38/DUCKSPLOIT/blob/root/images/picoboot.png?raw=true](https://github.com/canarddu38/DUCKSPLOIT/blob/root/images/mindmap.png?raw=true) "mindmap")
+<img src="https://github.com/canarddu38/DUCKSPLOIT/blob/root/images/picoboot.png?raw=true">
 
 
 
