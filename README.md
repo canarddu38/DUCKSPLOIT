@@ -52,6 +52,9 @@ support us with
 
 ## **Commands**
 
+https://github.com/canarddu38/DUCKSPLOIT/blob/root/images/mindmap.png?raw=true
+
+
 #### Launch
 | Command | Usage | Result |
 | ------------- | ------------- | ------------- |
