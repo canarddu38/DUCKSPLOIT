@@ -1,52 +1,47 @@
-[ReadMe.md](https://github.com/canarddu38/DUCKSPLOIT/files/8785338/ReadMe.md)
 <img src="https://github.com/canarddu38/DUCKSPLOIT/blob/root/images/dsbanner.png" alt="banner"/>
 
 ![](https://img.shields.io/badge/Version-1.0.7-red?style=for-the-badge) ![](https://img.shields.io/github/stars/canarddu38/DUCKSPLOIT?style=for-the-badge) ![](https://img.shields.io/github/issues/canarddu38/DUCKSPLOIT?style=for-the-badge) ![](	https://img.shields.io/github/forks/canarddu38/DUCKSPLOIT?style=for-the-badge) ![](https://img.shields.io/github/license/canarddu38/DUCKSPLOIT?style=for-the-badge) ![](https://img.shields.io/badge/Windows-blue?style=for-the-badge)
 
-> Awsome crossbreed of batch and python on Windows ♥
+> Awsome crossbreed of c#, batch, powershell and python on Windows n linux ♥
  <center>
-<img src="https://camo.githubusercontent.com/7f611eb7fa49f2b2cf006f5164f75e1b4fafd3d967bfe0b00b717d3a10ebd44d/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f527562792d4343333432443f7374796c653d666f722d7468652d6261646765266c6f676f3d72756279266c6f676f436f6c6f723d7768697465" alt="ruby" width="100"/><img src="https://github.com/canarddu38/DUCKSPLOIT/blob/root/images/windows-10.png?raw=true" alt="win10" widith="100" height="100"/>
+<img src="https://github.com/canarddu38/DUCKSPLOIT/blob/root/images/windows-10.png?raw=true" alt="win10" widith="100" height="100"/>
 </center>
 
 ## Install Ducksploit
 
 #### Hacker
-###### setup raspberry pico (hacker)
-1. Download https://github.com/canarddu38/DUCKSPLOIT/archive/root.zip
+###### setup Windows/Linux
+1. Download the hacker's version for your version (win/linux)
 2. Extract downloaded zip file
-3. Plugg your raspberry pico on your PC with the BOOTSEL button
-   [![picobootbutton](https://github.com/canarddu38/DUCKSPLOIT/blob/root/images/picoboot.png?raw=true "picobootbutton")](https://github.com/canarddu38/DUCKSPLOIT/blob/root/images/picoboot.png?raw=true "picobootbutton")
-4. Move CircuitPython.uf2 file in the E:\ or F:\ <-- usb port (port of your pico)
-   now your raspberry pico gonna leave usb port and reconnec with CIRCUITPY name
-5. Erase all the content of your raspberry pico and copy all the extracted repo folder into him
-6. Write myip.txt and write your own IP
-7. Now your raspberry pico is full configured , unplugg your pico and done!
+3. Launch the setup.exe/install.sh
+4. Type ds in your terminal
+5. And done! 
 
-###### setup ducksploit commands (hacker)
+###### setup Android
+ 1. Download last version of ds android
+ 2. Install the ds.apk file
+ 3. Set your port
+ 4. Click on START SERVER button
+ 5. And wait till someone install your payload
 
-1. Download https://github.com/canarddu38/DUCKSPLOIT/archive/root.zip
-2. Extract downloaded zip file
-3. If python is not installed, launch 'installpython.bat' or download at https://www.python.org/ftp/python/3.8.0/python-3.8.0.exe
-4. launch setup.bat       ###MUST BE RUN AS ADMINISTRATOR###
-5. wait till installation is finished
-7. Ducksploit is now installed on your PC :smile:
-8. Type 'ds' in the cmd
-9. Wait victim's connection using 'wait' command
-10. Have fun with ducksploit hacking commands (type help to get commands list)
+ **⚠️DS ANDROID'S PAYLOAD GENERATION IS NOT ACTUALLY WORKING
+ TO GET YOUR PAYLOAD PLEASE GO IN OUR DISCORD SERVER⚠️**
 
-⚠️ WHEN EXPLOIT/SCRIPT IS RUNNING, TYPE ON 'ESC' KEY ⚠️
 
 #### Victim
-Just plugg the raspberry pico in your pc (or hacker can do also)
-That will start automaticaly the client of the reverse shell
+Just install the generated payload and that will start automaticaly the client of the reverse shell
 
 :warning: Ducksploit is made for legal use or educational use (then, we are not responsible for any crimes committed by our users):warning:
 
-## Uninstall Ducksploit (victim)
+## Uninstall Ducksploit (windows/linux)
 
 1. type 'ds uninstall' in cmd
 2. Done  :smile:
 
+## Uninstall DuckSploit for Android
+
+ 1. Delete the app from your phone
+ 
 ## SUPPORT
 support us with     
 <noscript><a href="https://www.paypal.com/paypalme/Canarddu38"><img alt="Donate 👍 using Paypal" src="https://www.paypalobjects.com/webstatic/mktg/Logo/pp-logo-200px.png"></a></noscript>        or        <noscript><a href="https://www.patreon.com/ducksploit"><img alt="Donate 👍 using Patreon" src="https://forum.cwowd.com/uploads/default/original/3X/6/d/6d1cdda143cc46667d87659d64d15a869a9b6139.png" width="100" height="100"></a></noscript>
@@ -77,7 +72,7 @@ support us with
 | recordscreen  | recordscreen (time in second) | record victim's screen durring amount of time |
 | recordmicro  | recordmicro (time in second) | record victim's micro durring amount of time |
 
-## ⚠️ To get your victim's keylogs, go on 'http://{ip of your victim}:8013/keylogger/' ⚠️
+## ⚠️ To get your victim's keylogs, go on 'http://{ip of your victim}:8080/keylogger/' ⚠️
 
 #### Mouse
 | Command  | Usage | Result |
