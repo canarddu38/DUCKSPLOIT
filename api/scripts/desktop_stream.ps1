@@ -9,7 +9,7 @@ $height = "$($_.Bounds.Height)"
 )
 
 
-
+while (1 -eq 1 ){
 [Reflection.Assembly]::LoadWithPartialName("System.Drawing")
 function screenshot([Drawing.Rectangle]$bounds, $path) {
    $bmp = New-Object Drawing.Bitmap $bounds.width, $bounds.height
@@ -26,5 +26,11 @@ function screenshot([Drawing.Rectangle]$bounds, $path) {
 # dimensions
 $bounds = [Drawing.Rectangle]::FromLTRB(0, 0, $width, $height)
 # output_path
-screenshot $bounds "./last.jpg"
-Write-Host "Done!"
+screenshot $bounds "$env:TEMP/host/host/pannel/temp/last.jpg"
+
+
+start-sleep -seconds 1
+}
+
+
+
