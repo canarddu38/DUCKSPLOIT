@@ -1,3 +1,5 @@
+$version = "V1.0.8"
+
 $animation = @"
 Loading DuckSploit $version...
 #
