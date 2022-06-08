@@ -1,13 +1,11 @@
-$version = "V1.0.8"
-
 $animation = @"
-Loading DuckSploit $version...
+Loading DuckSploit V1.0.8...
 #
-Loading DuckSploit $version..
+Loading DuckSploit V1.0.8..
 #
-Loading DuckSploit $version.
+Loading DuckSploit V1.0.8.
 #
-Loading DuckSploit $version..
+Loading DuckSploit V1.0.8..
 "@
 
 $frames = $animation.Split("#").Trim()
