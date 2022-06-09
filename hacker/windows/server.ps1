@@ -1,6 +1,7 @@
 $address="Any"
 $port=53
 
+Cls
 
 Write-Host " "
 Write-Host "        dP                   dP                         dP          oo   dP   " -fore green
@@ -13,67 +14,92 @@ Write-Host "                                               88                   
 Write-Host "                                               dP                              " -fore green
 Write-Host "                            | DuckSploit V1.0.8 |                         " -fore green
 Write-Host ""
-Write-Host "    [1] Wait" -fore yellow
-Write-Host "    [2] Open chat"-fore yellow
-Write-Host "    [3] Visit our website" -fore yellow
-Write-Host "    [4] Exit" -fore yellow
+# Wait
+Write-Host "    [" -fore yellow -NoNewline;
+Write-Host "1" -fore red -NoNewline;
+Write-Host "] Wait" -fore yellow;
+# Open chat
+Write-Host "    [" -fore yellow -NoNewline;
+Write-Host "2" -fore red -NoNewline;
+Write-Host "] Open chat" -fore yellow;
+# Visit website
+Write-Host "    [" -fore yellow -NoNewline;
+Write-Host "3" -fore red -NoNewline;
+Write-Host "] Visit our website" -fore yellow;
+# Exit
+Write-Host "    [" -fore yellow -NoNewline;
+Write-Host "4" -fore red -NoNewline;
+Write-Host "] Exit" -fore yellow;
 Write-Host " "
-$menu = Read-Host "Choose option [1,2,3,4]"
+
+Write-Host "Choose option [" -fore green -NoNewline;
+Write-Host "1" -fore yellow -NoNewline;
+Write-Host "," -fore red -NoNewline;
+Write-Host "2" -fore yellow -NoNewline;
+Write-Host "," -fore red -NoNewline;
+Write-Host "3" -fore yellow -NoNewline;
+Write-Host "," -fore red -NoNewline;
+Write-Host "4" -fore yellow -NoNewline;
+Write-Host "]: " -fore green -NoNewline;
+$menu = Read-Host
 
 if( $menu -eq "1" )
 {
-    
+    try{
+		$endpoint = new-object System.Net.IPEndPoint( [IPAddress]::$address, $port )
+		$udpclient = new-object System.Net.Sockets.UdpClient $port
+	}
+	catch{
+		throw $_
+		exit -1
+	}
+
+	Write-Host "Waiting for connection..." -fore yellow
+	Write-Host ""
+	while( $true )
+	{
+		if( $host.ui.RawUi.KeyAvailable )
+		{
+			$key = $host.ui.RawUI.ReadKey( "NoEcho,IncludeKeyUp,IncludeKeyDown" )
+			if( $key.VirtualKeyCode -eq 27 )
+			{	break	}
+		}
+
+		if( $udpclient.Available )
+		{
+			Write-Host ""
+			Write-Host "DS> " -fore green -NoNewline;
+			$input = Read-Host
+			$EndPoints2 = New-Object System.Net.IPEndPoint([IPAddress]::$address, $port) 
+			$EncodedText = [Text.Encoding]::ASCII.GetBytes($input) 
+			$SendMessage = $udpclient.Send($EncodedText, $EncodedText.Length, $EndPoints2) 
+			
+			
+			$content = $udpclient.Receive( [ref]$endpoint )
+			Write-Host "$($endpoint.Address.IPAddressToString):$($endpoint.Port) $([Text.Encoding]::ASCII.GetString($content))"
+		}
+	}
+
+	$udpclient.Close( )
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-try{
-	$endpoint = new-object System.Net.IPEndPoint( [IPAddress]::$address, $port )
-	$udpclient = new-object System.Net.Sockets.UdpClient $port
-}
-catch{
-	throw $_
-	exit -1
-}
-
-Write-Host "Press ESC to stop the udp server ..." -fore yellow
-Write-Host ""
-while( $true )
+elseif( $menu -eq "2" )
 {
-	if( $host.ui.RawUi.KeyAvailable )
-	{
-		$key = $host.ui.RawUI.ReadKey( "NoEcho,IncludeKeyUp,IncludeKeyDown" )
-		if( $key.VirtualKeyCode -eq 27 )
-		{	break	}
-	}
-
-	if( $udpclient.Available )
-	{
-		Write-Host ""
-		$input = Read-Host "DS> "
-		
-		$EndPoints2 = New-Object System.Net.IPEndPoint([IPAddress]::$address, $port) 
-        $EncodedText = [Text.Encoding]::ASCII.GetBytes($input) 
-		$SendMessage = $udpclient.Send($EncodedText, $EncodedText.Length, $EndPoints2) 
-		
-		
-		$content = $udpclient.Receive( [ref]$endpoint )
-		Write-Host "$($endpoint.Address.IPAddressToString):$($endpoint.Port) $([Text.Encoding]::ASCII.GetString($content))"
-	}
+	
 }
-
-$udpclient.Close( )
+elseif( $menu -eq "3" )
+{
+	Start-Process "https://canarddu38.github.io/DUCKSPLOIT"
+}
+elseif( $menu -eq "4" )
+{
+	Cls
+	Write-Host "[" -fore yellow -NoNewline; 
+	Write-Host "o" -fore red -NoNewline; 
+	Write-Host "]" -fore yellow -NoNewline;
+	Write-Host " Successfully exited from DuckSploit!" -fore green
+	Exit
+}
+else
+{
+	Write-Host "Incorrect awnser (only 1,2,3 or 4 are accepted)!" -fore red
+}
