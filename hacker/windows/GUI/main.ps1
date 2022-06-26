@@ -10,8 +10,8 @@ $Form.TopMost                    = $true
 $Form.BackColor                  = [System.Drawing.ColorTranslator]::FromHtml("#000000")
 
 
-$objIcon 						 = New-Object system.drawing.icon ("C:\DuckSploit\images\icon.ico")
-$Form.Icon						 = $objIcon
+$objIcon 		         = New-Object system.drawing.icon ("C:\DuckSploit\images\icon.ico")
+$Form.Icon			 = $objIcon
 
 
 $Label1                          = New-Object system.Windows.Forms.Label
