@@ -1,27 +1,36 @@
-const getDeviceType = () => {
-  const ua = navigator.userAgent;
-  if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {
-    return "tablet";
-  }
-  if (
-    /Mobile|iP(hone|od)|Android|BlackBerry|IEMobile|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(
-      ua
-    )
-  ) {
-    return "mobile";
-  }
-  return "desktop";
-};
+var detectedOS = "Unknown OS";
+var versionurl = "https://raw.githubusercontent.com/canarddu38/DUCKSPLOIT/root/hacker/version.txt"
+var downloadurl = "nothin";
+
+if (navigator.appVersion.indexOf("Android") != -1) {
+    detectedOS = "Android";
+	versionurl = "https://raw.githubusercontent.com/canarddu38/DUCKSPLOIT/root/hacker/android/version.txt";
+	downloadurl = "https://github.com/canarddu38/DUCKSPLOIT/raw/root/hacker/android/DSinstaller.apk";
+	alert(downloadurl);
+	
+} else if (navigator.appVersion.indexOf("Win") != -1) {
+    detectedOS = "Windows";
+	versionurl = "https://raw.githubusercontent.com/canarddu38/DUCKSPLOIT/root/hacker/windows/version.txt";
+	downloadurl = "https://github.com/canarddu38/DUCKSPLOIT/raw/root/hacker/windows/DSinstaller.exe";
+	alert(downloadurl);
+	
+} else if (navigator.appVersion.indexOf("Linux") != -1) {
+    detectedOS = "Linux";
+	versionurl = "https://raw.githubusercontent.com/canarddu38/DUCKSPLOIT/root/hacker/linux/version.txt";
+	downloadurl = "https://github.com/canarddu38/DUCKSPLOIT/raw/root/hacker/linux/DSinstaller.deb";
+	alert(downloadurl);
+}
+	
+alert(detectedOS);
 
 
 
-
-
-// As with JSON, use the Fetch API & ES6
-fetch('https://raw.githubusercontent.com/canarddu38/DUCKSPLOIT/root/hacker/version.txt')
+fetch(versionurl)
   .then(response => response.text())
   .then(data => {
-  	// Do something with your data
-	
-  	document.getElementById("version").innerHTML = 'last version: V'.concat(data);
+  document.getElementById("version").innerHTML = 'last version: V'.concat(data);
+  document.getElementById("downloadlastbut").href=downloadurl;
   });
+  
+  
+
