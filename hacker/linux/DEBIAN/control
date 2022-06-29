@@ -1,0 +1,8 @@
+Source: DuckSploit
+Section: utils
+Priority: extra
+Version: 1.0.8
+Maintainer: Canarddu38
+Package: DuckSploit
+Architecture: all
+Description: Example package maintenance (under 60 chars)

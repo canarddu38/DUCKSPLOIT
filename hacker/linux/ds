@@ -1,0 +1,7 @@
+#!/bin/bash
+
+clear
+
+version="1.0.8"
+
+sudo python /usr/share/DukSploit/server.py
