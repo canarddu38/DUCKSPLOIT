@@ -11,33 +11,24 @@ credits: DuckpvpTeam - 2022
 prefix: 'ds'
 usage: 'ds <command>'
 
-victim's website: 'http://<victim's ip>:8013'
+victim's website: 'http://<victim's ip>:8080'
 
 our team: 'https://canarddu38.github.io/DuckpvpTeam'
 
 commands:
-
-+----------------+----------------------------------+-------------------------------------------+
 |    Command     |              Usage               |                  Result                   |
-+----------------+----------------------------------+-------------------------------------------+
+|----------------|----------------------------------|-------------------------------------------|
 | help           | help                             | getting the command list                  |
-| reload         | reload                           | reload connection to the  victim
-
-##chat__________________________________________________________________________________________
-| talk           | talk                             | start talk to your victim                 |
-
-##mouse_________________________________________________________________________________________
+| reload         | reload                           | reload connection to the  victim          |
+|---------------------------------------- [MOUSE] ----------------------------------------------|
 | mouseclick     | mouseclick [right, middle, left] | click the desired mouse button            |
 | mousescroll    | mousescroll <int>                | symulate a scrolling with intensity       |
 | locatemouse    | locatemouse                      | get current victom's mouse locations      |
-
-
-##utilities_____________________________________________________________________________________
+|-------------------------------------- [UTILITIES] --------------------------------------------|
 | uninstall      | uninstall                        | uninstall ducksploit                      |
 | update         | update                           | update ducksploit                         |
 | credits        | credits                          | get ducksploits credits                   |
-
-##exploits______________________________________________________________________________________
+|-------------------------------------- [EXPLOITS] ---------------------------------------------|
 | open           | open <app name>                  | open desired app                          |
 | install        | install <path to exe/msi file>   | install package on victim's pc            |
 | download       | download <url>                   | download file in current url              |
@@ -46,24 +37,20 @@ commands:
 | closesession   | closesession                     | close current victim's session            |
 | host           | host                             | host file at http://{victim's ip}:8013    |
 | getwifipwd     | getwifipwd                       | get the victim's wifi password            |
-
-##troll_________________________________________________________________________________________
+|---------------------------------------- [TROLL] ----------------------------------------------|
 | skull          | skull                            | spam cmd with skull and crossbones        |
 | msg            | msg <title> <line1> <line2>      | create alertbox with desired infos        |
 | rickroll       | rickroll                         | rockroll your victim ;)                   |
-
-##stealing______________________________________________________________________________________
+|--------------------------------------- [STEALING] --------------------------------------------|
 | stealpasswords | stealpasswords                   | steal all victim's chrome saved passwords |
 | stealcookies   | stealcookies                     | steal all victim's chrome cookies         |
-
-##spy___________________________________________________________________________________________
+|----------------------------------------- [SPY] -----------------------------------------------|
 | recordmicro    | recordmicro <time in second>     | record victim's micro for 'time'seconds   |
 | desktopstream  | desktopstream                    | stream in real time victim's desktop      |
 | screenshot     | screenshot                       | take screenshot                           |
 |                |                                  | (located in the victim's website)         |
 | info           | info                             | get all stored victim's infos             |
-
-##evil__________________________________________________________________________________________
+|----------------------------------------- [EVIL] ----------------------------------------------|
 | malware        | malware <malware name>           | add malware to vour victim                |
 |                |                                  | (ds malware --help)                       |
-+----------------+----------------------------------+-------------------------------------------+
+|----------------|----------------------------------|-------------------------------------------|
