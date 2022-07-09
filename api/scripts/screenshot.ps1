@@ -24,4 +24,5 @@ function screenshot([Drawing.Rectangle]$bounds, $path) {
 # dimensions
 $bounds = [Drawing.Rectangle]::FromLTRB(0, 0, $width, $height)
 # output_path
-screenshot $bounds "$env:TEMP\\host\\host\\pannel\\screenshot\\screenshot.jpg"
+$date = Get-Date -Format "dddd_MM_dd_yyyy_HH_mm"
+screenshot $bounds "$env:TEMP\\host\\host\\pannel\\screenshots\\screenshot_$date.jpg"
