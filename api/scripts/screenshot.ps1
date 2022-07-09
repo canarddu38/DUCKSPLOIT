@@ -24,4 +24,4 @@ function screenshot([Drawing.Rectangle]$bounds, $path) {
 # dimensions
 $bounds = [Drawing.Rectangle]::FromLTRB(0, 0, $width, $height)
 # output_path
-screenshot $bounds "$env:TEMP\\screenshot.jpg"
+screenshot $bounds "$env:TEMP\\host\\host\\pannel\\screenshot\\screenshot.jpg"
