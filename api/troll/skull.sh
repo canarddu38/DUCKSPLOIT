@@ -23,3 +23,4 @@ echo -e "\033[0;32m     NO!                          MNO!
     MNNNNNO!    OOOOOOOOOOO    MMNNON!
       MNNNNO!    PPPPPPPPP    MMNON!
          OO!                   ON!"
+read -p "Press any key to continue ..."
