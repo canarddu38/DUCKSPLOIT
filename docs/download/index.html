@@ -456,7 +456,18 @@
     font-size: 3.75rem;
   }
 }</style>
-    
+    <style>
+	.topcorner{
+	   background: url("cross.png");
+	   position:absolute;
+	   width:50px;
+	   height:50px;
+	   top:50px;
+	   left:50px;
+	   position: absolute;
+       z-index: 3000000;
+	  }
+	</style>
     <script type="application/ld+json">{
 		"@context": "http://schema.org",
 		"@type": "Organization",
@@ -469,6 +480,7 @@
   
 </head>
   <body class="u-body u-xl-mode">
+	 <div id="exit" style="overflow: visible;" class="topcorner"></div>
      <section class="u-align-center u-clearfix u-palette-1-dark-3 u-section-2" id="carousel_e870" style="height:100vh;">
 	 <img src="banner.png"></img>
       <div class="u-clearfix u-sheet u-sheet-1">
