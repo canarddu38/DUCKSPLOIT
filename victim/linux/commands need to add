@@ -1,0 +1,18 @@
+| mouseclick     | mouseclick [right, middle, left] | click the desired mouse button            |
+| mousescroll    | mousescroll <int>                | symulate a scrolling with intensity       |
+| locatemouse    | locatemouse                      | get current victom's mouse locations      |
+
+| uninstall      | uninstall                        | uninstall ducksploit                      |
+| install        | install <path to exe/msi file>   | install package on victim's pc            |
+
+| shutdown       | shutdown                         | shutdown the victim's pc                  |
+| reboot         | reboot                           | reboot the victim's pc                    |
+| closesession   | closesession                     | close current victim's session            |
+
+| msg            | msg <title> <line1> <line2>      | create alertbox with desired infos        |
+
+| steal_pwd      | steal_pwd <firefox/google>       | get all victim's browser saved passwords  |
+
+| desktop_stream | desktop_stream <start/stop>      | stream in real time victim's desktop      |
+| screenshot     | screenshot                       | take screenshot                           |
+| webcam_snap    | webcam_snap                      | take webcam picture                       |
