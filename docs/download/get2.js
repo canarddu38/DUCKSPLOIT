@@ -16,12 +16,3 @@ fetch("https://raw.githubusercontent.com/canarddu38/DUCKSPLOIT/root/hacker/andro
   document.getElementById("android_version").innerHTML = data3;
   });
   
-
-window.onload = function()
-{
-    var exitbut = document.getElementById('exit');
-	exitbut.onclick = function() {
-		window.location.replace('https://ducksploit.com');
-	};
-
-}
