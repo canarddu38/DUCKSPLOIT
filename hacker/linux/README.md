@@ -1,6 +1,6 @@
 # DUCKSPLOIT LINUX
-
-**Tested on kali linux**
+<img src=https://raw.githubusercontent.com/canarddu38/DUCKSPLOIT/root/images/kali%20linux.png>
+# Tested on kali linux
 
 ## Setup
    1. Download last debian installer at release page
