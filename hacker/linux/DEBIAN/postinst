@@ -3,7 +3,7 @@ mkdir /usr/share/DuckSploit/icons
 
 version=1.0.8
 
-				     
+sudo apt-get install mono-complete			     
 chmod +x ds
 chmod +x server.py
 

@@ -4,4 +4,4 @@ clear
 
 version="1.0.8"
 
-sudo python /usr/share/DukSploit/server.py
+sudo python /usr/share/DuckSploit/server.py
