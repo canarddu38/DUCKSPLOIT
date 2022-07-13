@@ -101,4 +101,6 @@ support us with
 
 
 Made with love by DuckpvpTeam's devs
-<img src="https://avatars.githubusercontent.com/u/100393931?s=48&v=4"><img src="https://avatars.githubusercontent.com/u/71982379?s=40&v=4">
+<a href="https://github.com/canarddu38/DUCKSPLOIT/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=canarddu38/DUCKSPLOIT" />
+</a>
