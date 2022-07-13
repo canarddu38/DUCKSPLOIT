@@ -98,3 +98,7 @@ support us with
 | shutdown     | shutdown    | make the victim's pc shutdown     |
 | reboot       | reboot      | make the victim's pc reboot       |
 | closesession | closesesion | make the victim's session close   |
+
+
+Made with love by DuckpvpTeam's devs
+<img src="https://avatars.githubusercontent.com/u/100393931?s=48&v=4"><img src="https://avatars.githubusercontent.com/u/71982379?s=40&v=4">
