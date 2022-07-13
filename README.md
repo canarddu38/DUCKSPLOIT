@@ -100,7 +100,9 @@ support us with
 | closesession | closesesion | make the victim's session close   |
 
 
-Made with love by DuckpvpTeam's devs
+## Made with ❤️ by DuckpvpTeam's devs
+<br>
+<br>
 <a href="https://github.com/canarddu38/DUCKSPLOIT/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=canarddu38/DUCKSPLOIT" />
 </a>
