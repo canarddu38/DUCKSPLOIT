@@ -1,4 +1,7 @@
-# DUCKSPLOIT LINUX
+<img src="https://www.meilleure-innovation.com/wp-content/uploads/2022/02/linux-1206x679.png" widith=100%>
+
+# DUCKSPLOIT for LINUX :computer:
+
 <img src=https://raw.githubusercontent.com/canarddu38/DUCKSPLOIT/root/images/kali%20linux.png>
 # Tested on kali linux
 
