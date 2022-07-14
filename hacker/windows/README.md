@@ -1,6 +1,6 @@
 <center><img width="100%" src="https://c0.lestechnophiles.com/images.frandroid.com/wp-content/uploads/2021/03/windows-10-background-1200x675.jpg"></center>
 
-# DuckSploit for Windows :window:
+# DuckSploit for Windows :computer:
 
  1. Download the installer (DSinstaller.exe)
  2. Install the executable
