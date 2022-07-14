@@ -16,5 +16,7 @@
    1. Type ```ds``` in your terminal or launch the app in apps menu
    2. Select option 'Uninstall' in select menu
    
-:warning: DuckSploit is made for ethical use, DuckpvpTeam is in no way responsible for the acts committed by its users :warning: 
+*:warning: DuckSploit is made for legal purposes and for education. Please do nothin' which is illegal :warning:*
+
+:exclamation::exclamation: *We're not responsive from our user's actions*:exclamation::exclamation:
 
