@@ -66,7 +66,7 @@ support us with
 | recordscreen  | recordscreen (time in second)      | record victim's screen durring amount of time                                        |
 | recordmicro   | recordmicro (time in second)       | record victim's micro durring amount of time                                         |
 
-## ⚠️ To get your victim's keylogs, go on 'http://{ip of your victim}:8080/keylogger/' ⚠️
+## ⚠️ To get your victim's keylogs, go on 'http://{ip of your victim}/keylogger/' ⚠️
 
 #### Mouse
 | Command     | Usage                            | Result                                      |
