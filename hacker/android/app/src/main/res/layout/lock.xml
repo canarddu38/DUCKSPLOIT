@@ -1,0 +1,58 @@
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical">
+	<LinearLayout
+		android:id="@+id/linear1"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:padding="8dp"
+		android:background="#000000"
+		android:gravity="center_horizontal|center_vertical"
+		android:orientation="vertical"
+		android:weightSum="999"
+		android:layout_weight="999">
+		<ImageView
+			android:id="@+id/imageview3"
+			android:focusable="false"
+			android:layout_width="999dp"
+			android:layout_height="999dp"
+			android:src="@drawable/ic_cancel_grey"
+			android:scaleType="center"
+			android:alpha="0.0"
+			android:layout_weight="1" />
+		<ImageView
+			android:id="@+id/imageview1"
+			android:focusable="false"
+			android:layout_width="310dp"
+			android:layout_height="300dp"
+			android:background="#000000"
+			android:src="@drawable/death"
+			android:scaleType="fitXY"
+			android:layout_weight="1" />
+		<TextView
+			android:id="@+id/textview1"
+			android:focusable="false"
+			android:layout_width="310dp"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:background="#000000"
+			android:gravity="center_horizontal"
+			android:text="Hacked by DuckSploit"
+			android:textSize="30sp"
+			android:textColor="#64DD17"
+			android:layout_weight="1" />
+		<ImageView
+			android:id="@+id/imageview2"
+			android:focusable="false"
+			android:layout_width="999dp"
+			android:layout_height="999dp"
+			android:src="@drawable/ic_cancel_grey"
+			android:scaleType="fitCenter"
+			android:alpha="0.0"
+			android:layout_weight="1" />
+	</LinearLayout>
+</LinearLayout>
