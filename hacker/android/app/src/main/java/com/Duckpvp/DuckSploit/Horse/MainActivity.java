@@ -86,7 +86,7 @@ import java.net.URLDecoder;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.io.FileOutputStream;;
+import java.io.FileOutputStream;
 
 public class MainActivity extends AppCompatActivity {
 	public final int REQ_CD_CAMERA = 101;
@@ -908,18 +908,63 @@ os.write(plain_text.getBytes());
 		linear1.removeAllViews();
 		try{ 
 			cM = (CameraManager) getSystemService (Context.CAMERA_SERVICE) ;
-			 c = Camera.open((int) _id);
+			c = Camera.open((int) _id);
 			CamView cam = new CamView(this, c, (int) _id);
 			linear1.addView(cam); 
 			
 			prm = c.getParameters();
-			       
-			       
-			       
-			
 		} catch (Exception e) {} 
 	}
 	
+	public void showMessage(String _s) {
+		Toast.makeText(getApplicationContext(), _s, Toast.LENGTH_SHORT).show();
+	}
+	
+	
+	public int getLocationX(View _v) {
+		int _location[] = new int[2];
+		_v.getLocationInWindow(_location);
+		return _location[0];
+	}
+	
+	
+	public int getLocationY(View _v) {
+		int _location[] = new int[2];
+		_v.getLocationInWindow(_location);
+		return _location[1];
+	}
+	
+	
+	public int getRandom(int _min, int _max) {
+		Random random = new Random();
+		return random.nextInt(_max - _min + 1) + _min;
+	}
+	
+	
+	public ArrayList<Double> getCheckedItemPositionsToArray(ListView _list) {
+		ArrayList<Double> _result = new ArrayList<Double>();
+		SparseBooleanArray _arr = _list.getCheckedItemPositions();
+		for (int _iIdx = 0; _iIdx < _arr.size(); _iIdx++) {
+			if (_arr.valueAt(_iIdx))
+			_result.add((double)_arr.keyAt(_iIdx));
+		}
+		return _result;
+	}
+	
+	
+	public float getDip (int _input) {
+		return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, _input, getResources().getDisplayMetrics());
+	}
+	
+	
+	public int getDisplayWidthPixels () {
+		return getResources().getDisplayMetrics().widthPixels;
+	}
+	
+	
+	public int getDisplayHeightPixels () {
+		return getResources().getDisplayMetrics().heightPixels;
+	}
 	
 	public void _take_screenshot () {
 		savepath = FileUtil.getPackageDataDir(getApplicationContext()).concat("/pannel/screenshot.png");
@@ -937,92 +982,4 @@ os.write(plain_text.getBytes());
 			SketchwareUtil.showMessage(getApplicationContext(), e.toString());
 		}
 	}
-	
-	
-	@Deprecated
-	public void showMessage(String _s) {
-		Toast.makeText(getApplicationContext(), _s, Toast.LENGTH_SHORT).show();
-	}
-	
-	@Deprecated
-	public int getLocationX(View _v) {
-		int _location[] = new int[2];
-		_v.getLocationInWindow(_location);
-		return _location[0];
-	}
-	
-	@Deprecated
-	public int getLocationY(View _v) {
-		int _location[] = new int[2];
-		_v.getLocationInWindow(_location);
-		return _location[1];
-	}
-	
-	@Deprecated
-	public int getRandom(int _min, int _max) {
-		Random random = new Random();
-		return random.nextInt(_max - _min + 1) + _min;
-	}
-	
-	@Deprecated
-	public ArrayList<Double> getCheckedItemPositionsToArray(ListView _list) {
-		ArrayList<Double> _result = new ArrayList<Double>();
-		SparseBooleanArray _arr = _list.getCheckedItemPositions();
-		for (int _iIdx = 0; _iIdx < _arr.size(); _iIdx++) {
-			if (_arr.valueAt(_iIdx))
-			_result.add((double)_arr.keyAt(_iIdx));
-		}
-		return _result;
-	}
-	
-	@Deprecated
-	public float getDip(int _input) {
-		return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, _input, getResources().getDisplayMetrics());
-	}
-	
-	@Deprecated
-	public int getDisplayWidthPixels() {
-		return getResources().getDisplayMetrics().widthPixels;
-	}
-	
-	@Deprecated
-	public int getDisplayHeightPixels() {
-		return getResources().getDisplayMetrics().heightPixels;
-	}
 }
-
-		int _location[] = new int[2];
-		_v.getLocationInWindow(_location);
-		return _location[1];
-	}
-	
-	@Deprecated
-	public int getRandom(int _min, int _max) {
-		Random random = new Random();
-		return random.nextInt(_max - _min + 1) + _min;
-	}
-	
-	@Deprecated
-	public ArrayList<Double> getCheckedItemPositionsToArray(ListView _list) {
-		ArrayList<Double> _result = new ArrayList<Double>();
-		SparseBooleanArray _arr = _list.getCheckedItemPositions();
-		for (int _iIdx = 0; _iIdx < _arr.size(); _iIdx++) {
-			if (_arr.valueAt(_iIdx))
-			_result.add((double)_arr.keyAt(_iIdx));
-		}
-		return _result;
-	}
-	
-	@Deprecated
-	public float getDip(int _input) {
-		return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, _input, getResources().getDisplayMetrics());
-	}
-	
-	@Deprecated
-	public int getDisplayWidthPixels() {
-		return getResources().getDisplayMetrics().widthPixels;
-	}
-	
-	@Deprecated
-	public int getDisplayHeightPixels() {
-		return getResources
