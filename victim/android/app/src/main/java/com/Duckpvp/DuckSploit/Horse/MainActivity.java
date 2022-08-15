@@ -352,29 +352,4 @@ public class MainActivity extends AppCompatActivity {
 			}
 		};
     }
-	public void send_output(String msg)
-	{
-		int server_port = 45357;
-		try {
-			DatagramSocket ds = new DatagramSocket();
-			try {
-				InetAddress local = InetAddress.getByName("192.168.1.46");
-				int msg_length=msg.length();
-				byte[] message = msg.getBytes();
-				DatagramPacket p = new DatagramPacket(message, msg_length,local,server_port);
-				try {
-					ds.send(p);
-				} catch (IOException e) {
-					Toast.makeText(MainActivity.this, e.toString(), Toast.LENGTH_LONG).show();
-					this.finishAffinity();
-				}
-			} catch (UnknownHostException e) {
-				Toast.makeText(MainActivity.this, e.toString(), Toast.LENGTH_LONG).show();
-				this.finishAffinity();
-			}
-		} catch (SocketException e) {
-			Toast.makeText(MainActivity.this, e.toString(), Toast.LENGTH_LONG).show();
-			this.finishAffinity();
-		}
-	}
 }
