@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>Dashboard - DuckSploit Web Hosting (WPH)</title>
+    <meta property="og:title" content="Dashboard - DuckSploit Web Hosting (WPH)" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6 {  margin: 0;  padding: 0;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    </style>
+	
+	<script src="api/api.js"></script>
+	
+	
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
+
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      data-tag="font"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div>
+      <link href="./home.css" rel="stylesheet" />
+
+      <div class="home-container">
+        <div class="home-sidebar">
+          <a
+            href="https://ducksploit.com"
+            target="_blank"
+            rel="noreferrer noopener"
+            class="home-link"
+          >
+            <img
+              alt="logo"
+              src="public/playground_assets/icon2-200h.png"
+              loading="eager"
+              class="home-image"
+            />
+          </a>
+          <div class="home-container01">
+            <nav class="home-nav"></nav>
+            <div class="home-container02">
+              <div class="button1-container button1-root-class-name">
+                <button class="button1-button button">
+                  <img
+                    alt="image"
+                    src="https://www.iconsdb.com/icons/preview/black/home-5-xxl.png"
+                    class="button1-image"
+                  />
+                  <span class="button1-text"><span>Dashboard</span></span>
+                </button>
+              </div>
+              <a
+                href="./desktop_stream.html"
+                target="_blank"
+                rel="noreferrer noopener"
+                class="home-link1"
+              >
+                <div class="button-container button-root-class-name7">
+                  <button class="button-button button">
+                    <img
+                      alt="desktop_stream"
+                      src="https://www.iconsdb.com/icons/preview/white/flag-xxl.png"
+                      class="button-image"
+                    />
+                    <span class="button-text"><span>Desktop Stream</span></span>
+                  </button>
+                </div>
+              </a>
+              <a href="screenshot.html" class="home-navlink">
+                <div class="button-container button-root-class-name">
+                  <button class="button-button button">
+                    <img
+                      alt="screenshots"
+                      src="https://www.iconsdb.com/icons/preview/white/screenshot-xxl.png"
+                      class="button-image"
+                    />
+                    <span class="button-text"><span>Screenshots</span></span>
+                  </button>
+                </div>
+              </a>
+              <a href="dedicatedwebsite.html" class="home-navlink1">
+                <div class="button-container button-root-class-name11">
+                  <button class="button-button button">
+                    <img
+                      alt="dedicated_website"
+                      src="https://www.iconsdb.com/icons/preview/white/website-optimization-xxl.png"
+                      class="button-image"
+                    />
+                    <span class="button-text">
+                      <span>Dedicated website</span>
+                    </span>
+                  </button>
+                </div>
+              </a>
+              <a href="keyloggs.html" class="home-navlink2">
+                <div class="button-container button-root-class-name8">
+                  <button class="button-button button">
+                    <img
+                      alt="keyloggs"
+                      src="https://www.iconsdb.com/icons/preview/white/keyboard-2-xxl.png"
+                      class="button-image"
+                    />
+                    <span class="button-text"><span>Keyloggs</span></span>
+                  </button>
+                </div>
+              </a>
+              <a
+                href="https://discord.gg/sTVWespH4M"
+                target="_blank"
+                rel="noreferrer noopener"
+                class="home-link2"
+              >
+                <div class="button-container button-root-class-name1">
+                  <button class="button-button button">
+                    <img
+                      alt="discord"
+                      src="https://www.iconsdb.com/icons/preview/white/discord-xxl.png"
+                      class="button-image"
+                    />
+                    <span class="button-text">
+                      <span>Our discord server</span>
+                    </span>
+                  </button>
+                </div>
+              </a>
+              <a
+                href="https://www.youtube.com/channel/UCFsxrmr-EYp9SMKjvbb0eNw"
+                target="_blank"
+                rel="noreferrer noopener"
+                class="home-link3"
+              >
+                <div class="button-container button-root-class-name4">
+                  <button class="button-button button">
+                    <img
+                      alt="discord"
+                      src="https://www.iconsdb.com/icons/preview/white/youtube-xxl.png"
+                      class="button-image"
+                    />
+                    <span class="button-text"><span>Our channel</span></span>
+                  </button>
+                </div>
+              </a>
+            </div>
+          </div>
+          <a href="settings.html" class="home-navlink3">
+            <div id="profile" class="home-profile">
+              <img
+                alt="image"
+                src="public/playground_assets/icon-200h.png"
+                class="home-image1"
+              />
+              <div class="home-container03">
+                <span class="home-text">
+                  <span>DSadmin</span>
+                  <br />
+                </span>
+                <span class="home-text03">Edit Profile</span>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="home-container04">
+          <div class="home-container05">
+            <div class="home-stats">
+              <div class="home-stat">
+                <h1 id="new_users" class="home-text04">0+</h1>
+                <span class="home-text05">New users</span>
+                <span class="home-text06">
+                  <span>New DuckSploit users totay</span>
+                  <br />
+                </span>
+              </div>
+              <div class="home-stat1">
+                <h1 id="hacker_computers" class="home-text09">0</h1>
+                <span class="home-text10">
+                  <span>Computers Hacked</span>
+                  <br />
+                </span>
+                <span class="home-text13">
+                  <span>Total of hacked computers</span>
+                  <br />
+                </span>
+              </div>
+              <div class="home-stat2">
+                <h1 class="home-text16">1000+</h1>
+                <span class="home-text17">
+                  <span>Hours of developement</span>
+                  <br />
+                </span>
+                <span class="home-text20">
+                  <span>To make DuckSploit</span>
+                  <br />
+                </span>
+              </div>
+              <div class="home-stat3">
+                <h1 id="discord_members" class="home-text23">0</h1>
+                <span class="home-text24">
+                  <span>Members on our Discord server</span>
+                  <br />
+                </span>
+                <span class="home-text27">
+                  <span>At our discord server</span>
+                  <br />
+                </span>
+              </div>
+            </div>
+            <a
+              href="https://github.com/canarddu38/DUCKSPLOIT"
+              target="_blank"
+              rel="noreferrer noopener"
+              class="home-link4"
+            >
+              <img
+                alt="image"
+                src="https://raw.githubusercontent.com/tholman/github-corners/786d845dbea7f36c1e6c82c59b30dfa4d2d31f23/svg/github-corner-right.svg"
+                class="home-image2"
+              />
+            </a>
+          </div>
+          <div class="home-container06">
+            <div class="home-container07">
+              <div class="home-container08">
+                <div class="home-container09">
+                  <h1 class="home-text30">
+                    <span>RECENT  LOGINS</span>
+                    <br />
+                  </h1>
+                  <div class="home-container10">
+                    <ul id="list_ip" class="home-ul list">
+                      <li class="home-li list-item"><span>IP</span></li>
+                    </ul>
+                    <ul id="list_date" class="home-ul1 list">
+                      <li class="home-li1 list-item">
+                        <span>
+                          <span>Date of connection</span>
+                          <br />
+                        </span>
+                      </li>
+                    </ul>
+                    <ul id="list_logged" class="home-ul2 list">
+                      <li class="home-li2 list-item">
+                        <span class="home-text37">
+                          <span>Been logged</span>
+                          <br />
+                        </span>
+                      </li>
+                    </ul>
+                    <ul class="home-ul3 list">
+                      <li class="home-li3 list-item">
+                        <span>
+                          <span>Identity</span>
+                          <br />
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="home-container11">
+                  <div id="chart" class="home-container12"></div>
+                </div>
+              </div>
+            </div>
+            <div class="home-container13">
+              <span class="home-text43">
+                <span>Victim geolocation</span>
+                <br />
+              </span>
+              <iframe
+                id="serverloc"
+                src="https://maps.google.com/maps?q=0, 0&amp;z=15&amp;output=embed"
+                class="home-iframe"
+              ></iframe>
+              <h1 class="home-text46">
+                <span>Victim&apos;s infos</span>
+                <br />
+              </h1>
+              <div class="home-container14">
+                <div class="home-container15">
+                  <span class="home-text49">
+                    <span class="home-text50">ip address</span>
+                    <span>:</span>
+                    <br />
+                  </span>
+                  <span id="info_ipaddress" class="home-text53">...</span>
+                </div>
+                <div class="home-container16">
+                  <span class="home-text54">
+                    <span class="home-text55">Country</span>
+                    <span>:</span>
+                    <br />
+                  </span>
+                  <span id="info_country" class="home-text58">
+                    <span>...</span>
+                    <br />
+                  </span>
+                </div>
+                <div class="home-container17">
+                  <span class="home-text61">City:</span>
+                  <span id="info_city" class="home-text62">
+                    <span>...</span>
+                    <br />
+                  </span>
+                </div>
+                <div class="home-container18">
+                  <span class="home-text65">Region:</span>
+                  <span id="info_region" class="home-text66">
+                    <span>...</span>
+                    <br />
+                  </span>
+                </div>
+                <div class="home-container19">
+                  <span class="home-text69">
+                    <span class="home-text70">Country code:</span>
+                    <br />
+                  </span>
+                  <span id="info_countrycode" class="home-text73">
+                    <span>...</span>
+                    <br />
+                  </span>
+                </div>
+                <div class="home-container20">
+                  <span class="home-text76">
+                    <span>Computer name:</span>
+                    <br />
+                  </span>
+                  <span id="info_computername" class="home-text79">
+                    <span>...</span>
+                    <br />
+                  </span>
+                </div>
+                <div class="home-container21">
+                  <span class="home-text82">
+                    <span class="home-text83">ISP:</span>
+                    <br />
+                  </span>
+                  <span id="info_isp" class="home-text86">
+                    <span>...</span>
+                    <br />
+                  </span>
+                </div>
+                <div class="home-container22">
+                  <span class="home-text89">
+                    <span class="home-text90">City:</span>
+                    <br />
+                  </span>
+                  <span id="info_city" class="home-text93">
+                    <span>...</span>
+                    <br />
+                  </span>
+                </div>
+                <div class="home-container23"></div>
+                <button id="info_download_json" onClick="downloadjson()" class="home-button button">
+                  <span class="home-text96">
+                    <span>Download json</span>
+                    <br />
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
