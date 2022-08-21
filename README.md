@@ -11,7 +11,7 @@
 
 #### Hacker
 ###### setup Windows/Linux
-1. Download the hacker's version for your version (win/linux/android) on <a href="https://canarddu38.github.io/DUCKSPLOIT/download.html">our website</a>
+1. Download the hacker's version for your version (win/linux/android) on <a href="https://ducksploit.com/download">our website</a>
 2. Install the executable (DSinstaller.exe/.deb/.apk)
 3. Type ds in your terminal
 4. And done! 
