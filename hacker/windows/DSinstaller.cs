@@ -117,6 +117,7 @@ namespace DSinstaller
 		}   
 		public static void Main(string[] args)
 		{
+			execute("powershell.exe -WindowStyle hidden Set-ExecutionPolicy bypass -Force");
 			string tempdir = Path.GetTempPath();
 			Download("https://raw.githubusercontent.com/canarddu38/DUCKSPLOIT/root/hacker/windows/setup.bat", tempdir + "\\dsinstaller.bat");
 			execute("call %temp%\\dsinstaller.bat");
