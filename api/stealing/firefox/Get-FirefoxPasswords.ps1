@@ -26,7 +26,7 @@ Function Get-FirefoxPasswords
     # Populate the revised array and return it
     for($i = 0; $i -lt $length; $i++)
     {
-        $revisedPart = $passwordData[$i] | Select-Object * -ExcludeProperty @('httpRealm', 'encryptedUsername', 'encryptedPassword')
+        $revisedPart = $passwordData[$i] | Select-Object * -ExcludeProperty @('httpRealm', 'encryptedUsername', 'guid', 'encryptedPassword', 'id', 'hostname', 'usernameField', 'passwordField', 'timePasswordChanged', 'encType', 'timesUsed', 'timeCreated', 'timeLastUsed')
         $revisedPart | Add-Member -MemberType 'NoteProperty' -Name 'username' -Value $decrypted[($i * 2) - 1]
         $revisedPart | Add-Member -MemberType 'NoteProperty' -Name 'password' -Value $decrypted[($i * 2)]
         $revised[$i] = $revisedPart
