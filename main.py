@@ -70,7 +70,7 @@ suggest: suggest an idea to our developpers```""", color=0x00ff44)
                embed.footer("React with :tada: for a chance to win a prize!")
                embed.color=0x00ff44
                
-               channel = self.get_channel(956682695100993616) # <- Your Welcome-Channel ID (Right-Click on Text-Channel -> Copy ID)
+               channel = self.get_channel(961337408375369768)
                msg = channel.send(embed=embed)
                await msg.add_reaction("🎉") 
                await message.channel.send("Giveaway created :tada:")
