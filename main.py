@@ -64,7 +64,7 @@ suggest: suggest an idea to our developpers```""", color=0x00ff44)
 
         elif message.content.startswith('ds!gend'):
             channel = self.get_channel(961337408375369768)
-            message = await channel.fetch_message(message.channel.replace("ds!gend ", ""))
+            message = await channel.fetch_message(message.content.replace("ds!gend ", ""))
             users = set()
             for reaction in message.reactions:
                 async for user in reaction.users():
