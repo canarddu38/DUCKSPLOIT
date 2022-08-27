@@ -71,7 +71,7 @@ suggest: suggest an idea to our developpers```""", color=0x00ff44)
                 async for user in reaction.users():
                     users.add(user)
             winner = random.choice(tuple(users))
-            message.channel.send("The winner is: "+winner.name)
+            await message.channel.send("The winner is: "+winner.name)
 
 
         elif message.content.startswith('ds!gcreate'):
