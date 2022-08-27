@@ -8,7 +8,7 @@ class DSbot(discord.Client):
     async def on_ready(self):
         await self.change_presence(activity=discord.Streaming(name="DuckSploit V1.0.8", url="https://ducksploit.com"))
         print("Ready!")
-
+        
 
     async def on_member_join(member):
         channel = self.get_channel(956682695100993616)
@@ -61,6 +61,17 @@ suggest: suggest an idea to our developpers```""", color=0x00ff44)
         elif message.content.startswith('ds!download'):
             embed = discord.Embed(title="DuckSploit Download", description="```"+version_windows+"\n"+version_linux+"\n"+version_android+"```", color=0x00ff44)
             await message.channel.send(embed=embed) 
+
+        elif message.content.startswith('ds!gend') 
+            channel = self.get_channel(961337408375369768)
+            message = await channel.fetch_message(message.channel.replace("ds!gend ", ""))
+            users = set()
+            for reaction in message.reactions:
+                async for user in reaction.users():
+                    users.add(user)
+            winner = random.choice(tuple(users))
+            message.channel.send("The winner is: "+winner.name)
+
 
         elif message.content.startswith('ds!gcreate'):
            fullmessage = message.content.replace("ds!gcreate ", "").split(" ")
