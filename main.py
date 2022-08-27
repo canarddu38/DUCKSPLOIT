@@ -62,7 +62,7 @@ suggest: suggest an idea to our developpers```""", color=0x00ff44)
             embed = discord.Embed(title="DuckSploit Download", description="```"+version_windows+"\n"+version_linux+"\n"+version_android+"```", color=0x00ff44)
             await message.channel.send(embed=embed) 
 
-        elif message.content.startswith('ds!gend') 
+        elif message.content.startswith('ds!gend'):
             channel = self.get_channel(961337408375369768)
             message = await channel.fetch_message(message.channel.replace("ds!gend ", ""))
             users = set()
