@@ -64,7 +64,7 @@ suggest: suggest an idea to our developpers```""", color=0x00ff44)
 
         elif message.content.startswith('ds!gcreate'):
            fullmessage = message.content.replace("ds!gcreate ", "").split(" ")
-           if (fullmessage.length == 1):
+           if fullmessage.length == 1:
                prize = fullmessage[0]
                embed = discord.Embed(title=":tada: Giveaway! :tada:", description="Prize: "+prize+"\nHosted by "+message.author)
                embed.footer("React with :tada: for a chance to win a prize!")
