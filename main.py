@@ -67,7 +67,7 @@ suggest: suggest an idea to our developpers```""", color=0x00ff44)
            if len(fullmessage) == 1:
                prize = fullmessage[0]
                embed = discord.Embed(title=":tada: Giveaway! :tada:", description="Prize: "+prize+"\nHosted by "+message.author.name)
-               embed.set_footer("React with :tada: for a chance to win a prize!")
+               embed.set_footer(text="React with :tada: for a chance to win a prize!")
                embed.color=0x00ff44
                
                channel = self.get_channel(961337408375369768)
