@@ -71,7 +71,7 @@ suggest: suggest an idea to our developpers```""", color=0x00ff44)
                embed.color=0x00ff44
                
                channel = self.get_channel(956682695100993616) # <- Your Welcome-Channel ID (Right-Click on Text-Channel -> Copy ID)
-               msg = await channel.send(embed=embed)
+               msg = channel.send(embed=embed)
                await msg.add_reaction("🎉") 
                await message.channel.send("Giveaway created :tada:")
            else:
