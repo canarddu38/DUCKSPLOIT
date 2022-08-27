@@ -64,15 +64,22 @@ suggest: suggest an idea to our developpers```""", color=0x00ff44)
             await message.channel.send(embed=embed) 
 
         elif message.content.startswith('ds!gend'):
-            channel = self.get_channel(961337408375369768)
-            message = await channel.fetch_message(message.content.replace("ds!gend ", ""))
-            users = set()
-            for reaction in message.reactions:
-                async for user in reaction.users():
-                    users.add(user)
-            winner = random.choice(tuple(users))
-            await message.channel.send("The winner is: "+winner.name)
-
+            if message.author.guild_permissions.administrator:
+                channel = self.get_channel(961337408375369768)
+                message = await channel.fetch_message(message.content.replace("ds!gend ", ""))
+                users = set()
+                for reaction in message.reactions:
+                    async for user in reaction.users():
+                        users.add(user)
+                winner = random.choice(tuple(users))
+                embed = discord.Embed(title="🎊 | Giveaway Ended | 🎉", description="🎀 Thanks to all participants 🎀\nGg "+winner.mention+", you won "+prize+"\n```You can claim your prize by creating a ticket 🎫```")
+                embed.set_footer(text="🎉┃Congrats")
+                embed.color=0x00ff44
+            
+                msg = await message.channel.send(embed=embed)
+                await msg.add_reaction("🎊", "🎉")  
+            else:
+                message.channel.send("✖️ error"))
 
         elif message.content.startswith('ds!gcreate'):
            fullmessage = message.content.replace("ds!gcreate ", "").split(" ")
