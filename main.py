@@ -73,7 +73,7 @@ suggest: suggest an idea to our developpers```""", color=0x00ff44)
                channel = self.get_channel(961337408375369768)
                msg = channel.send(embed=embed)
  
-               msg.add_reaction(":tada:") 
+               await msg.add_reaction("💖")
                await message.channel.send("Giveaway created :tada:")
            else:
                message.channel.send("Usage: ds!gcreate <prize>")
