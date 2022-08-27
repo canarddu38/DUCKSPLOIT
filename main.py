@@ -3,6 +3,7 @@ from discord import Webhook
 import os
 import requests
 import aiohttp
+import random
 
 class DSbot(discord.Client):
     async def on_ready(self):
