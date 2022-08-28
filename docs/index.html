@@ -1,66 +1,290 @@
 <!DOCTYPE html>
-<!-- credits: DuckpvpTeam - 2022 -->
-<!-- all rights reserved -->
 
 <html lang="en">
-<head>    
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DuckSploit - Windows</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="favicon.png">
-    <meta property="twitter:title" content="DuckSploit | A multiplatform hacking framework">
-    <meta property="twitter:description" content="DuckSploit is a free pentesting tool, made for Windows, Linux (Debian) and Android.">
-    <meta property="twitter:image" content="">
-    <meta name="theme-color" content="#0e0e0e">
-	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
-    <meta name="description" content="Official DuckSploit Website">
-    <meta name="keywords" content="DuckSploit, DuckpvpTeam, Download DuckSploit, ds, DS, windows, android, linux, canarddu38">
-    
-    <meta property="og:site_name" content="https://ducksploit.com">
-    <meta property="og:title" content="DuckSploit">
-    <meta property="og:type" content="website">
-    <meta property="og:description" content="DuckSploit Download">
-    <meta property="og:image" content="https://github.com/canarddu38/DUCKSPLOIT/raw/root/images/dsbanner.png">
-    <meta property="og:image:type" content="image/png">
-    <meta property="og:image:width" content="1280">
-    <meta property="og:image:height" content="800">
-    <meta property="og:url" content="https://ducksploit.com">
-    <meta property="twitter:card" content="summary_large_image">
-	<script type="text/javascript" src="get.js"></script>
-</head>
-<body>
-    <img href="https://ducksploit.com" src="assets/images/banner.png" id="banner">
-    <div class="buttons">
-	<p id="version">Version: ~</p>
-        <div type="download" class="download">
-            <a id="downloadlastbut" class="button__text" href="./download/" >Download last version</a>
-            <span class="button__icon">
-                <ion-icon name="cloud-download-outline"></ion-icon>
-            </span>
+  <head>
+    <title>DuckSploit, the best multiplatform hacking framework</title>
+    <meta property="og:title" content="DuckSploit, the best multiplatform hacking framework" />
+    <meta property="twitter:card" content="summary_large_image" />
+	<link rel="icon" type="image/png" href="https://ducksploit.com/assets/images/icon.png">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6 {  margin: 0;  padding: 0;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.55;
+        color: var(--dl-color-gray-900);
+        background-color: var(--dl-color-gray-white);
+
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script:wght@400&display=swap"
+      data-tag="font"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div>
+      <link href="./home.css" rel="stylesheet" />
+
+      <div class="home-container">
+        <div data-role="Header" class="home-header-container">
+          <header class="home-header">
+            <div class="home-logo">
+              <img
+                alt="image"
+                src="public/playground_assets/icon-1500h.png"
+                class="home-image"
+              />
+              <h1 class="home-text">uckSploit</h1>
+            </div>
+            <div class="home-menu">
+              <span class="home-text01">
+                <span class="home-text02">Home</span>
+                <br />
+              </span>
+              <a href="https://blogs.ducksploit.com" class="home-link">Blog</a>
+              <a
+                href="https://ducksploit.com/download"
+                target="_blank"
+                rel="noreferrer noopener"
+                class="home-link01"
+              >
+                <span class="home-text04">Download</span>
+                <br />
+              </a>
+              <a
+                href="https://ducksploit.com/payement/buy_pro.html"
+                target="_blank"
+                rel="noreferrer noopener"
+                class="home-link02"
+              >
+                <span>Buy pro</span>
+                <br />
+              </a>
+              <svg viewBox="0 0 1024 1024" class="home-icon">
+                <path
+                  d="M316 366l196 196 196-196 60 60-256 256-256-256z"
+                ></path>
+              </svg>
+            </div>
+            <div class="home-container01">
+              <a
+                href="https://ducksploit.com/download"
+                target="_blank"
+                rel="noreferrer noopener"
+                class="home-link03"
+              >
+                <img
+                  alt="image"
+                  src="public/playground_assets/linux-badge-1500h.png"
+                  class="home-image1"
+                />
+              </a>
+              <a href="https://ducksploit.com/download" class="home-link04">
+                <img
+                  alt="image"
+                  src="public/playground_assets/windows-badge-1500h.png"
+                  class="home-image2"
+                />
+              </a>
+              <a href="https://ducksploit.com/download" class="home-link05">
+                <img
+                  alt="android"
+                  src="public/playground_assets/android-badge_black-1500h.png"
+                  class="home-image3"
+                />
+              </a>
+            </div>
+          </header>
         </div>
-		<div type="github" class="github">
-            <a class="button__text" href="https://github.com/canarddu38/DUCKSPLOIT" target="_blank">DUCKSPLOIT Github Repo</a>
-            <span class="button__icon">
-                <ion-icon name="logo-github"></ion-icon>
-            </span>
+        <div class="home-container02">
+          <div class="home-container03">
+            <div class="home-container04">
+              <div class="home-container05">
+                <h1 class="home-text08">
+                  <span class="home-text09">DuckSploit</span>
+                  <span>,</span>
+                  <br />
+                  <span>the best multiplatform</span>
+                  <br />
+                  <span>h</span>
+                  <span>acking tool</span>
+                  <br />
+                </h1>
+                <a
+                  href="https://ducksploit.com/download"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  class="home-link06"
+                >
+                  <div
+                    class="primary-button-container primary-button-root-class-name"
+                  >
+                    <button class="primary-button-button">
+                      <span>Try it now</span>
+                    </button>
+                  </div>
+                </a>
+              </div>
+              <div class="home-container06">
+                <img
+                  alt="computer with ducksploit"
+                  src="public/playground_assets/pc-600h.png"
+                  class="home-image4"
+                />
+              </div>
+            </div>
+          </div>
+          <div id="pricing" class="home-pricing">
+            <div class="home-container07">
+              <div class="home-container08">
+                <h1>Pricing Plans</h1>
+                <span class="home-text18">
+                  <span>Want more than DuckSploit?</span>
+                  <br />
+                  <span>
+                    If your awnser is yes, you should try buy DuckSploit pro
+                  </span>
+                  <br />
+                </span>
+              </div>
+              <div class="home-container09">
+                <div class="home-container10">
+                  <span class="home-text23">DuckSploit</span>
+                  <span class="home-text24">$0</span>
+                  <span class="home-text25">
+                    <span>All</span>
+                    <span class="home-text27">terminal command</span>
+                    <br />
+                  </span>
+                  <span class="home-text29">
+                    <span class="home-text30">Basic</span>
+                    <span>WPH pannel</span>
+                    <br />
+                  </span>
+                  <span class="home-text33">
+                    <span>free</span>
+                    <span class="home-text35">tools</span>
+                  </span>
+                  <a
+                    href="https://ducksploit.com/download"
+                    class="home-link07 button"
+                  >
+                    <span>
+                      <span>Download</span>
+                      <br />
+                    </span>
+                  </a>
+                </div>
+                <div class="home-container11">
+                  <span class="home-text39">
+                    <span>DuckSploit pro</span>
+                    <br />
+                  </span>
+                  <span class="home-text42">$9.99</span>
+                  <span class="home-text43">
+                    <span class="home-text44">VIP</span>
+                    <span>rank on Discord</span>
+                    <br />
+                  </span>
+                  <span class="home-text47">
+                    <span>An awesome</span>
+                    <span class="home-text49">gui</span>
+                  </span>
+                  <span class="home-text50">
+                    <span class="home-text51">New</span>
+                    <span>phishing tool</span>
+                    <br />
+                  </span>
+                  <span class="home-text54">
+                    <span>Complete WPH  pannel</span>
+                    <br />
+                  </span>
+                  <a
+                    href="https://ducksploit.com/payement/buy_pro.html"
+                    class="home-link08 button"
+                  >
+                    <span>
+                      <span>Buy now</span>
+                      <br />
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <footer class="home-footer">
+            <div class="home-container12">
+              <img
+                alt="logo"
+                src="public/playground_assets/icon1-200h.png"
+                class="home-image5"
+              />
+              <span class="home-text60">
+                <span>© 2022 DuckSploit,</span>
+                <br />
+                <span>All Rights Reserved.</span>
+              </span>
+            </div>
+            <div class="home-links-container">
+              <div class="home-container13">
+                <div class="home-container14">
+                  <span class="home-text64">Product</span>
+                  <a href="https://ducksploit.com/download" class="home-link09">
+                    <span>Download</span>
+                    <br />
+                  </a>
+                </div>
+              </div>
+              <div class="home-container15">
+                <div class="home-container16">
+                  <span class="home-text67">Support</span>
+                  <a
+                    href="https://discord.com/invite/sTVWespH4M"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    class="home-link10"
+                  >
+                    <span>Our discord</span>
+                    <br />
+                  </a>
+                </div>
+                <div class="home-container17">
+                  <span class="home-text70">Resources</span>
+                  <a href="https://blogs.ducksploit.com" class="home-link11">
+                    Blog
+                  </a>
+                </div>
+              </div>
+            </div>
+          </footer>
+          <div class="home-container18"></div>
         </div>
-        <div type="discord" class="discord">
-            <a class="button__text" href="https://discord.gg/sTVWespH4M" target="_blank">Discord Support Server</a>
-            <span class="button__icon">
-                <ion-icon name="logo-discord"></ion-icon>
-            </span>
-        </div>
+      </div>
     </div>
-	<br>
-		<center>
-		<div type="docs" class="docs">
-            <a class="button__text" href="https://ducksploit.com/docs" target="_blank">    Documentation   </a>
-            <span class="button__icon">
-                <ion-icon name="book"></ion-icon>
-            </span>
-        </div>
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-</body>
+    <script src="https://unpkg.com/@teleporthq/teleport-custom-scripts"></script>
+  </body>
 </html>
