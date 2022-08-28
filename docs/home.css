@@ -23,6 +23,24 @@
   background-color: #8c30f5ff;
 }
 
+.primary-button-button:hover {
+  color: 8c30f5ff;
+  font-size: 25px;
+  align-self: center;
+  transition: 0.3s;
+  font-family: Inter;
+  font-weight: 600;
+  padding-top: 12px;
+  border-width: 0px;
+  padding-left: 150px;
+  border-radius: var(--dl-radius-radius-radius6);
+  padding-right: 150px;
+  padding-bottom: 12px;
+  text-transform: none;
+  text-decoration: none;
+  background-color: var(--dl-color-gray-white);
+}
+
 
 .home-container {
   width: 100%;
