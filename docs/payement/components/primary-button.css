@@ -1,0 +1,25 @@
+.primary-button-container {
+  display: flex;
+  position: relative;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.primary-button-button {
+  color: var(--dl-color-gray-white);
+  font-size: 25px;
+  align-self: center;
+  transition: 0.3s;
+  font-family: Inter;
+  font-weight: 600;
+  padding-top: 12px;
+  border-width: 0px;
+  padding-left: 150px;
+  border-radius: var(--dl-radius-radius-radius6);
+  padding-right: 150px;
+  padding-bottom: 12px;
+  text-transform: none;
+  text-decoration: none;
+  background-color: #8c30f5ff;
+}
+
