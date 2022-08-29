@@ -87,7 +87,8 @@ suggest: suggest an idea to our developpers```""", color=0x00ff44)
                 embed.color=0x00ff44
             
                 msg = await message2.channel.send(embed=embed)
-                await msg.add_reaction("🎊", "🎉")  
+                await msg.add_reaction("🎊")  
+                await msg.add_reaction("🎉")  
             else:
                 message.channel.send("✖️ error")
 
