@@ -70,7 +70,7 @@ suggest: suggest an idea to our developpers```""", color=0x00ff44)
                 message2 = await channel.fetch_message(message.content.replace("ds!gend ", ""))
                 
                 print(message2.content)
-                prize2 = message2.footer.split("\n");
+                #prize2 = message2.content.footer.split("\n");
                 
                 prize = prize2[2];
                 
