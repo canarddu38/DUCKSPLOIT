@@ -67,9 +67,16 @@ suggest: suggest an idea to our developpers```""", color=0x00ff44)
         elif message.content.startswith('ds!gend'):
             if message.author.guild_permissions.administrator:
                 channel = self.get_channel(961337408375369768)
-                message = await channel.fetch_message(message.content.replace("ds!gend ", ""))
+                message2 = await channel.fetch_message(message.content.replace("ds!gend ", ""))
+                
+                prize2 = message2.get_footer().split("'");
+                prize = prize2[2];
+                
+                
+                
+                
                 users = set()
-                for reaction in message.reactions:
+                for reaction in message2.reactions:
                     async for user in reaction.users():
                         users.add(user)
                 winner = random.choice(tuple(users))
@@ -77,7 +84,7 @@ suggest: suggest an idea to our developpers```""", color=0x00ff44)
                 embed.set_footer(text="🎉┃Congrats")
                 embed.color=0x00ff44
             
-                msg = await message.channel.send(embed=embed)
+                msg = await message2.channel.send(embed=embed)
                 await msg.add_reaction("🎊", "🎉")  
             else:
                 message.channel.send("✖️ error")
@@ -89,7 +96,7 @@ suggest: suggest an idea to our developpers```""", color=0x00ff44)
                if message.author.guild_permissions.administrator:
                    prize = fullmessage[0]
                    embed = discord.Embed(title=":tada: Giveaway! :tada:", description="Prize: "+prize+"\nHosted by "+message.author.mention)
-                   embed.set_footer(text="React with 🎉 for a chance to win a prize!")
+                   embed.set_footer(text="React with 🎉 for a chance to win '"+prize+"'")
                    embed.color=0x00ff44
                
                    channelid = self.get_channel(961337408375369768)
