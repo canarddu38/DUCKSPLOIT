@@ -69,7 +69,7 @@ suggest: suggest an idea to our developpers```""", color=0x00ff44)
                 channel = self.get_channel(961337408375369768)
                 message2 = await channel.fetch_message(message.content.replace("ds!gend ", ""))
                 
-                prize2 = message2.get_footer().split("'");
+                prize2 = message2.footer().split("'");
                 prize = prize2[2];
                 
                 
