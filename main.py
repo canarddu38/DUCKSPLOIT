@@ -93,23 +93,20 @@ suggest: suggest an idea to our developpers```""", color=0x00ff44)
 
                 
         elif message.content.startswith('ds!gcreate'):
-           fullmessage = message.content.replace("ds!gcreate ", "").split(" ")
-           if len(fullmessage) == 1:
-               if message.author.guild_permissions.administrator:
-                   prize = fullmessage[0]
-                   embed = discord.Embed(title=":tada: Giveaway! :tada:", description="Prize: "+prize+"\nHosted by "+message.author.mention)
-                   embed.set_footer(text="React with 🎉 for a chance to win '"+prize+"'")
-                   embed.color=0x00ff44
+           fullmessage = message.content.replace("ds!gcreate ", "")
+           if message.author.guild_permissions.administrator:
+               prize = fullmessage
+               embed = discord.Embed(title=":tada: Giveaway! :tada:", description="Prize: "+prize+"\nHosted by "+message.author.mention)
+               embed.set_footer(text="React with 🎉 for a chance to win '"+prize+"'")
+               embed.color=0x00ff44
                
-                   channelid = self.get_channel(961337408375369768)
-                   msg = await channelid.send(embed=embed)
-                   await msg.add_reaction("🎉") 
+               channelid = self.get_channel(961337408375369768)
+               msg = await channelid.send(embed=embed)
+               await msg.add_reaction("🎉") 
 
-                   await message.channel.send("Giveaway created :tada:")
-               else:
-                   message.channel.send("✖️ error")
+               await message.channel.send("Giveaway created :tada:")
            else:
-               message.channel.send(":warn: Usage: ds!gcreate <prize>")
+               message.channel.send("✖️ error")
 
 
 intents = discord.Intents.default()
