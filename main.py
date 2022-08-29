@@ -72,8 +72,8 @@ suggest: suggest an idea to our developpers```""", color=0x00ff44)
                 print(message2.content)
                 #prize2 = message2.content.footer.split("\n");
                 
-                prize = prize2[2];
-                
+                #prize = prize2[2];
+                prize = "prizee";
                 
                 
                 
