@@ -67,28 +67,27 @@ suggest: suggest an idea to our developpers```""", color=0x00ff44)
         elif message.content.startswith('ds!gend'):
             if message.author.guild_permissions.administrator:
                 channel = self.get_channel(961337408375369768)
-                message2 = await channel.fetch_message(message.content.replace("ds!gend ", ""))
-                
-                print(message2.content)
-                #prize2 = message2.content.footer.split("\n");
-                
-                #prize = prize2[2];
-                prize = "prizee";
-                
-                
-                
-                users = set()
-                for reaction in message2.reactions:
-                    async for user in reaction.users():
-                        users.add(user)
-                winner = random.choice(tuple(users))
-                embed = discord.Embed(title="🎊 | Giveaway Ended | 🎉", description="🎀 Thanks to all participants 🎀\nGg "+winner.mention+", you won "+prize+"\n```You can claim your prize by creating a ticket 🎫```")
-                embed.set_footer(text="🎉┃Congrats")
-                embed.color=0x00ff44
-            
-                msg = await message2.channel.send(embed=embed)
-                await msg.add_reaction("🎊")  
-                await msg.add_reaction("🎉")  
+                messages = message.content.split(" ")
+                message2 = await channel.fetch_message(messages[1])
+                if len(messages) == 3:
+                    prize = messages[2];
+
+
+
+                    users = set()
+                    for reaction in message2.reactions:
+                        async for user in reaction.users():
+                            users.add(user)
+                    winner = random.choice(tuple(users))
+                    embed = discord.Embed(title="🎊 | Giveaway Ended | 🎉", description="🎀 Thanks to all participants 🎀\nGg "+winner.mention+", you won "+prize+"\n```You can claim your prize by creating a ticket 🎫```")
+                    embed.set_footer(text="🎉┃Congrats")
+                    embed.color=0x00ff44
+
+                    msg = await message2.channel.send(embed=embed)
+                    await msg.add_reaction("🎊")  
+                    await msg.add_reaction("🎉")  
+                else:
+                    message.channel.send(":warn: Usage: ds!gend <giveaway msg id> <prize>")
             else:
                 message.channel.send("✖️ error")
 
@@ -110,7 +109,7 @@ suggest: suggest an idea to our developpers```""", color=0x00ff44)
                else:
                    message.channel.send("✖️ error")
            else:
-               message.channel.send("Usage: ds!gcreate <prize>")
+               message.channel.send(":warn: Usage: ds!gcreate <prize>")
 
 
 intents = discord.Intents.default()
