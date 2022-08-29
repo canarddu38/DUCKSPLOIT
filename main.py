@@ -63,6 +63,7 @@ suggest: suggest an idea to our developpers```""", color=0x00ff44)
             embed = discord.Embed(title="DuckSploit Download", description="```"+version_windows+"\n"+version_linux+"\n"+version_android+"```", color=0x00ff44)
             await message.channel.send(embed=embed) 
 
+            
         elif message.content.startswith('ds!gend'):
             if message.author.guild_permissions.administrator:
                 channel = self.get_channel(961337408375369768)
@@ -79,8 +80,9 @@ suggest: suggest an idea to our developpers```""", color=0x00ff44)
                 msg = await message.channel.send(embed=embed)
                 await msg.add_reaction("🎊", "🎉")  
             else:
-                message.channel.send("✖️ error"))
+                message.channel.send("✖️ error")
 
+                
         elif message.content.startswith('ds!gcreate'):
            fullmessage = message.content.replace("ds!gcreate ", "").split(" ")
            if len(fullmessage) == 1:
