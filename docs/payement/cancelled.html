@@ -1,0 +1,28 @@
+<head>
+<link rel="icon" type="image/png" href="https://icons-for-free.com/iconfiles/png/512/delete+error+exit+remove+icon-1320183420375856393.png">
+</head>
+
+<body onload="load()" style="background-color: #000000">
+<!-- <script src="./new.js"></script> -->
+<script>
+function deleteAllCookies() {
+	var cookies = document.cookie.split(";");
+
+	for (var i = 0; i < cookies.length; i++) {
+		var cookie = cookies[i];
+		var eqPos = cookie.indexOf("=");
+		var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+		document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+	}
+}
+deleteAllCookies();
+</script>
+<font size="+2">
+<h1 style="text-align: center;"><img src="https://icons-for-free.com/iconfiles/png/512/delete+error+exit+remove+icon-1320183420375856393.png" alt="success" width="100" height="100" /></h1>
+<h1 style="text-align: center; color: #ffffff;">Transaction cancelled</h1>
+<p style="text-align: center; color: #ffffff;">You've <span class="buypro-text17">cancelled DuckSploit pro transaction</span></p>
+<center>
+<button href="https://ducksploit.com/payement/buy_pro.html" style="font-size: 50; text-align: center; color: #ffffff; background-color: #323232">Back</button>
+</center>
+</font>
+</body>

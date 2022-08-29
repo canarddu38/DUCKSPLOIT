@@ -6,8 +6,7 @@
     <meta property="og:title" content="Buy DuckSploit pro" />
 	<link rel="icon" type="image/png" href="https://ducksploit.com/assets/images/icon.png">
 	<meta property="og:image" content="https://ducksploit.com/assets/images/dsbanner.png" />
-    <meta property="og:title" content="Buy DuckSploit pro" />
-    <meta property="og:description" content="Buy DuckSploit pro for onlu $9.99 only via PayPal" />
+    <meta property="og:banner" content="https://ducksploit.com/assets/images/dsbanner.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="utf-8" />
     <meta property="twitter:card" content="summary_large_image" />
@@ -44,7 +43,21 @@
     />
     <link rel="stylesheet" href="./style.css" />
   </head>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   <body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="./buy.js"></script>
     <div>
       <link href="./buypro.css" rel="stylesheet" />
 
@@ -138,40 +151,13 @@
                 <h1>Price: $9.99</h1>
                 <div class="buypro-container13"></div>
 				
-				
-				
-				<script>
-				fetch("https://ipify.org/", {
-				  method: "GET",
-				}).then(res => {
-				  alert(res);
-				});
-				
-				
-				<!-- let client = {}; -->
-				<!-- client["token"] = "KnBLpKfobLybzDqiqKYo"; -->
-				<!-- client[newkey] = "null"; -->
-
-
-				<!-- fetch("https://dsrestapi-default-rtdb.firebaseio.com/clients.json", { -->
-				  <!-- method: "PATCH", -->
-				  <!-- headers: {'Content-Type': 'application/json'},  -->
-				  <!-- body: JSON.stringify(client) -->
-				<!-- }).then(res => { -->
-				  <!-- console.log("Request complete! response:", res); -->
-				<!-- }); -->
-				</script>
-				
-				
-				
-				
-				
-				<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+				<form style="display: none" id="form" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
 				<input type="hidden" name="cmd" value="_s-xclick">
 				<input type="hidden" name="hosted_button_id" value="R5HBL8K83JLHG">
-				<input type="image" src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online!">
-				<img alt="" border="0" src="https://www.paypalobjects.com/fr_FR/i/scr/pixel.gif" width="1" height="1">
+				<input type="image" src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_buynowCC_LG.gif" height="100px" border="0" alt="PayPal – The safer, easier way to pay online!">
+				<img alt="" border="0" src="https://www.paypalobjects.com/fr_FR/i/scr/pixel.gif" height="100px">
 				</form>
+				<img src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_buynowCC_LG.gif" onclick="buy()" height="100px"></img>
 
 
 
@@ -182,6 +168,5 @@
         </div>
       </div>
     </div>
-    <script src="https://unpkg.com/@teleporthq/teleport-custom-scripts"></script>
   </body>
 </html>
