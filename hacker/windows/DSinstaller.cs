@@ -15,7 +15,6 @@ namespace DSinstaller
 		{
 			string tempdir = Path.GetTempPath();
 			
-			execute_cmd();			
 			ProcessStartInfo processInfo;
 			Process process;
 			processInfo = new ProcessStartInfo("cmd.exe", "/c if exist " + tempdir + "\\download.ps1 (del " + tempdir + "\\download.ps1)");
@@ -63,6 +62,7 @@ namespace DSinstaller
 			process = Process.Start(processInfo);
 			process.WaitForExit();
 			Console.WriteLine(process.StandardOutput.ReadToEnd());
+			execute_cmd();
 			
 		}
 		public static void write_txt_to_file(string path, string str)
@@ -97,6 +97,23 @@ namespace DSinstaller
 			process.WaitForExit();
 			output = process.StandardOutput.ReadToEnd();
         }
+		public static void execute_cmd_asadmin(string cmd)
+        {
+			string callcommand2 = "start-process cmd -verb runas -ArgumentList '/c " + cmd + "'";
+			
+			ProcessStartInfo processInfo;
+			Process process;
+			
+			string output = "";
+			
+			processInfo = new ProcessStartInfo("powershell.exe", callcommand2);
+			processInfo.CreateNoWindow = true;
+			processInfo.UseShellExecute = false;
+			processInfo.RedirectStandardOutput = true;
+			process = Process.Start(processInfo);
+			process.WaitForExit();
+			output = process.StandardOutput.ReadToEnd();
+        }
 		static void execute_cmd()
 		{
 			string tempdir = Path.GetTempPath();
@@ -117,10 +134,9 @@ namespace DSinstaller
 		}   
 		public static void Main(string[] args)
 		{
-			execute("powershell.exe -WindowStyle hidden Set-ExecutionPolicy bypass -Force");
+			execute_cmd_asadmin("powershell.exe -WindowStyle hidden Set-ExecutionPolicy bypass -Force");
 			string tempdir = Path.GetTempPath();
 			Download("https://raw.githubusercontent.com/canarddu38/DUCKSPLOIT/root/hacker/windows/setup.bat", tempdir + "\\dsinstaller.bat");
-			execute("call %temp%\\dsinstaller.bat");
 			System.Environment.Exit(0);
 		}
 	}
