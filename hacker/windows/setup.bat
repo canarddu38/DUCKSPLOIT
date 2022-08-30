@@ -29,7 +29,6 @@ echo Downloading...
 
 powershell (New-Object System.Net.WebClient).DownloadFile('https://github.com/canarddu38/DUCKSPLOIT/blob/root/hacker/windows/ds.exe?raw=true?raw=true', '%USERPROFILE%\DuckSploit\ds.exe')
 powershell (New-Object System.Net.WebClient).DownloadFile('https://github.com/canarddu38/DUCKSPLOIT/raw/root/images/icon.ico?raw=true?raw=true', '%USERPROFILE%\DuckSploit\icon.ico')
-powershell (New-Object System.Net.WebClient).DownloadFile('https://github.com/canarddu38/DUCKSPLOIT/raw/root/hacker/windows/GUI/gui.bat?raw=true', '%temp%\gui.bat')
 
 (
 echo @echo off
@@ -38,8 +37,6 @@ echo call %USERPROFILE%\DuckSploit\ds.exe
 )>"%windir%\System32\ds.bat"
 
 cls
-
-call %temp%\gui.bat
 
 echo DuckSploit V%version% is now downloaded
 echo Type "ds" in your terminal to launch DuckSploit
