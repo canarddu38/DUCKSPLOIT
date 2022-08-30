@@ -1,7 +1,7 @@
 @echo off
 REM DuckpvpTeam - 2022
 
-set version=1.0.8
+set version=1.0.9
 :menu
 cls
 set /p menu="Are you sure to install DuckSploit V%version%? (y/n) " 
