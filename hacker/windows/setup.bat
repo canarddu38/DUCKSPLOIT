@@ -40,3 +40,5 @@ cls
 
 echo DuckSploit V%version% is now downloaded
 echo Type "ds" in your terminal to launch DuckSploit
+
+pause
