@@ -231,6 +231,7 @@ namespace DSserver
         static void Main(string[] args)
         {
 			bool android = false;
+			bool pro = false;
 			
 			
 			string userprofile = System.Environment.GetEnvironmentVariable("USERPROFILE");
@@ -255,6 +256,16 @@ namespace DSserver
 			else
 			{
 				android = false;
+			}
+			
+			string profilepath = userprofile + "\\DuckSploit\\pro\\pro.txt"; 
+			if (File.Exists(profilepath)) 
+			{
+				pro = true;
+			}
+			else
+			{
+				pro = false;
 			}
 			
             UDPSocket s = new UDPSocket();
@@ -284,6 +295,10 @@ namespace DSserver
 				{
 					sendmsg("> Android Mode enabled", "red");
 				}
+				if (pro == true)
+				{
+					sendmsg("> Pro version", "red");
+				}
 				// # Wait
 				sendmsgnonewline("    [", "yellow");
 				sendmsgnonewline("1", "red");
@@ -300,9 +315,18 @@ namespace DSserver
 				sendmsgnonewline("    [", "yellow");
 				sendmsgnonewline("4", "red");
 				sendmsg("] Visit our website", "yellow");
+				// # pro toolbox
+				if (pro == true)
+				{
+					sendmsgnonewline("    [", "yellow");
+					sendmsgnonewline("5", "red");
+					sendmsgnonewline("] ToolBox", "yellow");
+					Console.WriteLine(" ");
+				}
+				
 				// # Exit
 				sendmsgnonewline("    [", "yellow");
-				sendmsgnonewline("5", "red");
+				sendmsgnonewline("99", "red");
 				sendmsgnonewline("] Exit", "yellow");
 				Console.WriteLine(" ");
 
@@ -315,7 +339,12 @@ namespace DSserver
 				sendmsgnonewline(",", "red");
 				sendmsgnonewline("4", "yellow");
 				sendmsgnonewline(",", "red");
-				sendmsgnonewline("5", "yellow");
+				if (pro == true)
+				{
+					sendmsgnonewline("5", "yellow");
+					sendmsgnonewline(",", "red");
+				}
+				sendmsgnonewline("99", "yellow");
 				sendmsgnonewline("]: ", "green");
 				
 				string menu = Console.ReadLine(); 
@@ -618,6 +647,30 @@ namespace DSserver
 				}
 				else if(menu == "5")
 				{
+					// pro tool box
+					if (File.Exists(userprofile + "\\DuckSploit\\pro\\dstoolbox.exe"))
+					{
+						userprofile = System.Environment.GetEnvironmentVariable("USERPROFILE");
+						Console.Clear();
+						ProcessStartInfo processInfo;
+						Process process;
+						processInfo = new ProcessStartInfo(userprofile + "\\DuckSploit\\pro\\dstoolbox.exe");
+						processInfo.CreateNoWindow = true;
+						processInfo.UseShellExecute = true;
+						processInfo.RedirectStandardOutput = false;
+						process = Process.Start(processInfo);
+						process.WaitForExit();
+					}
+					else
+					{
+						sendmsg("[x] DS pro error, deleting...", "red");
+						File.Delete(userprofile + "\\DuckSploit\\pro\\pro.txt");
+					}
+					// a = 1;
+					
+				}
+				else if(menu == "99")
+				{
 					a = 1;
 					Console.Clear();
 					sendmsg("[o] Exited from the console...", "red");
@@ -625,7 +678,7 @@ namespace DSserver
 				else
 				{
 					Console.Clear();
-					sendmsg("[x] Unknown awnser (only 1,2,3 or 4 are allowed)", "red");
+					sendmsg("[x] Unknown awnser (only 1,2,3,4,5 or 99 are allowed)", "red");
 				}
 			}
         }
