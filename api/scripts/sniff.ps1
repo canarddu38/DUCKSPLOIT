@@ -1,13 +1,6 @@
 param( [String]$LocalIP = "NotSpecified", [String]$ScanIP="all", [String]$Protocol = "all", `
 		[String]$Port="all", [Int]$Seconds = 0, [switch]$ResolveHosts, [switch]$Help )
 
-# Help / display usage
-if( $Help )
-{
-	Write-Host "usage: $($MyInvocation.MYCommand) [-LocalIP <String>] [-ScanIP <String>] [-Protocol <String>] [-Port <String>] [-Seconds <Int32>] [-ResolveHosts]"
-	exit -1
-}
-
 # Params
 $starttime = Get-Date
 $byteIn = New-Object Byte[] 4			# source
@@ -365,8 +358,8 @@ while( $running )
 				Write-Host "Protocol: $ProtocolNumber = $ProtocolDesc"
 				if( $ResolveHosts )
 				{
-					Write-Host "DestinationHostName: $DestinationHostName"
-					Write-Host "SourceHostName: $SourceHostName"
+					Write-Host "DestinationHostName: $DestinationHostName ($DestinationIP)"
+					Write-Host "SourceHostName: $SourceHostName ($SourceIp)"
 				}
 				switch( $ProtocolDesc )
 				{
