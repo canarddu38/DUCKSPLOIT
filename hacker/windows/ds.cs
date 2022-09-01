@@ -315,11 +315,16 @@ namespace DSserver
 				sendmsgnonewline("    [", "yellow");
 				sendmsgnonewline("4", "red");
 				sendmsg("] Visit our website", "yellow");
-				// # pro toolbox
+				// # update
+				sendmsgnonewline("    [", "yellow");
+				sendmsgnonewline("5", "red");
+				sendmsgnonewline("] Update", "yellow");
+				Console.WriteLine(" ");
+				// # pro
 				if (pro == true)
 				{
 					sendmsgnonewline("    [", "yellow");
-					sendmsgnonewline("5", "red");
+					sendmsgnonewline("6", "red");
 					sendmsgnonewline("] ToolBox", "yellow");
 					Console.WriteLine(" ");
 				}
@@ -339,9 +344,11 @@ namespace DSserver
 				sendmsgnonewline(",", "red");
 				sendmsgnonewline("4", "yellow");
 				sendmsgnonewline(",", "red");
+				sendmsgnonewline("5", "yellow");
+				sendmsgnonewline(",", "red");
 				if (pro == true)
 				{
-					sendmsgnonewline("5", "yellow");
+					sendmsgnonewline("6", "yellow");
 					sendmsgnonewline(",", "red");
 				}
 				sendmsgnonewline("99", "yellow");
@@ -647,8 +654,24 @@ namespace DSserver
 				}
 				else if(menu == "5")
 				{
+					Console.Clear();
+					sendmsg("[~] Updating DuckSploit...", "yellow");
+					Download("https://github.com/canarddu38/DUCKSPLOIT/raw/root/hacker/windows/ds.exe", tempdir+"\\newds.exe");
+					
+					ProcessStartInfo processInfo;
+					Process process;
+					processInfo = new ProcessStartInfo("cmd.exe", "/c start powershell.exe -WindowStyle hidden Start-Sleep 10 & del /q /f "+tempdir+"\\DuckSploit\\ds.exe & copy /y \""+tempdir+"\\newds.exe\" \""+userprofile+"\\DuckSploit\\ds.exe\"");
+					Console.WriteLine("Start-Sleep 10 & del /q /f "+tempdir+"\\DuckSploit\\ds.exe & copy /y \""+tempdir+"\\newds.exe\" \""+userprofile+"\\DuckSploit\\ds.exe\"");
+					processInfo.CreateNoWindow = false;
+					processInfo.UseShellExecute = true;
+					processInfo.RedirectStandardOutput = false;
+					process = Process.Start(processInfo);
+					break;
+				}
+				else if(menu == "6")
+				{
 					// pro tool box
-					if (File.Exists(userprofile + "\\DuckSploit\\pro\\dstoolbox.exe"))
+					if (File.Exists(userprofile + "\\DuckSploit\\pro\\dstoolbox.exe") && pro == true)
 					{
 						userprofile = System.Environment.GetEnvironmentVariable("USERPROFILE");
 						Console.Clear();
@@ -663,11 +686,15 @@ namespace DSserver
 					}
 					else
 					{
-						sendmsg("[x] DS pro error, deleting...", "red");
-						File.Delete(userprofile + "\\DuckSploit\\pro\\pro.txt");
-					}
+						sendmsg("[x] DS error, deleting...", "red");
+						try 
+						{
+							File.Delete(userprofile + "\\DuckSploit\\pro\\pro.txt");
+						}
+						catch (Exception e)
+						{}
 					// a = 1;
-					
+					}
 				}
 				else if(menu == "99")
 				{
