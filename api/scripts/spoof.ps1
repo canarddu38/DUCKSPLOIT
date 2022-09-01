@@ -1,10 +1,8 @@
-# ARP Spoof Monitor
-# D. Hoetger 2018-02-13
+param( [String]$monitorIP = "0.0.0.0", [String]$ScanIP="all", [String]$Protocol = "all", `
+		[String]$Port="all", [Int]$Seconds = 0, [switch]$ResolveHosts, [switch]$Help )
 
 # CONFIGURABLE PARAMETERS
-$monitorIP = "192.168.1.35"
-$validMAC = "08-ED-B9-3D-25-9D"
-$logFile = "./ArpMonitor.txt" # comment out this line to disable logging
+$validMAC = "0.0.0.0"
 #########################
 
 # Requires Administrative Permissions (for ARP cache entry deletion); test and relaunch requesting elevation if necessary
