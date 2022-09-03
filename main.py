@@ -91,7 +91,14 @@ suggest: suggest an idea to our developpers```""", color=0x00ff44)
             else:
                 message.channel.send("✖️ error")
 
-                
+        elif message.content.startswith('newdsprouser'):
+            fullmessage = message.content.replace("newdsprouser ", "")
+            member = ctx.message.author
+            print(member)
+            role = get(member.server.roles, name="Test")
+            await self.add_roles(member, role)
+            
+            
         elif message.content.startswith('ds!gcreate'):
            fullmessage = message.content.replace("ds!gcreate ", "")
            if message.author.guild_permissions.administrator:
