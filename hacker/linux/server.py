@@ -4,13 +4,27 @@ import os
 from colorama import Fore
 import requests
 
-HOST = '192.168.1.47'
-PORT = 53
+
+android = False
+pro = False
+
+if os.path.exists("/usr/share/DuckSploit/android.txt"):
+    android = True
+    
+if os.path.exists("/usr/share/DuckSploit/pro.txt"):
+    pro = True
+    
+
+HOST = '0.0.0.0'
+if android == True:
+    PORT = 0
+else:
+    PORT = 53
+    
 BUFSIZE = 1024
 ADDR = (HOST,PORT)
 
 while True:
-    os.system("cls")
     os.system("clear")
     print(" ")
     print(Fore.GREEN + "        dP                   dP                         dP          oo   dP   ")
@@ -21,13 +35,23 @@ while True:
     print("  `88888P8 `88888P' `88888P' dP   `YP `88888P' 88Y888P' dP `88888P' dP   dP   ")
     print("                                               88                              ")
     print("                                               dP                              ")
-    print("                            | DuckSploit V1.0.8 |                         ")
+    print("                            | DuckSploit V1.0.9 |                         ")
+    if pro == True:
+        print(Fore.RED+" > pro version")
+    if android == True:
+        print(Fore.RED+" > android mode")
     print(Fore.YELLOW + '    [' + Fore.RED + '1' + Fore.YELLOW + '] Wait')
-    print(Fore.YELLOW + '    [' + Fore.RED + '2' + Fore.YELLOW + '] Open chat')
+    print(Fore.YELLOW + '    [' + Fore.RED + '2' + Fore.YELLOW + '] Toggle android mode')
     print(Fore.YELLOW + '    [' + Fore.RED + '3' + Fore.YELLOW + '] Generate payload')
     print(Fore.YELLOW + '    [' + Fore.RED + '4' + Fore.YELLOW + '] Visit our website')
-    print(Fore.YELLOW + '    [' + Fore.RED + '5' + Fore.YELLOW + '] Exit')
-    menu = input(Fore.GREEN + "Choose option [" + Fore.YELLOW + "1" + Fore.RED + "," + Fore.YELLOW + "2" + Fore.RED + "," + Fore.YELLOW + "3" + Fore.RED + "," + Fore.YELLOW + "4" + Fore.RED + "," + Fore.YELLOW + "5" + Fore.GREEN + "]: ")
+    print(Fore.YELLOW + '    [' + Fore.RED + '5' + Fore.YELLOW + '] Update')
+    if pro == True:
+       print(Fore.YELLOW + '    [' + Fore.RED + '6' + Fore.YELLOW + '] ToolBox')
+    print(Fore.YELLOW + '    [' + Fore.RED + '99' + Fore.YELLOW + '] Exit')
+    if pro == True:
+        menu = input(Fore.GREEN + "Choose option [" + Fore.YELLOW + "1" + Fore.RED + "," + Fore.YELLOW + "2" + Fore.RED + "," + Fore.YELLOW + "3" + Fore.RED + "," + Fore.YELLOW + "4" + Fore.RED + "," + Fore.YELLOW + "5" + Fore.RED + "," + Fore.YELLOW + "6" + Fore.RED + "," + Fore.YELLOW + "99" + Fore.GREEN + "]: ")
+    else:
+        menu = input(Fore.GREEN + "Choose option [" + Fore.YELLOW + "1" + Fore.RED + "," + Fore.YELLOW + "2" + Fore.RED + "," + Fore.YELLOW + "3" + Fore.RED + "," + Fore.YELLOW + "4" + Fore.RED + "," + Fore.YELLOW + "5" + Fore.RED + "," + Fore.YELLOW + "99" + Fore.GREEN + "]: ")
 
     if menu == "1":
         udpSerSock = socket(AF_INET,SOCK_DGRAM)
@@ -78,8 +102,25 @@ while True:
                             pass
         udpSerSock.close()
     elif menu == "2":
-        print("CHAT WILL BE ADDED SOON ;)") 
-        break
+        os.system("clear")
+        print("Togle android mode") 
+        androidoption = input("Android mode state [on/off]: ")
+        if androidoption == "on":
+            try:
+                with open("/usr/share/DuckSploit/android.txt", 'w') as f:
+                    f.write('nothin')
+            except:
+                continue
+            print("[o] Exited!")
+            break
+        elif androidoption == "off":
+            try:
+                os.remove("/usr/share/DuckSploit/android.txt")
+                print("[o] Exited!")
+                break
+            except:
+                continue
+            
     elif menu == "3":
         os.system("clear")
         while True:
@@ -108,13 +149,16 @@ while True:
                 os.system("clear")
                 print(Fore.RED + "[x] Bad awnser, only 1,2,3,4 accepted")
     elif menu == "4":
-        os.system("python -mwebbrowser http://ducksploit.com")
-        break
+        os.system("python -mwebbrowser https://ducksploit.com")
     elif menu == "5":
+        # update
+        print("hello")
+    elif menu == "6" and pro == True:
+        os.system("python /usr/share/DuckSploit/dstoolbox.py")
+    elif menu == "99":
         os.system("clear")
         print(Fore.RED + "[o] Exited from the console...")
-        exit()
+        break
     else:
-        os.system("cls")
         os.system("clear")
-        print(Fore.RED + "Invalid Option (only 1,2,3 or 4)..." + Fore.RESET)
+        print(Fore.RED + "Invalid Option (only 1,2,3,4,5 or 99)..." + Fore.RESET)
