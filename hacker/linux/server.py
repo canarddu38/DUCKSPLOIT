@@ -15,7 +15,7 @@ if os.path.exists("/usr/share/DuckSploit/pro.txt"):
     pro = True
     
 
-HOST = '192.168.1.47'
+HOST = '0.0.0.0'
 if android == True:
     PORT = 45357
 else:
