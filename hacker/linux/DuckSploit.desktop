@@ -1,11 +1,11 @@
 [Desktop Entry]
 Name=DuckSploit
-Comment=V1.0.8
+Comment=V1.0.9
 Encoding=UTF-8
-Exec=/usr/share/kali-menu/exec-in-shell "ds"
+Exec=ds
 Icon=/usr/share/DuckSploit/icons/icon.png
 StartupNotify=false
 Terminal=true
 Type=Application
-Categories=DuckSploit
+Categories=08-exploitation-tools;
 X-Kali-Package=DuckSploit
