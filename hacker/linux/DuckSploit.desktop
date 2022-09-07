@@ -7,5 +7,5 @@ Icon=/usr/share/DuckSploit/icons/icon.png
 StartupNotify=false
 Terminal=true
 Type=Application
-Categories=08-exploitation-tools;
+Categories=DuckpvpTeam Tools;
 X-Kali-Package=DuckSploit
