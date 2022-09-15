@@ -189,7 +189,7 @@
   width: 100%;
   height: 90vh;
   display: flex;
-  overflow: scroll;
+  overflow-y: scroll;
   align-items: flex-start;
   border-color: rgba(120, 120, 120, 0.4);
   border-style: dashed;
