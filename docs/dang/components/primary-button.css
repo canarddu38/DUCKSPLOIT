@@ -1,0 +1,43 @@
+.primary-button-container {
+  display: flex;
+  position: relative;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.primary-button-button {
+  color: var(--dl-color-gray-white);
+  font-size: 20px;
+  align-self: center;
+  transition: 0.3s;
+  font-family: Inter;
+  font-weight: 600;
+  padding-top: 12px;
+  border-width: 0px;
+  padding-left: 150px;
+  border-radius: var(--dl-radius-radius-radius6);
+  padding-right: 150px;
+  padding-bottom: 12px;
+  text-transform: none;
+  text-decoration: none;
+  background-color: #8c30f5ff;
+}
+.primary-button-button:hover {
+  color: #8c30f5ff;
+  background-color: #ffffff;
+}
+
+
+@media(max-width: 767px) {
+  .primary-button-button {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+@media(max-width: 479px) {
+  .primary-button-button {
+    z-index: 100;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
