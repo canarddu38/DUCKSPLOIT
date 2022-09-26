@@ -89,6 +89,42 @@
         }
     </style>
     <link rel="stylesheet" href="./style.css" />
+	<style>
+.dropbtn {
+  color: white;
+  background-color: #000000;
+  font-size: 16px;
+  border: none;
+  margin-right: 20px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {color: var(--dl-color-turquoise-default);}
+</style>
   </head>
   <body>
     <div>
@@ -118,6 +154,14 @@
               >
                 Docs
               </a>
+			  <div class="dropdown">
+				  <button class="dropbtn">DANG</button>
+				  <div class="dropdown-content">
+					<a href="https://github.com/canarddu38/Dang">Docs</a>
+					<a href="https://ducksploit.com/dang/download.html">Download</a>
+					<a href="https://discord.com/invite/AepgsWPcVS">Payloads</a>
+				  </div>
+			  </div>
               <a
                 href="http://blogs.ducksploit.com"
                 target="_blank"
@@ -135,24 +179,13 @@
                 <span class="buypro-text03">Download</span>
                 <br />
               </a>
-              <a
-                href="https://store.ducksploit.com"
-                target="_blank"
-                rel="noreferrer noopener"
-                class="buypro-link2"
-              >
-                Store
-              </a>
-              <a
-                href="https://leaks.ducksploit.com/"
-                target="_blank"
-                rel="noreferrer noopener"
-                class="buypro-link3"
-              >
-                <span>DSleaks</span>
-                <br />
-                <br />
-              </a>
+              <div class="dropdown">
+				  <button class="dropbtn">Other</button>
+				  <div class="dropdown-content">
+					<a href="https://leaks.ducksploit.com/">DSleaks</a>
+					<a href="https://store.ducksploit.com">Store</a>
+				  </div>
+			  </div>
               <span class="buypro-text08">
                 <span>Buypro</span>
                 <br />
