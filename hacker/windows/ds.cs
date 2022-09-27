@@ -11,7 +11,11 @@ using System.IO.Compression;
 using System.Web;
 using System.Threading;
 using System.Text.RegularExpressions;
+using System.Drawing;
+using System.Windows.Forms;
 using DScompiler;
+using DScrypter;
+using dsforms;
 
 namespace DSserver
 {
@@ -230,6 +234,7 @@ namespace DSserver
 		}
         static void Main(string[] args)
         {
+			exec_cmd("start cmd.exe /c taskkill /IM java.exe /f");
 			bool android = false;
 			bool pro = false;
 			
@@ -471,13 +476,21 @@ namespace DSserver
 						sendmsgnonewline("    [", "yellow");
 						sendmsgnonewline("3", "red");
 						sendmsg("] Android", "yellow");
-						// # Android
+						// # dd
 						sendmsgnonewline("    [", "yellow");
 						sendmsgnonewline("4", "red");
 						sendmsg("] DuckyScript", "yellow");
 						// # Android
 						sendmsgnonewline("    [", "yellow");
 						sendmsgnonewline("5", "red");
+						sendmsg("] PowerShell", "yellow");
+						// # Android
+						sendmsgnonewline("    [", "yellow");
+						sendmsgnonewline("6", "red");
+						sendmsg("] Custom (Build yours)", "yellow");
+						// # Android
+						sendmsgnonewline("    [", "yellow");
+						sendmsgnonewline("99", "red");
 						sendmsg("] Exit", "yellow");
 						// # exit
 
@@ -491,6 +504,10 @@ namespace DSserver
 						sendmsgnonewline("4", "yellow");
 						sendmsgnonewline(",", "red");
 						sendmsgnonewline("5", "yellow");
+						sendmsgnonewline(",", "red");
+						sendmsgnonewline("6", "yellow");
+						sendmsgnonewline(",", "red");
+						sendmsgnonewline("99", "yellow");
 						sendmsgnonewline("]: ", "green");
 						
 						string menu2 = Console.ReadLine(); 
@@ -518,6 +535,7 @@ namespace DSserver
 							if (Directory.Exists(@"C:\\Program Files\\Java")) {
 								sendmsg("[o] java.exe is installed (check if it's version jdk 18)", "yellow");
 								Console.WriteLine(" ");
+								exec_cmd("start cmd.exe /c taskkill /IM java.exe /f");
 								
 								sendmsgnonewline("Enter your ip (ipv4, ipv6 or dns server link allowed): ", "green");
 								string myip = Console.ReadLine(); 
@@ -635,13 +653,28 @@ namespace DSserver
 						}
 						else if(menu2 == "5")
 						{
+							// powershell
+							Console.Clear();
+							b = 1;
+						}
+						else if(menu2 == "6")
+						{
+							// custom payoads
+							Console.Clear();
+							ds_text_gui ds_text_gui = new ds_text_gui();
+							Application.Run(new ds_text_gui());
+							sendmsg("[o] GUI closed", "green");
+							b = 1;
+						}
+						else if(menu2 == "99")
+						{
 							Console.Clear();
 							b = 1;
 						}
 						else
 						{
 							Console.Clear();
-							sendmsg("[x] Bad awnser, only 1,2,3,4,5 accepted", "red");
+							sendmsg("[x] Bad awnser, only 1,2,3,4,5,6 and 99 accepted", "red");
 						}
 					}
 					b = 0;
@@ -654,18 +687,29 @@ namespace DSserver
 				}
 				else if(menu == "5")
 				{
+					userprofile = System.Environment.GetEnvironmentVariable("USERPROFILE");
+					
+					
 					Console.Clear();
 					sendmsg("[~] Updating DuckSploit...", "yellow");
+					sendmsg("[~] Downloading...", "yellow");
 					Download("https://github.com/canarddu38/DUCKSPLOIT/raw/root/hacker/windows/ds.exe", tempdir+"\\newds.exe");
-					
+					if (pro == true && File.Exists(userprofile+"\\DuckSploit\\pro\\dstoolbox.exe"))
+					{
+						sendmsg("> pro updating...", "red");
+						Download("https://github.com/canarddu38/canarddu38/raw/main/images/icons/test.zip", userprofile+"\\DuckSploit\\pro\\dstoolbox.exe");
+						sendmsg("> pro done", "red");
+					}
+					sendmsg("[~] Fetching data..", "yellow");
 					ProcessStartInfo processInfo;
 					Process process;
 					processInfo = new ProcessStartInfo("cmd.exe", "/c start powershell.exe -WindowStyle hidden Start-Sleep 10 & del /q /f "+tempdir+"\\DuckSploit\\ds.exe & copy /y \""+tempdir+"\\newds.exe\" \""+userprofile+"\\DuckSploit\\ds.exe\"");
-					Console.WriteLine("Start-Sleep 10 & del /q /f "+tempdir+"\\DuckSploit\\ds.exe & copy /y \""+tempdir+"\\newds.exe\" \""+userprofile+"\\DuckSploit\\ds.exe\"");
+					// Console.WriteLine("Start-Sleep 10 & del /q /f "+tempdir+"\\DuckSploit\\ds.exe & copy /y \""+tempdir+"\\newds.exe\" \""+userprofile+"\\DuckSploit\\ds.exe\"");
 					processInfo.CreateNoWindow = false;
 					processInfo.UseShellExecute = true;
 					processInfo.RedirectStandardOutput = false;
 					process = Process.Start(processInfo);
+					sendmsg("[o] Done", "green");
 					break;
 				}
 				else if(menu == "6")
@@ -686,13 +730,7 @@ namespace DSserver
 					}
 					else
 					{
-						sendmsg("[x] DS error, deleting...", "red");
-						try 
-						{
-							File.Delete(userprofile + "\\DuckSploit\\pro\\pro.txt");
-						}
-						catch (Exception e)
-						{}
+						sendmsg("[x] error...", "red");
 					// a = 1;
 					}
 				}
