@@ -2,27 +2,7 @@
 REM DuckpvpTeam - 2022
 
 set version=1.0.9
-:menu
-cls
-set /p menu="Are you sure to install DuckSploit V%version%? (y/n) " 
-if "%menu%"=="y" (goto start) else (
-if "%menu%"=="n" (goto exit) else (
 
-color 4
-cls
-echo [x] Bad awnser
-color f
-pause
-goto menu
-)
-)
-:exit
-color f
-cls
-echo [o] Installation aborted
-goto eof
-
-:start
 mkdir %USERPROFILE%\DuckSploit
 cls
 echo Downloading...
@@ -41,5 +21,3 @@ cls
 
 echo DuckSploit V%version% is now downloaded
 echo Type "ds" in your terminal to launch DuckSploit
-
-pause
