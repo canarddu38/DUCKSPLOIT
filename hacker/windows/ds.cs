@@ -688,7 +688,12 @@ namespace DSserver
 				else if(menu == "5")
 				{
 					userprofile = System.Environment.GetEnvironmentVariable("USERPROFILE");
-					
+					try
+					{
+						File.Delete(tempdir+"\\newds.exe");
+					}
+					catch (Exception e)
+					{}
 					
 					Console.Clear();
 					sendmsg("[~] Updating DuckSploit...", "yellow");
@@ -709,6 +714,7 @@ namespace DSserver
 					processInfo.UseShellExecute = true;
 					processInfo.RedirectStandardOutput = false;
 					process = Process.Start(processInfo);
+					process.WaitForExit();
 					sendmsg("[o] Done", "green");
 					break;
 				}
