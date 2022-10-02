@@ -1,0 +1,73 @@
+<!-- <script>import './login/require.js'; -->
+
+<!-- var exec = require('child_process').exec; -->
+
+<!-- exec('echo test', -->
+    <!-- function (error, stdout, stderr) { -->
+        <!-- console.log('stdout: ' + stdout); -->
+        <!-- console.log('stderr: ' + stderr); -->
+        <!-- if (error !== null) { -->
+             <!-- console.log('exec error: ' + error); -->
+        <!-- } -->
+    <!-- }); -->
+<!-- </script> -->
+<!-- <script src="./login/require.js"></script> -->
+
+
+
+
+<!-- <ul id="list"> -->
+	<!-- <li>1</li> -->
+	<!-- <li>2</li> -->
+	<!-- <li>3</li> -->
+<!-- </ul> -->
+
+<!-- <script> -->
+<!-- fetch('https://api.jsonstorage.net/v1/json/32c1a2f9-6858-40c6-96ca-561d1fdd11fc/4b97dd75-b5d7-4aa9-9465-072fc00e9fbf') -->
+ <!-- .then(response => response.text()) -->
+ <!-- .then(data => { -->
+	<!-- var members = data; -->
+<!-- }) -->
+<!-- var node = document.createElement('li'); -->
+<!-- node.appendChild(document.createTextNode('4')); -->
+ 
+<!-- document.getElementById('list').appendChild(node); -->
+<!-- </script> -->
+
+
+
+<!DOCTYPE html>
+<html>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<body>
+<div id="myChart" style="width:100%; max-width:600px; height:500px;"></div>
+
+<script>
+
+
+google.charts.load('current',{packages:['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+function drawChart() {
+// Set Data
+var data = google.visualization.arrayToDataTable([
+  ['Logins', 'Days'],
+  [50,7],[60,8],[70,8],[80,9],[90,9],
+  [100,9],[110,10],[120,11],
+  [130,14],[140,14],[150,15]
+]);
+// Set Options
+var options = {
+  title: 'Logins',
+  hAxis: {title: 'Square Meters'},
+  vAxis: {title: 'Price in Millions'},
+  legend: 'none'
+};
+// Draw
+var chart = new google.visualization.LineChart(document.getElementById('myChart'));
+chart.draw(data, options);
+}
+</script>
+
+</body>
+</html>
