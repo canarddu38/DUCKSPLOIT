@@ -1,18 +1,22 @@
 function logincheck() {
 	var logindatas = location.search.substring(1);
 	var loginarray = logindatas.split("|");
-	// fetch('./data/login.txt')
-	 // .then(response => response.text())
-	 // .then(data => {
-	  // loginjson = data;
-	// });
-	loginjson = '{"username": "DSadmin","password": "ducksploit"}';
+	
+	loginjson = getfilecontent("data/login.txt");
+	
 	const maplogin = new Map(Object.entries(JSON.parse(loginjson)));
 	var username = loginarray[0];
 	var pwd = loginarray[1];
-
+	
+	
+	var username = browser.cookies.get("username");	
+	var password = browser.cookies.get("password");	
+	alert(username+" | "+password);
+	
 	if (maplogin.get('username') == loginarray[0]) {
 		if (maplogin.get('password') == loginarray[1]) {
+	if (maplogin.get('username') == username) {
+		if (maplogin.get('password') == password) {
 			try {
 			  document.getElementById("link_settings").setAttribute('href', "settings.html?"+username+"|"+pwd);
 			}
@@ -127,31 +131,6 @@ function download(filename, text) {
 }
 
 
-// chart
-google.charts.load('current',{packages:['corechart']});
-google.charts.setOnLoadCallback(drawChart);
-
-function drawChart() {
-// Set Data
-var data = google.visualization.arrayToDataTable([
-  ['Number', 'Day'],
-  [50,1],[50,2],
-  [60,8],[70,8],[80,9],
-  [100,9],
-]);
-// Set Options
-var options = {
-  title: 'Logins',
-  hAxis: {title: 'Date'},
-  vAxis: {title: 'Number'},
-  legend: 'none'
-};
-// Draw
-var chart = new google.visualization.LineChart(document.getElementById('chart'));
-chart.draw(data, options);
-}
-
-
 function downloadjson() {
 	const infosmap = new Map();
 	
@@ -163,4 +142,18 @@ function downloadjson() {
 	infosmap.set("isp",isp);
 	
 	download("infos.json",JSON.stringify(Object.fromEntries(infosmap)));
+}
+
+function previewFile() {
+	alert(getfilecontent("api/server_infos.txt"));
+}
+function getfilecontent(filePath) {
+	var result = null;
+	var xmlhttp = new XMLHttpRequest();
+	xmlhttp.open("GET", filePath, false);
+	xmlhttp.send();
+	if (xmlhttp.status==200) {
+		result = xmlhttp.responseText;
+	}
+	return result;
 }

@@ -1,7 +1,13 @@
 function login() {
     username = document.getElementById("inputUsername").value;
     pwd = document.getElementById("inputPassword").value;
-    
+	if (typeof browser === "undefined") {
+		var browser = chrome;
+	}
+    browser.cookies.set({
+		username: username,
+		password: pwd
+	});
 	document.location.replace("./index.html?"+username+"|"+pwd);
 }
 
