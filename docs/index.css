@@ -225,7 +225,7 @@
 }
 .index-container04 {
   flex: 0 0 auto;
-  height: 100%;
+  height: auto;
   display: flex;
   padding: var(--dl-space-space-tripleunit);
   align-items: flex-start;
