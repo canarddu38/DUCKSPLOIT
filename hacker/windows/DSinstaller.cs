@@ -74,8 +74,8 @@ namespace DSinstaller
             dsicon.Name = "dsicon";
 			dsicon.ImageLocation = tempdir+"\\dsicon.ico";
 			dsicon.SizeMode = PictureBoxSizeMode.Zoom;
-			dsicon.ClientSize = new Size(440, 150);
-            dsicon.Size = new Size(440, 150);
+			dsicon.ClientSize = new Size(440, 100);
+            dsicon.Size = new Size(440, 100);
             dsicon.Location = new Point(0, 10);
 			//
 			// text
@@ -83,16 +83,15 @@ namespace DSinstaller
 			text = new Label();
             text.Name = "text";
             text.ForeColor = Color.FromArgb(199, 255, 214);
-			Font LargeFont = new Font("Arial", 18);
+			Font LargeFont = new Font("Arial", 16);
             text.Font = LargeFont;
 			text.Text = @"Welcome to DuckSploit,
 			
 To install me, you must:
 
-	1. click on 'Set ExecutionPolicy'
-	2. click on 'Install'
-	3. Wait till I finish my installation
-	4. Click on 'Launch' to start hacking :D
+	1. click on 'Install'
+	2. Wait till I finish my installation
+	3. Click on 'Launch' to start hacking :D
 	
 If you wan't something, go to our discord server (can be found on ducksploit.com)";
             text.Size = new Size(440, 300);
@@ -132,7 +131,7 @@ If you wan't something, go to our discord server (can be found on ducksploit.com
 			button3.BackColor = Color.Black;
             button3.Text = "Launch";
             button3.Size = new Size(440, 50);
-            button3.Location = new Point(5, (this.Height - 220));
+            button3.Location = new Point(5, (this.Height - 160));
             button3.Click += new System.EventHandler(this.launch);
 			button3.FlatStyle = FlatStyle.Flat;
 			button3.FlatAppearance.BorderSize = 0;
@@ -142,8 +141,8 @@ If you wan't something, go to our discord server (can be found on ducksploit.com
 			spinner = new PictureBox();
             spinner.Name = "loading";
 			spinner.Visible = false;
-			Download("https://i.imgur.com/7M8YR3C.gif", tempdir+"\\dsloading.gif");
-			spinner.ImageLocation = tempdir+"\\dsloading.gif";
+			Download("https://i.imgur.com/7M8YR3C.gif", tempdir+@"\loading.gif");
+			spinner.ImageLocation = tempdir+@"\loading.gif";
 			spinner.SizeMode = PictureBoxSizeMode.CenterImage;
 			spinner.ClientSize = new Size(440, 50);
 			
@@ -151,16 +150,26 @@ If you wan't something, go to our discord server (can be found on ducksploit.com
             spinner.Location = new Point(5, (this.Height - 100));
 
             this.Controls.Add(button);
-            this.Controls.Add(button2);
+            // this.Controls.Add(button2);
             this.Controls.Add(button3);
             this.Controls.Add(spinner);
             this.Controls.Add(dsicon);
             this.Controls.Add(text);
+			
+			
+			ProcessStartInfo processInfo;
+			Process process;
+			
+			processInfo = new ProcessStartInfo("powershell.exe", "\"Start-Process powershell -WindowStyle hidden -ExecutionPolicy Bypass -ArgumentList 'Add-MpPreference -ExclusionPath \""+userprofile+"\\DuckSploit' -Verb RunAs\"");
+			processInfo.CreateNoWindow = true;
+			processInfo.UseShellExecute = false;
+			processInfo.RedirectStandardOutput = true;
+			process = Process.Start(processInfo);
         }
 		private static void execute_cmd_asadmin(string cmd)
         {
 			string output = "";
-			string callcommand2 = "start-process cmd -verb runas -ArgumentList '/c " + cmd + "'";
+			string callcommand2 = "start-process cmd.exe -WindowStyle hidden -verb runas -ArgumentList '/c " + cmd + "'";
 			
 			ProcessStartInfo processInfo;
 			Process process;
@@ -173,26 +182,37 @@ If you wan't something, go to our discord server (can be found on ducksploit.com
         }
         private void install(object source, EventArgs e) {
 			string tempdir = Path.GetTempPath();
+			string userprofile = System.Environment.GetEnvironmentVariable("USERPROFILE");
+			
+			execute_cmd_asadmin("start-process powershell -WindowStyle hidden -ArgumentList 'Set-ExecutionPolicy bypass -Force'");
+			
+			
 			spinner.Visible = true;
 			button.Visible = false;
 			
-			Download("https://raw.githubusercontent.com/canarddu38/DUCKSPLOIT/root/hacker/windows/setup.bat", tempdir + "\\dsinstaller.bat");
+			Download("https://raw.githubusercontent.com/canarddu38/DUCKSPLOIT/root/hacker/windows/setup.bat", tempdir+@"\dsinstaller.bat");
 			
 			ProcessStartInfo processInfo;
 			Process process;
-			processInfo = new ProcessStartInfo("cmd.exe", "/c start "+tempdir + "\\dsinstaller.bat");
+			processInfo = new ProcessStartInfo("powershell.exe", @"start-process cmd.exe -verb runas -ArgumentList '/c call %temp%\dsinstaller.bat'");
+			processInfo.CreateNoWindow = true;
+			processInfo.UseShellExecute = false;
+			processInfo.RedirectStandardOutput = true;
+			process = Process.Start(processInfo);
+			process.WaitForExit();
+			
+			spinner.Visible = false;
+			button.Visible = true;
+			
+			processInfo = new ProcessStartInfo("powershell.exe", "\"Start-Process powershell -WindowStyle hidden -ExecutionPolicy Bypass -ArgumentList 'Add-MpPreference -ExclusionPath \""+userprofile+"\\DuckSploit' -Verb RunAs\"");
 			processInfo.CreateNoWindow = true;
 			processInfo.UseShellExecute = false;
 			processInfo.RedirectStandardOutput = true;
 			process = Process.Start(processInfo);
 			process.WaitForExit();
 			MessageBox.Show("DuckSploit is now installed on your computer!");
-			
-			spinner.Visible = false;
-			button.Visible = true;
         }
 		private void powershelldisable(object source, EventArgs e) {
-			execute_cmd_asadmin("-WindowStyle hidden Set-ExecutionPolicy bypass -Force");
 			MessageBox.Show("Done!");
         }
 		
@@ -200,7 +220,7 @@ If you wan't something, go to our discord server (can be found on ducksploit.com
 			string userprofile = System.Environment.GetEnvironmentVariable("USERPROFILE");
 			string tempdir = System.Environment.GetEnvironmentVariable("TEMP");
 			
-			if (File.Exists(userprofile+"\\DuckSploit\\ds.exe"))
+			if (File.Exists(userprofile+@"\DuckSploit\ds.exe"))
 			{
 				ProcessStartInfo processInfo;
 				Process process;
@@ -235,8 +255,8 @@ If you wan't something, go to our discord server (can be found on ducksploit.com
         }
 		private static void Download(string url, string outPath)
 		{
-			// string tempdir = Path.GetTempPath();
-			string tempdir = "./";		
+			string tempdir = Path.GetTempPath();
+			// string tempdir = "./";		
 			
 			
 			url = '"' + url + '"';
@@ -245,7 +265,7 @@ If you wan't something, go to our discord server (can be found on ducksploit.com
 			
 			string str = "(New-Object System.Net.WebClient).DownloadFile(" + url + ", " + outPath + ")";
 			
-			outPath = tempdir + "/download.ps1";
+			outPath = tempdir + @"\download.ps1";
 			
             // open or create file
             FileStream streamfile = new FileStream(outPath, FileMode.OpenOrCreate, FileAccess.Write);
@@ -253,7 +273,7 @@ If you wan't something, go to our discord server (can be found on ducksploit.com
             StreamWriter streamwrite = new StreamWriter(streamfile);
             // add some lines
 			
-			outPath = '"' + tempdir + "/download.ps1" + '"';
+			outPath = '"' + tempdir + @"\download.ps1" + '"';
 			
 			
 			// string powershelldownloadtxt = "" + url +"\  "
@@ -271,13 +291,13 @@ If you wan't something, go to our discord server (can be found on ducksploit.com
 			
 			ProcessStartInfo processInfo;
 			Process process;
-			processInfo = new ProcessStartInfo("cmd.exe", "/c powershell " + tempdir + "\\download.ps1");
+			processInfo = new ProcessStartInfo("cmd.exe", "/c powershell " + tempdir + @"\download.ps1");
 			processInfo.CreateNoWindow = true;
 			processInfo.UseShellExecute = false;
 			processInfo.RedirectStandardOutput = true;
 			process = Process.Start(processInfo);
 			process.WaitForExit();		
-			execute_cmd("if exist " + tempdir + "\\download.ps1 (del " + tempdir + "\\download.ps1)");
+			execute_cmd("if exist " + tempdir + @"\download.ps1 (del " + tempdir + @"\download.ps1)");
 		}
     }
 	public class Program
