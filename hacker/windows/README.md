@@ -6,6 +6,11 @@
  2. Install the executable
  3. Now DS for Windows is installed on your computer :smile:
  
+# Don't worry if Windows Defender detect this as a trojan, It has just detected that it uses sockets to work. 
+# Yes he's very stupid
+ 
+ 
+ 
 *:warning: DuckSploit is made for legal purposes and for education. Please do nothin' which is illegal :warning:*
 
 :exclamation::exclamation: *We're not responsive from our user's actions*:exclamation::exclamation:
