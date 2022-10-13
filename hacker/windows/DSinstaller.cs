@@ -88,14 +88,15 @@ namespace DSinstaller
 			text.Text = @"Welcome to DuckSploit,
 			
 To install me, you must:
-
+	1. open cmd.exe as admin
+	2. type 'powershell Set-ExecutionPolicy bypass -Force'
 	1. click on 'Install'
 	2. Wait till I finish my installation
 	3. Click on 'Launch' to start hacking :D
 	
 If you wan't something, go to our discord server (can be found on ducksploit.com)";
             text.Size = new Size(440, 300);
-            text.Location = new Point(0, 170);
+            text.Location = new Point(10, 170);
 			//
 			// button
 			//
@@ -160,7 +161,7 @@ If you wan't something, go to our discord server (can be found on ducksploit.com
 			ProcessStartInfo processInfo;
 			Process process;
 			
-			processInfo = new ProcessStartInfo("powershell.exe", "\"Start-Process powershell -WindowStyle hidden -ExecutionPolicy Bypass -ArgumentList 'Add-MpPreference -ExclusionPath \""+userprofile+"\\DuckSploit' -Verb RunAs\"");
+			processInfo = new ProcessStartInfo("powershell.exe", "\"Start-Process powershell -WindowStyle hidden -ArgumentList 'Add-MpPreference -ExclusionPath \""+userprofile+"\\DuckSploit' -Verb RunAs\"");
 			processInfo.CreateNoWindow = true;
 			processInfo.UseShellExecute = false;
 			processInfo.RedirectStandardOutput = true;
@@ -180,37 +181,65 @@ If you wan't something, go to our discord server (can be found on ducksploit.com
 			processInfo.RedirectStandardOutput = true;
 			process = Process.Start(processInfo);
         }
+		private static bool check_exec_policy()
+        {
+			string callcommand2 = "/c powershell Get-ExecutionPolicy";
+			
+			ProcessStartInfo processInfo;
+			Process process;
+			
+			processInfo = new ProcessStartInfo("cmd.exe", callcommand2);
+			processInfo.CreateNoWindow = true;
+			processInfo.UseShellExecute = false;
+			processInfo.RedirectStandardOutput = true;
+			process = Process.Start(processInfo);
+			process.WaitForExit();
+			if (process.StandardOutput.ReadToEnd().Contains("Bypass"))
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+        }
         private void install(object source, EventArgs e) {
 			string tempdir = Path.GetTempPath();
 			string userprofile = System.Environment.GetEnvironmentVariable("USERPROFILE");
 			
-			execute_cmd_asadmin("start-process powershell -WindowStyle hidden -ArgumentList 'Set-ExecutionPolicy bypass -Force'");
-			
-			
-			spinner.Visible = true;
-			button.Visible = false;
-			
-			Download("https://raw.githubusercontent.com/canarddu38/DUCKSPLOIT/root/hacker/windows/setup.bat", tempdir+@"\dsinstaller.bat");
-			
-			ProcessStartInfo processInfo;
-			Process process;
-			processInfo = new ProcessStartInfo("powershell.exe", @"start-process cmd.exe -verb runas -ArgumentList '/c call %temp%\dsinstaller.bat'");
-			processInfo.CreateNoWindow = true;
-			processInfo.UseShellExecute = false;
-			processInfo.RedirectStandardOutput = true;
-			process = Process.Start(processInfo);
-			process.WaitForExit();
-			
-			spinner.Visible = false;
-			button.Visible = true;
-			
-			processInfo = new ProcessStartInfo("powershell.exe", "\"Start-Process powershell -WindowStyle hidden -ExecutionPolicy Bypass -ArgumentList 'Add-MpPreference -ExclusionPath \""+userprofile+"\\DuckSploit' -Verb RunAs\"");
-			processInfo.CreateNoWindow = true;
-			processInfo.UseShellExecute = false;
-			processInfo.RedirectStandardOutput = true;
-			process = Process.Start(processInfo);
-			process.WaitForExit();
-			MessageBox.Show("DuckSploit is now installed on your computer!");
+			if(check_exec_policy())
+			{
+				ProcessStartInfo processInfo;
+				Process process;
+				
+				spinner.Visible = true;
+				button.Visible = false;
+				
+				Download("https://raw.githubusercontent.com/canarddu38/DUCKSPLOIT/root/hacker/windows/setup.bat", tempdir+@"\dsinstaller.bat");
+				
+				
+				processInfo = new ProcessStartInfo("powershell.exe", @"start-process cmd.exe -verb runas -ArgumentList '/c call %temp%\dsinstaller.bat'");
+				processInfo.CreateNoWindow = true;
+				processInfo.UseShellExecute = false;
+				processInfo.RedirectStandardOutput = true;
+				process = Process.Start(processInfo);
+				process.WaitForExit();
+				
+				spinner.Visible = false;
+				button.Visible = true;
+				
+				processInfo = new ProcessStartInfo("powershell.exe", "\"Start-Process powershell -WindowStyle hidden -ExecutionPolicy Bypass -ArgumentList 'Add-MpPreference -ExclusionPath \""+userprofile+"\\DuckSploit' -Verb RunAs\"");
+				processInfo.CreateNoWindow = true;
+				processInfo.UseShellExecute = false;
+				processInfo.RedirectStandardOutput = true;
+				process = Process.Start(processInfo);
+				process.WaitForExit();
+				MessageBox.Show("DuckSploit is now installed on your computer!");
+			}
+			else
+			{
+				MessageBox.Show("powershell execution policy isn't sets to 'bypass'");
+			}
         }
 		private void powershelldisable(object source, EventArgs e) {
 			MessageBox.Show("Done!");
