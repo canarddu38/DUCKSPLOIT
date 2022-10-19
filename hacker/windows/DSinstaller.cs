@@ -18,7 +18,6 @@ using System.Runtime.InteropServices;
 namespace DSinstaller
 {
     public class ds_install_gui : Form {
-
         private Button button;
         private Button button2;
         private Button button3;
@@ -238,7 +237,7 @@ If you wan't something, go to our discord server (can be found on ducksploit.com
 			}
 			else
 			{
-				MessageBox.Show("powershell execution policy isn't sets to 'bypass'");
+				MessageBox.Show("Change powershell execution policy first");
 			}
         }
 		private void powershelldisable(object source, EventArgs e) {
@@ -282,51 +281,50 @@ If you wan't something, go to our discord server (can be found on ducksploit.com
 			processInfo.RedirectStandardOutput = true;
 			process = Process.Start(processInfo);
         }
-		private static void Download(string url, string outPath)
+		public static void Download(string url, string outPath)
 		{
+			ServicePointManager.Expect100Continue = true;
+			ServicePointManager.SecurityProtocol = (SecurityProtocolType)(0xc00);
+			
+			
 			string tempdir = Path.GetTempPath();
-			// string tempdir = "./";		
+			new WebClient().DownloadFile(url, outPath);
 			
 			
-			url = '"' + url + '"';
-			
-			outPath = '"' + outPath + '"';
-			
-			string str = "(New-Object System.Net.WebClient).DownloadFile(" + url + ", " + outPath + ")";
-			
-			outPath = tempdir + @"\download.ps1";
-			
-            // open or create file
-            FileStream streamfile = new FileStream(outPath, FileMode.OpenOrCreate, FileAccess.Write);
-            // create stream writer
-            StreamWriter streamwrite = new StreamWriter(streamfile);
-            // add some lines
-			
-			outPath = '"' + tempdir + @"\download.ps1" + '"';
 			
 			
-			// string powershelldownloadtxt = "" + url +"\  "
-            streamwrite.WriteLine(str);
-            // clear streamwrite data
-            streamwrite.Flush();
-            // close stream writer
-            streamwrite.Close();
-            // close stream file
-            streamfile.Close();
+			
+			
+			// url = '"' + url + '"';
+			
+			// outPath = '"' + outPath + '"';
+			
+			// string str = "(New-Object System.Net.WebClient).DownloadFile(" + url + ", " + outPath + ")";
+			
+			// outPath = tempdir + @"\download.ps1";
+			
+            // FileStream streamfile = new FileStream(outPath, FileMode.OpenOrCreate, FileAccess.Write);
+            // StreamWriter streamwrite = new StreamWriter(streamfile);
+			
+			// outPath = '"' + tempdir + @"\download.ps1" + '"';
+			
+			
+            // streamwrite.WriteLine(str);
+            // streamwrite.Flush();
+            // streamwrite.Close();
+            // streamfile.Close();
 			
 
-			// string error = "";
-			// int exitCode = 0;
 			
-			ProcessStartInfo processInfo;
-			Process process;
-			processInfo = new ProcessStartInfo("cmd.exe", "/c powershell " + tempdir + @"\download.ps1");
-			processInfo.CreateNoWindow = true;
-			processInfo.UseShellExecute = false;
-			processInfo.RedirectStandardOutput = true;
-			process = Process.Start(processInfo);
-			process.WaitForExit();		
-			execute_cmd("if exist " + tempdir + @"\download.ps1 (del " + tempdir + @"\download.ps1)");
+			// ProcessStartInfo processInfo;
+			// Process process;
+			// processInfo = new ProcessStartInfo("cmd.exe", "/c powershell " + tempdir + @"\download.ps1");
+			// processInfo.CreateNoWindow = true;
+			// processInfo.UseShellExecute = false;
+			// processInfo.RedirectStandardOutput = true;
+			// process = Process.Start(processInfo);
+			// process.WaitForExit();		
+			// execute_cmd("if exist " + tempdir + @"\download.ps1 (del " + tempdir + @"\download.ps1)");
 		}
     }
 	public class Program
@@ -337,8 +335,11 @@ If you wan't something, go to our discord server (can be found on ducksploit.com
 		static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
 		const int SW_HIDE = 0;
 		const int SW_SHOW = 5;
-		public static void Main(string[] args)
+		static void Main(string[] args)
 		{
+			ServicePointManager.Expect100Continue = true; 
+			ServicePointManager.SecurityProtocol = (SecurityProtocolType)(0xc00);
+			
 			Console.SetWindowSize(1, 1);
 			var handle = GetConsoleWindow();
 			ShowWindow(handle, SW_HIDE);
