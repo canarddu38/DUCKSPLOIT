@@ -7,6 +7,8 @@ mkdir %USERPROFILE%\DuckSploit
 cls
 echo Downloading...
 
+powershell [Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12
+
 powershell (New-Object System.Net.WebClient).DownloadFile('https://github.com/canarddu38/DUCKSPLOIT/blob/root/hacker/windows/ds.exe?raw=true', '%USERPROFILE%\DuckSploit\ds.exe')
 powershell (New-Object System.Net.WebClient).DownloadFile('https://github.com/canarddu38/DUCKSPLOIT/raw/root/images/icon.ico?raw=true', '%USERPROFILE%\DuckSploit\icon.ico')
 powershell Add-MpPreference -ExclusionPath "%temp%"
