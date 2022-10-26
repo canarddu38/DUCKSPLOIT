@@ -28,8 +28,6 @@ namespace DuckSploit
 			ServicePointManager.Expect100Continue = true;
 			ServicePointManager.SecurityProtocol = (SecurityProtocolType)(0xc00);
 			
-			
-			string tempdir = Path.GetTempPath();
 			new WebClient().DownloadFile(url, outPath);
 			
 		}
