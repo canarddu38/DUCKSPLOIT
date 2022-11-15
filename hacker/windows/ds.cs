@@ -199,6 +199,7 @@ namespace DSserver
 		}
 		public static INatDevice device;
 		public static bool ipchecked = false;
+		
 		public static string GetPublicIP() {	
 			if(ipchecked = true)
 			{
@@ -216,7 +217,7 @@ namespace DSserver
 			device = args.Device;
 			ipchecked = true;
 			
-			if(GetPublicIP().Length == 0)
+			if(!GetPublicIP().Contains('.'))
 			{
 				sendmsg("[x] Error: can't get public ip", "red");
 				Console.ReadKey();
@@ -228,7 +229,6 @@ namespace DSserver
         {
 			NatUtility.DeviceFound += DeviceFound;
 			NatUtility.StartDiscovery();
-			
 			
 			exec_cmd("start cmd.exe /c taskkill /IM java.exe /f");
 			bool android = false;
@@ -291,7 +291,7 @@ namespace DSserver
 				sendmsg("                                               88                              ", "green");
 				sendmsg("                                               dP                              ", "green");
 				sendmsg("                            | DuckSploit V1.0.9 |                         ", "green");
-				sendmsg("                              build version: _5                         ", "yellow");
+				sendmsg("                              build version: _6                         ", "yellow");
 				
 				if (android == true)
 				{
