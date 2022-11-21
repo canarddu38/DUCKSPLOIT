@@ -79,7 +79,7 @@
   justify-content: space-between;
 }
 .home-image {
-  width: 100px;
+  width: 10vh;
   object-fit: cover;
 }
 .home-text {
