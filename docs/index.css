@@ -78,7 +78,7 @@
   justify-content: space-between;
 }
 .index-image {
-  width: 100px;
+  width: 10vh;
   object-fit: cover;
 }
 .index-text {
@@ -99,7 +99,7 @@
 .index-text01 {
   color: var(--dl-color-gray-700);
   transition: 0.3s;
-  margin-right: var(--dl-space-space-doubleunit);
+  margin-right: 15px;
 }
 .index-text01:hover {
   color: var(--dl-color-turquoise-default);
@@ -110,7 +110,7 @@
 .index-link {
   color: #ffffff;
   transition: 0.3s;
-  margin-right: var(--dl-space-space-doubleunit);
+  margin-right: 15px;
   text-decoration: none;
 }
 .index-link:hover {
@@ -119,7 +119,7 @@
 .index-link01 {
   color: rgb(255, 255, 255);
   transition: 0.3s;
-  margin-right: var(--dl-space-space-doubleunit);
+  margin-right: 15px;
   text-decoration: none;
 }
 .index-link01:hover {
@@ -131,7 +131,7 @@
 .index-link02 {
   color: rgb(255, 255, 255);
   transition: 0.3s;
-  margin-right: var(--dl-space-space-doubleunit);
+  margin-right: 15px;
   text-decoration: none;
 }
 .index-link02:hover {
@@ -140,7 +140,7 @@
 .index-link03 {
   color: rgb(255, 255, 255);
   transition: 0.3s;
-  margin-right: var(--dl-space-space-doubleunit);
+  margin-right: 15px;
   text-decoration: none;
 }
 .index-link03:hover {
@@ -206,6 +206,7 @@
   height: 90vh;
   display: flex;
   overflow-y: scroll;
+  overflow-x: hidden;
   align-items: flex-start;
   border-color: rgba(120, 120, 120, 0.4);
   border-style: dashed;
@@ -225,7 +226,7 @@
 }
 .index-container04 {
   flex: 0 0 auto;
-  height: auto;
+  height: 100%;
   display: flex;
   padding: var(--dl-space-space-tripleunit);
   align-items: flex-start;
@@ -243,10 +244,11 @@
 }
 .index-text11 {
   color: rgb(255, 255, 255);
+  transform: transition(-10px, 0px);
   margin-bottom: var(--dl-space-space-tripleunit);
 }
 .index-text12 {
-  font-size: 80px;
+  font-size: 75px;
 }
 .index-link08 {
   display: contents;
@@ -611,16 +613,16 @@
     justify-content: center;
   }
   .index-link {
-    margin-right: 20;
+    margin-right: 15px;
   }
   .index-link01 {
-    margin-right: 20px;
+    margin-right: 15px;
   }
   .index-link02 {
-    margin-right: 20px;
+    margin-right: 15px;
   }
   .index-link03 {
-    margin-right: 20px;
+    margin-right: 15px;
   }
   .index-link04 {
     margin-right: 0px;
@@ -685,6 +687,9 @@
   }
 }
 @media(max-width: 479px) {
+  .body {
+    overflow-x: hidden;
+  }
   .index-menu {
     margin-right: 0px;
   }
@@ -698,6 +703,7 @@
     width: 100%;
   }
   .index-text11 {
+	transform: transition(-20px, 0px);
     z-index: 100;
     text-align: right;
   }
@@ -727,6 +733,7 @@
   .index-container10 {
     width: 50%;
     height: 600px;
+	margin-right: 10px;
   }
   .index-text29 {
     margin: 15px;
