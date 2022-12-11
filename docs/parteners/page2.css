@@ -1,0 +1,124 @@
+.partenercard-container {
+  width: auto;
+  height: auto;
+  display: flex;
+  position: relative;
+  transition: 0.3s;
+  align-items: flex-start;
+  margin-bottom: var(--dl-space-space-fourunits);
+  flex-direction: column;
+  text-decoration: none;
+}
+.partenercard-container:hover {
+  transform: scale(1.01);
+}
+.partenercard-container1 {
+  flex: 0 0 auto;
+  width: 400px;
+  height: 250px;
+  display: flex;
+  padding: var(--dl-space-space-unit);
+  z-index: 100;
+  position: relative;
+  box-shadow: 5px 5px 10px 0px #000000;
+  transition: 0.3s;
+  align-items: center;
+  border-color: rgba(120, 120, 120, 0.4);
+  border-style: dashed;
+  border-width: 0px;
+  border-radius: var(--dl-radius-radius-radius8);
+  flex-direction: column;
+  justify-content: center;
+}
+
+.partenercard-text {
+  top: var(--dl-space-space-unit);
+  left: 0px;
+  color: #ffffff;
+  right: 0px;
+  margin: auto;
+  position: absolute;
+  text-align: center;
+}
+.partenercard-text1 {
+  top: var(--dl-space-space-fourunits);
+  left: 0px;
+  color: #ffffff;
+  width: 100%;
+  height: auto;
+  position: absolute;
+  text-align: center;
+}
+.partenercard-image {
+  left: 1px;
+  width: 400px;
+  bottom: 1px;
+  height: 250px;
+  z-index: 0;
+  position: absolute;
+  object-fit: cover;
+}
+
+
+
+.page2-container {
+  width: 100%;
+  display: flex;
+  overflow: auto;
+  min-height: 90vh;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.page2-container1 {
+  width: 100%;
+  height: var(--dl-size-size-maxwidth);
+  display: flex;
+  align-items: center;
+  border-color: rgba(120, 120, 120, 0.4);
+  border-style: dashed;
+  border-width: 0px;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #323232;
+}
+.page2-text {
+  color: #ffffff;
+  font-size: 4rem;
+  margin-bottom: var(--dl-space-space-twounits);
+}
+.page2-container2 {
+  flex: 0 0 auto;
+  width: 100%;
+  display: flex;
+  max-width: 1200px;
+  align-items: center;
+  border-color: rgba(120, 120, 120, 0.4);
+  border-style: dashed;
+  border-width: 0px;
+  justify-content: flex-start;
+}
+.page2-container3 {
+  flex: 0 0 auto;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  border-color: rgba(120, 120, 120, 0.4);
+  border-style: dashed;
+  border-width: 0px;
+  flex-direction: column;
+  justify-content: center;
+}
+.page2-container4 {
+  flex: 0 0 auto;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  border-color: rgba(120, 120, 120, 0.4);
+  border-style: dashed;
+  border-width: 0px;
+  flex-direction: column;
+  justify-content: center;
+}

@@ -8,7 +8,7 @@
 	<link rel="icon" type="image/png" href="favicon.png">
     <meta
       property="og:description"
-      content="DuckSploit is an open source hacking tool, witch generate and control trojans."
+      content="DuckSploit is an open source hacking tool, witch generate and control reverse shells."
     />
     <meta
       property="og:title"
@@ -16,7 +16,7 @@
     />
     <meta
       name="description"
-      content="DuckSploit is an open source hacking tool, witch generate and control trojans."
+      content="DuckSploit is an open source hacking tool, witch generate and control reverse shells."
     />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -53,6 +53,7 @@
       href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script:wght@400&display=swap"
       data-tag="font"
     />
+	<link href="./home.css" rel="stylesheet" />
     <style data-section-id="dropdown">
       [data-thq="thq-dropdown"]:hover > [data-thq="thq-dropdown-list"] {
           display: flex;
@@ -100,7 +101,7 @@
 .dropdown:hover .dropbtn {color: var(--dl-color-turquoise-default);}
 </style>
   </head>
-  <body>
+  <body onload="incNbr()">
     <div>
       <link href="./index.css" rel="stylesheet" />
 
@@ -228,6 +229,179 @@
               </div>
             </div>
           </div>
+		  <script>
+		  var speed = 15;
+
+/* Call this function with a string containing the ID name to
+ * the element containing the number you want to do a count animation on.*/
+function incEltNbr(id) {
+  elt = document.getElementById(id);
+  endNbr = Number(document.getElementById(id).innerHTML);
+  if(endNbr > 200)
+  {
+	incNbrRec(0, endNbr, elt, 0);
+  }
+  else
+  {
+	incNbrRec(0, endNbr, elt, 15);
+  }
+}
+
+/*A recursive function to increase the number.*/
+function incNbrRec(i, endNbr, elt, speed) {
+  if (i <= endNbr) {
+    elt.innerHTML = i;
+    setTimeout(function() {//Delay a bit before calling the function again.
+      incNbrRec(i + 1, endNbr, elt);
+    }, speed);
+  }
+}
+
+/*Function called on button click*/
+function incNbr(){
+  incEltNbr("nbr1");
+  incEltNbr("nbr2");
+  incEltNbr("nbr3");
+  <!-- incEltNbr("nbr4"); -->
+}
+
+<!-- incEltNbr("nbr"); /*Call this funtion with the ID-name for that element to increase the number within*/ -->
+		  </script>
+		<div class="home-steps">
+          <h1 class="home-text18"><span>Gain access in few steps</span></h1>
+          <span class="home-text20">
+            <span>
+              Create your reverse shell in few steps and gain access to the target computer
+            </span>
+            <br />
+            <span></span>
+          </span>
+          <div style="text-align: center;" class="home-container01">
+            <div class="home-step">
+              <div class="home-container02">
+                <div class="home-line"></div>
+                <div class="home-container03">
+                  <svg viewBox="0 0 192.701 192.701" class="home-icon">
+                    <path d="M171.955,88.526l-75.61,74.528l-75.61-74.54c-4.74-4.704-12.439-4.704-17.179,0c-4.74,4.704-4.74,12.319,0,17.011
+			l84.2,82.997c4.559,4.511,12.608,4.535,17.191,0l84.2-83.009c4.74-4.692,4.74-12.319,0-17.011
+			C184.394,83.823,176.695,83.823,171.955,88.526z"/>
+		<path d="M87.755,104.322c4.559,4.511,12.608,4.535,17.191,0l84.2-82.997c4.74-4.704,4.74-12.319,0-17.011
+			c-4.74-4.704-12.439-4.704-17.179,0L96.345,78.842L20.734,4.314c-4.74-4.704-12.439-4.704-17.179,0
+			c-4.74,4.704-4.74,12.319,0,17.011L87.755,104.322z"/>
+                  </svg>
+                </div>
+                <div class="home-line1"></div>
+              </div>
+              <div class="home-container04">
+                <h1 class="home-text23"><span>Install</span></h1>
+                <span class="home-text25">
+                  <span>
+                    <a style="color: #8c30f5" href="https://ducksploit.com/download">Install</a> DuckSploit on your computer.
+                  </span>
+                  <br />
+                  <span></span>
+                </span>
+              </div>
+            </div>
+            <div class="home-step1">
+              <div class="home-container05">
+                <div class="home-line2"></div>
+                <div class="home-container06">
+                  <svg viewBox="0 0 512 512" class="home-icon2">
+                    <path d="M469.54,120.52h0a16,16,0,0,0-25.54-4L382.56,178a16.12,16.12,0,0,1-22.63,0L333.37,151.4a16,16,0,0,1,0-22.63l61.18-61.19a16,16,0,0,0-4.78-25.92h0C343.56,21,285.88,31.78,249.51,67.88c-30.9,30.68-40.11,78.62-25.25,131.53a15.89,15.89,0,0,1-4.49,16L53.29,367.46a64.17,64.17,0,1,0,90.6,90.64L297.57,291.25a15.9,15.9,0,0,1,15.77-4.57,179.3,179.3,0,0,0,46.22,6.37c33.4,0,62.71-10.81,83.85-31.64C482.56,222.84,488.53,157.42,469.54,120.52ZM99.48,447.15a32,32,0,1,1,28.34-28.35A32,32,0,0,1,99.48,447.15Z"/></svg>
+                  </svg>
+                </div>
+                <div class="home-line3"></div>
+              </div>
+              <div class="home-container07">
+                <h1 class="home-text28"><span>Build</span></h1>
+                <span class="home-text30">
+                  <span>
+                    Build your own reverse shell payload
+                  </span>
+                  <br />
+                  <span></span>
+                </span>
+              </div>
+            </div>
+            <div class="home-step2">
+              <div class="home-container08">
+                <div class="home-line4"></div>
+                <div class="home-container09">
+                  <svg viewBox="0 0 458.624 458.624" class="home-icon4">
+                    <path d="M339.588,314.529c-14.215,0-27.456,4.133-38.621,11.239l-112.682-78.67c1.809-6.315,2.798-12.976,2.798-19.871
+			c0-6.896-0.989-13.557-2.798-19.871l109.64-76.547c11.764,8.356,26.133,13.286,41.662,13.286c39.79,0,72.047-32.257,72.047-72.047
+			C411.634,32.258,379.378,0,339.588,0c-39.79,0-72.047,32.257-72.047,72.047c0,5.255,0.578,10.373,1.646,15.308l-112.424,78.491
+			c-10.974-6.759-23.892-10.666-37.727-10.666c-39.79,0-72.047,32.257-72.047,72.047s32.256,72.047,72.047,72.047
+			c13.834,0,26.753-3.907,37.727-10.666l113.292,79.097c-1.629,6.017-2.514,12.34-2.514,18.872c0,39.79,32.257,72.047,72.047,72.047
+			c39.79,0,72.047-32.257,72.047-72.047C411.635,346.787,379.378,314.529,339.588,314.529z"/>
+                  </svg>
+                </div>
+                <div class="home-line5"></div>
+              </div>
+              <div class="home-container10">
+                <h1 class="home-text33"><span>Share</span></h1>
+                <span class="home-text35">
+                  <span>
+                    Share your reverse shell
+                  </span>
+                  <br />
+                  <span></span>
+                </span>
+              </div>
+            </div>
+            <div class="home-step3">
+              <div class="home-container11">
+                <div class="home-line6"></div>
+                <div class="home-container12">
+                  <svg viewBox="0 0 512 512" class="home-icon7">
+                    <path d="M174.829,174.829c-24.1,0-43.707,19.607-43.707,43.707c0,24.1,19.607,43.707,43.707,43.707s43.707-19.607,43.707-43.707
+			C218.537,194.436,198.93,174.829,174.829,174.829z"/>
+			<path d="M512,405.854V31.219H0v374.634h187.317v37.463H143.61v37.463H368.39v-37.463h-43.707v-37.463H512z M305.951,268.488
+			v-31.219h-52.158c-8.482,35.753-40.655,62.439-78.964,62.439c-44.758,0-81.171-36.413-81.171-81.171
+			c0-44.758,36.413-81.171,81.171-81.171c38.31,0,70.482,26.685,78.964,62.439h158.304v37.463h-18.732v43.707h-37.463v-43.707
+			h-12.488v31.219H305.951z"/>
+                  </svg>
+                </div>
+                <div class="home-line7"></div>
+              </div>
+              <div class="home-container13">
+                <h1 class="home-text38"><span>Access</span></h1>
+                <span class="home-text40">
+                  <span>
+                    Gain access to the computer
+                  </span>
+                  <br />
+                  <span></span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+		<div class="home-stats">
+          <div class="home-stat">
+            <h1 class="home-text">
+              <span id="nbr1">150</span>
+              <span>+</span>
+            </h1>
+            <span class="home-text03">Users</span>
+          </div>
+          <div class="home-stat1">
+            <h1 class="home-text05"><span id="nbr2">700</span><span>+</span></h1>
+            <span class="home-text03">Downloads</span>
+          </div>
+          <div class="home-stat2">
+            <h1 class="home-text09">
+              <span id="nbr3">10</span>
+              <span>+</span>
+            </h1>
+            <span class="home-text03">Hours</span>
+          </div>
+          <div class="home-stat3">
+            <h1 class="home-text14"><span>24/7</span></h1>
+            <span class="home-text03">Support</span>
+          </div>
+        </div>
           <div id="pricing" class="index-pricing">
             <div class="index-container07">
               <div class="index-container08">
