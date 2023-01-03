@@ -1,3 +1,16 @@
+index-image3:hover {
+  -webkit-filter: invert(100%);
+  filter: invert(100%);
+}
+index-image2:hover {
+  -webkit-filter: invert(100%);
+  filter: invert(100%);
+}
+index-image1:hover {
+  -webkit-filter: invert(100%);
+  filter: invert(100%);
+}
+
 .primary-button-container {
   display: flex;
   position: relative;
