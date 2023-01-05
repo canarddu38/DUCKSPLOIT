@@ -53,6 +53,7 @@
   left: 1px;
   width: 400px;
   bottom: 1px;
+  border-radius: var(--dl-radius-radius-radius8);
   height: 250px;
   z-index: 0;
   position: absolute;
