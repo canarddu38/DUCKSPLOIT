@@ -84,7 +84,7 @@
   background-color: #f1f1f1;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
+  z-index: 9999;
 }
 
 .dropdown-content a {
@@ -105,94 +105,16 @@
     <div>
       <link href="./index.css" rel="stylesheet" />
 
-      <div class="index-container">
-        <div data-role="Header" class="index-header-container">
-          <header class="index-header">
-            <div class="index-logo">
-              <img
-                alt="image"
-                src="public/playground_assets/icon-1500h.png"
-                class="index-image"
-              />
-              <h1 style="" class="index-text">uckSploit</h1>
-            </div>
-            <div class="index-menu">
-              <span class="index-text01">
-                <span class="index-text02">Home</span>
-                <br />
-              </span>
-			  <a
-                href="https://ducksploit.com/docs"
-                target="_blank"
-                rel="noreferrer noopener"
-                class="index-link02"
-              >
-                Docs
-              </a>
-			  <div class="dropdown">
-				  <button class="dropbtn">DANG</button>
-				  <div class="dropdown-content">
-					<a href="dang/">Home</a>
-					<a href="https://github.com/canarddu38/Dang">Docs</a>
-					<a href="dang/download.html">Download</a>
-					<a href="https://discord.com/invite/AepgsWPcVS">Payloads</a>
-				  </div>
-			  </div>
-			  <div class="dropdown">
-				  <button class="dropbtn">Community</button>
-				  <div class="dropdown-content">
-					<a href="https://discord.com/invite/sTVWespH4M">Discord [0.1K]</a>
-					<a href="https://forum.ducksploit.com">Forum [0.1K]</a>
-					<a href="https://www.youtube.com/@ducksploit">YouTube [0.01K]</a>
-				  </div>
-			  </div>
-			  <div class="dropdown">
-				  <button class="dropbtn">Other</button>
-				  <div class="dropdown-content">
-					<a href="https://leaks.ducksploit.com/">DSleaks</a>
-					<a href="https://store.ducksploit.com">Store</a>
-				  </div>
-			  </div>
-              <a
-                href="https://ducksploit.com/payement/buy_pro.html"
-                target="_blank"
-                rel="noreferrer noopener"
-                class="index-link04"
-              >
-                <span>Buy pro</span>
-                <br />
-              </a>
-            </div>
-            <div class="index-container01">
-              <a
-                href="https://ducksploit.com/download"
-                target="_blank"
-                rel="noreferrer noopener"
-                class="index-link05"
-              >
-                <img
-                  alt="image"
-                  src="public/playground_assets/linux-badge-1500h.png"
-                  class="index-image1"
-                />
-              </a>
-              <a href="https://ducksploit.com/download" class="index-link06">
-                <img
-                  alt="image"
-                  src="public/playground_assets/windows-badge-1500h.png"
-                  class="index-image2"
-                />
-              </a>
-              <a href="https://ducksploit.com/download" class="index-link07">
-                <img
-                  alt="android"
-                  src="public/playground_assets/android-badge_black-1500h.png"
-                  class="index-image3"
-                />
-              </a>
-            </div>
-          </header>
-        </div>
+      <div id="header" class="index-container">
+	    <script>
+		function httpGet(theUrl) {
+			let xmlHttpReq = new XMLHttpRequest();
+			xmlHttpReq.open("GET", theUrl, false);
+			xmlHttpReq.send(null);
+			return xmlHttpReq.responseText;
+		}
+		document.write(httpGet("https://raw.githubusercontent.com/canarddu38/DUCKSPLOIT/root/docs/header.html"))
+		</script>
         <div class="index-container02">
           <div class="index-container03">
             <div class="index-container04">
@@ -392,10 +314,10 @@ function incNbr(){
           </div>
           <div class="home-stat2">
             <h1 class="home-text09">
-              <span id="nbr3">10</span>
+              <span id="nbr3">100</span>
               <span>+</span>
             </h1>
-            <span class="home-text03">Hours</span>
+            <span class="home-text03">Hours of developement</span>
           </div>
           <div class="home-stat3">
             <h1 class="home-text14"><span>24/7</span></h1>
@@ -491,7 +413,7 @@ function incNbr(){
                 class="index-image5"
               />
               <span class="index-text64">
-                <span>© 2022 DuckSploit,</span>
+                <span>© 2023 DuckSploit,</span>
                 <br />
                 <span>All Rights Reserved.</span>
               </span>
@@ -534,12 +456,12 @@ function incNbr(){
                 <div class="index-container17">
                   <span class="index-text76">Resources</span>
                   <a
-                    href="http://blogs.ducksploit.com"
+                    href="http://forum.ducksploit.com"
                     target="_blank"
                     rel="noreferrer noopener"
                     class="index-link14"
                   >
-                    Blog
+                    Forum
                   </a>
                   <a
                     href="https://github.com/canarddu38/DUCKSPLOIT"

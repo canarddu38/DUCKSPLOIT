@@ -132,89 +132,15 @@
       <link href="../index.css" rel="stylesheet" />
 
       <div class="buypro-container">
-        <header class="buypro-header">
-          <div data-role="Header" class="index-header-container">
-          <header class="index-header">
-            <div class="index-logo">
-              <img
-                alt="image"
-                src="public/playground_assets/icon-1500h.png"
-                class="index-image"
-              />
-              <h1 style="" class="index-text">uckSploit</h1>
-            </div>
-            <div class="index-menu">
-              <a href="https://ducksploit.com/" class="index-link02">Home</a>
-			  <a
-                href="https://ducksploit.com/docs"
-                target="_blank"
-                rel="noreferrer noopener"
-                class="index-link02"
-              >
-                Docs
-              </a>
-			  <div class="dropdown">
-				  <button class="dropbtn">DANG</button>
-				  <div class="dropdown-content">
-					<a href="dang/">Home</a>
-					<a href="https://github.com/canarddu38/Dang">Docs</a>
-					<a href="dang/download.html">Download</a>
-					<a href="https://discord.com/invite/AepgsWPcVS">Payloads</a>
-				  </div>
-			  </div>
-			  <div class="dropdown">
-				  <button class="dropbtn">Community</button>
-				  <div class="dropdown-content">
-					<a href="https://discord.com/invite/sTVWespH4M">Discord [0.1K]</a>
-					<a href="https://forum.ducksploit.com">Forum [0.1K]</a>
-					<a href="https://www.youtube.com/@ducksploit">YouTube [0.01K]</a>
-				  </div>
-			  </div>
-			  <div class="dropdown">
-				  <button class="dropbtn">Other</button>
-				  <div class="dropdown-content">
-					<a href="https://leaks.ducksploit.com/">DSleaks</a>
-					<a href="https://store.ducksploit.com">Store</a>
-				  </div>
-			  </div>
-			  <span style="margin-right: 0px;" class="index-text01">
-                <span class="index-text02">Buy pro</span>
-                <br />
-              </span>
-                <br />
-              </a>
-            </div>
-            <div class="index-container01">
-              <a
-                href="https://ducksploit.com/download"
-                target="_blank"
-                rel="noreferrer noopener"
-                class="index-link05"
-              >
-                <img
-                  alt="image"
-                  src="public/playground_assets/linux-badge-1500h.png"
-                  class="index-image1"
-                />
-              </a>
-              <a href="https://ducksploit.com/download" class="index-link06">
-                <img
-                  alt="image"
-                  src="public/playground_assets/windows-badge-1500h.png"
-                  class="index-image2"
-                />
-              </a>
-              <a href="https://ducksploit.com/download" class="index-link07">
-                <img
-                  alt="android"
-                  src="public/playground_assets/android-badge_black-1500h.png"
-                  class="index-image3"
-                />
-              </a>
-            </div>
-          </header>
-        </div>
-        </header>
+        <script>
+		function httpGet(theUrl) {
+			let xmlHttpReq = new XMLHttpRequest();
+			xmlHttpReq.open("GET", theUrl, false);
+			xmlHttpReq.send(null);
+			return xmlHttpReq.responseText;
+		}
+		document.write(httpGet("https://raw.githubusercontent.com/canarddu38/DUCKSPLOIT/root/docs/header.html"))
+		</script>
         <div class="buypro-container02">
           <div class="buypro-container03">
             <h1 class="buypro-text11">
