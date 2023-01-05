@@ -156,9 +156,7 @@
 }
 .home-container01 {
 	flex: 0 0 auto;
-	width: 100%;
-	display: block ruby;
-	align-items: revert;
+	display: flex;
 	flex-direction: row;
 	align-items: center;
 }
