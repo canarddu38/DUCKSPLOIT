@@ -123,3 +123,9 @@
   flex-direction: column;
   justify-content: center;
 }
+
+@media(max-width: 479px) {
+ .page2-container2 {
+  flex-direction: column;
+ }
+}
