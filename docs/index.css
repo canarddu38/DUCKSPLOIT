@@ -93,6 +93,7 @@ index-image1:hover {
 .index-logo {
   display: flex;
   align-items: center;
+  margin-right: var(--dl-space-space-doubleunit);
   flex-direction: row;
   justify-content: space-between;
 }
