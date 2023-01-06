@@ -108,11 +108,9 @@ index-image1:hover {
   height: 26px;
   display: flex;
   align-self: center;
-  align-items: flex-start;
-  margin-left: var(--dl-space-space-doubleunit);
-  margin-right: var(--dl-space-space-doubleunit);
+  align-items: center;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: center;
   background-color: #000000;
 }
 .index-text01 {
