@@ -107,7 +107,7 @@ index-image1:hover {
 .index-menu {
   width: 100%;
   height: 26px;
-  display: flex;
+  display: gird;
   align-self: center;
   align-items: center;
   flex-direction: row;
