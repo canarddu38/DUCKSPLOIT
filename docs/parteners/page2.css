@@ -83,8 +83,8 @@
 }
 .page2-text {
   color: #ffffff;
-  font-size: 4rem;
-  margin-bottom: var(--dl-space-space-twounits);
+  font-size: 3rem;
+  margin-bottom: 50px
 }
 .page2-container2 {
   flex: 0 0 auto;
