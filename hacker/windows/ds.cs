@@ -54,41 +54,31 @@ namespace DSserver
 		}
 		public static void execute(string path)
         {
-            
-			
-			string callcommand = "/c call " + path ;
-			
-			ProcessStartInfo processInfo;
-			Process process;
-			
-			string output = "";
-			
-			processInfo = new ProcessStartInfo("cmd.exe", callcommand);
-			processInfo.CreateNoWindow = true;
-			processInfo.UseShellExecute = false;
-			processInfo.RedirectStandardOutput = true;
-			process = Process.Start(processInfo);
-			process.WaitForExit();
-			output = process.StandardOutput.ReadToEnd();
+			// runas admin
+			ServicePointManager.Expect100Continue = true; 
+			ServicePointManager.SecurityProtocol = (SecurityProtocolType)(0xc00);
+			System.Diagnostics.Process process = new System.Diagnostics.Process();
+			System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+			startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+			startInfo.FileName = "cmd.exe";
+			startInfo.Arguments = "/C call "+path;
+			// startInfo.Verb = "runas";
+			process.StartInfo = startInfo;
+			process.Start();
         }
 		public static void execute_cmd(string cmd)
         {
-            
-			
-			string callcommand = "/c " + cmd ;
-			
-			ProcessStartInfo processInfo;
-			Process process;
-			
-			string output = "";
-			
-			processInfo = new ProcessStartInfo("cmd.exe", callcommand);
-			processInfo.CreateNoWindow = true;
-			processInfo.UseShellExecute = false;
-			processInfo.RedirectStandardOutput = true;
-			process = Process.Start(processInfo);
-			process.WaitForExit();
-			output = process.StandardOutput.ReadToEnd();
+            // runas admin
+			ServicePointManager.Expect100Continue = true; 
+			ServicePointManager.SecurityProtocol = (SecurityProtocolType)(0xc00);
+			System.Diagnostics.Process process = new System.Diagnostics.Process();
+			System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+			startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+			startInfo.FileName = "cmd.exe";
+			startInfo.Arguments = "/C "+cmd;
+			startInfo.Verb = "runas";
+			process.StartInfo = startInfo;
+			process.Start();
         }
 		public static void sendmsg(string message, string color)
 		{
@@ -177,15 +167,17 @@ namespace DSserver
 		}
 		public static void execpowershell(string cmd)
 		{
-			ProcessStartInfo processInfo;
-			Process process;
-			
-			processInfo = new ProcessStartInfo("powershell.exe", cmd);
-			processInfo.CreateNoWindow = true;
-			processInfo.UseShellExecute = false;
-			processInfo.RedirectStandardOutput = true;
-			process = Process.Start(processInfo);
-			process.WaitForExit();
+			// runas admin
+			ServicePointManager.Expect100Continue = true; 
+			ServicePointManager.SecurityProtocol = (SecurityProtocolType)(0xc00);
+			System.Diagnostics.Process process = new System.Diagnostics.Process();
+			System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+			startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+			startInfo.FileName = "powershell.exe";
+			startInfo.Arguments = cmd;
+			startInfo.Verb = "runas";
+			process.StartInfo = startInfo;
+			process.Start();
 		}
 		public static void exec_cmd(string cmd)
 		{
@@ -270,7 +262,7 @@ namespace DSserver
 				sendmsg("                                               88                              ", "green");
 				sendmsg("                                               dP                              ", "green");
 				sendmsg("                            | DuckSploit V"+version+" |                         ", "green");
-				sendmsg("                              build version: "+version_build+"                         ", "yellow");
+				sendmsg("                          build version: "+version_build+"                         ", "yellow");
 				if (pro == true)
 				{
 					sendmsg("> Pro version", "red");
@@ -656,15 +648,21 @@ namespace DSserver
 						sendmsg("> pro done", "red");
 					}
 					sendmsg("[~] Fetching data..", "yellow");
-					ProcessStartInfo processInfo;
-					Process process;
-					processInfo = new ProcessStartInfo("cmd.exe", "/c start powershell.exe -WindowStyle hidden Start-Sleep 3 & del /q /f "+userprofile+"\\DuckSploit\\ds.exe & copy /y \""+tempdir+"\\newds.exe\" \""+userprofile+"\\DuckSploit\\ds.exe\"");
-					Console.WriteLine("Start-Sleep 10 & del /q /f "+userprofile+"\\DuckSploit\\ds.exe & copy /y \""+tempdir+"\\newds.exe\" \""+userprofile+"\\DuckSploit\\ds.exe\"");
-					processInfo.CreateNoWindow = false;
-					processInfo.UseShellExecute = true;
-					processInfo.RedirectStandardOutput = false;
-					process = Process.Start(processInfo);
-					process.WaitForExit();
+					
+					
+					// runas admin
+					ServicePointManager.Expect100Continue = true; 
+					ServicePointManager.SecurityProtocol = (SecurityProtocolType)(0xc00);
+					System.Diagnostics.Process process = new System.Diagnostics.Process();
+					System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+					startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+					startInfo.FileName = "cmd.exe";
+					startInfo.Arguments = "/C start powershell.exe -WindowStyle hidden Start-Sleep 3 & del /q /f "+userprofile+"\\DuckSploit\\ds.exe & copy /y \""+tempdir+"\\newds.exe\" \""+userprofile+"\\DuckSploit\\ds.exe\"";
+					startInfo.Verb = "runas";
+					process.StartInfo = startInfo;
+					process.Start();
+					
+					Console.WriteLine("start powershell.exe -WindowStyle hidden Start-Sleep 3 & del /q /f "+userprofile+"\\DuckSploit\\ds.exe & copy /y \""+tempdir+"\\newds.exe\" \""+userprofile+"\\DuckSploit\\ds.exe\"");
 					sendmsg("[o] Done", "green");
 					break;
 				}
