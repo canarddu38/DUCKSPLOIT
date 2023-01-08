@@ -262,7 +262,7 @@ namespace DSserver
 				sendmsg("                                               88                              ", "green");
 				sendmsg("                                               dP                              ", "green");
 				sendmsg("                            | DuckSploit V"+version+" |                         ", "green");
-				sendmsg("                          build version: "+version_build+"                         ", "yellow");
+				sendmsg("                            build version: "+version_build+"                         ", "yellow");
 				if (pro == true)
 				{
 					sendmsg("> Pro version", "red");
@@ -636,11 +636,20 @@ namespace DSserver
 					}
 					catch (Exception e)
 					{}
-					
+					string newversion = gethtmlcode("https://github.com/canarddu38/DUCKSPLOIT/raw/root/hacker/windows/version.txt");
+					string[] tempstr = newversion.Split(' ');
+					if(tempstr[0] != version)
+					{
+						sendmsg("[o] New version found: "+newversion, "red");
+						sendmsg("=> Current version: "+version+" "+version_build, "red");
+					}
+					Console.Write("Type any key to continue...");
+					Console.ReadKey();
 					Console.Clear();
 					sendmsg("[~] Updating DuckSploit...", "yellow");
 					sendmsg("[~] Downloading...", "yellow");
-					Download("https://github.com/canarddu38/DUCKSPLOIT/raw/root/hacker/windows/ds.exe", tempdir+"\\newds.exe");
+					string date = DateTime.Now.ToString("hh_mm_dd_MM_yyyy");
+					Download("https://github.com/canarddu38/DUCKSPLOIT/raw/root/hacker/windows/ds.exe", tempdir+"\\newds"+date+".exe");
 					if (pro == true && File.Exists(userprofile+"\\DuckSploit\\pro\\dstoolbox.exe"))
 					{
 						sendmsg("> pro updating...", "red");
@@ -657,12 +666,12 @@ namespace DSserver
 					System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
 					startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
 					startInfo.FileName = "cmd.exe";
-					startInfo.Arguments = "/C start powershell.exe -WindowStyle hidden Start-Sleep 3 & del /q /f "+userprofile+"\\DuckSploit\\ds.exe & copy /y \""+tempdir+"\\newds.exe\" \""+userprofile+"\\DuckSploit\\ds.exe\"";
+					startInfo.Arguments = "/C start powershell.exe -WindowStyle hidden Start-Sleep 3 & del /q /f "+userprofile+"\\DuckSploit\\ds.exe & copy /y \""+tempdir+"\\newds"+date+".exe\" \""+userprofile+"\\DuckSploit\\ds.exe\"";
 					startInfo.Verb = "runas";
 					process.StartInfo = startInfo;
 					process.Start();
 					
-					Console.WriteLine("start powershell.exe -WindowStyle hidden Start-Sleep 3 & del /q /f "+userprofile+"\\DuckSploit\\ds.exe & copy /y \""+tempdir+"\\newds.exe\" \""+userprofile+"\\DuckSploit\\ds.exe\"");
+					Console.WriteLine("start powershell.exe -WindowStyle hidden Start-Sleep 3 & del /q /f "+userprofile+"\\DuckSploit\\ds.exe & copy /y \""+tempdir+"\\newds"+date+".exe\" \""+userprofile+"\\DuckSploit\\ds.exe\"");
 					sendmsg("[o] Done", "green");
 					break;
 				}
