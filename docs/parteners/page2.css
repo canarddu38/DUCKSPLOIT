@@ -42,11 +42,9 @@
 }
 .partenercard-text1 {
   top: var(--dl-space-space-fourunits);
-  left: 0px;
   color: #ffffff;
   width: 100%;
   height: auto;
-  position: absolute;
   text-align: center;
 }
 .partenercard-image {
