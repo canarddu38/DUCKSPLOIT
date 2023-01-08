@@ -79,7 +79,7 @@ index-image1:hover {
 }
 .index-header {
   width: 100%;
-  height: 10vh;
+  height: 5vh;
   display: flex;
   padding: var(--dl-space-space-doubleunit);
   z-index: 100;
@@ -98,7 +98,7 @@ index-image1:hover {
   justify-content: space-between;
 }
 .index-image {
-  width: 10vh;
+  width: 7vh;
   object-fit: cover;
 }
 .index-text {
