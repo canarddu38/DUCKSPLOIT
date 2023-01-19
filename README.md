@@ -56,7 +56,6 @@
 | webcam_snap    | webcam_snap                      | take webcam picture                       |
 | info           | info                             | get all stored victim's infos             |
 | malware        | malware <malware name>           | add malware to vour victim (ds malware --help) |
-|----------------|----------------------------------|-------------------------------------------|
 
 ## Made with ❤️ by DuckpvpTeam's devs
 <br>
