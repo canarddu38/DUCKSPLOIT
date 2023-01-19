@@ -34,17 +34,11 @@
 |    Command     |              Usage               |                  Result                   |
 |----------------|----------------------------------|-------------------------------------------|
 | help           | help                             | getting the command list                  |
-
-### Mouse
 | mouseclick     | mouseclick [right, middle, left] | click the desired mouse button            |
 | mousescroll    | mousescroll <int>                | symulate a scrolling with intensity       |
 | locatemouse    | locatemouse                      | get current victom's mouse locations      |
-
-### Utilities
 | uninstall      | uninstall                        | uninstall ducksploit                      |
 | credits        | credits                          | get ducksploits credits                   |
-
-### EXPLOITS
 | open           | open <app name>                  | open desired app                          |
 | install        | install <path to exe/msi file>   | install package on victim's pc            |
 | download       | download <url>                   | download file in current url              |
@@ -53,22 +47,14 @@
 | closesession   | closesession                     | close current victim's session            |
 | host           | host                             | host file at http://{victim's ip}:8080    |
 | network_info   | network_info                     | get the victim's wifi infos               |
-
-### troll
 | skull          | skull                            | open cmd with skull and crossbones        |
 | msg            | msg <title> <line1> <line2>      | create alertbox with desired infos        |
 | rickroll       | rickroll                         | rockroll your victim ;)                   |
-
-### Stealing
 | steal_pwd      | steal_pwd <firefox/google>       | get all victim's browser saved passwords  |
-
-### Spying
 | desktop_stream | desktop_stream <start/stop>      | stream in real time victim's desktop      |
 | screenshot     | screenshot                       | take screenshot                           |
 | webcam_snap    | webcam_snap                      | take webcam picture                       |
 | info           | info                             | get all stored victim's infos             |
-
-### Evil
 | malware        | malware <malware name>           | add malware to vour victim                |
 |                |                                  | (ds malware --help)                       |
 |----------------|----------------------------------|-------------------------------------------|
