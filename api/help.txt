@@ -30,7 +30,7 @@ commands:
 | shutdown       | shutdown                         | shutdown the victim's pc                  |
 | reboot         | reboot                           | reboot the victim's pc                    |
 | closesession   | closesession                     | close current victim's session            |
-| host           | host                             | host file at http://{victim's ip}:8080    |
+| host           | host                             | host file at http://{victim's ip}         |
 | network_info   | network_info                     | get the victim's wifi infos               |
 |---------------------------------------- [TROLL] ----------------------------------------------|
 | skull          | skull                            | open cmd with skull and crossbones        |
