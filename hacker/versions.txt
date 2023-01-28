@@ -1,4 +1,6 @@
 windows:
--V1.1 #beta|https://ducksploit.com
+-V1.1 #beta|https://ducksploit.com1
 linux:
+-V1.1 #beta|https://ducksploit.com2
 android:
+-V1.1 #beta|https://ducksploit.com3
