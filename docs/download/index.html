@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html style="font-size: 16px; width: 100%; height: 100%; background-image: url(bg.gif); background-position: center;background-size: cover; background-position: top; position: relative;" class="u-responsive-xl"><head>
+<html style="font-size: 16px; width: 100%; height: 100vh; background-position: center;background-size: cover; background-position: top; position: relative;" class="u-responsive-xl"><head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta property="og:image" content="https://ducksploit.com/assets/images/dsbanner.png" />
@@ -11,9 +11,12 @@
     <link rel="stylesheet" href="style2.css" media="screen">
 	<link rel="icon" type="image/png" href="icon.png">
 	<script type="text/javascript" src="get2.js"></script>
-		
-    <style class="u-style"> .u-section-2 {
-	width: 100%; height: 100vh; background-image: url(bg.gif); background-position: center;background-size: cover; background-position: top; position: relative;
+	<script type="text/javascript" src="download.js"></script>
+    <style class="u-style"> 
+	
+.u-section-2 {
+	width: 100%; height: 100vh; 
+	background-position: center;background-size: cover; background-position: top; position: relative;
 }
 .u-section-2 .u-sheet-1 {
   min-height: 932px;
@@ -465,6 +468,9 @@
 	   position: absolute;
        z-index: 3000000;
 	  }
+	  .topcorner:hover {
+		transform: scale(1.1);
+	  }
 	</style>
     <script type="application/ld+json">{
 		"@context": "http://schema.org",
@@ -477,7 +483,7 @@
     <meta property="og:type" content="website">
   
 </head>
-  <body class="body u-body u-xl-mode body" style="width: 100%; height: 100%; background-image: url(bg.gif); background-position: center;background-size: cover; background-position: top; background-repeat: no-repeat; position: relative; min-height: 100%;">
+  <body onload="onload()" class="body u-body u-xl-mode body" style="overflow: hidden; width: 100%; height: 100vh; background-position: center;background-size: cover; background-position: top; background-repeat: no-repeat; position: relative; min-height: 100%;">
 	 <div id="exit" style="overflow: visible;" class="topcorner"></div>
 	 <script>
 	 var exitbut = document.getElementById('exit');
@@ -485,14 +491,13 @@
 		window.location.replace('https://ducksploit.com');
 	 }
 	 </script>
-     <section class="u-align-center u-clearfix u-palette-1-dark-3 u-section-2" id="carousel_e870" style="height:100vh;">
+     <section class="body u-align-center u-clearfix u-palette-1-dark-3 u-section-2" id="carousel_e870" style="height:100%;">
 	 
 	 
 	 
-	 <a href="https://ducksploit.com" style="line-height: 0; font-size: 0; color: transparent;">
+	 <a href="https://ducksploit.com" class="image" style="line-height: 0; font-size: 0; color: transparent;">
 	 <img style="border:0" src="banner.png"></img>
 	 </a>	 
-	 
       <div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-clearfix u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-gutter-30 u-layout-wrap u-layout-wrap-1">
           <div class="u-layout" style="">
@@ -527,62 +532,33 @@
                           </div>Useful
                         </li>
                       </ul>
+						<div style="width: 100%; justify-content: center; text-align: center; postion: absolute; bottom: 0px;" id="linuxdownload">
 						<select name="version_lin" id="version_lin">
-						<script>
-						function httpGet(theUrl) {
-							let xmlHttpReq = new XMLHttpRequest();
-							xmlHttpReq.open("GET", theUrl, false);
-							xmlHttpReq.send(null);
-							return xmlHttpReq.responseText;
-						}
-						versions = httpGet("https://raw.githubusercontent.com/canarddu38/DUCKSPLOIT/root/hacker/versions.txt");
-						var linux_ver = versions.substring(
-							versions.indexOf("windows:") + 9, 
-							versions.lastIndexOf("linux:")
-						);
-						versions_lin_list = linux_ver.split("\n");
-						for(var i = 0; i < versions_lin_list.length; i++) {
-							if(versions_lin_list[i] == "" || versions_lin_list[i] == " ")
-							{
-								temp = versions_lin_list[i].split("|");
-								document.write("<option onclick='set_url("+temp[1]+")' value='"+temp[0]+"'>"+temp[0]+"</option>");
-							}
-							else
-							{
-								temp = versions_lin_list[i].split("|");
-								if(!temp[0] == "")
-								{
-									document.write("<option onclick='set_url("+temp[1]+")' value='"+temp[0]+"'>"+temp[0]+"</option>");
-								}
-							}
-						}
-						console.log(versions_lin_list)
-						</script>
-						</select>
-                      <a href="https://github.com/canarddu38/DUCKSPLOIT/raw/root/hacker/linux/DSinstaller.deb" style="position: absolute; bottom: 0;" class="u-btn u-button-style u-palette-2-base u-btn-1">Download</a>
+						</div>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="u-align-center-lg u-align-center-md u-align-center-xl u-container-style u-layout-cell u-size-20 u-white u-layout-cell-2">
-                <div class="u-border-4 u-border-palette-1-base u-container-layout u-container-layout-4">
-                  <div class="u-align-center u-container-style u-expanded-width u-group u-palette-1-base u-group-3">
-                    <div class="u-container-layout u-valign-middle-lg u-valign-middle-sm u-valign-middle-xl u-valign-middle-xs u-container-layout-5">
-                      <h3 class="u-text u-text-5"><span class="u-file-icon u-icon u-icon-2"><img src="windows.png" alt=""></span> WINDOWS
+			  <div class="u-layout-row" style="">
+              <div class="u-align-center-lg u-align-center-md u-align-center-xl u-container-style u-layout-cell u-left-cell u-size-20 u-white u-layout-cell-1">
+                <div class="u-border-4 u-border-palette-4-base u-container-layout u-container-layout-1">
+                  <div class="u-align-center u-container-style u-expanded-width u-group u-palette-4-base u-group-1">
+                    <div class="u-container-layout u-container-layout-2">
+                      <h3 class="u-text u-text-1"><span class="u-file-icon u-icon u-icon-1"><img src="debian.png" alt=""></span> WINDOWS
                       </h3>
                     </div>
                   </div>
                   <div class="u-container-style u-group u-group-4">
                     <div class="u-container-layout u-valign-top u-container-layout-6">
-                      <h2 id="windows_version" class="u-align-center u-custom-font u-font-montserrat u-text u-text-6">~<br>
+                      <h2 id="linux_version" class="u-align-center u-custom-font u-font-montserrat u-text u-text-6">~<br>
                       </h2>
-                      <ul class="u-align-left u-custom-list u-text u-text-8">
+                      <ul class="u-align-left u-custom-list u-text u-text-8" style="height: ;">
                         <li style="">
                           <div class="u-list-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" version="1.1" xml:space="preserve" class="u-svg-content" viewBox="0 0 512 512" id="svg-0cec"><path d="m202.6 478-202.6-186.6 70.5-76.6 121.5 111.9 239.4-292.7 80.6 65.9z" fill="currentColor"></path></svg>
                           </div>
                         </li>
-                        <li style="">Only for Windows os</li>
+                        <li style="">Only for Linux os</li>
                         <li style="">
                           <div class="u-list-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" version="1.1" xml:space="preserve" class="u-svg-content" viewBox="0 0 512 512" id="svg-0cec"><path d="m202.6 478-202.6-186.6 70.5-76.6 121.5 111.9 239.4-292.7 80.6 65.9z" fill="currentColor"></path></svg>
@@ -594,7 +570,9 @@
                           </div>Useful
                         </li>
                       </ul>
-                      <a href="https://github.com/canarddu38/DUCKSPLOIT/raw/root/hacker/windows/DSinstaller.exe" style="position: absolute; bottom: 0;" class="u-btn u-button-style u-palette-1-base u-btn-2">Download</a>
+						<div style="width: 100%; justify-content: center; text-align: center; postion: absolute; bottom: 0px;" id="linuxdownload">
+						<select name="version_lin" id="version_lin">
+						</div>
                     </div>
                   </div>
                 </div>
@@ -628,8 +606,9 @@
                           </div>Useful
                         </li>
                       </ul>
-                      <a href="https://github.com/canarddu38/DUCKSPLOIT/raw/root/hacker/android/DSinstaller.apk" style="position: relative; bottom: 0;" class="u-btn u-button-style u-palette-2-base u-btn-3">Download</a>
-					  <a href="https://github.com/canarddu38/DUCKSPLOIT/raw/root/hacker/android/DSinstaller(unsigned).apk" style="position: relative; bottom: 0; transform: translateX(-12%);" class="u-btn u-button-style u-palette-2-base u-btn-3">Download(unsigned)</a>
+                      <div style="width: 100%; justify-content: center; text-align: center; postion: absolute; bottom: 0px;" id="androiddownload">
+						<select name="version_and" id="version_and">
+					  </div>
 					</div>
                   </div>
                 </div>
