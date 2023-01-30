@@ -1,3 +1,9 @@
+.u-layout-row {
+	width: 100%;
+}
+.downloaditem {
+	
+}
 select {
 	-webkit-appearance: button;
     -webkit-border-radius: 2px;
@@ -6591,9 +6597,7 @@ section.u-image:not(.u-hover-box),
   }
 }
 .u-layout-row > .u-size-60 {
-  flex: 0 0 100%;
-  max-width: 100%;
-  min-width: 100%;
+  width: 100%;
 }
 .u-layout-col > .u-size-60 {
   flex: 60 0 auto;

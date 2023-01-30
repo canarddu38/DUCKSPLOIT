@@ -11,7 +11,7 @@ function httpGet(theUrl) {
 function onload()
 {
 	//snow effect
-	for (i = 0; i < 75; i++)
+	for (i = 0; i < 50; i++)
 	{
 		document.body.innerHTML+="<div class='snowflake'></div>";
 	}
@@ -49,25 +49,26 @@ function onload()
 		}
 	}
 	document.getElementById('linuxdownload').innerHTML+="<a onclick='window.location=`"+download_url_lin+"`' class='u-btn u-button-style u-palette-2-base u-btn-1'>Download</a>";
+	
 	//windows
-	// versions_win_list = windows_ver.split("\n");
-	// for(var i = 0; i < versions_win_list.length; i++) {
-		// if(versions_win_list[i] == "" || versions_win_list[i] == " ")
-		// {}
-		// else
-		// {
-			// temp = versions_win_list[i].split("|");
-			// if(download_url_win=="")
-			// {
-				// download_url_win=temp[1];
-			// }
-			// if(!temp[0] == "")
-			// {
-				// document.getElementById('version_win').innerHTML+="<option onclick='download_url_win="+temp[1]+"' value='"+temp[0]+"'>"+temp[0]+"</option>";
-			// }
-		// }
-	// }
-	// document.getElementById('windowsdownload').innerHTML+="<a onclick='window.location=`"+download_url_win+"`' class='u-btn u-button-style u-palette-2-base u-btn-1'>Download</a>";
+	versions_win_list = windows_ver.split("\n");
+	for(var i = 0; i < versions_win_list.length; i++) {
+		if(versions_win_list[i] == "" || versions_win_list[i] == " ")
+		{}
+		else
+		{
+			temp = versions_win_list[i].split("|");
+			if(download_url_win=="")
+			{
+				download_url_win=temp[1];
+			}
+			if(!temp[0] == "")
+			{
+				document.getElementById('version_win').innerHTML+="<option onclick='download_url_win="+temp[1]+"' value='"+temp[0]+"'>"+temp[0]+"</option>";
+			}
+		}
+	}
+	document.getElementById('windowsdownload').innerHTML+="<a onclick='window.location=`"+download_url_win+"`' class='u-btn u-button-style u-palette-2-base u-btn-1'>Download</a>";
 	
 	//android
 	versions_and_list = android_ver.split("\n");
