@@ -65,11 +65,17 @@ h2 {
   align-items: center;
   flex-direction: column;
 }
+.downloaditem {
+	width: 20%;
+	z-index: 9999;
+	margin: 50px;
+}
 .download-container1 {
   width: 100%;
   padding-top: 50px;
   /* height: var(--dl-size-size-maxwidth); */
   display: flex;
+  height: auto;
   align-items: center;
   border-color: rgba(120, 120, 120, 0.4);
   border-style: dashed;
@@ -78,6 +84,9 @@ h2 {
 }
 @media(max-width: 767px) {
   .download-container1 {
-    height: 100%;
+    height: auto;
+  }
+  .downloaditem {
+	width: 70%;
   }
 }
