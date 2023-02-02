@@ -1,0 +1,5 @@
+C:\Users\celin\Documents\JULES\DUCKSPLOIT\DS windows\installer\bin\Debug\net7.0-windows\publish\installer.exe
+C:\Users\celin\Documents\JULES\DUCKSPLOIT\DS windows\installer\bin\Debug\net7.0-windows\publish\installer.dll
+C:\Users\celin\Documents\JULES\DUCKSPLOIT\DS windows\installer\bin\Debug\net7.0-windows\publish\installer.deps.json
+C:\Users\celin\Documents\JULES\DUCKSPLOIT\DS windows\installer\bin\Debug\net7.0-windows\publish\installer.runtimeconfig.json
+C:\Users\celin\Documents\JULES\DUCKSPLOIT\DS windows\installer\bin\Debug\net7.0-windows\publish\installer.pdb

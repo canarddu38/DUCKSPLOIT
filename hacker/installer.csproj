@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+	<Authors>DuckpvpTeam</Authors>
+    <PackageProjectUrl>https://ducksploit.com</PackageProjectUrl>
+    <RepositoryType>GitHub</RepositoryType>
+    <RepositoryUrl>https://github.com/canarddu38/DUCKSPLOIT</RepositoryUrl>
+    <Description>DuckSploit is the best remote administration tool of any platforms</Description>
+    <SignAssembly>true</SignAssembly>
+    <Version>1.1</Version>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <Copyright>©2023 DuckpvpTeam</Copyright>
+    <PackageId>DuckSploit.Installer</PackageId>
+    <Product>DuckSploit Installer</Product>
+	<Configuration>Release</Configuration>
+  </PropertyGroup>
+<ItemGroup>
+	<Compile Include="bin\Release\net7.0-windows\publish\installer.dll" />
+</ItemGroup>
+</Project>

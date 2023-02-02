@@ -1,0 +1,15 @@
+C:\Users\celin\Documents\JULES\DUCKSPLOIT\DS windows\installer\bin\Release\net7.0-windows\installer.exe
+C:\Users\celin\Documents\JULES\DUCKSPLOIT\DS windows\installer\bin\Release\net7.0-windows\installer.deps.json
+C:\Users\celin\Documents\JULES\DUCKSPLOIT\DS windows\installer\bin\Release\net7.0-windows\installer.runtimeconfig.json
+C:\Users\celin\Documents\JULES\DUCKSPLOIT\DS windows\installer\bin\Release\net7.0-windows\installer.dll
+C:\Users\celin\Documents\JULES\DUCKSPLOIT\DS windows\installer\bin\Release\net7.0-windows\installer.pdb
+C:\Users\celin\Documents\JULES\DUCKSPLOIT\DS windows\installer\obj\Release\net7.0-windows\installer.csproj.AssemblyReference.cache
+C:\Users\celin\Documents\JULES\DUCKSPLOIT\DS windows\installer\obj\Release\net7.0-windows\installer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\celin\Documents\JULES\DUCKSPLOIT\DS windows\installer\obj\Release\net7.0-windows\installer.AssemblyInfoInputs.cache
+C:\Users\celin\Documents\JULES\DUCKSPLOIT\DS windows\installer\obj\Release\net7.0-windows\installer.AssemblyInfo.cs
+C:\Users\celin\Documents\JULES\DUCKSPLOIT\DS windows\installer\obj\Release\net7.0-windows\installer.csproj.CoreCompileInputs.cache
+C:\Users\celin\Documents\JULES\DUCKSPLOIT\DS windows\installer\obj\Release\net7.0-windows\installer.dll
+C:\Users\celin\Documents\JULES\DUCKSPLOIT\DS windows\installer\obj\Release\net7.0-windows\refint\installer.dll
+C:\Users\celin\Documents\JULES\DUCKSPLOIT\DS windows\installer\obj\Release\net7.0-windows\installer.pdb
+C:\Users\celin\Documents\JULES\DUCKSPLOIT\DS windows\installer\obj\Release\net7.0-windows\installer.genruntimeconfig.cache
+C:\Users\celin\Documents\JULES\DUCKSPLOIT\DS windows\installer\obj\Release\net7.0-windows\ref\installer.dll
