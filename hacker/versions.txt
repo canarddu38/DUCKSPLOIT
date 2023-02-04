@@ -1,6 +1,0 @@
-windows:
-V1.1 #beta|https://github.com/canarddu38/DUCKSPLOIT/raw/root/hacker/windows/DSinstaller.exe
-linux:
-V1.0.9 |https://github.com/canarddu38/DUCKSPLOIT/raw/root/hacker/linux/DSinstaller.deb
-android:
-V1.1 #beta|https://github.com/canarddu38/DUCKSPLOIT/raw/root/hacker/android/DSinstaller.apk
