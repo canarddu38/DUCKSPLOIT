@@ -1,5 +1,5 @@
 windows:
-V1.1 #beta|https://raw.githubusercontent.com/canarddu38/DUCKSPLOIT/root/hacker/windows/versions/DSinstaller.exe?raw=true
+V1.1 #beta|https://github.com/canarddu38/DUCKSPLOIT/raw/root/hacker/windows/versions/DSinstaller-1.1-beta.exe
 linux:
 V1.0.9|https://raw.githubusercontent.com/canarddu38/DUCKSPLOIT/root/hacker/linux/DSinstaller.deb?raw=true
 android:
