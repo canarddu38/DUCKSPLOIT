@@ -235,7 +235,7 @@ index-image1:hover {
 }
 .index-container03 {
   width: 100%;
-  height: 2000px;
+  height: auto;
   display: flex;
   align-items: center;
   background-size: cover;
