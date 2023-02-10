@@ -221,7 +221,7 @@ index-image1:hover {
 }
 .index-container02 {
   width: 100%;
-  height: 90vh;
+  height: auto;
   display: flex;
   overflow-y: scroll;
   overflow-x: hidden;
