@@ -84,7 +84,7 @@
   background-color: #f1f1f1;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 9999;
+  z-index: 1;
 }
 
 .dropdown-content a {
@@ -100,12 +100,32 @@
 
 .dropdown:hover .dropbtn {color: var(--dl-color-turquoise-default);}
 </style>
-  </head>
-  <body onload="incNbr()">
-    <div>
-      <link href="./index.css" rel="stylesheet" />
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BQ8GVFRZWB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-      <div id="header" class="index-container">
+  gtag('config', 'G-BQ8GVFRZWB');
+</script>
+  </head>
+  <body onload="load_downloads()">
+  <script>
+  function load_downloads()
+  {
+    fetch("https://dsrestapi-default-rtdb.firebaseio.com/data/downloads.json")
+			  .then(response => response.text())
+			  .then(data => {
+				var downloads = data.replace('"', "").replace('"', "");
+				document.getElementById("nbr2").innerHTML= downloads;
+				incNbr();
+			  });
+  }
+  </script>
+  
+
+<link href="./index.css" rel="stylesheet"><div id="header" class="index-container">
 	    <script>
 		function httpGet(theUrl) {
 			let xmlHttpReq = new XMLHttpRequest();
@@ -115,26 +135,19 @@
 		}
 		document.write(httpGet("https://raw.githubusercontent.com/canarddu38/DUCKSPLOIT/root/docs/header.html"))
 		</script>
-        <div class="index-container02">
+		<div class="index-container02">
           <div class="index-container03">            <div class="index-container04">
               <div class="index-container05">
                 <h1 class="index-text11">
                   <span class="index-text12">DuckSploit</span>
-                  <br />
+                  <br>
                   <span>the best multiplatform</span>
-                  <br />
+                  <br>
                   <span>hacking tool</span>
-                  <br />
+                  <br>
                 </h1>
-                <a
-                  href="https://ducksploit.com/download"
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  class="index-link08"
-                >
-                  <div
-                    class="primary-button-container primary-button-root-class-name"
-                  >
+                <a href="https://ducksploit.com/download" target="_blank" rel="noreferrer noopener" class="index-link08">
+                  <div class="primary-button-container primary-button-root-class-name">
                     <button class="primary-button-button">
                       <span>Try it now</span>
                     </button>
@@ -142,16 +155,12 @@
                 </a>
               </div>
               <div class="index-container06">
-                <img
-                  alt="computer with ducksploit"
-                  src="public/playground_assets/pc-600h.png"
-                  class="index-image4"
-                />
+                <img alt="computer with ducksploit" src="public/playground_assets/pc-600h.png" class="index-image4">
               </div>
             </div>
           </div>
 		  <script>
-		  var speed = 15;
+		  var speed = 30;
 
 /* Call this function with a string containing the ID name to
  * the element containing the number you want to do a count animation on.*/
@@ -164,7 +173,7 @@ function incEltNbr(id) {
   }
   else
   {
-	incNbrRec(0, endNbr, elt, 15);
+	incNbrRec(0, endNbr, elt, 30);
   }
 }
 
@@ -173,8 +182,8 @@ function incNbrRec(i, endNbr, elt, speed) {
   if (i <= endNbr) {
     elt.innerHTML = i;
     setTimeout(function() {//Delay a bit before calling the function again.
-      incNbrRec(i + 1, endNbr, elt);
-    }, speed);
+      incNbrRec(i + 6, endNbr, elt);
+    });
   }
 }
 
@@ -194,7 +203,7 @@ function incNbr(){
             <span>
               Create your reverse shell in few steps and gain access to the target computer
             </span>
-            <br />
+            <br>
             <span></span>
           </span>
           <div style="text-align: center;" class="home-container01">
@@ -205,10 +214,10 @@ function incNbr(){
                   <svg viewBox="0 0 192.701 192.701" class="home-icon">
                     <path d="M171.955,88.526l-75.61,74.528l-75.61-74.54c-4.74-4.704-12.439-4.704-17.179,0c-4.74,4.704-4.74,12.319,0,17.011
 			l84.2,82.997c4.559,4.511,12.608,4.535,17.191,0l84.2-83.009c4.74-4.692,4.74-12.319,0-17.011
-			C184.394,83.823,176.695,83.823,171.955,88.526z"/>
+			C184.394,83.823,176.695,83.823,171.955,88.526z"></path>
 		<path d="M87.755,104.322c4.559,4.511,12.608,4.535,17.191,0l84.2-82.997c4.74-4.704,4.74-12.319,0-17.011
 			c-4.74-4.704-12.439-4.704-17.179,0L96.345,78.842L20.734,4.314c-4.74-4.704-12.439-4.704-17.179,0
-			c-4.74,4.704-4.74,12.319,0,17.011L87.755,104.322z"/>
+			c-4.74,4.704-4.74,12.319,0,17.011L87.755,104.322z"></path>
                   </svg>
                 </div>
                 <div class="home-line1"></div>
@@ -219,7 +228,7 @@ function incNbr(){
                   <span>
                     <a style="color: #8c30f5" href="https://ducksploit.com/download">Install</a> DuckSploit on your computer.
                   </span>
-                  <br />
+                  <br>
                   <span></span>
                 </span>
               </div>
@@ -229,8 +238,8 @@ function incNbr(){
                 <div class="home-line2"></div>
                 <div class="home-container06">
                   <svg viewBox="0 0 512 512" class="home-icon2">
-                    <path d="M469.54,120.52h0a16,16,0,0,0-25.54-4L382.56,178a16.12,16.12,0,0,1-22.63,0L333.37,151.4a16,16,0,0,1,0-22.63l61.18-61.19a16,16,0,0,0-4.78-25.92h0C343.56,21,285.88,31.78,249.51,67.88c-30.9,30.68-40.11,78.62-25.25,131.53a15.89,15.89,0,0,1-4.49,16L53.29,367.46a64.17,64.17,0,1,0,90.6,90.64L297.57,291.25a15.9,15.9,0,0,1,15.77-4.57,179.3,179.3,0,0,0,46.22,6.37c33.4,0,62.71-10.81,83.85-31.64C482.56,222.84,488.53,157.42,469.54,120.52ZM99.48,447.15a32,32,0,1,1,28.34-28.35A32,32,0,0,1,99.48,447.15Z"/></svg>
-                  </svg>
+                    <path d="M469.54,120.52h0a16,16,0,0,0-25.54-4L382.56,178a16.12,16.12,0,0,1-22.63,0L333.37,151.4a16,16,0,0,1,0-22.63l61.18-61.19a16,16,0,0,0-4.78-25.92h0C343.56,21,285.88,31.78,249.51,67.88c-30.9,30.68-40.11,78.62-25.25,131.53a15.89,15.89,0,0,1-4.49,16L53.29,367.46a64.17,64.17,0,1,0,90.6,90.64L297.57,291.25a15.9,15.9,0,0,1,15.77-4.57,179.3,179.3,0,0,0,46.22,6.37c33.4,0,62.71-10.81,83.85-31.64C482.56,222.84,488.53,157.42,469.54,120.52ZM99.48,447.15a32,32,0,1,1,28.34-28.35A32,32,0,0,1,99.48,447.15Z"></path></svg>
+                  
                 </div>
                 <div class="home-line3"></div>
               </div>
@@ -240,7 +249,7 @@ function incNbr(){
                   <span>
                     Build your own reverse shell payload
                   </span>
-                  <br />
+                  <br>
                   <span></span>
                 </span>
               </div>
@@ -255,7 +264,7 @@ function incNbr(){
 			C411.634,32.258,379.378,0,339.588,0c-39.79,0-72.047,32.257-72.047,72.047c0,5.255,0.578,10.373,1.646,15.308l-112.424,78.491
 			c-10.974-6.759-23.892-10.666-37.727-10.666c-39.79,0-72.047,32.257-72.047,72.047s32.256,72.047,72.047,72.047
 			c13.834,0,26.753-3.907,37.727-10.666l113.292,79.097c-1.629,6.017-2.514,12.34-2.514,18.872c0,39.79,32.257,72.047,72.047,72.047
-			c39.79,0,72.047-32.257,72.047-72.047C411.635,346.787,379.378,314.529,339.588,314.529z"/>
+			c39.79,0,72.047-32.257,72.047-72.047C411.635,346.787,379.378,314.529,339.588,314.529z"></path>
                   </svg>
                 </div>
                 <div class="home-line5"></div>
@@ -266,7 +275,7 @@ function incNbr(){
                   <span>
                     Share your reverse shell
                   </span>
-                  <br />
+                  <br>
                   <span></span>
                 </span>
               </div>
@@ -277,11 +286,11 @@ function incNbr(){
                 <div class="home-container12">
                   <svg viewBox="0 0 512 512" class="home-icon7">
                     <path d="M174.829,174.829c-24.1,0-43.707,19.607-43.707,43.707c0,24.1,19.607,43.707,43.707,43.707s43.707-19.607,43.707-43.707
-			C218.537,194.436,198.93,174.829,174.829,174.829z"/>
+			C218.537,194.436,198.93,174.829,174.829,174.829z"></path>
 			<path d="M512,405.854V31.219H0v374.634h187.317v37.463H143.61v37.463H368.39v-37.463h-43.707v-37.463H512z M305.951,268.488
 			v-31.219h-52.158c-8.482,35.753-40.655,62.439-78.964,62.439c-44.758,0-81.171-36.413-81.171-81.171
 			c0-44.758,36.413-81.171,81.171-81.171c38.31,0,70.482,26.685,78.964,62.439h158.304v37.463h-18.732v43.707h-37.463v-43.707
-			h-12.488v31.219H305.951z"/>
+			h-12.488v31.219H305.951z"></path>
                   </svg>
                 </div>
                 <div class="home-line7"></div>
@@ -292,7 +301,7 @@ function incNbr(){
                   <span>
                     Gain access to the computer
                   </span>
-                  <br />
+                  <br>
                   <span></span>
                 </span>
               </div>
@@ -308,15 +317,15 @@ function incNbr(){
             <span class="home-text03">Users</span>
           </div>
           <div class="home-stat1">
-            <h1 class="home-text05"><span id="nbr2">700</span><span>+</span></h1>
+            <h1 class="home-text05"><span id="nbr2"></span><span>+</span></h1>
             <span class="home-text03">Downloads</span>
           </div>
           <div class="home-stat2">
             <h1 class="home-text09">
-              <span id="nbr3">100</span>
+              <span id="nbr">1</span>
               <span>+</span>
             </h1>
-            <span class="home-text03">Hours of developement</span>
+            <span class="home-text03">Year of developement</span>
           </div>
           <div class="home-stat3">
             <h1 class="home-text14"><span>24/7</span></h1>
@@ -328,15 +337,15 @@ function incNbr(){
               <div class="index-container08">
                 <h1 class="index-text20">
                   <span>Pricing plans</span>
-                  <br />
+                  <br>
                 </h1>
                 <span class="index-text23">
                   <span>Want more than DuckSploit?</span>
-                  <br />
+                  <br>
                   <span>
                     If your awnser is yes, you should try buy DuckSploit pro
                   </span>
-                  <br />
+                  <br>
                 </span>
               </div>
               <div class="index-container09">
@@ -346,38 +355,35 @@ function incNbr(){
                   <span class="index-text30">
                     <span>All</span>
                     <span class="index-text32">terminal command</span>
-                    <br />
+                    <br>
                   </span>
                   <span class="index-text34">
                     <span class="index-text35">Basic</span>
                     <span>WPH pannel</span>
-                    <br />
+                    <br>
                   </span>
                   <span class="index-text30">
                     <span>Free</span>
                     <span class="index-text32">tools</span>
-                    <br />
+                    <br>
                   </span>
-                  <a
-                    href="https://ducksploit.com/download"
-                    class="index-link09 button"
-                  >
+                  <a href="https://ducksploit.com/download" class="index-link09 button">
                     <span>
                       <span>Download</span>
-                      <br />
+                      <br>
                     </span>
                   </a>
                 </div>
                 <div class="index-container11">
                   <span class="index-text44">
                     <span>DuckSploit pro</span>
-                    <br />
+                    <br>
                   </span>
                   <span class="index-text47">$9.99</span>
                   <span class="index-text48">
                     <span class="index-text49">VIP</span>
                     <span>rank on Discord</span>
-                    <br />
+                    <br>
                   </span>
                   <span class="index-text52">
                     <span>An awesome</span>
@@ -389,15 +395,12 @@ function incNbr(){
                   </span>
                   <span class="index-text58">
                     <span>Complete WPH  pannel</span>
-                    <br />
+                    <br>
                   </span>
-                  <a
-                    href="https://ducksploit.com/payement/buy_pro.html"
-                    class="index-link10 button"
-                  >
+                  <a href="https://ducksploit.com/payement/buy_pro.html" class="index-link10 button">
                     <span>
                       <span>Buy now</span>
-                      <br />
+                      <br>
                     </span>
                   </a>
                 </div>
@@ -406,14 +409,10 @@ function incNbr(){
           </div>
           <footer class="index-footer">
             <div class="index-container12">
-              <img
-                alt="logo"
-                src="public/playground_assets/icon1-200h.png"
-                class="index-image5"
-              />
+              <img alt="logo" src="public/playground_assets/icon1-200h.png" class="index-image5">
               <span class="index-text64">
                 <span>© 2023 DuckSploit,</span>
-                <br />
+                <br>
                 <span>All Rights Reserved.</span>
               </span>
             </div>
@@ -421,53 +420,30 @@ function incNbr(){
               <div class="index-container13">
                 <div class="index-container14">
                   <span class="index-text68">Product</span>
-                  <a
-                    href="https://ducksploit.com/download"
-                    class="index-link11"
-                  >
+                  <a href="https://ducksploit.com/download" class="index-link11">
                     <span>Download</span>
-                    <br />
+                    <br>
                   </a>
-                  <a
-                    href="https://ducksploit.com/payement/buy_pro.html"
-                    target="_blank"
-                    rel="noreferrer noopener"
-                    class="index-link12"
-                  >
+                  <a href="https://ducksploit.com/payement/buy_pro.html" target="_blank" rel="noreferrer noopener" class="index-link12">
                     <span>Buy pro</span>
-                    <br />
+                    <br>
                   </a>
                 </div>
               </div>
               <div class="index-container15">
                 <div class="index-container16">
                   <span class="index-text73">Support</span>
-                  <a
-                    href="https://discord.com/invite/sTVWespH4M"
-                    target="_blank"
-                    rel="noreferrer noopener"
-                    class="index-link13"
-                  >
+                  <a href="https://discord.com/invite/sTVWespH4M" target="_blank" rel="noreferrer noopener" class="index-link13">
                     <span>Our discord</span>
-                    <br />
+                    <br>
                   </a>
                 </div>
                 <div class="index-container17">
                   <span class="index-text76">Resources</span>
-                  <a
-                    href="http://forum.ducksploit.com"
-                    target="_blank"
-                    rel="noreferrer noopener"
-                    class="index-link14"
-                  >
+                  <a href="http://forum.ducksploit.com" target="_blank" rel="noreferrer noopener" class="index-link14">
                     Forum
                   </a>
-                  <a
-                    href="https://github.com/canarddu38/DUCKSPLOIT"
-                    target="_blank"
-                    rel="noreferrer noopener"
-                    class="index-link15"
-                  >
+                  <a href="https://github.com/canarddu38/DUCKSPLOIT" target="_blank" rel="noreferrer noopener" class="index-link15">
                     Github
                   </a>
                 </div>
@@ -476,7 +452,5 @@ function incNbr(){
           </footer>
           <div class="index-container18"></div>
         </div>
-      </div>
-    </div>
-  </body>
+	</body>
 </html>

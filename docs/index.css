@@ -1,16 +1,3 @@
-index-image3:hover {
-  -webkit-filter: invert(100%);
-  filter: invert(100%);
-}
-index-image2:hover {
-  -webkit-filter: invert(100%);
-  filter: invert(100%);
-}
-index-image1:hover {
-  -webkit-filter: invert(100%);
-  filter: invert(100%);
-}
-
 .primary-button-container {
   display: flex;
   position: relative;
@@ -93,12 +80,11 @@ index-image1:hover {
 .index-logo {
   display: flex;
   align-items: center;
-  margin-right: var(--dl-space-space-doubleunit);
   flex-direction: row;
   justify-content: space-between;
 }
 .index-image {
-  width: 7vh;
+  width: 10vh;
   object-fit: cover;
 }
 .index-text {
@@ -109,7 +95,9 @@ index-image1:hover {
   height: 26px;
   display: flex;
   align-self: center;
-  align-items: center;
+  align-items: flex-start;
+  margin-left: var(--dl-space-space-doubleunit);
+  margin-right: var(--dl-space-space-doubleunit);
   flex-direction: row;
   justify-content: flex-start;
   background-color: #000000;
@@ -221,7 +209,7 @@ index-image1:hover {
 }
 .index-container02 {
   width: 100%;
-  height: auto;
+  height: 95vh;
   display: flex;
   overflow-y: scroll;
   overflow-x: hidden;
@@ -235,7 +223,7 @@ index-image1:hover {
 }
 .index-container03 {
   width: 100%;
-  height: auto;
+  height: 2000px;
   display: flex;
   align-items: center;
   background-size: cover;
@@ -244,7 +232,7 @@ index-image1:hover {
 }
 .index-container04 {
   flex: 0 0 auto;
-  height: auto;
+  height: 100%;
   display: flex;
   padding: var(--dl-space-space-tripleunit);
   align-items: flex-start;
@@ -266,7 +254,7 @@ index-image1:hover {
   margin-bottom: var(--dl-space-space-tripleunit);
 }
 .index-text12 {
-  font-size: 70px;
+  font-size: 75px;
 }
 .index-link08 {
   display: contents;
@@ -703,6 +691,9 @@ index-image1:hover {
   .index-container16 {
     margin-right: var(--dl-space-space-unit);
   }
+}
+.body {
+    overflow: hidden;
 }
 @media(max-width: 479px) {
   .body {
