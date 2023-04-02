@@ -6,7 +6,7 @@ V1.1 #beta|https://github.com/canarddu38/DUCKSPLOIT/raw/root/hacker/windows/vers
 linux:
 V1.0.9|https://raw.githubusercontent.com/canarddu38/DUCKSPLOIT/root/hacker/linux/DSinstaller.deb?raw=true
 android:
-V1.3.3|https://github.com/canarddu38/DUCKSPLOIT/blob/root/hacker/android/versions/DSinstaller-V1.3.3.apk
+V1.3.3|https://github.com/canarddu38/DUCKSPLOIT/blob/root/hacker/android/versions/DSinstaller-V1.3.3.apk?raw=true
 V1.2|https://github.com/canarddu38/DUCKSPLOIT/blob/root/hacker/android/versions/DSinstaller-V1.2.apk?raw=true 
 V1.1 #beta 2|https://github.com/canarddu38/DUCKSPLOIT/blob/root/hacker/android/versions/DSinstaller-V1.1-beta2.apk?raw=true 
 V1.1 #beta|https://github.com/canarddu38/DUCKSPLOIT/blob/root/hacker/android/versions/DSinstaller-V1.1-beta.apk?raw=true
