@@ -57,7 +57,7 @@
 | info           | info                             | get all stored victim's infos             |
 | malware        | malware <malware name>           | add malware to vour victim (ds malware --help) |
 
-## Made with ❤️ by DuckpvpTeam's devs
+## Made with ❤️ by 4RE5's devs
 <br>
 <a href="https://github.com/canarddu38/DUCKSPLOIT/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=canarddu38/DUCKSPLOIT" />
