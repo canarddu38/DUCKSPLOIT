@@ -21,7 +21,7 @@
 
  
 ## SUPPORT
-<a href="https://www.paypal.com/paypalme/Canarddu38"><img alt="Donate 👍 using Paypal" src="https://www.paypalobjects.com/webstatic/mktg/Logo/pp-logo-200px.png"></a>
+<a href="https://www.paypal.com/paypalme/devcanarddu38"><img alt="Donate 👍 using Paypal" src="https://www.paypalobjects.com/webstatic/mktg/Logo/pp-logo-200px.png"></a>
 </br>
 <a href="https://www.patreon.com/ducksploit"><img alt="Donate 👍 using Patreon" src="https://forum.cwowd.com/uploads/default/original/3X/6/d/6d1cdda143cc46667d87659d64d15a869a9b6139.png" width="100" height="100"></a>
 
