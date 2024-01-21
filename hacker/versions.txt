@@ -1,5 +1,6 @@
 windows:
-V1.1.3|https://github.com/canarddu38/DUCKSPLOIT/raw/root/hacker/windows/versions/DSinstaller-1.1.2.exe
+V1.1.4|https://github.com/canarddu38/DUCKSPLOIT/raw/root/hacker/windows/versions/DSinstaller-1.1.4.exe
+V1.1.3|https://github.com/canarddu38/DUCKSPLOIT/raw/root/hacker/windows/versions/DSinstaller-1.1.3.exe
 V1.1.2|https://github.com/canarddu38/DUCKSPLOIT/raw/root/hacker/windows/versions/DSinstaller-1.1.2.exe
 V1.1.1|https://github.com/canarddu38/DUCKSPLOIT/raw/root/hacker/windows/versions/DSinstaller-1.1.1.exe
 V1.1 #beta|https://github.com/canarddu38/DUCKSPLOIT/raw/root/hacker/windows/versions/DSinstaller-1.1-beta.exe
