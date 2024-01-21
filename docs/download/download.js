@@ -36,29 +36,32 @@ function onload()
 
 	//linux
 	versions_lin_list = linux_ver.split("\n");
-	document.getElementById("linux_version").innerHTML = versions_lin_list[0];
+	first=true;
 	for(var i = 0; i < versions_lin_list.length; i++) {
 		if(versions_lin_list[i] == "" || versions_lin_list[i] == " ")
 		{}
 		else
 		{
 			temp = versions_lin_list[i].split("|");
-			temp[0]="Version: "+temp[0];
+			
 			if(download_url_lin=="")
 			{
+				temp[0]="Version: "+temp[0];
 				download_url_lin=temp[1];
 			}
 			if(!temp[0] == "")
 			{
+				temp[0]="Version: "+temp[0];
 				document.getElementById('version_lin').innerHTML+="<option onclick='download_url_lin="+temp[1]+"' value='"+temp[0]+"'>"+temp[0]+"</option>";
 			}
+			if(first) { document.getElementById("linux_version").innerHTML = temp[0]; first=false;}
 		}
 	}
 	document.getElementById('linuxdownload').innerHTML+="<a onclick='window.location=`"+download_url_lin+"`' style='background-color: #e3c032' class='u-btn u-button-style u-palette-2-base u-btn-1'>Download</a>";
 	
 	//windows
 	versions_win_list = windows_ver.split("\n");
-	document.getElementById("windows_version").innerHTML = versions_win_list[0];
+	first=true;
 	console.log(versions_win_list[0]);
 	for(var i = 0; i < versions_win_list.length; i++) {
 		if(versions_win_list[i] == "" || versions_win_list[i] == " ")
@@ -66,37 +69,42 @@ function onload()
 		else
 		{
 			temp = versions_win_list[i].split("|");
-			temp[0]="Version: "+temp[0];
 			if(download_url_win=="")
 			{
+				temp[0]="Version: "+temp[0];
 				download_url_win=temp[1];
 			}
 			if(!temp[0] == "")
 			{
+				temp[0]="Version: "+temp[0];
 				document.getElementById('version_win').innerHTML+="<option onclick='download_url_win="+temp[1]+"' value='"+temp[0]+"'>"+temp[0]+"</option>";
 			}
+			if(first) { document.getElementById("windows_version").innerHTML = temp[0]; first=false;}
 		}
 	}
 	document.getElementById('windowsdownload').innerHTML+="<a onclick='window.location=`"+download_url_win+"`' style='background-color: #599ce0' class='u-btn u-button-style u-palette-2-base u-btn-1'>Download</a>";
 	
 	//android
 	versions_and_list = android_ver.split("\n");
-	document.getElementById("android_version").innerHTML = versions_and_list[0];
+	first=true;
 	for(var i = 0; i < versions_and_list.length; i++) {
 		if(versions_and_list[i] == "" || versions_and_list[i] == " ")
 		{}
 		else
 		{
 			temp = versions_and_list[i].split("|");
-			temp[0]="Version: "+temp[0];
+			
 			if(download_url_and=="")
 			{
+				temp[0]="Version: "+temp[0];
 				download_url_and=temp[1];
 			}
 			if(!temp[0] == "")
 			{
+				temp[0]="Version: "+temp[0];
 				document.getElementById('version_and').innerHTML+="<option onclick='download_url_and="+temp[1]+"' value='"+temp[0]+"'>"+temp[0]+"</option>";
 			}
+			if(first) { document.getElementById("android_version").innerHTML = temp[0]; first=false;}
 		}
 	}
 	document.getElementById('androiddownload').innerHTML+="<a onclick='window.location=`"+download_url_and+"`' style='background-color: #a4c639' class='u-btn u-button-style u-palette-2-base u-btn-1'>Download</a>";
