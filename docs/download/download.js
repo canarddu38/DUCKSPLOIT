@@ -36,6 +36,7 @@ function onload()
 
 	//linux
 	versions_lin_list = linux_ver.split("\n");
+	document.getElementById("linux_version").innerText = versions_lin_list[0];
 	for(var i = 0; i < versions_lin_list.length; i++) {
 		if(versions_lin_list[i] == "" || versions_lin_list[i] == " ")
 		{}
@@ -57,6 +58,7 @@ function onload()
 	
 	//windows
 	versions_win_list = windows_ver.split("\n");
+	document.getElementById("windows_version").innerText = versions_win_list[0];
 	for(var i = 0; i < versions_win_list.length; i++) {
 		if(versions_win_list[i] == "" || versions_win_list[i] == " ")
 		{}
@@ -78,6 +80,7 @@ function onload()
 	
 	//android
 	versions_and_list = android_ver.split("\n");
+	document.getElementById("android_version").innerText = versions_and_list[0];
 	for(var i = 0; i < versions_and_list.length; i++) {
 		if(versions_and_list[i] == "" || versions_and_list[i] == " ")
 		{}
