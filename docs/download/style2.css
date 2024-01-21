@@ -14,7 +14,7 @@ select {
 	outline:0px;
 	border: none;
 	option {
-		color: black;
+		color: grey;
 	}
 }
 .u-border-4 {
