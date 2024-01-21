@@ -46,13 +46,11 @@ function onload()
 			
 			if(download_url_lin=="")
 			{
-				temp[0]="Version: "+temp[0];
 				download_url_lin=temp[1];
 			}
 			if(!temp[0] == "")
 			{
-				temp[0]="Version: "+temp[0];
-				document.getElementById('version_lin').innerHTML+="<option onclick='download_url_lin="+temp[1]+"' value='"+temp[0]+"'>"+temp[0]+"</option>";
+				document.getElementById('version_lin').innerHTML+="<option onclick='download_url_lin="+temp[1]+"' value='"+temp[0]+"'>Version: "+temp[0]+"</option>";
 			}
 			if(first) { document.getElementById("linux_version").innerHTML = temp[0]; first=false;}
 		}
@@ -71,13 +69,11 @@ function onload()
 			temp = versions_win_list[i].split("|");
 			if(download_url_win=="")
 			{
-				temp[0]="Version: "+temp[0];
 				download_url_win=temp[1];
 			}
 			if(!temp[0] == "")
 			{
-				temp[0]="Version: "+temp[0];
-				document.getElementById('version_win').innerHTML+="<option onclick='download_url_win="+temp[1]+"' value='"+temp[0]+"'>"+temp[0]+"</option>";
+				document.getElementById('version_win').innerHTML+="<option onclick='download_url_win="+temp[1]+"' value='"+temp[0]+"'>Version: "+temp[0]+"</option>";
 			}
 			if(first) { document.getElementById("windows_version").innerHTML = temp[0]; first=false;}
 		}
@@ -96,13 +92,11 @@ function onload()
 			
 			if(download_url_and=="")
 			{
-				temp[0]="Version: "+temp[0];
 				download_url_and=temp[1];
 			}
 			if(!temp[0] == "")
 			{
-				temp[0]="Version: "+temp[0];
-				document.getElementById('version_and').innerHTML+="<option onclick='download_url_and="+temp[1]+"' value='"+temp[0]+"'>"+temp[0]+"</option>";
+				document.getElementById('version_and').innerHTML+="<option onclick='download_url_and="+temp[1]+"' value='"+temp[0]+"'>Version: "+temp[0]+"</option>";
 			}
 			if(first) { document.getElementById("android_version").innerHTML = temp[0]; first=false;}
 		}
