@@ -1,0 +1,44 @@
+<Project ToolsVersion="v4.0.30319" Sdk="Microsoft.NET.Sdk" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <PropertyGroup>
+	<Optimize>yes</Optimize>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <AssemblyName>ds</AssemblyName>
+	<UseWindowsForms>true</UseWindowsForms>
+	<ApplicationIcon>icon.ico</ApplicationIcon>
+	<Platforms>x64</Platforms>
+	<OutputType>Exe</OutputType>
+    <DisableWinExeOutputInference>True</DisableWinExeOutputInference>
+    <Authors>DuckpvpTeam</Authors>
+    <PackageProjectUrl>https://ducksploit.com</PackageProjectUrl>
+    <RepositoryType>GitHub</RepositoryType>
+    <RepositoryUrl>https://github.com/canarddu38/DUCKSPLOIT</RepositoryUrl>
+    <Description>DuckSploit is the best remote administration tool of any platforms</Description>
+    <SignAssembly>false</SignAssembly>
+    <Version>1.1.4-stable</Version>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <Copyright>©2023 DuckpvpTeam</Copyright>
+    <PackageId>DuckSploit.Installer</PackageId>
+    <Product>DuckSploit Installer</Product>
+	<Configuration>Release</Configuration>
+    <PackageIcon></PackageIcon>
+    <PackageIconUrl/>
+  </PropertyGroup>
+	
+	<ItemGroup>
+        <CSFile Include = "*.cs"/>
+    </ItemGroup>
+	<Target Name = "Compile">
+        <CSC Sources = "@(CSFile)"
+            DebugType="$(DebugType)"
+			TargetType="exe"
+            Optimize="$(Optimize)"
+			Win32Icon="$(ApplicationIcon)"
+			References="Mono.Nat.dll"
+			Resources="Mono.Nat.dll"
+            OutputAssembly="ds-$(Version).exe" >
+            <Output TaskParameter="OutputAssembly"
+                ItemName = "EXEFile" />
+        </CSC>
+    </Target>
+</Project>
