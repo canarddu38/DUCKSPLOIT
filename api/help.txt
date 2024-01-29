@@ -6,11 +6,11 @@
 `88888P8 `88888P' `88888P' dP   `YP `88888P' 88Y888P' dP `88888P' dP   dP   
                                              88                             
                                              dP                             
-credits: DuckpvpTeam - 2022
+credits: 4re5 group - 2024
 
 victim's website: 'http://<victim's ip>'
 
-our team: 'https://canarddu38.github.io/DuckpvpTeam'
+our team: 'https://4re5group.github.io'
 
 commands:
 |    Command     |              Usage               |                  Result                   |
