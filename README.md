@@ -1,6 +1,6 @@
 #### :warning: Ducksploit is made for legal use or educational use (then, we are not responsible for any crimes committed by our users):warning:
 
-<img src="https://github.com/canarddu38/DUCKSPLOIT/blob/root/images/dsbanner.png" alt="banner"/>
+![banner](https://github.com/canarddu38/DUCKSPLOIT/assets/71982379/e1acdcf5-92e1-4fad-be02-6f54649b8c7e)
 
 ![](https://img.shields.io/badge/Version-1.1-red?style=for-the-badge) ![](https://img.shields.io/github/stars/canarddu38/DUCKSPLOIT?style=for-the-badge)
 ![](	https://img.shields.io/github/forks/canarddu38/DUCKSPLOIT?style=for-the-badge) ![](https://img.shields.io/badge/Windows-blue?style=for-the-badge)![](https://img.shields.io/badge/Linux-yellow?style=for-the-badge)![](https://img.shields.io/badge/Android-green?style=for-the-badge)
